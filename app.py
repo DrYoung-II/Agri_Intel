@@ -180,33 +180,45 @@ def main():
         )
 
         st.markdown("---")
-        with st.expander("🔑 Live AI Key (Google Gemini Free Tier)", expanded=False):
-            sb_gemini_key = st.text_input(
-                "Google Gemini Key:",
-                value=get_gemini_api_key(),
-                type="password",
-                placeholder="AIzaSy...",
-                key="sidebar_gemini_key_input",
-                help="Enter free Gemini key from aistudio.google.com"
+        active_sb_key = get_gemini_api_key()
+        if active_sb_key:
+            st.markdown(
+                '<div style="background: rgba(46,125,50,0.18); border: 1px solid #81C784; '
+                'border-radius: 6px; padding: 10px 14px; margin-bottom: 12px;">'
+                '<div style="font-size: 0.80rem; font-weight: 700; color: #A5D6A7;">'
+                '🟢 Live Google Gemini Engine Active'
+                '</div>'
+                '<div style="font-size: 0.72rem; color: #E8F5E9; margin-top: 2px;">'
+                'Cloud Verified &bull; Secrets Secured'
+                '</div></div>',
+                unsafe_allow_html=True
             )
-            cleaned_sb_key = (sb_gemini_key or "").strip().strip("'\"")
-            if cleaned_sb_key and cleaned_sb_key != get_gemini_api_key():
-                set_gemini_api_key(cleaned_sb_key)
-                if HAS_GENAI and genai is not None:
-                    try:
-                        genai.configure(api_key=cleaned_sb_key)
-                        st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
-                    except Exception:
-                        pass
-                val = validate_gemini_key(cleaned_sb_key)
-                if val.get("valid"):
-                    st.success(f"🟢 {val.get('message')}")
+        else:
+            with st.expander("🔑 Connect Google Gemini (Optional Free Key)", expanded=False):
+                sb_gemini_key = st.text_input(
+                    "Google Gemini Key:",
+                    value="",
+                    type="password",
+                    placeholder="AIzaSy...",
+                    key="sidebar_gemini_key_input",
+                    help="Enter free Gemini key from aistudio.google.com"
+                )
+                cleaned_sb_key = (sb_gemini_key or "").strip().strip("'\"")
+                if cleaned_sb_key:
+                    set_gemini_api_key(cleaned_sb_key)
+                    if HAS_GENAI and genai is not None:
+                        try:
+                            genai.configure(api_key=cleaned_sb_key)
+                            st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
+                        except Exception:
+                            pass
+                    val = validate_gemini_key(cleaned_sb_key)
+                    if val.get("valid"):
+                        st.success(f"🟢 {val.get('message')}")
+                    else:
+                        st.error(f"🔴 {val.get('message')}")
                 else:
-                    st.error(f"🔴 {val.get('message')}")
-            elif cleaned_sb_key:
-                st.caption("🟢 Live Gemini key active & synchronized across all suites.")
-            else:
-                st.caption("Optional: Free key from [Google AI Studio](https://aistudio.google.com/) unlocks live AI everywhere.")
+                    st.caption("Optional: Free key from [Google AI Studio](https://aistudio.google.com/) unlocks live AI everywhere.")
 
         with st.expander("📖 Founder Story & Vision", expanded=False):
             st.markdown(f"*{FOUNDER_STORY}*")
@@ -298,86 +310,60 @@ def render_orchestrator_home():
 
     st.markdown("##### ⚙️ Intelligence Engine Mode")
     engine_choices = [
-        "⚡ Built-in African Agronomic Science Engine (Offline • 100% Free • No API Key Required)",
-        "🟢 Live Google Gemini API (Cloud LLM • Free Tier Available)",
-        "🧠 Live OpenAI API (GPT-4o / GPT-4o-mini)",
-        "⚡ Live Groq API (Ultra-Fast Llama-3 70B)"
+        "🟢 Live Google Gemini API (Cloud Multi-Agent Reasoning)",
+        "⚡ Built-in African Agronomic Science Engine (Offline • Local Biometrics)"
     ]
     selected_engine = st.selectbox(
         "Select Engine:",
         options=engine_choices,
         index=0,
-        help="Select whether AgriIntel runs with local offline African scientific models or live cloud LLM reasoning."
+        help="Select whether AgriIntel runs with live Google Gemini cloud reasoning or local offline African scientific models."
     )
 
     api_key_to_use = ""
     provider_to_use = "gemini"
 
     if selected_engine == engine_choices[0]:
-        st.info("🌿 **Built-in African Agronomic Science Engine Active**: Operates 100% offline with zero cost. Powered by calibrated agronomic, edaphic, and genomic models for Western Nigeria (NIHORT, IITA), Northern Savanna, and East Africa.")
-    elif selected_engine == engine_choices[1]:
-        c_k1, c_k2 = st.columns([2, 1])
-        with c_k1:
-            input_gemini_key = st.text_input(
-                "Paste Google Gemini API Key:",
-                value=get_gemini_api_key(),
-                type="password",
-                placeholder="AIzaSy...",
-                help="Get a free API key at https://aistudio.google.com/"
-            )
-            cleaned_key = (input_gemini_key or get_gemini_api_key()).strip().strip("'\"")
-            if cleaned_key:
-                set_gemini_api_key(cleaned_key)
-                if HAS_GENAI and genai is not None:
-                    try:
-                        genai.configure(api_key=cleaned_key)
-                        st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
-                    except Exception:
-                        pass
-                val = validate_gemini_key(cleaned_key)
-                if val.get("valid"):
-                    st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")
-                else:
-                    st.error(f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
-                    st.caption("💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/), has no IP restrictions, and 'Generative Language API' is enabled.*")
-            api_key_to_use = cleaned_key
+        active_key = get_gemini_api_key()
+        if active_key:
+            st.success("🟢 **Google Gemini Live Intelligence Active**: Cloud multi-agent reasoning is connected and secured via server secrets. Zero client-side key entry required.")
+            api_key_to_use = active_key
             provider_to_use = "gemini"
-        with c_k2:
-            st.caption("🔑 **Free Tier Available**: Generate a free API key at [Google AI Studio](https://aistudio.google.com/). Live Gemini enables real-time reasoning across all 48+ African countries.")
-    elif selected_engine == engine_choices[2]:
-        c_k1, c_k2 = st.columns([2, 1])
-        with c_k1:
-            stored_oai = st.session_state.get("openai_api_key") or (st.secrets.get("OPENAI_API_KEY") if hasattr(st, "secrets") else None) or os.getenv("OPENAI_API_KEY", "")
-            input_openai_key = st.text_input(
-                "Paste OpenAI API Key:",
-                value=stored_oai,
-                type="password",
-                placeholder="sk-...",
-                help="Get an API key at https://platform.openai.com/"
-            )
-            if input_openai_key:
-                st.session_state["openai_api_key"] = input_openai_key
-            api_key_to_use = input_openai_key or stored_oai
-            provider_to_use = "openai"
-        with c_k2:
-            st.caption("🧠 Connects to OpenAI GPT-4o-mini / GPT-4o for live reasoning.")
-    elif selected_engine == engine_choices[3]:
-        c_k1, c_k2 = st.columns([2, 1])
-        with c_k1:
-            stored_groq = st.session_state.get("groq_api_key") or (st.secrets.get("GROQ_API_KEY") if hasattr(st, "secrets") else None) or os.getenv("GROQ_API_KEY", "")
-            input_groq_key = st.text_input(
-                "Paste Groq API Key:",
-                value=stored_groq,
-                type="password",
-                placeholder="gsk_...",
-                help="Get a free Groq API key at https://console.groq.com/"
-            )
-            if input_groq_key:
-                st.session_state["groq_api_key"] = input_groq_key
-            api_key_to_use = input_groq_key or stored_groq
-            provider_to_use = "groq"
-        with c_k2:
-            st.caption("⚡ Connects to Groq Llama-3.3 70B for ultra-fast sub-second live reasoning.")
+        else:
+            c_k1, c_k2 = st.columns([2, 1])
+            with c_k1:
+                input_gemini_key = st.text_input(
+                    "Paste Google Gemini API Key:",
+                    value="",
+                    type="password",
+                    placeholder="AIzaSy...",
+                    help="Get a free API key at https://aistudio.google.com/"
+                )
+                cleaned_key = (input_gemini_key or "").strip().strip("'\"")
+                if cleaned_key:
+                    set_gemini_api_key(cleaned_key)
+                    if HAS_GENAI and genai is not None:
+                        try:
+                            genai.configure(api_key=cleaned_key)
+                            st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
+                        except Exception:
+                            pass
+                    val = validate_gemini_key(cleaned_key)
+                    if val.get("valid"):
+                        st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")
+                    else:
+                        st.error(f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
+                        st.caption("💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/), has no IP restrictions, and 'Generative Language API' is enabled.*")
+                    api_key_to_use = cleaned_key
+                else:
+                    api_key_to_use = ""
+                provider_to_use = "gemini"
+            with c_k2:
+                st.caption("🔑 **Free Tier Available**: Generate a free API key at [Google AI Studio](https://aistudio.google.com/). Live Gemini enables real-time reasoning across all 48+ African countries.")
+    else:
+        st.info("🌿 **Built-in African Agronomic Science Engine Active**: Operates 100% offline with zero external API calls. Powered by calibrated agronomic, edaphic, and genomic models for Western Nigeria (NIHORT, IITA), Northern Savanna, and East Africa.")
+        api_key_to_use = ""
+        provider_to_use = "offline"
 
     col_btn, col_mode = st.columns([1, 2])
     with col_btn:
@@ -410,11 +396,11 @@ def render_orchestrator_home():
                     st.info(f"🟢 **Live Cloud AI Consultation**: Generated via **{result.get('provider')} ({result.get('model')})** with your Google AI Studio API key.")
                 elif result.get("live_api_error"):
                     st.warning(f"⚠️ **Live Cloud AI Notice**: Google Gemini API returned: `{result['live_api_error']}`. AgriIntel automatically served this consultation using its built-in **Offline African Agronomic Science Engine**.")
-                elif not api_key_to_use and selected_engine != engine_choices[0]:
+                elif not api_key_to_use and selected_engine == engine_choices[0]:
                     st.info(
-                        "💡 **Offline Mode Notice**: You selected a Cloud LLM engine without providing an API key. "
+                        "💡 **Offline Mode Notice**: No Gemini API key detected. "
                         "AgriIntel synthesized this consultation using its built-in **Offline African Agronomic Science Engine**. "
-                        "To activate live unconstrained generative reasoning on any question, paste a free key from Google AI Studio above."
+                        "To activate live unconstrained generative reasoning on any question, configure a free key from Google AI Studio above."
                     )
 
                 # Dispatch Banner with Badges

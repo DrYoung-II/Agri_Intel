@@ -705,28 +705,29 @@ The Federal Executive Council (FEC) is respectfully requested to:
         c_pm1, c_pm2 = st.columns([2, 1])
         with c_pm1:
             if gemini_key:
-                st.markdown("🟢 **Live Google Gemini Engine Active** *(Free Tier Synchronized)*")
+                st.markdown("🟢 **Live Google Gemini Engine Active** *(Secured via Cloud Secrets)*")
             else:
                 st.markdown("⚡ **Built-in Institutional Policy Engine Active** *(Offline Mode)*")
         with c_pm2:
-            with st.expander("🔑 Live Gemini API Settings", expanded=False):
-                pol_key_input = st.text_input(
-                    "Google Gemini Key:",
-                    value=gemini_key,
-                    type="password",
-                    placeholder="AIzaSy...",
-                    key="pol_gemini_key_input",
-                    help="Enter free Gemini key from aistudio.google.com"
-                )
-                cleaned_pk = (pol_key_input or "").strip().strip("'\"")
-                if cleaned_pk and cleaned_pk != gemini_key:
-                    set_gemini_api_key(cleaned_pk)
-                    gemini_key = cleaned_pk
-                    val = validate_gemini_key(cleaned_pk)
-                    if val.get("valid"):
-                        st.success(f"🟢 {val.get('message')}")
-                    else:
-                        st.error(f"🔴 {val.get('message')}")
+            if not gemini_key:
+                with st.expander("🔑 Connect Gemini Key", expanded=False):
+                    pol_key_input = st.text_input(
+                        "Google Gemini Key:",
+                        value="",
+                        type="password",
+                        placeholder="AIzaSy...",
+                        key="pol_gemini_key_input",
+                        help="Enter free Gemini key from aistudio.google.com"
+                    )
+                    cleaned_pk = (pol_key_input or "").strip().strip("'\"")
+                    if cleaned_pk:
+                        set_gemini_api_key(cleaned_pk)
+                        gemini_key = cleaned_pk
+                        val = validate_gemini_key(cleaned_pk)
+                        if val.get("valid"):
+                            st.success(f"🟢 {val.get('message')}")
+                        else:
+                            st.error(f"🔴 {val.get('message')}")
 
         col_enh_btn, col_enh_info = st.columns([1, 2])
         with col_enh_btn:

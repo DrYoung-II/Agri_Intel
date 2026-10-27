@@ -916,7 +916,7 @@ def render_research_copilot():
                                     "Trait": "Uncalibrated Domain",
                                     "Sample_Size": 0,
                                     "Method": "Zero-Hallucination Policy",
-                                    "Major_Finding": "No peer-reviewed records in offline database. Please connect Live Multi-Agent AI (Gemini/OpenAI/Groq).",
+                                    "Major_Finding": "No peer-reviewed records in offline database. Please connect Live Multi-Agent AI (Google Gemini).",
                                     "Evidence_Strength": "Withheld"
                                 }
                             ]

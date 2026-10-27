@@ -1843,7 +1843,7 @@ def set_gemini_api_key(api_key: str):
 
 def call_live_llm_orchestration(query: str, api_key: str = "", provider: str = "gemini", active_region: dict = None, **kwargs) -> dict:
     """
-    Connects to external LLM API (Google Gemini, OpenAI, or Groq) if key is provided.
+    Connects to Google Gemini API if key is provided.
     Falls back cleanly to the rule-based expert engine if network/key fails.
     """
     if not api_key and provider.lower() == "gemini":

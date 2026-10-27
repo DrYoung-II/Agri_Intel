@@ -19,42 +19,35 @@ def render_api_hub():
 <b>AgriIntel is designed to run 100% free out of the box!</b><br>
 All core statistical models (ANOVA, Duncan's Multiple Range Test, BLUP), soil diagnostic algorithms, climate scenario engines, 
 and knowledge graphs execute locally using deterministic scientific pipelines and preloaded African agricultural databases.<br>
-Subscribing to paid GenAI APIs (Google Gemini, OpenAI, or Groq) is strictly <b>optional</b> and is only required if you want live real-time LLM agent synthesis.
+Connecting Google Gemini is strictly <b>optional</b> (free tier available at Google AI Studio) and is only required if you want live real-time LLM agent synthesis.
 </div>
 """, unsafe_allow_html=True)
 
     # API Configuration Section
-    st.markdown("#### 🔑 Optional Live API Key Settings")
-    col1, col2 = st.columns(2)
-    with col1:
-        current_k = get_gemini_api_key()
+    st.markdown("#### 🔑 Live AI Engine (Google Gemini)")
+    current_k = get_gemini_api_key()
+    if current_k:
+        val = validate_gemini_key(current_k)
+        if val.get("valid"):
+            st.success("🟢 **Google Gemini Live API Connected & Active**: Secured via Streamlit Cloud Secrets. All multi-agent reasoning is authenticated server-side with zero client-side key exposure.")
+        else:
+            st.warning(f"🟡 **Google Gemini Status**: {val.get('message')}")
+    else:
         gemini_key = st.text_input(
             "Google Gemini API Key (Recommended - Free Tier Available):",
-            value=current_k,
+            value="",
             type="password",
             help="Get your free key at https://aistudio.google.com/"
         )
         cleaned_gk = (gemini_key or "").strip().strip("'\"")
-        if cleaned_gk and cleaned_gk != current_k:
+        if cleaned_gk:
             set_gemini_api_key(cleaned_gk)
             current_k = cleaned_gk
-        if current_k:
             val = validate_gemini_key(current_k)
             if val.get("valid"):
                 st.success(f"🟢 **Key Active & Synchronized**: {val.get('message')}")
             else:
                 st.error(f"🔴 **Key Notice**: {val.get('message')}")
-
-    with col2:
-        openai_key = st.text_input(
-            "OpenAI API Key (Optional):",
-            value=st.session_state.get("openai_api_key", ""),
-            type="password",
-            help="Get your key at https://platform.openai.com/"
-        )
-        if openai_key:
-            st.session_state["openai_api_key"] = openai_key
-            st.success("OpenAI key configured for live agent calls!")
 
     st.markdown("---")
     st.markdown("#### 📚 Comprehensive Directory of Agricultural & AI APIs")

@@ -970,59 +970,43 @@ def render_research_scientist():
 
         # Engine Mode Selector
         engine_options = [
-            "⚡ Built-in African Agronomic Science Engine (Offline • 100% Free • Verified)",
-            "🟢 Live Google Gemini API (Cloud LLM • Free Tier Available)",
-            "🧠 Live OpenAI GPT-4o API (Cloud LLM)",
-            "⚡ Live Groq Llama-3.3 API (Ultra-Fast Cloud LLM)"
+            "🟢 Live Google Gemini API (Cloud LLM • High-Impact Synthesis)",
+            "⚡ Built-in African Agronomic Science Engine (Offline • 100% Free • Verified)"
         ]
         selected_engine = st.selectbox("Select Proposal Generation Engine:", engine_options, index=0)
 
         if "Live Google Gemini" in selected_engine:
             active_gemini_key = get_gemini_api_key()
-            c_gk1, c_gk2 = st.columns([2, 1])
-            with c_gk1:
-                prop_gemini_key = st.text_input(
-                    "Google Gemini API Key (Free tier available from Google AI Studio):",
-                    value=active_gemini_key,
-                    type="password",
-                    placeholder="AIzaSy...",
-                    key="prop_gemini_key_input",
-                    help="Free API key obtained from https://aistudio.google.com/"
-                )
-                cleaned_k = (prop_gemini_key or "").strip().strip("'\"")
-                if cleaned_k and cleaned_k != active_gemini_key:
-                    set_gemini_api_key(cleaned_k)
-                    active_gemini_key = cleaned_k
-
-                if active_gemini_key:
-                    val = validate_gemini_key(active_gemini_key)
-                    if val.get("valid"):
-                        st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")
-                    else:
-                        st.error(f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
-                        st.caption("💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/) and 'Generative Language API' is enabled.*")
+            if active_gemini_key:
+                val = validate_gemini_key(active_gemini_key)
+                if val.get("valid"):
+                    st.success("🟢 **Google Gemini Live Intelligence Active**: Cloud proposal synthesis connected and secured via server secrets. Zero client-side key entry required.")
                 else:
-                    st.info("🔑 **Zero-Cost Live AI**: You can generate a free API key at [Google AI Studio](https://aistudio.google.com/) with no credit card required. Paste it above to enable real-time generative proposal synthesis.")
-            with c_gk2:
-                st.caption("🌐 **Universal Key Synchronization**: An API key entered here is automatically shared with the **Multi-Agent Orchestrator**, **Thesis Mentor & Defense Tutor**, and **Policy Memorandum Generator** across AgriIntel!")
-        elif "Live OpenAI" in selected_engine:
-            c_ok1, c_ok2 = st.columns([2, 1])
-            with c_ok1:
-                stored_oai = st.session_state.get("openai_api_key") or (st.secrets.get("OPENAI_API_KEY") if hasattr(st, "secrets") else None) or os.getenv("OPENAI_API_KEY", "")
-                input_oai = st.text_input("OpenAI API Key:", value=stored_oai, type="password", key="prop_oai_key_input")
-                if input_oai:
-                    st.session_state["openai_api_key"] = input_oai
-            with c_ok2:
-                st.caption("Connects to OpenAI GPT-4o-mini / GPT-4o for proposal generation.")
-        elif "Live Groq" in selected_engine:
-            c_gq1, c_gq2 = st.columns([2, 1])
-            with c_gq1:
-                stored_groq = st.session_state.get("groq_api_key") or (st.secrets.get("GROQ_API_KEY") if hasattr(st, "secrets") else None) or os.getenv("GROQ_API_KEY", "")
-                input_gq = st.text_input("Groq API Key:", value=stored_groq, type="password", key="prop_groq_key_input")
-                if input_gq:
-                    st.session_state["groq_api_key"] = input_gq
-            with c_gq2:
-                st.caption("Connects to Groq Llama-3.3 70B for ultra-fast proposal generation.")
+                    st.warning(f"🟡 **Google Gemini Status**: {val.get('message')}")
+            else:
+                c_gk1, c_gk2 = st.columns([2, 1])
+                with c_gk1:
+                    prop_gemini_key = st.text_input(
+                        "Google Gemini API Key (Free tier available from Google AI Studio):",
+                        value="",
+                        type="password",
+                        placeholder="AIzaSy...",
+                        key="prop_gemini_key_input",
+                        help="Free API key obtained from https://aistudio.google.com/"
+                    )
+                    cleaned_k = (prop_gemini_key or "").strip().strip("'\"")
+                    if cleaned_k:
+                        set_gemini_api_key(cleaned_k)
+                        val = validate_gemini_key(cleaned_k)
+                        if val.get("valid"):
+                            st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")
+                        else:
+                            st.error(f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
+                            st.caption("💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/) and 'Generative Language API' is enabled.*")
+                    else:
+                        st.info("🔑 **Zero-Cost Live AI**: You can generate a free API key at [Google AI Studio](https://aistudio.google.com/) with no credit card required. Paste it above to enable real-time generative proposal synthesis.")
+                with c_gk2:
+                    st.caption("🌐 **Universal Key Synchronization**: An API key entered here is automatically shared across all suites in AgriIntel!")
 
         col_btn, col_info = st.columns([1, 2])
         with col_btn:
@@ -1045,26 +1029,6 @@ def render_research_scientist():
                         st.session_state["last_proposal_meta"] = {
                             "title": user_prompt,
                             "domain_title": "AI Research Scientist (Live Google Gemini Synthesis)" if active_key else "Multi-Agent Science Synthesis (Offline)",
-                            "organism": "Live Model Inferred",
-                            "geography": {"country": target_geo_hint or "Sub-Saharan Africa", "agrozone": "Regional Context"}
-                        }
-                    elif "Live OpenAI" in selected_engine:
-                        oai_k = st.session_state.get("openai_api_key", os.getenv("OPENAI_API_KEY", ""))
-                        proposal_text = call_live_ai_proposal(user_prompt, oai_k, provider="openai", academic_level=academic_level, geo_hint=target_geo_hint)
-                        st.session_state["last_proposal_text"] = proposal_text
-                        st.session_state["last_proposal_meta"] = {
-                            "title": user_prompt,
-                            "domain_title": "OpenAI GPT-4o Synthesis",
-                            "organism": "Live Model Inferred",
-                            "geography": {"country": target_geo_hint or "Sub-Saharan Africa", "agrozone": "Regional Context"}
-                        }
-                    elif "Live Groq" in selected_engine:
-                        groq_k = st.session_state.get("groq_api_key", os.getenv("GROQ_API_KEY", ""))
-                        proposal_text = call_live_ai_proposal(user_prompt, groq_k, provider="groq", academic_level=academic_level, geo_hint=target_geo_hint)
-                        st.session_state["last_proposal_text"] = proposal_text
-                        st.session_state["last_proposal_meta"] = {
-                            "title": user_prompt,
-                            "domain_title": "Groq Llama-3.3 Synthesis",
                             "organism": "Live Model Inferred",
                             "geography": {"country": target_geo_hint or "Sub-Saharan Africa", "agrozone": "Regional Context"}
                         }

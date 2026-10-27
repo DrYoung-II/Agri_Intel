@@ -376,28 +376,29 @@ To build academic authority in <b>{field_of_study}</b>, at least 70% of your cit
     c_eng1, c_eng2 = st.columns([2, 1])
     with c_eng1:
         if gemini_key:
-            st.markdown("🟢 **Live Google Gemini Supervisor Connected** *(Free Tier Active & Synchronized)*")
+            st.markdown("🟢 **Live Google Gemini Supervisor Connected** *(Secured via Cloud Secrets)*")
         else:
             st.markdown("⚡ **Built-in Socratic Thesis Engine Active** *(Offline Mode • Free)*")
     with c_eng2:
-        with st.expander("🔑 Supervisor API Key Settings", expanded=False):
-            tutor_key_input = st.text_input(
-                "Google Gemini Key:",
-                value=gemini_key,
-                type="password",
-                placeholder="AIzaSy...",
-                key="tutor_gemini_key_input",
-                help="Enter free Gemini key from aistudio.google.com"
-            )
-            cleaned_tk = (tutor_key_input or "").strip().strip("'\"")
-            if cleaned_tk and cleaned_tk != gemini_key:
-                set_gemini_api_key(cleaned_tk)
-                gemini_key = cleaned_tk
-                val = validate_gemini_key(cleaned_tk)
-                if val.get("valid"):
-                    st.success(f"🟢 {val.get('message')}")
-                else:
-                    st.error(f"🔴 {val.get('message')}")
+        if not gemini_key:
+            with st.expander("🔑 Connect Gemini Key", expanded=False):
+                tutor_key_input = st.text_input(
+                    "Google Gemini Key:",
+                    value="",
+                    type="password",
+                    placeholder="AIzaSy...",
+                    key="tutor_gemini_key_input",
+                    help="Enter free Gemini key from aistudio.google.com"
+                )
+                cleaned_tk = (tutor_key_input or "").strip().strip("'\"")
+                if cleaned_tk:
+                    set_gemini_api_key(cleaned_tk)
+                    gemini_key = cleaned_tk
+                    val = validate_gemini_key(cleaned_tk)
+                    if val.get("valid"):
+                        st.success(f"🟢 {val.get('message')}")
+                    else:
+                        st.error(f"🔴 {val.get('message')}")
 
     c_q1, c_q2 = st.columns([3, 1])
     with c_q1:

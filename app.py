@@ -82,59 +82,40 @@ st.markdown(LEAF_GREEN_CSS, unsafe_allow_html=True)
 
 def main():
     # -------------------------------------------------------------
-    # HERO HEADER & SILHOUETTE BANNER WITH OFFICIAL LOGO
+    # -------------------------------------------------------------
+    # UNIFIED INSTITUTIONAL HERO BANNER
     # -------------------------------------------------------------
     st.markdown(f"""
-<div class="agri-header">
-    <div class="agri-header-row">
-        <div class="agri-header-brand">
-            <div class="hero-logo-badge">
+<div class="agri-hero-banner">
+    <div class="agri-hero-main">
+        <div class="agri-hero-identity">
+            <div class="agri-hero-logo">
                 <img src="data:image/png;base64,{ICON_B64}" alt="AgriIntel Emblem" />
             </div>
-            <div class="agri-header-text">
-                <div class="agri-title-pill-wrap">
-                    <h1 class="agri-title">{APP_NAME}</h1>
-                    <span class="agri-version-pill">v1.0 Institutional</span>
+            <div class="agri-hero-text">
+                <div class="agri-hero-title-row">
+                    <span class="agri-hero-title">{APP_NAME}</span>
+                    <span class="agri-hero-pill">v1.0 Institutional</span>
                 </div>
-                <div class="agri-subtitle">{APP_SUBTITLE}</div>
-                <div class="agri-tagline">
-                    <span style="color: #69F0AE; font-weight: 700;">AGRICULTURE</span> &bull; 
-                    <span style="color: #B9F6CA; font-weight: 700;">RESEARCH</span> &bull; 
-                    <span style="color: #64FFDA; font-weight: 700;">INSIGHT</span>
-                    <span class="agri-tagline-divider">&nbsp;|&nbsp;</span>
-                    <span>🌍 Africa-First Biometrics</span>
+                <div class="agri-hero-subtitle">{APP_SUBTITLE}</div>
+                <div class="agri-hero-framework">
+                    <span>🏛️ Aligned with <b>CGIAR AI Hub &bull; IITA &bull; ILRI &bull; FAO &bull; IFPRI</b> &bull; Sub-Saharan NARS</span>
                 </div>
             </div>
         </div>
-        <div class="header-partner-badge">
-            <div class="header-partner-title">Institutional Alignment</div>
-            <b>CGIAR AI Hub &bull; IITA &bull; ILRI &bull; FAO &bull; IFPRI</b><br>
-            <div class="header-partner-sub">
-                <i>Multimodal &bull; Multi-Agent &bull; 100% Offline Certified</i>
-            </div>
+        <div class="agri-hero-cert">
+            <div class="agri-cert-tag">Africa-First Biometrics</div>
+            <div class="agri-cert-status">100% Offline &bull; Live Multi-Agent AI</div>
         </div>
     </div>
-</div>
-""", unsafe_allow_html=True)
-
-    # Farm animal and crop silhouette visual strip
-    st.markdown(f"""
-<div class="silhouette-strip">
-    <div class="silhouette-item">
-        <div style="width: 36px; height: 26px;">{CATTLE_SVG}</div>
-        <span>Indigenous Zebu & Taurine</span>
-    </div>
-    <div class="silhouette-item">
-        <div style="width: 24px; height: 30px;">{MAIZE_SVG}</div>
-        <span>Drought-Tolerant Maize</span>
-    </div>
-    <div class="silhouette-item">
-        <div style="width: 26px; height: 26px;">{POULTRY_SVG}</div>
-        <span>Poultry & Small Ruminants</span>
-    </div>
-    <div class="silhouette-item">
-        <div style="width: 28px; height: 28px;">{LEAF_SVG}</div>
-        <span>Cassava & Savanna Soils</span>
+    <div class="agri-hero-scope">
+        <div class="agri-scope-label">Calibrated Systems:</div>
+        <div class="agri-scope-chips">
+            <div class="agri-chip"><span class="agri-chip-icon">{CATTLE_SVG}</span><span>Indigenous Cattle</span></div>
+            <div class="agri-chip"><span class="agri-chip-icon">{MAIZE_SVG}</span><span>Drought Maize</span></div>
+            <div class="agri-chip"><span class="agri-chip-icon">{POULTRY_SVG}</span><span>Poultry & Ruminants</span></div>
+            <div class="agri-chip"><span class="agri-chip-icon">{LEAF_SVG}</span><span>Cassava & Soils</span></div>
+        </div>
     </div>
 </div>
 """, unsafe_allow_html=True)

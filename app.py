@@ -86,13 +86,13 @@ def main():
     # -------------------------------------------------------------
     st.markdown(f"""
 <div class="agri-header">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-        <div style="display: flex; align-items: center; gap: 18px;">
+    <div class="agri-header-row">
+        <div class="agri-header-brand">
             <div class="hero-logo-badge">
-                <img src="data:image/png;base64,{ICON_B64}" alt="AgriIntel Emblem" style="width: 58px; height: 58px; object-fit: contain; display: block;" />
+                <img src="data:image/png;base64,{ICON_B64}" alt="AgriIntel Emblem" />
             </div>
-            <div>
-                <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="agri-header-text">
+                <div class="agri-title-pill-wrap">
                     <h1 class="agri-title">{APP_NAME}</h1>
                     <span class="agri-version-pill">v1.0 Institutional</span>
                 </div>
@@ -101,16 +101,15 @@ def main():
                     <span style="color: #69F0AE; font-weight: 700;">AGRICULTURE</span> &bull; 
                     <span style="color: #B9F6CA; font-weight: 700;">RESEARCH</span> &bull; 
                     <span style="color: #64FFDA; font-weight: 700;">INSIGHT</span>
-                    &nbsp;|&nbsp; 🌍 Africa-First Biometrics
+                    <span class="agri-tagline-divider">&nbsp;|&nbsp;</span>
+                    <span>🌍 Africa-First Biometrics</span>
                 </div>
             </div>
         </div>
         <div class="header-partner-badge">
-            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; color: #C8E6C9; font-weight: 700; margin-bottom: 3px;">
-                Institutional Alignment
-            </div>
+            <div class="header-partner-title">Institutional Alignment</div>
             <b>CGIAR AI Hub &bull; IITA &bull; ILRI &bull; FAO &bull; IFPRI</b><br>
-            <div style="font-size: 0.78rem; opacity: 0.9; margin-top: 2px;">
+            <div class="header-partner-sub">
                 <i>Multimodal &bull; Multi-Agent &bull; 100% Offline Certified</i>
             </div>
         </div>

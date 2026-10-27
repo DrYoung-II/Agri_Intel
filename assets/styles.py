@@ -88,9 +88,9 @@ p, span, label, li {
 .agri-header {
     background: linear-gradient(135deg, #103B16 0%, #1B5E20 40%, #2E7D32 80%, #1E6B35 100%);
     color: #FFFFFF;
-    padding: 1.35rem 1.65rem;
+    padding: 1.25rem 1.50rem;
     border-radius: 16px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
     border: 1px solid rgba(100, 255, 218, 0.22);
     box-shadow: 0 10px 28px rgba(16, 59, 22, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
     position: relative;
@@ -109,6 +109,33 @@ p, span, label, li {
     pointer-events: none;
 }
 
+.agri-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.agri-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.agri-header-text {
+    min-width: 0;
+}
+
+.agri-title-pill-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
 .hero-logo-badge {
     background: #FFFFFF;
     border-radius: 16px;
@@ -121,51 +148,72 @@ p, span, label, li {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.hero-logo-badge img {
+    width: clamp(42px, 36px + 2vw, 56px);
+    height: clamp(42px, 36px + 2vw, 56px);
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+}
+
 .hero-logo-badge:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35), 0 0 0 3px rgba(100, 255, 218, 0.65);
 }
 
 .agri-title {
-    font-size: 2.15rem !important;
+    font-size: clamp(1.40rem, 1.1rem + 2.5vw, 2.15rem) !important;
     font-weight: 800;
     letter-spacing: -0.4px;
     margin: 0;
     color: #FFFFFF !important;
     line-height: 1.15;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    hyphens: none !important;
 }
 
 .agri-version-pill {
     background: rgba(0, 229, 255, 0.16);
     color: #64FFDA;
-    font-size: 0.72rem;
+    font-size: clamp(0.62rem, 0.55rem + 0.35vw, 0.72rem);
     font-weight: 700;
     letter-spacing: 0.6px;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 3px 9px;
     border-radius: 20px;
     border: 1px solid rgba(100, 255, 218, 0.40);
     display: inline-block;
+    white-space: nowrap;
 }
 
 .agri-subtitle {
-    font-size: 1.05rem;
+    font-size: clamp(0.85rem, 0.75rem + 0.35vw, 1.05rem);
     font-weight: 400;
     color: #E8F5E9;
     margin-top: 0.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.35;
 }
 
 .agri-tagline {
-    display: inline-block;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
     background: rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(8px);
-    padding: 0.28rem 0.85rem;
+    padding: 0.28rem 0.80rem;
     border-radius: 16px;
-    font-size: 0.86rem;
+    font-size: clamp(0.70rem, 0.65rem + 0.25vw, 0.86rem);
     font-weight: 600;
     color: #C8E6C9;
     border: 1px solid rgba(255, 255, 255, 0.20);
+    line-height: 1.4;
+}
+
+.agri-tagline-divider {
+    opacity: 0.8;
 }
 
 .header-partner-badge {
@@ -177,6 +225,22 @@ p, span, label, li {
     text-align: right;
     color: #FFFFFF;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    flex-shrink: 0;
+}
+
+.header-partner-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #C8E6C9;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.header-partner-sub {
+    font-size: 0.78rem;
+    opacity: 0.9;
+    margin-top: 2px;
 }
 
 /* Sidebar Brand Card */
@@ -197,7 +261,7 @@ p, span, label, li {
 }
 
 .sidebar-brand-card img {
-    max-width: 195px;
+    max-width: 185px;
     width: 100%;
     height: auto;
     display: block;
@@ -546,6 +610,230 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
     color: #E8F5E9 !important;
     font-size: 0.82rem !important;
     line-height: 1.45 !important;
+}
+
+/* ============================================================
+   MOBILE & TABLET RESPONSIVE SYSTEM (< 768px & < 480px)
+   Engineered for clean Android / iOS browser viewing
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* Optimize Streamlit viewport margins on mobile phones */
+    .block-container {
+        padding-top: 1.0rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 0.70rem !important;
+        padding-right: 0.70rem !important;
+        max-width: 100% !important;
+    }
+
+    /* Hero Header: Stack brand and institutional badge gracefully */
+    .agri-header {
+        padding: 0.95rem 0.90rem !important;
+        border-radius: 14px !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .agri-header-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .agri-header-brand {
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .hero-logo-badge {
+        padding: 5px !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-logo-badge img {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .agri-title-pill-wrap {
+        gap: 6px !important;
+    }
+
+    .agri-title {
+        font-size: 1.45rem !important;
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        hyphens: none !important;
+    }
+
+    .agri-version-pill {
+        font-size: 0.62rem !important;
+        padding: 2px 7px !important;
+    }
+
+    .agri-subtitle {
+        font-size: 0.82rem !important;
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.30rem !important;
+        line-height: 1.30 !important;
+    }
+
+    .agri-tagline {
+        padding: 0.25rem 0.60rem !important;
+        font-size: 0.70rem !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Institutional Badge: Full-width balanced banner on mobile */
+    .header-partner-badge {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 7px 10px !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .header-partner-title {
+        font-size: 0.68rem !important;
+    }
+
+    .header-partner-badge b {
+        font-size: 0.76rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .header-partner-sub {
+        font-size: 0.70rem !important;
+    }
+
+    /* Enterprise Silhouettes: Balanced 2x2 grid prevents cramped text */
+    .silhouette-strip {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+        padding: 8px 8px !important;
+        margin-bottom: 0.90rem !important;
+    }
+
+    .silhouette-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 7px !important;
+        font-size: 0.75rem !important;
+        background: rgba(46, 125, 50, 0.04) !important;
+        padding: 6px 8px !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(46, 125, 50, 0.10) !important;
+    }
+
+    .silhouette-item span {
+        white-space: normal !important;
+        line-height: 1.20 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* Sidebar Mobile Optimization */
+    section[data-testid="stSidebar"] {
+        max-width: 86vw !important;
+    }
+
+    .sidebar-brand-card {
+        padding: 8px 10px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .sidebar-brand-card img {
+        max-width: 130px !important;
+    }
+
+    section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
+        padding: 6px 9px !important;
+        margin-bottom: 2px !important;
+    }
+
+    section[data-testid="stSidebar"] div[data-testid="stRadio"] label p {
+        font-size: 0.83rem !important;
+    }
+
+    /* Streamlit Columns Mobile Stacking */
+    div[data-testid="column"] {
+        min-width: 100% !important;
+        margin-bottom: 6px !important;
+    }
+
+    div[data-testid="column"] button {
+        width: 100% !important;
+    }
+
+    /* Streamlit Metrics on Mobile */
+    div[data-testid="stMetric"], div.stMetric {
+        padding: 6px 9px !important;
+        margin-bottom: 6px !important;
+    }
+
+    div[data-testid="stMetricValue"] * {
+        font-size: 1.10rem !important;
+    }
+
+    div[data-testid="stMetricLabel"] * {
+        font-size: 0.70rem !important;
+    }
+
+    /* Primary and Secondary Buttons: Touch-friendly 44px min-height */
+    div.stButton > button:first-child {
+        width: 100% !important;
+        padding: 0.55rem 1.0rem !important;
+        font-size: 0.90rem !important;
+        min-height: 44px !important;
+    }
+
+    /* Responsive Tabs */
+    .stTabs [data-baseweb="tab"] {
+        padding: 6px 10px !important;
+        font-size: 0.78rem !important;
+    }
+
+    /* Touch-friendly scrolling for dataframes, tables, and preformatted blocks */
+    [data-testid="stDataFrame"], .stTable, pre {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Extra small devices (< 420px) like compact Android phones */
+@media (max-width: 420px) {
+    .agri-header {
+        padding: 0.80rem 0.70rem !important;
+    }
+
+    .agri-title {
+        font-size: 1.30rem !important;
+    }
+
+    .hero-logo-badge img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .silhouette-strip {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 5px !important;
+    }
+
+    .silhouette-item {
+        font-size: 0.70rem !important;
+        padding: 5px 6px !important;
+    }
+
+    .silhouette-item span {
+        font-size: 0.70rem !important;
+    }
 }
 </style>
 """

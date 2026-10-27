@@ -1,0 +1,3 @@
+"""
+AgriIntel Core Modules Package
+"""

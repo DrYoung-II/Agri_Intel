@@ -1,0 +1,1001 @@
+Animal_ID,Breed,Sex,Age_Years,THI_Index,Body_Temperature_C,Respiration_Rate_bpm,Milk_Yield_kg_day,Body_Weight_kg,HSP_Genotype,Trypanotolerance
+AG-1001,N'Dama,Female,3.3,77.2,38.74,34.6,4.6,343.8,HSP70_A2_Intermediate,Tolerant
+AG-1002,N'Dama,Female,4.0,76.2,38.65,27.6,5.19,346.3,HSP70_A2_Intermediate,Tolerant
+AG-1003,N'Dama,Female,4.7,75.1,38.16,31.4,4.53,344.4,HSP70_A1_Resistant,Tolerant
+AG-1004,N'Dama,Male,7.2,86.6,39.65,49.7,,420.2,HSP70_A1_Resistant,Tolerant
+AG-1005,N'Dama,Male,3.7,74.7,38.59,30.5,,386.3,HSP70_A2_Intermediate,Tolerant
+AG-1006,N'Dama,Female,2.5,81.8,39.37,38.7,4.25,336.4,HSP70_A2_Intermediate,Tolerant
+AG-1007,N'Dama,Female,3.6,84.9,39.55,45.0,3.33,346.5,HSP70_A2_Intermediate,Tolerant
+AG-1008,N'Dama,Male,5.6,83.2,39.33,41.6,,389.6,HSP70_A1_Resistant,Tolerant
+AG-1009,N'Dama,Female,2.2,79.4,38.44,27.9,4.26,310.2,HSP70_A1_Resistant,Tolerant
+AG-1010,N'Dama,Male,4.0,74.0,38.42,33.5,,389.7,HSP70_A1_Resistant,Tolerant
+AG-1011,N'Dama,Female,2.5,72.8,39.0,34.5,5.32,332.1,HSP70_B1_Susceptible,Tolerant
+AG-1012,N'Dama,Female,3.8,84.7,39.34,37.9,2.89,360.2,HSP70_A1_Resistant,Tolerant
+AG-1013,N'Dama,Female,3.4,80.8,39.21,41.1,4.09,355.3,HSP70_A2_Intermediate,Tolerant
+AG-1014,N'Dama,Female,3.4,77.7,38.54,37.6,4.26,316.4,HSP70_A1_Resistant,Tolerant
+AG-1015,N'Dama,Female,4.4,78.4,39.07,36.9,4.11,335.6,HSP70_A2_Intermediate,Tolerant
+AG-1016,N'Dama,Female,6.7,82.5,39.13,40.0,4.03,372.4,HSP70_A2_Intermediate,Tolerant
+AG-1017,N'Dama,Female,5.5,79.3,38.97,34.2,4.32,354.8,HSP70_B1_Susceptible,Tolerant
+AG-1018,N'Dama,Female,2.4,73.6,38.28,28.7,5.03,311.6,HSP70_A1_Resistant,Tolerant
+AG-1019,N'Dama,Male,3.6,73.9,38.64,33.1,,388.0,HSP70_A2_Intermediate,Tolerant
+AG-1020,N'Dama,Female,3.0,84.0,39.51,36.2,2.71,315.7,HSP70_B1_Susceptible,Tolerant
+AG-1021,N'Dama,Male,4.4,84.0,39.65,41.0,,396.2,HSP70_B1_Susceptible,Tolerant
+AG-1022,N'Dama,Female,6.5,77.1,38.47,33.0,4.19,359.3,HSP70_B1_Susceptible,Tolerant
+AG-1023,N'Dama,Male,5.2,82.1,38.69,37.4,,419.9,HSP70_A2_Intermediate,Tolerant
+AG-1024,N'Dama,Male,6.3,73.5,38.1,25.6,,416.0,HSP70_A2_Intermediate,Tolerant
+AG-1025,N'Dama,Female,6.9,77.6,38.75,35.7,4.03,375.6,HSP70_A2_Intermediate,Tolerant
+AG-1026,N'Dama,Female,2.4,73.4,38.69,26.3,4.1,339.8,HSP70_A1_Resistant,Tolerant
+AG-1027,N'Dama,Male,5.1,78.8,38.66,33.0,,390.6,HSP70_A1_Resistant,Tolerant
+AG-1028,N'Dama,Female,5.6,83.9,39.34,44.0,3.51,335.2,HSP70_B1_Susceptible,Tolerant
+AG-1029,N'Dama,Female,7.3,72.2,38.19,28.2,5.09,384.7,HSP70_A2_Intermediate,Tolerant
+AG-1030,N'Dama,Female,5.8,79.3,38.81,38.1,5.16,358.3,HSP70_A2_Intermediate,Tolerant
+AG-1031,N'Dama,Female,3.0,79.4,39.05,37.8,2.96,297.7,HSP70_A2_Intermediate,Tolerant
+AG-1032,N'Dama,Female,2.9,86.6,39.76,49.6,3.99,335.2,HSP70_B1_Susceptible,Tolerant
+AG-1033,N'Dama,Female,2.1,78.0,38.61,32.7,3.57,320.9,HSP70_A2_Intermediate,Tolerant
+AG-1034,N'Dama,Male,4.6,78.6,38.69,32.4,,394.1,HSP70_B1_Susceptible,Tolerant
+AG-1035,N'Dama,Male,7.5,87.9,40.21,50.6,,425.3,HSP70_A1_Resistant,Tolerant
+AG-1036,N'Dama,Male,5.3,75.7,38.0,31.7,,427.1,HSP70_A1_Resistant,Tolerant
+AG-1037,N'Dama,Female,5.7,80.3,38.95,41.2,4.03,375.6,HSP70_A2_Intermediate,Tolerant
+AG-1038,N'Dama,Male,4.2,74.1,38.77,31.1,,384.1,HSP70_A1_Resistant,Tolerant
+AG-1039,N'Dama,Female,5.2,78.3,38.59,35.2,4.12,355.9,HSP70_A2_Intermediate,Tolerant
+AG-1040,N'Dama,Female,5.4,85.8,39.03,45.6,3.68,350.8,HSP70_B1_Susceptible,Tolerant
+AG-1041,N'Dama,Female,3.8,82.1,38.72,38.6,3.65,319.2,HSP70_A1_Resistant,Tolerant
+AG-1042,N'Dama,Male,4.6,82.7,39.32,38.5,,388.1,HSP70_A1_Resistant,Tolerant
+AG-1043,N'Dama,Female,3.5,74.8,38.04,27.3,4.53,298.1,HSP70_A2_Intermediate,Tolerant
+AG-1044,N'Dama,Female,6.4,82.0,39.34,36.7,3.26,375.5,HSP70_A1_Resistant,Tolerant
+AG-1045,N'Dama,Female,4.7,81.9,38.95,30.9,4.23,331.2,HSP70_B1_Susceptible,Tolerant
+AG-1046,N'Dama,Female,4.9,73.7,38.78,19.4,4.01,335.6,HSP70_A1_Resistant,Tolerant
+AG-1047,N'Dama,Female,3.8,75.4,38.21,26.8,4.63,348.9,HSP70_A2_Intermediate,Tolerant
+AG-1048,N'Dama,Male,4.7,73.4,38.99,31.6,,390.3,HSP70_A1_Resistant,Tolerant
+AG-1049,N'Dama,Female,4.0,82.3,39.56,32.7,4.23,338.4,HSP70_A1_Resistant,Tolerant
+AG-1050,N'Dama,Female,2.8,75.9,38.43,26.7,4.25,311.7,HSP70_B1_Susceptible,Tolerant
+AG-1051,N'Dama,Female,4.9,78.6,38.57,34.0,4.11,352.2,HSP70_A1_Resistant,Tolerant
+AG-1052,N'Dama,Female,5.7,86.9,39.77,54.7,4.04,372.1,HSP70_A1_Resistant,Tolerant
+AG-1053,N'Dama,Female,4.3,80.1,38.7,33.8,3.77,319.2,HSP70_A2_Intermediate,Tolerant
+AG-1054,N'Dama,Female,4.6,80.5,39.14,35.6,3.66,336.7,HSP70_A2_Intermediate,Tolerant
+AG-1055,N'Dama,Male,5.3,79.5,39.02,28.2,,387.8,HSP70_B1_Susceptible,Tolerant
+AG-1056,N'Dama,Male,7.3,74.0,38.44,28.3,,435.0,HSP70_A2_Intermediate,Tolerant
+AG-1057,N'Dama,Female,6.4,75.2,38.8,26.9,4.31,374.6,HSP70_A2_Intermediate,Tolerant
+AG-1058,N'Dama,Female,6.8,78.3,38.93,31.2,4.98,361.7,HSP70_A1_Resistant,Tolerant
+AG-1059,N'Dama,Female,4.8,75.7,37.84,27.2,4.99,360.6,HSP70_A2_Intermediate,Tolerant
+AG-1060,N'Dama,Female,7.2,82.0,39.15,35.8,3.46,383.7,HSP70_A2_Intermediate,Tolerant
+AG-1061,N'Dama,Male,6.3,74.4,38.71,24.2,,403.8,HSP70_A2_Intermediate,Tolerant
+AG-1062,N'Dama,Female,5.1,84.2,39.3,45.7,4.19,344.9,HSP70_A1_Resistant,Tolerant
+AG-1063,N'Dama,Female,6.0,83.5,39.65,45.1,2.53,365.9,HSP70_A1_Resistant,Tolerant
+AG-1064,N'Dama,Female,7.0,81.3,38.82,29.5,3.9,413.6,HSP70_A2_Intermediate,Tolerant
+AG-1065,N'Dama,Female,6.8,86.9,40.16,49.7,3.19,378.2,HSP70_A1_Resistant,Tolerant
+AG-1066,N'Dama,Female,5.3,78.8,38.78,33.4,4.08,365.8,HSP70_A1_Resistant,Tolerant
+AG-1067,N'Dama,Male,6.6,74.0,39.03,29.8,,410.5,HSP70_A1_Resistant,Tolerant
+AG-1068,N'Dama,Male,2.0,77.3,38.53,33.4,,329.5,HSP70_B1_Susceptible,Tolerant
+AG-1069,N'Dama,Female,3.9,83.8,38.96,41.1,2.8,334.7,HSP70_A1_Resistant,Tolerant
+AG-1070,N'Dama,Female,4.3,86.6,39.95,40.7,2.49,349.4,HSP70_B1_Susceptible,Tolerant
+AG-1071,N'Dama,Female,4.3,73.4,38.4,28.6,4.09,343.6,HSP70_A2_Intermediate,Tolerant
+AG-1072,N'Dama,Female,6.9,75.3,39.04,24.1,5.33,333.4,HSP70_A1_Resistant,Tolerant
+AG-1073,N'Dama,Female,5.1,74.5,38.47,27.1,4.41,358.9,HSP70_A1_Resistant,Tolerant
+AG-1074,N'Dama,Female,4.2,72.4,38.52,25.3,4.45,341.4,HSP70_A1_Resistant,Tolerant
+AG-1075,N'Dama,Female,5.7,72.3,38.42,27.5,4.8,342.5,HSP70_A1_Resistant,Tolerant
+AG-1076,N'Dama,Female,3.3,83.6,39.37,42.5,4.49,314.9,HSP70_A1_Resistant,Tolerant
+AG-1077,N'Dama,Female,6.9,72.2,37.98,34.2,3.76,360.9,HSP70_A1_Resistant,Tolerant
+AG-1078,N'Dama,Female,3.5,82.0,39.43,31.2,2.66,323.5,HSP70_B1_Susceptible,Tolerant
+AG-1079,N'Dama,Male,2.8,85.9,39.83,45.7,,368.2,HSP70_A1_Resistant,Tolerant
+AG-1080,N'Dama,Female,5.0,82.1,39.47,36.9,3.44,330.4,HSP70_A1_Resistant,Tolerant
+AG-1081,N'Dama,Female,7.0,73.9,38.43,22.3,4.83,404.4,HSP70_A2_Intermediate,Tolerant
+AG-1082,N'Dama,Female,2.1,74.2,38.58,33.7,5.44,299.7,HSP70_B1_Susceptible,Tolerant
+AG-1083,N'Dama,Female,4.1,80.3,39.04,34.5,4.05,317.8,HSP70_A1_Resistant,Tolerant
+AG-1084,N'Dama,Female,4.0,83.5,39.45,43.5,2.46,368.7,HSP70_B1_Susceptible,Tolerant
+AG-1085,N'Dama,Female,3.2,72.5,38.32,30.1,3.59,328.1,HSP70_A2_Intermediate,Tolerant
+AG-1086,N'Dama,Female,6.2,73.7,38.24,28.6,4.3,394.5,HSP70_A1_Resistant,Tolerant
+AG-1087,N'Dama,Female,6.5,84.8,39.44,40.0,3.9,341.6,HSP70_A1_Resistant,Tolerant
+AG-1088,N'Dama,Male,2.8,87.2,40.03,43.5,,369.6,HSP70_A2_Intermediate,Tolerant
+AG-1089,N'Dama,Male,6.0,84.9,39.79,47.7,,405.5,HSP70_A1_Resistant,Tolerant
+AG-1090,N'Dama,Female,7.4,87.1,39.89,50.9,3.11,385.9,HSP70_B1_Susceptible,Tolerant
+AG-1091,N'Dama,Male,4.6,85.8,39.52,44.0,,408.6,HSP70_A2_Intermediate,Tolerant
+AG-1092,N'Dama,Female,5.3,75.7,38.14,32.5,4.34,355.4,HSP70_A1_Resistant,Tolerant
+AG-1093,N'Dama,Female,6.3,77.1,38.75,31.0,3.55,375.0,HSP70_A1_Resistant,Tolerant
+AG-1094,N'Dama,Male,2.1,86.0,39.78,46.2,,383.8,HSP70_A1_Resistant,Tolerant
+AG-1095,N'Dama,Female,5.5,86.0,39.43,40.1,2.13,342.3,HSP70_A1_Resistant,Tolerant
+AG-1096,N'Dama,Female,3.6,76.7,38.69,22.6,3.68,316.9,HSP70_B1_Susceptible,Tolerant
+AG-1097,N'Dama,Male,2.5,78.7,38.89,40.9,,359.9,HSP70_A1_Resistant,Tolerant
+AG-1098,N'Dama,Male,3.3,87.1,40.02,53.6,,355.7,HSP70_A1_Resistant,Tolerant
+AG-1099,N'Dama,Female,3.0,84.5,39.44,41.5,3.28,320.7,HSP70_A2_Intermediate,Tolerant
+AG-1100,N'Dama,Female,2.8,85.1,39.19,41.8,2.88,359.5,HSP70_A2_Intermediate,Tolerant
+AG-1101,N'Dama,Female,6.8,76.2,38.66,30.4,5.12,359.2,HSP70_A1_Resistant,Tolerant
+AG-1102,N'Dama,Female,3.4,83.6,39.34,38.7,3.5,341.6,HSP70_A1_Resistant,Tolerant
+AG-1103,N'Dama,Male,4.7,79.7,38.58,38.9,,401.8,HSP70_A1_Resistant,Tolerant
+AG-1104,N'Dama,Female,5.1,76.3,38.49,29.6,5.02,357.7,HSP70_B1_Susceptible,Tolerant
+AG-1105,N'Dama,Female,6.6,83.2,39.51,46.2,3.17,376.5,HSP70_B1_Susceptible,Tolerant
+AG-1106,N'Dama,Male,2.2,85.2,39.41,41.7,,355.6,HSP70_A2_Intermediate,Tolerant
+AG-1107,N'Dama,Male,4.8,72.1,38.52,30.9,,375.2,HSP70_B1_Susceptible,Tolerant
+AG-1108,N'Dama,Female,3.4,82.1,39.51,39.8,3.85,325.1,HSP70_A2_Intermediate,Tolerant
+AG-1109,N'Dama,Male,3.9,82.1,39.18,40.4,,383.8,HSP70_A2_Intermediate,Tolerant
+AG-1110,N'Dama,Female,5.2,77.5,38.48,29.1,4.37,357.9,HSP70_A1_Resistant,Tolerant
+AG-1111,N'Dama,Female,3.8,79.8,38.73,37.4,4.64,309.8,HSP70_B1_Susceptible,Tolerant
+AG-1112,N'Dama,Female,4.5,74.6,38.3,30.3,5.09,360.6,HSP70_A1_Resistant,Tolerant
+AG-1113,N'Dama,Male,2.8,78.9,39.08,32.9,,383.5,HSP70_A2_Intermediate,Tolerant
+AG-1114,N'Dama,Female,3.5,87.7,40.03,48.4,2.52,322.1,HSP70_A1_Resistant,Tolerant
+AG-1115,N'Dama,Female,4.0,85.8,39.71,45.6,3.36,334.9,HSP70_A2_Intermediate,Tolerant
+AG-1116,N'Dama,Male,6.6,84.2,39.15,43.8,,438.5,HSP70_A1_Resistant,Tolerant
+AG-1117,N'Dama,Female,2.7,83.0,39.36,35.8,3.39,311.1,HSP70_A2_Intermediate,Tolerant
+AG-1118,N'Dama,Female,6.4,77.0,38.51,28.8,4.36,364.0,HSP70_A1_Resistant,Tolerant
+AG-1119,N'Dama,Female,3.6,83.1,39.08,42.1,3.85,332.9,HSP70_A1_Resistant,Tolerant
+AG-1120,N'Dama,Female,7.4,74.3,38.26,36.4,4.49,387.0,HSP70_A1_Resistant,Tolerant
+AG-1121,N'Dama,Female,4.8,73.4,38.85,27.1,4.45,345.5,HSP70_A1_Resistant,Tolerant
+AG-1122,N'Dama,Female,5.8,84.8,39.27,42.1,3.07,363.6,HSP70_A2_Intermediate,Tolerant
+AG-1123,N'Dama,Female,7.1,72.8,38.2,34.3,4.71,381.7,HSP70_A2_Intermediate,Tolerant
+AG-1124,N'Dama,Female,6.5,73.3,38.57,28.4,5.07,364.8,HSP70_A2_Intermediate,Tolerant
+AG-1125,N'Dama,Female,6.0,73.3,38.73,24.4,4.18,371.6,HSP70_A1_Resistant,Tolerant
+AG-1126,N'Dama,Female,6.0,75.7,38.68,24.1,4.84,353.9,HSP70_A1_Resistant,Tolerant
+AG-1127,N'Dama,Female,4.5,85.9,39.64,49.1,3.72,316.6,HSP70_A1_Resistant,Tolerant
+AG-1128,N'Dama,Male,2.2,85.9,39.36,40.3,,396.7,HSP70_A2_Intermediate,Tolerant
+AG-1129,N'Dama,Female,6.8,86.4,39.24,44.7,3.61,374.3,HSP70_A1_Resistant,Tolerant
+AG-1130,N'Dama,Female,5.5,83.7,39.43,39.5,3.67,351.3,HSP70_A1_Resistant,Tolerant
+AG-1131,N'Dama,Female,6.8,79.1,38.22,34.4,3.39,376.3,HSP70_A1_Resistant,Tolerant
+AG-1132,N'Dama,Male,3.4,82.5,39.46,37.2,,357.7,HSP70_A1_Resistant,Tolerant
+AG-1133,N'Dama,Female,4.9,77.4,38.5,29.6,5.06,358.0,HSP70_A2_Intermediate,Tolerant
+AG-1134,N'Dama,Female,2.9,72.6,38.05,31.0,5.23,343.3,HSP70_A2_Intermediate,Tolerant
+AG-1135,N'Dama,Female,6.8,75.3,38.38,26.9,4.17,372.0,HSP70_B1_Susceptible,Tolerant
+AG-1136,N'Dama,Female,2.7,79.2,38.62,33.2,4.34,313.2,HSP70_A1_Resistant,Tolerant
+AG-1137,N'Dama,Male,7.3,72.1,38.4,28.5,,434.5,HSP70_B1_Susceptible,Tolerant
+AG-1138,N'Dama,Female,4.8,79.8,38.64,36.3,3.43,357.7,HSP70_A2_Intermediate,Tolerant
+AG-1139,N'Dama,Male,2.5,82.8,39.48,39.6,,378.4,HSP70_A2_Intermediate,Tolerant
+AG-1140,N'Dama,Male,5.8,80.0,38.65,38.5,,413.7,HSP70_A2_Intermediate,Tolerant
+AG-1141,N'Dama,Female,7.1,83.0,38.97,43.0,2.92,399.9,HSP70_A2_Intermediate,Tolerant
+AG-1142,N'Dama,Female,5.6,88.0,40.09,48.7,3.12,378.9,HSP70_A2_Intermediate,Tolerant
+AG-1143,N'Dama,Male,4.2,77.2,38.81,32.2,,401.5,HSP70_A1_Resistant,Tolerant
+AG-1144,N'Dama,Male,2.7,80.7,39.12,32.0,,347.3,HSP70_A2_Intermediate,Tolerant
+AG-1145,N'Dama,Female,4.5,75.8,38.08,25.9,4.6,333.1,HSP70_A2_Intermediate,Tolerant
+AG-1146,N'Dama,Female,4.5,78.1,38.66,35.7,3.95,344.3,HSP70_A1_Resistant,Tolerant
+AG-1147,N'Dama,Female,4.2,81.3,39.62,40.0,4.21,349.0,HSP70_A2_Intermediate,Tolerant
+AG-1148,N'Dama,Male,2.1,75.1,38.34,29.4,,362.4,HSP70_A1_Resistant,Tolerant
+AG-1149,N'Dama,Female,3.4,76.6,38.61,32.4,4.06,302.3,HSP70_A2_Intermediate,Tolerant
+AG-1150,N'Dama,Female,3.5,78.6,38.81,32.2,4.06,317.5,HSP70_A2_Intermediate,Tolerant
+AG-1151,N'Dama,Female,2.6,81.1,39.15,42.0,3.78,312.4,HSP70_A2_Intermediate,Tolerant
+AG-1152,N'Dama,Male,5.3,85.1,39.51,43.4,,409.7,HSP70_A1_Resistant,Tolerant
+AG-1153,N'Dama,Female,4.3,85.4,39.46,47.6,3.7,330.6,HSP70_A1_Resistant,Tolerant
+AG-1154,N'Dama,Male,4.3,82.7,39.26,37.3,,425.3,HSP70_A1_Resistant,Tolerant
+AG-1155,N'Dama,Female,6.7,75.5,38.09,32.3,5.47,347.9,HSP70_A1_Resistant,Tolerant
+AG-1156,N'Dama,Female,4.7,87.8,39.88,50.7,2.48,325.3,HSP70_A2_Intermediate,Tolerant
+AG-1157,N'Dama,Female,7.5,74.1,37.92,29.1,4.18,355.1,HSP70_A1_Resistant,Tolerant
+AG-1158,N'Dama,Female,6.9,75.1,38.54,24.1,4.07,364.2,HSP70_A2_Intermediate,Tolerant
+AG-1159,N'Dama,Female,6.4,75.7,38.35,31.6,4.57,373.8,HSP70_A1_Resistant,Tolerant
+AG-1160,N'Dama,Female,5.7,87.9,40.36,51.9,4.1,354.3,HSP70_A1_Resistant,Tolerant
+AG-1161,N'Dama,Female,7.3,74.8,38.83,24.5,4.88,363.5,HSP70_A1_Resistant,Tolerant
+AG-1162,N'Dama,Male,3.9,82.6,39.22,38.1,,365.8,HSP70_A1_Resistant,Tolerant
+AG-1163,N'Dama,Male,7.1,80.6,38.98,40.6,,413.9,HSP70_A2_Intermediate,Tolerant
+AG-1164,N'Dama,Female,6.5,84.5,39.48,39.6,2.84,358.0,HSP70_B1_Susceptible,Tolerant
+AG-1165,N'Dama,Female,3.7,78.4,38.62,39.8,3.51,346.7,HSP70_A1_Resistant,Tolerant
+AG-1166,N'Dama,Male,6.7,75.3,38.41,26.5,,437.7,HSP70_B1_Susceptible,Tolerant
+AG-1167,N'Dama,Male,6.4,84.6,39.31,42.7,,399.4,HSP70_A2_Intermediate,Tolerant
+AG-1168,N'Dama,Female,7.4,82.3,39.06,38.5,3.79,415.4,HSP70_A2_Intermediate,Tolerant
+AG-1169,N'Dama,Female,4.8,78.4,38.61,31.0,3.59,354.8,HSP70_A1_Resistant,Tolerant
+AG-1170,N'Dama,Female,4.8,79.0,38.78,34.4,3.62,355.5,HSP70_A2_Intermediate,Tolerant
+AG-1171,N'Dama,Female,2.3,84.5,39.1,40.9,3.34,309.6,HSP70_A1_Resistant,Tolerant
+AG-1172,N'Dama,Female,2.6,83.1,39.15,40.8,3.13,297.7,HSP70_A2_Intermediate,Tolerant
+AG-1173,N'Dama,Female,4.3,74.1,38.63,27.6,5.09,334.5,HSP70_A1_Resistant,Tolerant
+AG-1174,N'Dama,Male,6.0,84.3,39.1,42.9,,409.8,HSP70_A1_Resistant,Tolerant
+AG-1175,N'Dama,Female,3.4,84.2,39.41,38.8,2.83,330.7,HSP70_A2_Intermediate,Tolerant
+AG-1176,N'Dama,Female,6.6,73.6,38.1,27.9,5.2,356.8,HSP70_A1_Resistant,Tolerant
+AG-1177,N'Dama,Female,4.2,79.4,38.87,34.8,4.74,323.2,HSP70_A1_Resistant,Tolerant
+AG-1178,N'Dama,Female,6.6,72.6,38.38,31.2,5.35,387.7,HSP70_B1_Susceptible,Tolerant
+AG-1179,N'Dama,Female,5.4,73.1,38.1,28.2,4.55,380.4,HSP70_A2_Intermediate,Tolerant
+AG-1180,N'Dama,Female,2.5,83.5,39.09,46.0,2.93,299.7,HSP70_A2_Intermediate,Tolerant
+AG-1181,N'Dama,Female,3.0,74.8,38.47,25.5,4.03,339.4,HSP70_A1_Resistant,Tolerant
+AG-1182,N'Dama,Female,7.3,76.7,38.64,33.9,3.65,370.3,HSP70_A1_Resistant,Tolerant
+AG-1183,N'Dama,Female,6.3,82.3,39.01,39.5,4.54,392.1,HSP70_A2_Intermediate,Tolerant
+AG-1184,N'Dama,Male,5.6,74.0,38.54,27.3,,398.4,HSP70_A1_Resistant,Tolerant
+AG-1185,N'Dama,Female,5.4,87.1,39.41,46.3,2.84,357.6,HSP70_A2_Intermediate,Tolerant
+AG-1186,N'Dama,Female,6.5,85.8,39.53,48.5,2.72,386.1,HSP70_A2_Intermediate,Tolerant
+AG-1187,N'Dama,Male,5.6,74.8,38.36,29.1,,407.8,HSP70_B1_Susceptible,Tolerant
+AG-1188,N'Dama,Female,2.9,74.1,38.6,30.0,4.52,302.5,HSP70_A2_Intermediate,Tolerant
+AG-1189,N'Dama,Female,5.0,81.4,38.58,38.1,4.87,359.1,HSP70_B1_Susceptible,Tolerant
+AG-1190,N'Dama,Female,6.2,74.6,38.34,27.9,5.0,350.3,HSP70_B1_Susceptible,Tolerant
+AG-1191,N'Dama,Female,4.2,84.8,39.52,38.9,3.77,362.2,HSP70_A1_Resistant,Tolerant
+AG-1192,N'Dama,Female,6.3,80.9,38.62,32.9,3.58,353.4,HSP70_B1_Susceptible,Tolerant
+AG-1193,N'Dama,Male,4.0,79.2,38.93,34.9,,362.8,HSP70_A1_Resistant,Tolerant
+AG-1194,N'Dama,Female,2.0,81.9,39.47,42.7,3.38,316.9,HSP70_A1_Resistant,Tolerant
+AG-1195,N'Dama,Female,2.4,81.3,38.82,44.0,4.94,342.7,HSP70_A2_Intermediate,Tolerant
+AG-1196,N'Dama,Female,6.5,80.0,39.12,39.1,3.59,382.7,HSP70_A2_Intermediate,Tolerant
+AG-1197,N'Dama,Female,2.8,77.3,38.72,27.3,4.25,330.9,HSP70_A2_Intermediate,Tolerant
+AG-1198,N'Dama,Male,7.1,82.3,38.81,45.8,,409.4,HSP70_A2_Intermediate,Tolerant
+AG-1199,N'Dama,Female,4.3,85.4,39.83,38.2,2.5,346.3,HSP70_A1_Resistant,Tolerant
+AG-1200,N'Dama,Female,2.1,72.4,38.27,30.7,3.36,318.3,HSP70_B1_Susceptible,Tolerant
+AG-1201,N'Dama,Female,4.4,86.0,39.5,47.3,3.07,363.2,HSP70_A1_Resistant,Tolerant
+AG-1202,N'Dama,Female,2.4,83.6,38.6,41.2,4.03,331.0,HSP70_A1_Resistant,Tolerant
+AG-1203,N'Dama,Female,2.7,84.0,39.45,42.9,2.86,309.5,HSP70_A1_Resistant,Tolerant
+AG-1204,N'Dama,Male,3.4,76.4,38.37,34.1,,372.6,HSP70_A1_Resistant,Tolerant
+AG-1205,N'Dama,Male,2.8,80.5,38.94,30.0,,357.8,HSP70_B1_Susceptible,Tolerant
+AG-1206,N'Dama,Female,5.7,87.4,39.95,48.9,2.93,348.7,HSP70_A1_Resistant,Tolerant
+AG-1207,N'Dama,Female,7.4,76.1,38.13,30.2,3.69,415.0,HSP70_B1_Susceptible,Tolerant
+AG-1208,N'Dama,Female,3.9,73.8,38.29,26.1,4.88,330.3,HSP70_A2_Intermediate,Tolerant
+AG-1209,N'Dama,Female,2.6,85.8,39.5,46.1,3.44,348.7,HSP70_A1_Resistant,Tolerant
+AG-1210,N'Dama,Female,4.7,74.7,38.29,35.0,5.56,330.5,HSP70_A2_Intermediate,Tolerant
+AG-1211,N'Dama,Female,4.8,84.9,39.31,43.8,2.95,356.9,HSP70_A1_Resistant,Tolerant
+AG-1212,N'Dama,Female,3.8,84.1,39.01,42.9,3.21,343.5,HSP70_A1_Resistant,Tolerant
+AG-1213,N'Dama,Male,6.2,72.4,38.38,25.4,,416.2,HSP70_A1_Resistant,Tolerant
+AG-1214,N'Dama,Female,5.6,85.2,39.72,49.1,2.95,329.9,HSP70_A2_Intermediate,Tolerant
+AG-1215,N'Dama,Female,5.5,84.8,39.5,46.5,3.23,337.6,HSP70_A2_Intermediate,Tolerant
+AG-1216,N'Dama,Male,3.7,85.7,39.6,44.6,,392.2,HSP70_B1_Susceptible,Tolerant
+AG-1217,N'Dama,Female,3.1,74.9,38.47,30.7,4.38,309.9,HSP70_A2_Intermediate,Tolerant
+AG-1218,N'Dama,Female,6.9,84.9,39.59,44.0,3.49,371.6,HSP70_A2_Intermediate,Tolerant
+AG-1219,N'Dama,Female,2.9,86.1,39.32,45.3,3.19,320.9,HSP70_A2_Intermediate,Tolerant
+AG-1220,N'Dama,Female,6.9,73.3,38.2,30.1,4.66,377.3,HSP70_A2_Intermediate,Tolerant
+AG-1221,N'Dama,Female,3.7,79.5,38.78,38.9,3.98,301.1,HSP70_A2_Intermediate,Tolerant
+AG-1222,N'Dama,Female,3.0,83.4,39.15,39.9,3.13,295.0,HSP70_A2_Intermediate,Tolerant
+AG-1223,N'Dama,Female,5.4,77.6,38.57,35.2,4.31,357.0,HSP70_A1_Resistant,Tolerant
+AG-1224,N'Dama,Female,3.8,83.0,39.14,42.4,3.27,347.1,HSP70_A2_Intermediate,Tolerant
+AG-1225,N'Dama,Female,4.8,76.9,38.76,25.0,4.82,357.8,HSP70_A2_Intermediate,Tolerant
+AG-1226,N'Dama,Female,7.0,82.7,38.97,40.6,2.59,339.7,HSP70_B1_Susceptible,Tolerant
+AG-1227,N'Dama,Female,4.1,87.6,39.75,45.6,2.83,345.4,HSP70_B1_Susceptible,Tolerant
+AG-1228,N'Dama,Female,7.0,84.1,39.59,40.7,3.83,368.3,HSP70_A1_Resistant,Tolerant
+AG-1229,N'Dama,Female,5.0,73.5,37.93,27.0,3.54,361.4,HSP70_A1_Resistant,Tolerant
+AG-1230,N'Dama,Female,2.3,86.4,39.76,50.0,3.66,320.4,HSP70_A1_Resistant,Tolerant
+AG-1231,N'Dama,Female,3.3,84.7,39.47,42.0,2.91,330.3,HSP70_A2_Intermediate,Tolerant
+AG-1232,N'Dama,Female,2.6,73.5,38.47,30.2,4.89,361.9,HSP70_A1_Resistant,Tolerant
+AG-1233,N'Dama,Female,4.4,84.4,39.63,43.9,4.66,326.0,HSP70_A2_Intermediate,Tolerant
+AG-1234,N'Dama,Female,5.9,75.8,38.16,28.1,4.35,324.3,HSP70_A2_Intermediate,Tolerant
+AG-1235,N'Dama,Male,5.3,83.9,39.92,42.6,,402.1,HSP70_A1_Resistant,Tolerant
+AG-1236,N'Dama,Female,2.3,74.2,38.35,27.2,3.26,323.8,HSP70_A1_Resistant,Tolerant
+AG-1237,N'Dama,Female,4.8,72.1,38.09,31.8,4.15,355.3,HSP70_A1_Resistant,Tolerant
+AG-1238,N'Dama,Male,4.2,73.4,39.08,24.9,,394.2,HSP70_A1_Resistant,Tolerant
+AG-1239,N'Dama,Female,6.8,79.9,38.77,32.7,3.16,343.8,HSP70_A1_Resistant,Tolerant
+AG-1240,N'Dama,Male,5.9,81.7,39.32,36.4,,413.3,HSP70_A2_Intermediate,Tolerant
+AG-1241,N'Dama,Female,4.1,79.3,38.64,30.8,3.88,362.2,HSP70_A1_Resistant,Tolerant
+AG-1242,N'Dama,Female,4.0,87.1,39.61,52.2,3.73,355.1,HSP70_A1_Resistant,Tolerant
+AG-1243,N'Dama,Female,7.0,81.8,38.66,39.8,4.12,375.2,HSP70_A1_Resistant,Tolerant
+AG-1244,N'Dama,Female,4.3,76.7,38.3,38.7,4.11,312.5,HSP70_A2_Intermediate,Tolerant
+AG-1245,N'Dama,Female,6.7,83.1,39.43,47.2,3.12,355.7,HSP70_A2_Intermediate,Tolerant
+AG-1246,N'Dama,Female,6.4,85.2,39.23,38.1,2.88,339.2,HSP70_A2_Intermediate,Tolerant
+AG-1247,N'Dama,Female,5.8,78.0,38.93,30.7,3.51,345.0,HSP70_A1_Resistant,Tolerant
+AG-1248,N'Dama,Female,5.5,77.4,38.47,30.1,3.88,372.7,HSP70_A2_Intermediate,Tolerant
+AG-1249,N'Dama,Female,3.2,87.8,39.52,55.9,2.66,327.7,HSP70_A1_Resistant,Tolerant
+AG-1250,N'Dama,Female,7.3,78.1,38.37,28.0,4.0,350.6,HSP70_B1_Susceptible,Tolerant
+AG-1251,White Fulani,Female,7.3,77.0,38.84,40.2,7.49,444.0,HSP70_A2_Intermediate,Susceptible
+AG-1252,White Fulani,Female,5.0,80.7,39.36,53.6,6.37,413.5,HSP70_A2_Intermediate,Susceptible
+AG-1253,White Fulani,Female,3.9,76.3,38.64,37.3,7.42,441.0,HSP70_A1_Resistant,Susceptible
+AG-1254,White Fulani,Female,4.7,78.4,38.78,47.9,7.79,417.8,HSP70_A2_Intermediate,Tolerant
+AG-1255,White Fulani,Female,5.0,75.6,38.82,36.9,8.26,434.4,HSP70_B1_Susceptible,Susceptible
+AG-1256,White Fulani,Male,7.2,74.4,38.77,37.3,,515.9,HSP70_A2_Intermediate,Susceptible
+AG-1257,White Fulani,Female,4.1,76.6,38.99,35.4,7.21,392.5,HSP70_A2_Intermediate,Susceptible
+AG-1258,White Fulani,Male,7.4,78.5,39.38,46.6,,527.1,HSP70_A2_Intermediate,Tolerant
+AG-1259,White Fulani,Male,4.4,85.6,40.82,67.0,,498.0,HSP70_A2_Intermediate,Susceptible
+AG-1260,White Fulani,Male,2.1,79.6,39.78,51.3,,443.7,HSP70_A2_Intermediate,Susceptible
+AG-1261,White Fulani,Male,3.5,75.4,38.8,34.1,,485.2,HSP70_A1_Resistant,Susceptible
+AG-1262,White Fulani,Male,6.1,74.3,38.9,38.6,,520.7,HSP70_B1_Susceptible,Susceptible
+AG-1263,White Fulani,Female,4.7,73.2,38.88,30.3,6.22,433.3,HSP70_A1_Resistant,Susceptible
+AG-1264,White Fulani,Male,2.4,87.3,41.04,66.6,,462.0,HSP70_A1_Resistant,Susceptible
+AG-1265,White Fulani,Male,5.9,72.8,38.66,33.5,,485.7,HSP70_A2_Intermediate,Susceptible
+AG-1266,White Fulani,Male,4.2,86.5,40.82,69.7,,450.7,HSP70_A2_Intermediate,Susceptible
+AG-1267,White Fulani,Male,5.3,77.7,38.87,42.9,,494.0,HSP70_A2_Intermediate,Susceptible
+AG-1268,White Fulani,Female,2.4,82.9,40.47,61.7,4.94,415.9,HSP70_A2_Intermediate,Susceptible
+AG-1269,White Fulani,Female,6.3,76.3,38.9,30.7,7.1,460.2,HSP70_A1_Resistant,Susceptible
+AG-1270,White Fulani,Female,2.0,80.2,39.38,48.6,6.28,416.4,HSP70_A2_Intermediate,Tolerant
+AG-1271,White Fulani,Female,3.5,85.5,40.57,70.9,4.51,419.5,HSP70_B1_Susceptible,Susceptible
+AG-1272,White Fulani,Male,2.5,83.0,40.47,50.5,,457.9,HSP70_A2_Intermediate,Susceptible
+AG-1273,White Fulani,Female,2.9,83.4,40.38,60.7,4.77,430.9,HSP70_A1_Resistant,Susceptible
+AG-1274,White Fulani,Female,2.3,77.8,39.09,43.9,5.91,372.7,HSP70_A2_Intermediate,Susceptible
+AG-1275,White Fulani,Female,2.3,84.3,40.83,62.2,4.96,414.7,HSP70_B1_Susceptible,Susceptible
+AG-1276,White Fulani,Male,3.2,82.8,39.82,61.5,,473.9,HSP70_B1_Susceptible,Susceptible
+AG-1277,White Fulani,Female,4.2,83.4,40.1,61.1,5.32,416.9,HSP70_A1_Resistant,Tolerant
+AG-1278,White Fulani,Female,3.5,85.4,40.41,66.1,4.34,383.2,HSP70_A2_Intermediate,Susceptible
+AG-1279,White Fulani,Female,4.6,87.4,41.16,80.7,4.57,450.4,HSP70_B1_Susceptible,Susceptible
+AG-1280,White Fulani,Male,2.7,72.3,38.52,38.4,,471.2,HSP70_A1_Resistant,Susceptible
+AG-1281,White Fulani,Female,3.6,84.4,40.0,64.5,5.77,403.1,HSP70_B1_Susceptible,Susceptible
+AG-1282,White Fulani,Female,6.9,84.5,40.52,69.4,4.17,450.9,HSP70_A1_Resistant,Susceptible
+AG-1283,White Fulani,Female,4.7,84.0,40.28,62.1,5.6,436.7,HSP70_A1_Resistant,Susceptible
+AG-1284,White Fulani,Female,3.1,74.3,39.02,38.0,6.53,420.6,HSP70_B1_Susceptible,Susceptible
+AG-1285,White Fulani,Female,5.7,76.2,38.89,35.7,7.0,421.0,HSP70_B1_Susceptible,Susceptible
+AG-1286,White Fulani,Female,2.8,72.1,38.49,43.3,6.24,416.5,HSP70_A2_Intermediate,Susceptible
+AG-1287,White Fulani,Female,3.5,84.9,41.21,58.8,4.71,420.9,HSP70_A1_Resistant,Susceptible
+AG-1288,White Fulani,Female,2.3,85.5,40.68,69.4,3.94,414.2,HSP70_A2_Intermediate,Susceptible
+AG-1289,White Fulani,Female,5.4,87.7,41.41,72.6,4.38,453.7,HSP70_B1_Susceptible,Susceptible
+AG-1290,White Fulani,Female,4.6,83.5,40.53,56.2,4.81,442.6,HSP70_A2_Intermediate,Susceptible
+AG-1291,White Fulani,Female,2.1,72.1,38.85,35.3,7.58,385.8,HSP70_A2_Intermediate,Susceptible
+AG-1292,White Fulani,Male,6.0,73.5,38.59,35.8,,533.6,HSP70_A1_Resistant,Susceptible
+AG-1293,White Fulani,Female,7.1,87.9,41.25,70.5,3.36,468.4,HSP70_B1_Susceptible,Susceptible
+AG-1294,White Fulani,Female,6.3,76.0,38.74,29.2,7.73,437.8,HSP70_A1_Resistant,Susceptible
+AG-1295,White Fulani,Female,4.8,75.5,38.88,36.7,7.09,414.3,HSP70_A2_Intermediate,Susceptible
+AG-1296,White Fulani,Male,3.6,77.6,39.56,40.8,,486.5,HSP70_B1_Susceptible,Susceptible
+AG-1297,White Fulani,Female,3.1,81.5,39.76,50.4,5.66,424.2,HSP70_A1_Resistant,Tolerant
+AG-1298,White Fulani,Male,4.8,78.6,39.37,45.8,,506.0,HSP70_B1_Susceptible,Susceptible
+AG-1299,White Fulani,Female,6.8,80.6,39.45,49.3,5.08,472.2,HSP70_A1_Resistant,Susceptible
+AG-1300,White Fulani,Female,3.7,76.9,38.25,41.2,6.3,434.1,HSP70_A2_Intermediate,Susceptible
+AG-1301,White Fulani,Female,5.9,85.1,40.81,64.3,4.32,472.9,HSP70_B1_Susceptible,Tolerant
+AG-1302,White Fulani,Female,5.9,74.7,38.27,37.5,8.04,460.6,HSP70_A2_Intermediate,Susceptible
+AG-1303,White Fulani,Male,2.6,80.2,39.25,41.8,,463.1,HSP70_B1_Susceptible,Susceptible
+AG-1304,White Fulani,Female,5.9,79.4,39.5,48.9,6.78,457.5,HSP70_A2_Intermediate,Susceptible
+AG-1305,White Fulani,Female,3.9,77.4,39.27,43.8,7.25,428.1,HSP70_A2_Intermediate,Susceptible
+AG-1306,White Fulani,Female,6.3,83.8,40.33,61.3,4.41,450.5,HSP70_B1_Susceptible,Susceptible
+AG-1307,White Fulani,Female,7.3,72.8,39.15,36.1,7.06,471.9,HSP70_B1_Susceptible,Susceptible
+AG-1308,White Fulani,Female,2.7,85.8,40.75,65.5,5.23,406.8,HSP70_B1_Susceptible,Susceptible
+AG-1309,White Fulani,Female,5.4,81.1,39.85,50.7,5.35,428.7,HSP70_A2_Intermediate,Susceptible
+AG-1310,White Fulani,Female,6.0,78.5,39.11,38.2,5.93,470.9,HSP70_A1_Resistant,Susceptible
+AG-1311,White Fulani,Male,5.5,82.7,39.89,60.1,,519.2,HSP70_A1_Resistant,Susceptible
+AG-1312,White Fulani,Female,4.4,87.7,41.15,74.7,3.92,429.1,HSP70_B1_Susceptible,Susceptible
+AG-1313,White Fulani,Female,3.9,78.4,38.99,40.9,6.23,400.7,HSP70_A2_Intermediate,Susceptible
+AG-1314,White Fulani,Male,5.3,73.2,38.67,34.1,,489.8,HSP70_A2_Intermediate,Susceptible
+AG-1315,White Fulani,Female,3.5,72.2,39.0,39.5,6.26,435.5,HSP70_A2_Intermediate,Susceptible
+AG-1316,White Fulani,Male,7.2,73.7,38.84,37.2,,522.3,HSP70_B1_Susceptible,Susceptible
+AG-1317,White Fulani,Female,2.1,81.3,39.54,52.4,4.94,403.4,HSP70_B1_Susceptible,Susceptible
+AG-1318,White Fulani,Female,7.4,73.6,38.82,35.9,7.1,471.9,HSP70_B1_Susceptible,Susceptible
+AG-1319,White Fulani,Female,4.4,83.6,40.27,61.1,5.31,456.2,HSP70_A2_Intermediate,Susceptible
+AG-1320,White Fulani,Female,3.1,86.0,41.23,66.4,4.36,403.4,HSP70_A1_Resistant,Susceptible
+AG-1321,White Fulani,Female,5.3,82.8,39.98,59.8,5.83,423.0,HSP70_A2_Intermediate,Susceptible
+AG-1322,White Fulani,Female,4.9,73.1,38.75,38.4,7.07,454.5,HSP70_A2_Intermediate,Susceptible
+AG-1323,White Fulani,Male,5.7,84.6,41.18,71.9,,486.7,HSP70_A2_Intermediate,Susceptible
+AG-1324,White Fulani,Female,4.4,82.4,39.97,60.1,5.42,432.5,HSP70_A2_Intermediate,Susceptible
+AG-1325,White Fulani,Female,4.7,86.8,41.15,70.4,5.63,421.1,HSP70_A2_Intermediate,Susceptible
+AG-1326,White Fulani,Female,2.4,75.0,38.9,37.2,7.54,423.2,HSP70_A1_Resistant,Susceptible
+AG-1327,White Fulani,Female,3.4,80.2,39.1,51.9,6.8,413.5,HSP70_B1_Susceptible,Susceptible
+AG-1328,White Fulani,Male,7.2,77.2,38.99,32.3,,513.4,HSP70_A2_Intermediate,Susceptible
+AG-1329,White Fulani,Female,6.7,82.8,39.99,59.2,5.65,454.8,HSP70_A2_Intermediate,Susceptible
+AG-1330,White Fulani,Female,3.0,83.1,40.66,58.0,5.3,430.5,HSP70_A2_Intermediate,Susceptible
+AG-1331,White Fulani,Female,2.1,74.7,38.93,35.0,7.45,393.6,HSP70_A2_Intermediate,Susceptible
+AG-1332,White Fulani,Female,3.3,72.9,38.63,31.2,6.86,435.5,HSP70_A2_Intermediate,Susceptible
+AG-1333,White Fulani,Female,5.8,83.2,40.81,59.9,4.67,465.2,HSP70_A2_Intermediate,Susceptible
+AG-1334,White Fulani,Female,5.3,73.9,38.64,32.9,6.96,429.0,HSP70_A2_Intermediate,Susceptible
+AG-1335,White Fulani,Female,4.8,78.7,39.46,44.8,6.09,467.9,HSP70_B1_Susceptible,Susceptible
+AG-1336,White Fulani,Female,6.0,80.6,39.95,52.4,6.33,451.0,HSP70_A2_Intermediate,Susceptible
+AG-1337,White Fulani,Female,3.0,85.7,41.14,67.6,5.47,413.3,HSP70_B1_Susceptible,Susceptible
+AG-1338,White Fulani,Female,2.4,86.0,40.73,72.1,3.42,399.3,HSP70_A2_Intermediate,Susceptible
+AG-1339,White Fulani,Female,7.5,80.9,39.84,48.5,5.59,451.0,HSP70_A1_Resistant,Susceptible
+AG-1340,White Fulani,Female,6.0,82.5,39.76,59.8,4.94,448.7,HSP70_B1_Susceptible,Susceptible
+AG-1341,White Fulani,Female,2.4,84.3,40.52,68.2,5.45,419.7,HSP70_A2_Intermediate,Tolerant
+AG-1342,White Fulani,Female,5.4,83.9,40.59,60.4,5.01,449.4,HSP70_B1_Susceptible,Susceptible
+AG-1343,White Fulani,Female,5.6,86.2,41.07,76.3,5.39,445.8,HSP70_B1_Susceptible,Susceptible
+AG-1344,White Fulani,Female,3.7,75.9,38.4,34.7,6.36,424.9,HSP70_A1_Resistant,Tolerant
+AG-1345,White Fulani,Female,4.1,85.1,40.94,70.1,5.34,443.2,HSP70_A2_Intermediate,Susceptible
+AG-1346,White Fulani,Female,3.8,76.3,38.49,39.1,6.56,432.4,HSP70_A2_Intermediate,Susceptible
+AG-1347,White Fulani,Male,6.3,84.2,40.16,59.6,,526.9,HSP70_A2_Intermediate,Tolerant
+AG-1348,White Fulani,Female,2.2,86.1,41.0,63.7,4.82,402.3,HSP70_A2_Intermediate,Susceptible
+AG-1349,White Fulani,Male,3.8,86.4,40.87,72.6,,464.9,HSP70_A1_Resistant,Susceptible
+AG-1350,White Fulani,Female,6.1,84.9,40.69,61.8,4.9,452.8,HSP70_B1_Susceptible,Susceptible
+AG-1351,White Fulani,Female,5.6,75.7,38.67,40.7,7.58,463.3,HSP70_A2_Intermediate,Susceptible
+AG-1352,White Fulani,Female,5.2,87.9,41.81,73.9,5.27,430.1,HSP70_A2_Intermediate,Susceptible
+AG-1353,White Fulani,Male,7.1,77.5,39.41,35.7,,517.4,HSP70_B1_Susceptible,Susceptible
+AG-1354,White Fulani,Female,6.4,83.4,40.19,61.0,6.57,449.5,HSP70_B1_Susceptible,Susceptible
+AG-1355,White Fulani,Male,2.9,80.0,39.86,53.0,,445.4,HSP70_A1_Resistant,Susceptible
+AG-1356,White Fulani,Female,3.0,83.3,40.52,67.0,5.12,410.8,HSP70_A1_Resistant,Susceptible
+AG-1357,White Fulani,Female,5.8,85.4,40.86,63.6,6.76,433.6,HSP70_A2_Intermediate,Susceptible
+AG-1358,White Fulani,Male,5.2,81.5,39.83,52.5,,490.2,HSP70_A1_Resistant,Susceptible
+AG-1359,White Fulani,Female,5.3,86.1,41.0,72.1,5.01,438.9,HSP70_B1_Susceptible,Susceptible
+AG-1360,White Fulani,Female,3.6,84.8,40.71,68.1,5.04,429.7,HSP70_B1_Susceptible,Tolerant
+AG-1361,White Fulani,Female,2.4,87.6,41.34,75.4,3.99,405.8,HSP70_A2_Intermediate,Susceptible
+AG-1362,White Fulani,Female,3.5,73.6,38.64,35.2,7.16,428.9,HSP70_A2_Intermediate,Susceptible
+AG-1363,White Fulani,Female,3.6,75.7,38.6,34.0,8.02,406.7,HSP70_A1_Resistant,Susceptible
+AG-1364,White Fulani,Male,2.8,77.5,39.02,37.9,,472.3,HSP70_B1_Susceptible,Tolerant
+AG-1365,White Fulani,Female,4.8,74.3,38.25,31.0,7.67,424.7,HSP70_A2_Intermediate,Susceptible
+AG-1366,White Fulani,Male,2.3,78.7,39.29,51.0,,452.9,HSP70_A2_Intermediate,Susceptible
+AG-1367,White Fulani,Male,6.7,77.0,39.23,39.9,,493.1,HSP70_A2_Intermediate,Susceptible
+AG-1368,White Fulani,Female,4.7,85.4,40.65,70.4,4.7,410.3,HSP70_A2_Intermediate,Susceptible
+AG-1369,White Fulani,Female,3.1,87.2,40.94,74.0,3.73,411.7,HSP70_A2_Intermediate,Susceptible
+AG-1370,White Fulani,Female,4.0,82.6,40.82,58.5,4.95,419.7,HSP70_A2_Intermediate,Susceptible
+AG-1371,White Fulani,Male,3.6,86.8,40.87,72.0,,479.5,HSP70_A1_Resistant,Susceptible
+AG-1372,White Fulani,Male,4.0,73.4,38.99,36.7,,470.3,HSP70_B1_Susceptible,Susceptible
+AG-1373,White Fulani,Female,6.8,76.0,38.82,37.0,7.43,482.0,HSP70_A1_Resistant,Susceptible
+AG-1374,White Fulani,Female,2.5,79.8,39.7,45.2,5.89,414.6,HSP70_A2_Intermediate,Susceptible
+AG-1375,White Fulani,Male,2.8,79.8,39.49,55.3,,443.2,HSP70_B1_Susceptible,Susceptible
+AG-1376,White Fulani,Female,6.6,74.7,38.74,28.5,7.66,461.8,HSP70_A2_Intermediate,Susceptible
+AG-1377,White Fulani,Female,2.2,80.8,40.06,51.1,5.1,401.8,HSP70_A1_Resistant,Susceptible
+AG-1378,White Fulani,Female,5.3,76.5,38.71,33.7,6.81,463.0,HSP70_B1_Susceptible,Tolerant
+AG-1379,White Fulani,Male,3.3,82.8,40.39,59.0,,460.0,HSP70_A1_Resistant,Susceptible
+AG-1380,White Fulani,Female,6.3,75.8,38.66,35.3,7.16,456.5,HSP70_B1_Susceptible,Susceptible
+AG-1381,White Fulani,Female,5.7,77.1,39.0,40.7,7.26,434.3,HSP70_B1_Susceptible,Tolerant
+AG-1382,White Fulani,Female,5.9,82.0,39.77,53.6,5.62,426.0,HSP70_A2_Intermediate,Susceptible
+AG-1383,White Fulani,Male,3.0,78.0,39.03,38.6,,470.7,HSP70_B1_Susceptible,Susceptible
+AG-1384,White Fulani,Female,3.4,79.5,39.78,50.4,6.62,443.1,HSP70_B1_Susceptible,Susceptible
+AG-1385,White Fulani,Male,2.3,72.1,38.86,32.1,,432.1,HSP70_B1_Susceptible,Susceptible
+AG-1386,White Fulani,Male,3.7,83.1,39.86,56.4,,465.6,HSP70_A1_Resistant,Susceptible
+AG-1387,White Fulani,Female,6.6,73.9,38.76,42.0,7.16,431.1,HSP70_A2_Intermediate,Susceptible
+AG-1388,White Fulani,Female,2.9,73.9,38.93,36.4,7.96,402.2,HSP70_B1_Susceptible,Susceptible
+AG-1389,White Fulani,Male,5.1,82.5,40.08,60.5,,498.4,HSP70_A1_Resistant,Susceptible
+AG-1390,White Fulani,Female,2.7,87.7,41.4,79.9,4.73,412.9,HSP70_A2_Intermediate,Tolerant
+AG-1391,White Fulani,Female,5.1,76.7,38.81,38.2,7.29,435.0,HSP70_A1_Resistant,Susceptible
+AG-1392,White Fulani,Female,3.2,81.8,39.94,56.9,4.86,435.2,HSP70_B1_Susceptible,Susceptible
+AG-1393,White Fulani,Female,4.0,84.9,40.54,61.6,4.67,426.9,HSP70_A2_Intermediate,Susceptible
+AG-1394,White Fulani,Female,4.1,84.9,40.45,64.0,5.73,401.1,HSP70_B1_Susceptible,Tolerant
+AG-1395,White Fulani,Male,5.8,80.5,39.59,50.8,,491.4,HSP70_A2_Intermediate,Susceptible
+AG-1396,White Fulani,Female,7.3,81.0,39.71,53.1,5.41,465.0,HSP70_A2_Intermediate,Susceptible
+AG-1397,White Fulani,Female,2.4,77.7,38.52,45.5,7.04,415.5,HSP70_A2_Intermediate,Susceptible
+AG-1398,White Fulani,Female,2.6,77.7,39.5,38.5,6.46,414.1,HSP70_A2_Intermediate,Susceptible
+AG-1399,White Fulani,Female,6.6,72.7,38.4,35.0,7.29,473.9,HSP70_A2_Intermediate,Susceptible
+AG-1400,White Fulani,Female,7.3,75.5,38.76,38.4,6.44,492.8,HSP70_B1_Susceptible,Susceptible
+AG-1401,White Fulani,Female,4.4,83.7,40.32,62.4,5.43,451.1,HSP70_B1_Susceptible,Susceptible
+AG-1402,White Fulani,Female,7.0,76.0,38.69,40.3,6.02,466.5,HSP70_A2_Intermediate,Susceptible
+AG-1403,White Fulani,Female,3.5,72.1,39.08,33.6,7.98,404.3,HSP70_B1_Susceptible,Susceptible
+AG-1404,White Fulani,Female,6.3,76.3,39.17,40.6,6.7,461.1,HSP70_B1_Susceptible,Susceptible
+AG-1405,White Fulani,Female,3.2,76.9,38.34,43.4,6.78,413.6,HSP70_A2_Intermediate,Susceptible
+AG-1406,White Fulani,Male,2.5,78.3,39.47,49.3,,452.3,HSP70_A1_Resistant,Susceptible
+AG-1407,White Fulani,Male,2.7,75.7,38.55,33.9,,461.3,HSP70_A1_Resistant,Susceptible
+AG-1408,White Fulani,Female,2.2,81.3,39.85,53.5,4.87,428.3,HSP70_B1_Susceptible,Susceptible
+AG-1409,White Fulani,Female,5.9,76.3,38.72,39.9,6.74,451.9,HSP70_A2_Intermediate,Susceptible
+AG-1410,White Fulani,Male,3.2,75.6,38.67,32.9,,481.4,HSP70_A1_Resistant,Susceptible
+AG-1411,White Fulani,Male,2.3,79.9,39.46,42.0,,447.3,HSP70_A2_Intermediate,Susceptible
+AG-1412,White Fulani,Female,5.1,84.9,40.5,66.9,4.77,431.3,HSP70_A2_Intermediate,Susceptible
+AG-1413,White Fulani,Female,2.3,72.6,39.09,33.0,7.52,390.7,HSP70_A2_Intermediate,Susceptible
+AG-1414,White Fulani,Male,3.6,75.7,38.33,34.2,,488.3,HSP70_B1_Susceptible,Susceptible
+AG-1415,White Fulani,Female,2.9,83.8,40.55,66.7,4.63,408.7,HSP70_B1_Susceptible,Susceptible
+AG-1416,White Fulani,Male,7.4,84.7,40.56,67.8,,545.9,HSP70_B1_Susceptible,Susceptible
+AG-1417,White Fulani,Female,5.4,78.6,38.81,41.8,7.26,448.0,HSP70_A2_Intermediate,Susceptible
+AG-1418,White Fulani,Female,6.5,80.9,39.54,49.8,5.55,470.8,HSP70_B1_Susceptible,Tolerant
+AG-1419,White Fulani,Female,7.4,82.8,40.08,61.5,6.1,494.0,HSP70_A2_Intermediate,Susceptible
+AG-1420,White Fulani,Female,4.4,76.4,38.61,39.9,6.47,443.7,HSP70_A2_Intermediate,Susceptible
+AG-1421,White Fulani,Female,2.3,74.1,38.97,37.1,7.03,376.2,HSP70_B1_Susceptible,Susceptible
+AG-1422,White Fulani,Female,2.1,73.3,38.43,42.7,6.43,407.7,HSP70_A2_Intermediate,Susceptible
+AG-1423,White Fulani,Male,2.3,86.2,41.36,76.6,,445.7,HSP70_A1_Resistant,Susceptible
+AG-1424,White Fulani,Female,7.0,78.5,39.25,45.8,6.15,468.0,HSP70_B1_Susceptible,Susceptible
+AG-1425,White Fulani,Male,5.7,82.9,39.75,58.3,,502.4,HSP70_A1_Resistant,Susceptible
+AG-1426,White Fulani,Female,5.6,82.1,39.99,56.4,5.17,465.3,HSP70_B1_Susceptible,Susceptible
+AG-1427,White Fulani,Female,2.7,73.5,38.51,37.0,8.12,403.0,HSP70_B1_Susceptible,Tolerant
+AG-1428,White Fulani,Female,5.9,77.7,39.37,42.1,6.84,459.3,HSP70_A2_Intermediate,Tolerant
+AG-1429,White Fulani,Female,4.1,81.7,39.61,52.8,5.65,419.8,HSP70_A1_Resistant,Susceptible
+AG-1430,White Fulani,Male,4.4,80.5,40.01,52.1,,465.2,HSP70_A2_Intermediate,Susceptible
+AG-1431,White Fulani,Female,3.7,74.1,38.43,32.8,7.4,450.8,HSP70_B1_Susceptible,Susceptible
+AG-1432,White Fulani,Male,4.7,83.7,40.57,57.2,,493.7,HSP70_A1_Resistant,Susceptible
+AG-1433,White Fulani,Female,5.4,85.6,40.74,66.8,6.41,435.1,HSP70_A2_Intermediate,Tolerant
+AG-1434,White Fulani,Female,2.6,81.4,39.49,54.6,6.56,418.1,HSP70_A1_Resistant,Susceptible
+AG-1435,White Fulani,Female,3.4,76.9,39.11,39.9,7.18,440.0,HSP70_B1_Susceptible,Susceptible
+AG-1436,White Fulani,Female,4.6,75.0,38.83,42.3,7.62,431.1,HSP70_A1_Resistant,Susceptible
+AG-1437,White Fulani,Female,6.2,83.2,40.6,55.8,6.3,445.9,HSP70_A2_Intermediate,Susceptible
+AG-1438,White Fulani,Male,3.4,73.9,38.81,36.3,,461.7,HSP70_A2_Intermediate,Susceptible
+AG-1439,White Fulani,Female,5.6,88.0,41.29,68.3,3.89,433.5,HSP70_B1_Susceptible,Susceptible
+AG-1440,White Fulani,Female,5.6,79.1,39.32,44.3,6.56,453.5,HSP70_A1_Resistant,Susceptible
+AG-1441,White Fulani,Female,5.2,78.4,39.27,41.1,6.4,425.6,HSP70_B1_Susceptible,Susceptible
+AG-1442,White Fulani,Female,5.0,81.5,39.83,55.0,6.48,457.0,HSP70_A2_Intermediate,Tolerant
+AG-1443,White Fulani,Female,7.0,78.3,39.07,41.0,6.37,460.6,HSP70_A2_Intermediate,Tolerant
+AG-1444,White Fulani,Male,6.2,81.4,39.6,61.7,,497.8,HSP70_B1_Susceptible,Susceptible
+AG-1445,White Fulani,Female,7.2,74.0,38.84,33.2,7.14,458.7,HSP70_A2_Intermediate,Susceptible
+AG-1446,White Fulani,Male,5.7,79.7,39.35,46.8,,528.2,HSP70_A2_Intermediate,Tolerant
+AG-1447,White Fulani,Female,7.0,78.1,38.96,42.0,5.81,468.4,HSP70_A2_Intermediate,Susceptible
+AG-1448,White Fulani,Female,6.5,82.1,40.34,57.8,6.53,466.3,HSP70_A2_Intermediate,Susceptible
+AG-1449,White Fulani,Female,5.4,81.1,39.81,57.9,6.29,422.1,HSP70_B1_Susceptible,Tolerant
+AG-1450,White Fulani,Female,2.9,75.0,38.73,34.3,6.45,412.9,HSP70_A2_Intermediate,Susceptible
+AG-1451,White Fulani,Female,6.6,74.3,38.56,33.5,7.21,461.3,HSP70_A2_Intermediate,Susceptible
+AG-1452,White Fulani,Female,7.3,72.8,38.52,36.6,6.4,461.2,HSP70_B1_Susceptible,Susceptible
+AG-1453,White Fulani,Female,2.4,74.7,38.73,30.3,7.27,413.9,HSP70_A1_Resistant,Susceptible
+AG-1454,White Fulani,Female,2.4,72.1,38.73,40.0,8.03,404.5,HSP70_A2_Intermediate,Tolerant
+AG-1455,White Fulani,Female,3.0,73.6,38.05,36.4,7.5,401.9,HSP70_A2_Intermediate,Susceptible
+AG-1456,White Fulani,Female,3.0,84.8,40.91,66.7,6.24,428.0,HSP70_A1_Resistant,Susceptible
+AG-1457,White Fulani,Female,6.3,87.9,41.3,77.0,4.12,448.2,HSP70_A2_Intermediate,Susceptible
+AG-1458,White Fulani,Male,3.0,84.8,40.78,69.3,,452.8,HSP70_A2_Intermediate,Susceptible
+AG-1459,White Fulani,Male,6.4,85.9,40.91,67.3,,503.3,HSP70_A2_Intermediate,Susceptible
+AG-1460,White Fulani,Female,7.5,74.2,38.43,32.6,8.18,461.0,HSP70_B1_Susceptible,Susceptible
+AG-1461,White Fulani,Female,4.0,81.5,39.62,50.0,6.03,466.2,HSP70_A2_Intermediate,Susceptible
+AG-1462,White Fulani,Female,2.1,77.7,38.73,42.7,7.66,418.9,HSP70_A2_Intermediate,Susceptible
+AG-1463,White Fulani,Female,5.4,79.8,39.27,47.2,5.91,471.4,HSP70_A2_Intermediate,Susceptible
+AG-1464,White Fulani,Female,4.7,76.6,38.46,40.1,7.14,435.1,HSP70_A1_Resistant,Susceptible
+AG-1465,White Fulani,Female,4.2,80.3,39.33,50.2,6.18,444.9,HSP70_A2_Intermediate,Susceptible
+AG-1466,White Fulani,Female,6.1,86.6,41.08,66.6,4.8,441.0,HSP70_A2_Intermediate,Susceptible
+AG-1467,White Fulani,Female,5.2,78.8,39.16,42.8,6.64,420.5,HSP70_A2_Intermediate,Susceptible
+AG-1468,White Fulani,Male,2.1,82.4,40.13,60.8,,464.0,HSP70_B1_Susceptible,Tolerant
+AG-1469,White Fulani,Female,6.9,79.3,39.91,49.6,6.68,465.5,HSP70_B1_Susceptible,Susceptible
+AG-1470,White Fulani,Female,6.8,72.8,38.78,35.2,6.71,451.3,HSP70_A1_Resistant,Susceptible
+AG-1471,White Fulani,Female,5.7,75.8,38.9,38.8,6.72,423.2,HSP70_A2_Intermediate,Susceptible
+AG-1472,White Fulani,Female,7.1,76.9,39.06,41.4,6.4,461.4,HSP70_B1_Susceptible,Susceptible
+AG-1473,White Fulani,Female,3.1,80.1,39.42,43.2,6.99,429.1,HSP70_A2_Intermediate,Susceptible
+AG-1474,White Fulani,Female,3.1,84.5,40.52,66.8,5.39,421.1,HSP70_B1_Susceptible,Susceptible
+AG-1475,White Fulani,Male,4.1,77.4,39.01,38.2,,474.5,HSP70_A2_Intermediate,Susceptible
+AG-1476,White Fulani,Male,3.7,85.7,40.73,69.6,,482.2,HSP70_A1_Resistant,Susceptible
+AG-1477,White Fulani,Male,5.8,77.3,39.54,40.3,,483.4,HSP70_A2_Intermediate,Susceptible
+AG-1478,White Fulani,Male,2.8,87.2,41.18,77.3,,444.2,HSP70_B1_Susceptible,Susceptible
+AG-1479,White Fulani,Male,3.7,85.7,40.94,65.6,,487.3,HSP70_A2_Intermediate,Susceptible
+AG-1480,White Fulani,Female,2.3,83.5,40.63,64.9,5.34,390.7,HSP70_B1_Susceptible,Susceptible
+AG-1481,White Fulani,Female,6.0,80.2,39.52,46.8,7.57,457.2,HSP70_B1_Susceptible,Tolerant
+AG-1482,White Fulani,Male,5.7,83.2,40.37,62.7,,493.6,HSP70_B1_Susceptible,Tolerant
+AG-1483,White Fulani,Female,6.9,72.8,38.72,36.7,6.37,474.4,HSP70_A2_Intermediate,Susceptible
+AG-1484,White Fulani,Female,6.3,78.3,39.31,43.7,5.78,435.4,HSP70_A2_Intermediate,Susceptible
+AG-1485,White Fulani,Female,6.8,80.1,39.31,49.6,6.34,453.6,HSP70_A2_Intermediate,Susceptible
+AG-1486,White Fulani,Female,6.3,75.1,38.82,39.7,6.48,421.1,HSP70_A2_Intermediate,Susceptible
+AG-1487,White Fulani,Female,3.8,81.5,39.92,54.3,5.72,434.5,HSP70_A1_Resistant,Susceptible
+AG-1488,White Fulani,Female,3.2,72.0,38.52,37.8,7.39,421.0,HSP70_A2_Intermediate,Tolerant
+AG-1489,White Fulani,Female,3.9,78.0,39.5,45.4,6.65,420.2,HSP70_B1_Susceptible,Susceptible
+AG-1490,White Fulani,Female,5.7,80.1,39.68,49.6,6.39,448.4,HSP70_B1_Susceptible,Susceptible
+AG-1491,White Fulani,Female,7.5,85.7,40.91,66.1,3.99,461.7,HSP70_B1_Susceptible,Susceptible
+AG-1492,White Fulani,Male,2.0,76.9,38.71,36.4,,427.5,HSP70_A2_Intermediate,Susceptible
+AG-1493,White Fulani,Male,7.0,79.9,39.67,46.3,,509.1,HSP70_B1_Susceptible,Tolerant
+AG-1494,White Fulani,Female,3.6,77.1,39.06,37.8,7.12,410.4,HSP70_A1_Resistant,Tolerant
+AG-1495,White Fulani,Male,3.0,85.1,40.51,66.5,,463.5,HSP70_B1_Susceptible,Tolerant
+AG-1496,White Fulani,Female,6.2,87.0,41.17,71.6,4.68,439.9,HSP70_A2_Intermediate,Susceptible
+AG-1497,White Fulani,Female,2.9,83.1,40.0,57.5,4.95,436.2,HSP70_B1_Susceptible,Susceptible
+AG-1498,White Fulani,Female,5.0,73.4,38.7,31.6,6.12,434.4,HSP70_A1_Resistant,Susceptible
+AG-1499,White Fulani,Male,2.8,84.2,40.48,67.7,,454.8,HSP70_A2_Intermediate,Susceptible
+AG-1500,White Fulani,Female,2.8,87.0,41.42,74.0,4.41,405.7,HSP70_A2_Intermediate,Susceptible
+AG-1501,Muturu,Female,2.8,81.5,38.74,38.5,3.02,248.7,HSP70_A1_Resistant,Tolerant
+AG-1502,Muturu,Female,5.5,81.6,38.62,39.3,2.89,294.4,HSP70_A1_Resistant,Tolerant
+AG-1503,Muturu,Male,3.0,73.8,38.22,28.8,,289.2,HSP70_A1_Resistant,Tolerant
+AG-1504,Muturu,Female,3.3,78.2,38.81,27.4,3.4,244.0,HSP70_A1_Resistant,Tolerant
+AG-1505,Muturu,Male,2.9,87.5,39.43,45.5,,292.6,HSP70_A2_Intermediate,Tolerant
+AG-1506,Muturu,Male,5.0,80.6,38.64,31.3,,326.9,HSP70_A1_Resistant,Tolerant
+AG-1507,Muturu,Male,3.9,87.2,39.57,45.0,,339.0,HSP70_B1_Susceptible,Tolerant
+AG-1508,Muturu,Female,3.4,79.4,38.83,28.2,3.34,272.8,HSP70_A1_Resistant,Tolerant
+AG-1509,Muturu,Male,4.4,79.8,38.86,30.9,,346.1,HSP70_A2_Intermediate,Tolerant
+AG-1510,Muturu,Female,4.4,85.6,39.36,44.5,2.41,275.0,HSP70_A2_Intermediate,Tolerant
+AG-1511,Muturu,Male,6.6,78.3,38.67,29.0,,341.2,HSP70_A2_Intermediate,Tolerant
+AG-1512,Muturu,Female,6.1,77.7,38.19,30.3,3.79,317.7,HSP70_A1_Resistant,Tolerant
+AG-1513,Muturu,Female,6.1,79.7,38.45,22.5,3.43,307.7,HSP70_A2_Intermediate,Tolerant
+AG-1514,Muturu,Female,4.5,74.0,38.49,21.8,3.91,291.7,HSP70_A1_Resistant,Tolerant
+AG-1515,Muturu,Female,5.3,83.7,38.6,40.6,2.61,286.6,HSP70_B1_Susceptible,Tolerant
+AG-1516,Muturu,Female,3.8,85.1,38.79,44.8,3.5,264.3,HSP70_A1_Resistant,Tolerant
+AG-1517,Muturu,Male,2.5,84.4,39.06,39.9,,281.7,HSP70_A2_Intermediate,Tolerant
+AG-1518,Muturu,Female,5.5,75.1,38.24,28.2,2.67,292.1,HSP70_A1_Resistant,Tolerant
+AG-1519,Muturu,Male,6.0,86.9,39.61,36.4,,344.4,HSP70_A1_Resistant,Tolerant
+AG-1520,Muturu,Female,2.7,76.8,39.01,31.7,3.02,257.2,HSP70_A1_Resistant,Tolerant
+AG-1521,Muturu,Female,7.3,83.6,39.08,37.9,2.19,313.7,HSP70_A2_Intermediate,Tolerant
+AG-1522,Muturu,Female,5.3,79.8,38.17,33.0,2.53,285.1,HSP70_A2_Intermediate,Tolerant
+AG-1523,Muturu,Female,2.5,79.0,38.41,37.2,3.74,224.1,HSP70_A1_Resistant,Tolerant
+AG-1524,Muturu,Male,7.1,80.0,39.0,29.1,,354.4,HSP70_A1_Resistant,Tolerant
+AG-1525,Muturu,Male,2.1,80.8,38.65,32.9,,320.4,HSP70_A1_Resistant,Tolerant
+AG-1526,Muturu,Male,4.8,81.8,38.86,29.2,,316.8,HSP70_A1_Resistant,Tolerant
+AG-1527,Muturu,Male,3.3,75.1,38.27,31.5,,310.3,HSP70_A1_Resistant,Tolerant
+AG-1528,Muturu,Female,2.7,72.6,38.59,25.3,3.49,228.2,HSP70_A1_Resistant,Tolerant
+AG-1529,Muturu,Female,5.2,81.1,38.5,29.8,3.07,269.9,HSP70_A1_Resistant,Tolerant
+AG-1530,Muturu,Male,7.3,87.5,39.52,46.8,,341.8,HSP70_A2_Intermediate,Tolerant
+AG-1531,Muturu,Female,4.7,84.1,39.36,34.8,2.21,288.9,HSP70_A2_Intermediate,Tolerant
+AG-1532,Muturu,Female,3.4,77.5,38.44,28.9,4.32,246.4,HSP70_A1_Resistant,Tolerant
+AG-1533,Muturu,Male,4.1,81.7,38.87,35.3,,310.8,HSP70_B1_Susceptible,Tolerant
+AG-1534,Muturu,Female,2.7,81.3,38.71,39.0,3.41,264.9,HSP70_B1_Susceptible,Tolerant
+AG-1535,Muturu,Female,2.7,77.0,38.59,31.4,3.15,244.0,HSP70_A2_Intermediate,Tolerant
+AG-1536,Muturu,Female,3.2,81.9,38.86,33.9,2.45,257.3,HSP70_B1_Susceptible,Tolerant
+AG-1537,Muturu,Female,2.7,75.3,38.2,31.1,3.58,253.3,HSP70_A1_Resistant,Tolerant
+AG-1538,Muturu,Female,6.5,86.2,39.34,38.2,2.56,309.3,HSP70_A2_Intermediate,Tolerant
+AG-1539,Muturu,Female,7.1,84.0,39.14,39.5,3.25,303.1,HSP70_A1_Resistant,Tolerant
+AG-1540,Muturu,Female,5.9,84.2,39.29,41.2,2.8,280.9,HSP70_A1_Resistant,Tolerant
+AG-1541,Muturu,Female,7.4,82.3,39.23,33.7,3.74,306.1,HSP70_A1_Resistant,Tolerant
+AG-1542,Muturu,Male,3.2,77.2,38.27,32.8,,292.2,HSP70_A2_Intermediate,Tolerant
+AG-1543,Muturu,Female,2.3,76.8,38.91,22.7,3.65,230.5,HSP70_A1_Resistant,Tolerant
+AG-1544,Muturu,Female,6.9,74.4,37.88,31.9,4.4,327.8,HSP70_A1_Resistant,Tolerant
+AG-1545,Muturu,Female,2.0,83.1,38.84,35.6,3.08,246.8,HSP70_A1_Resistant,Tolerant
+AG-1546,Muturu,Female,7.0,83.5,39.04,41.9,3.2,302.1,HSP70_A1_Resistant,Tolerant
+AG-1547,Muturu,Female,7.3,83.2,39.29,34.1,2.99,274.8,HSP70_B1_Susceptible,Tolerant
+AG-1548,Muturu,Female,6.5,80.9,39.12,26.9,3.33,315.7,HSP70_A1_Resistant,Tolerant
+AG-1549,Muturu,Female,2.7,76.8,38.35,26.6,4.62,243.6,HSP70_A1_Resistant,Tolerant
+AG-1550,Muturu,Male,3.9,87.8,39.36,39.1,,315.7,HSP70_B1_Susceptible,Tolerant
+AG-1551,Muturu,Female,5.9,87.7,39.23,47.0,2.45,274.2,HSP70_A2_Intermediate,Tolerant
+AG-1552,Muturu,Female,2.1,84.5,39.11,42.1,1.84,285.4,HSP70_A1_Resistant,Tolerant
+AG-1553,Muturu,Male,6.9,77.4,38.61,28.7,,353.2,HSP70_A1_Resistant,Tolerant
+AG-1554,Muturu,Female,7.3,74.3,38.44,20.2,4.16,297.1,HSP70_B1_Susceptible,Tolerant
+AG-1555,Muturu,Female,5.2,73.3,37.91,25.3,3.1,256.6,HSP70_A1_Resistant,Tolerant
+AG-1556,Muturu,Female,3.7,87.5,39.46,42.6,2.8,276.7,HSP70_A1_Resistant,Tolerant
+AG-1557,Muturu,Male,7.2,73.5,38.34,24.9,,357.0,HSP70_A1_Resistant,Tolerant
+AG-1558,Muturu,Female,5.8,83.7,39.57,45.6,2.24,284.7,HSP70_B1_Susceptible,Tolerant
+AG-1559,Muturu,Male,4.7,81.7,38.93,29.2,,329.1,HSP70_B1_Susceptible,Tolerant
+AG-1560,Muturu,Female,4.0,84.4,39.62,37.1,2.2,255.7,HSP70_A2_Intermediate,Tolerant
+AG-1561,Muturu,Female,6.4,81.2,38.34,37.6,2.9,285.0,HSP70_A2_Intermediate,Tolerant
+AG-1562,Muturu,Female,2.0,82.4,38.76,25.4,3.45,245.7,HSP70_B1_Susceptible,Tolerant
+AG-1563,Muturu,Female,5.1,85.9,39.41,46.5,3.09,270.2,HSP70_A1_Resistant,Tolerant
+AG-1564,Muturu,Female,6.8,75.9,38.24,23.4,3.05,272.9,HSP70_A2_Intermediate,Tolerant
+AG-1565,Muturu,Female,3.5,83.8,38.93,32.2,2.21,260.6,HSP70_A1_Resistant,Tolerant
+AG-1566,Muturu,Female,3.7,87.6,38.96,38.8,1.25,268.8,HSP70_A1_Resistant,Tolerant
+AG-1567,Muturu,Female,5.9,81.7,38.88,35.5,2.81,293.4,HSP70_A2_Intermediate,Tolerant
+AG-1568,Muturu,Female,6.6,72.5,38.14,25.5,4.52,292.9,HSP70_B1_Susceptible,Tolerant
+AG-1569,Muturu,Female,3.1,77.6,38.37,31.2,4.94,251.4,HSP70_A1_Resistant,Tolerant
+AG-1570,Muturu,Female,4.3,83.3,38.86,34.8,2.26,275.5,HSP70_B1_Susceptible,Tolerant
+AG-1571,Muturu,Male,3.3,73.1,38.28,22.0,,296.6,HSP70_A2_Intermediate,Tolerant
+AG-1572,Muturu,Male,6.7,85.5,39.6,36.6,,344.7,HSP70_A2_Intermediate,Tolerant
+AG-1573,Muturu,Female,4.3,77.3,38.38,31.6,4.12,285.1,HSP70_A1_Resistant,Tolerant
+AG-1574,Muturu,Female,6.0,83.1,38.86,40.4,3.98,298.3,HSP70_A1_Resistant,Tolerant
+AG-1575,Muturu,Female,3.8,81.3,39.22,34.5,3.79,270.9,HSP70_A1_Resistant,Tolerant
+AG-1576,Muturu,Female,4.7,77.0,38.97,27.5,2.89,259.2,HSP70_A1_Resistant,Tolerant
+AG-1577,Muturu,Female,7.1,85.9,39.08,38.7,2.9,315.0,HSP70_A2_Intermediate,Tolerant
+AG-1578,Muturu,Female,5.5,85.3,39.38,46.5,3.36,312.3,HSP70_A1_Resistant,Tolerant
+AG-1579,Muturu,Female,2.4,79.0,37.97,31.8,2.39,255.4,HSP70_A2_Intermediate,Tolerant
+AG-1580,Muturu,Female,2.6,74.3,38.11,26.3,4.43,236.3,HSP70_A2_Intermediate,Tolerant
+AG-1581,Muturu,Male,6.6,82.0,38.88,33.6,,339.4,HSP70_A1_Resistant,Tolerant
+AG-1582,Muturu,Male,5.4,85.4,39.08,41.2,,320.7,HSP70_A2_Intermediate,Tolerant
+AG-1583,Muturu,Female,7.5,76.2,38.56,27.4,3.68,321.3,HSP70_B1_Susceptible,Tolerant
+AG-1584,Muturu,Male,2.4,85.1,39.34,44.4,,318.1,HSP70_A1_Resistant,Tolerant
+AG-1585,Muturu,Female,7.4,86.6,39.22,41.6,3.28,302.0,HSP70_A2_Intermediate,Tolerant
+AG-1586,Muturu,Female,2.3,78.8,38.78,30.0,2.65,263.3,HSP70_A2_Intermediate,Tolerant
+AG-1587,Muturu,Female,7.3,77.8,37.93,27.5,4.28,327.2,HSP70_A2_Intermediate,Tolerant
+AG-1588,Muturu,Female,3.7,74.0,38.22,26.4,4.4,268.8,HSP70_B1_Susceptible,Tolerant
+AG-1589,Muturu,Female,4.5,73.2,38.55,27.9,3.52,251.6,HSP70_A2_Intermediate,Tolerant
+AG-1590,Muturu,Male,3.3,80.8,38.73,37.3,,319.0,HSP70_A1_Resistant,Tolerant
+AG-1591,Muturu,Male,5.2,75.0,37.79,24.3,,325.2,HSP70_A1_Resistant,Tolerant
+AG-1592,Muturu,Female,6.6,72.3,38.32,23.9,3.48,314.4,HSP70_A1_Resistant,Tolerant
+AG-1593,Muturu,Female,3.5,72.4,38.49,30.9,4.73,269.9,HSP70_A2_Intermediate,Tolerant
+AG-1594,Muturu,Female,3.9,74.0,38.4,23.2,3.11,274.3,HSP70_A1_Resistant,Tolerant
+AG-1595,Muturu,Male,5.2,81.9,39.07,38.3,,341.8,HSP70_A1_Resistant,Tolerant
+AG-1596,Muturu,Female,3.7,87.3,39.55,43.3,2.28,272.5,HSP70_A1_Resistant,Tolerant
+AG-1597,Muturu,Female,4.7,86.6,39.16,40.3,2.41,276.7,HSP70_B1_Susceptible,Tolerant
+AG-1598,Muturu,Female,5.6,75.7,38.71,27.7,3.27,308.6,HSP70_A1_Resistant,Tolerant
+AG-1599,Muturu,Female,4.2,87.7,39.61,40.0,1.88,283.8,HSP70_A1_Resistant,Tolerant
+AG-1600,Muturu,Male,3.5,86.3,38.84,42.5,,300.4,HSP70_B1_Susceptible,Tolerant
+AG-1601,Muturu,Female,7.3,79.2,38.66,32.2,2.89,299.0,HSP70_A1_Resistant,Tolerant
+AG-1602,Muturu,Female,2.8,73.7,38.64,24.8,3.11,261.6,HSP70_A1_Resistant,Tolerant
+AG-1603,Muturu,Female,7.1,85.1,39.55,35.3,3.98,311.2,HSP70_A2_Intermediate,Tolerant
+AG-1604,Muturu,Female,3.5,72.6,38.54,25.6,4.53,265.4,HSP70_B1_Susceptible,Tolerant
+AG-1605,Muturu,Female,5.8,82.8,38.71,39.0,2.94,291.7,HSP70_A2_Intermediate,Tolerant
+AG-1606,Muturu,Male,4.1,82.1,38.48,28.4,,335.3,HSP70_B1_Susceptible,Tolerant
+AG-1607,Muturu,Male,3.0,86.0,39.11,37.9,,318.3,HSP70_A1_Resistant,Tolerant
+AG-1608,Muturu,Female,7.0,82.1,38.67,38.3,4.0,282.8,HSP70_A1_Resistant,Tolerant
+AG-1609,Muturu,Male,3.3,82.4,39.35,30.0,,305.8,HSP70_A2_Intermediate,Tolerant
+AG-1610,Muturu,Male,3.2,76.2,38.43,27.1,,309.1,HSP70_B1_Susceptible,Tolerant
+AG-1611,Muturu,Female,6.4,74.2,38.17,23.0,3.63,289.0,HSP70_A2_Intermediate,Tolerant
+AG-1612,Muturu,Female,2.5,77.5,38.45,28.6,2.93,245.4,HSP70_B1_Susceptible,Tolerant
+AG-1613,Muturu,Male,3.5,73.1,38.48,26.5,,331.0,HSP70_A1_Resistant,Tolerant
+AG-1614,Muturu,Female,6.0,74.8,38.3,30.8,2.97,289.3,HSP70_A2_Intermediate,Tolerant
+AG-1615,Muturu,Male,4.6,85.1,39.05,44.4,,320.6,HSP70_A2_Intermediate,Tolerant
+AG-1616,Muturu,Male,4.3,81.7,38.58,40.9,,310.1,HSP70_A2_Intermediate,Tolerant
+AG-1617,Muturu,Female,4.8,74.6,38.13,25.1,4.42,268.9,HSP70_A1_Resistant,Tolerant
+AG-1618,Muturu,Female,5.2,79.3,38.73,30.1,3.44,307.5,HSP70_A1_Resistant,Tolerant
+AG-1619,Muturu,Female,3.3,85.0,39.05,34.8,3.06,269.0,HSP70_A2_Intermediate,Tolerant
+AG-1620,Muturu,Female,3.4,85.9,38.96,38.7,3.88,239.3,HSP70_A2_Intermediate,Tolerant
+AG-1621,Muturu,Female,7.5,79.7,38.65,41.2,3.04,335.9,HSP70_A2_Intermediate,Tolerant
+AG-1622,Muturu,Female,3.1,79.4,38.54,32.1,3.32,262.2,HSP70_A2_Intermediate,Tolerant
+AG-1623,Muturu,Female,5.0,74.1,38.27,23.2,3.65,266.2,HSP70_A2_Intermediate,Tolerant
+AG-1624,Muturu,Female,2.9,78.5,39.08,30.4,3.77,263.2,HSP70_A1_Resistant,Tolerant
+AG-1625,Muturu,Male,5.7,76.6,37.7,23.6,,341.0,HSP70_B1_Susceptible,Tolerant
+AG-1626,Muturu,Female,5.6,75.9,38.53,28.6,4.42,310.2,HSP70_B1_Susceptible,Tolerant
+AG-1627,Muturu,Female,3.8,76.0,38.52,30.0,3.4,254.7,HSP70_A1_Resistant,Tolerant
+AG-1628,Muturu,Female,3.3,72.3,37.98,21.6,3.62,263.5,HSP70_A1_Resistant,Tolerant
+AG-1629,Muturu,Male,5.4,72.7,37.93,29.4,,354.0,HSP70_A2_Intermediate,Tolerant
+AG-1630,Muturu,Female,7.2,78.5,38.39,29.4,4.46,313.9,HSP70_A1_Resistant,Tolerant
+AG-1631,Muturu,Male,6.7,76.6,38.5,27.4,,332.4,HSP70_A2_Intermediate,Tolerant
+AG-1632,Muturu,Female,2.1,87.4,39.45,42.1,2.67,252.9,HSP70_A2_Intermediate,Tolerant
+AG-1633,Muturu,Female,5.0,79.4,38.44,31.0,3.45,309.7,HSP70_A2_Intermediate,Tolerant
+AG-1634,Muturu,Female,2.8,82.4,38.97,35.1,2.45,259.2,HSP70_B1_Susceptible,Tolerant
+AG-1635,Muturu,Female,2.4,82.0,39.1,32.9,1.28,250.7,HSP70_A2_Intermediate,Tolerant
+AG-1636,Muturu,Female,5.0,80.7,38.73,30.2,3.63,274.5,HSP70_A1_Resistant,Tolerant
+AG-1637,Muturu,Female,2.6,82.0,39.19,32.9,3.54,231.7,HSP70_A1_Resistant,Tolerant
+AG-1638,Muturu,Female,6.8,74.0,38.37,29.6,3.68,286.2,HSP70_A1_Resistant,Tolerant
+AG-1639,Muturu,Female,6.2,73.7,38.64,26.1,3.81,305.1,HSP70_B1_Susceptible,Tolerant
+AG-1640,Muturu,Female,4.2,85.6,38.44,37.5,3.47,269.5,HSP70_A2_Intermediate,Tolerant
+AG-1641,Muturu,Female,3.8,79.9,38.31,33.3,3.33,287.8,HSP70_A1_Resistant,Tolerant
+AG-1642,Muturu,Female,3.3,87.2,39.2,41.0,1.43,254.0,HSP70_A1_Resistant,Tolerant
+AG-1643,Muturu,Female,5.0,80.8,38.6,26.1,3.21,285.6,HSP70_A1_Resistant,Tolerant
+AG-1644,Muturu,Female,4.5,84.2,39.28,35.0,2.87,269.2,HSP70_A2_Intermediate,Tolerant
+AG-1645,Muturu,Female,5.1,75.3,38.21,27.5,3.6,294.2,HSP70_A2_Intermediate,Tolerant
+AG-1646,Muturu,Female,7.0,74.0,38.29,21.4,4.21,300.8,HSP70_A2_Intermediate,Tolerant
+AG-1647,Muturu,Female,5.9,82.5,38.86,36.3,3.11,312.7,HSP70_A1_Resistant,Tolerant
+AG-1648,Muturu,Female,3.6,78.0,38.56,34.6,3.46,249.6,HSP70_B1_Susceptible,Tolerant
+AG-1649,Muturu,Female,6.4,79.5,38.44,30.2,3.6,302.8,HSP70_A1_Resistant,Tolerant
+AG-1650,Muturu,Female,4.7,82.0,38.93,37.2,2.76,277.0,HSP70_A1_Resistant,Tolerant
+AG-1651,Muturu,Female,2.2,83.9,38.92,39.3,2.77,250.2,HSP70_A1_Resistant,Tolerant
+AG-1652,Muturu,Female,4.0,76.1,37.66,25.0,3.47,270.8,HSP70_A2_Intermediate,Tolerant
+AG-1653,Muturu,Female,4.9,81.0,38.69,31.8,3.77,253.5,HSP70_A1_Resistant,Tolerant
+AG-1654,Muturu,Female,7.3,72.4,38.45,28.1,3.35,301.8,HSP70_A1_Resistant,Tolerant
+AG-1655,Muturu,Female,5.5,84.5,39.2,40.2,2.58,277.0,HSP70_A2_Intermediate,Tolerant
+AG-1656,Muturu,Female,2.4,83.3,39.21,36.3,2.59,252.6,HSP70_B1_Susceptible,Tolerant
+AG-1657,Muturu,Female,3.9,78.4,38.54,27.4,3.38,251.8,HSP70_A1_Resistant,Tolerant
+AG-1658,Muturu,Male,6.4,74.5,37.96,20.9,,352.7,HSP70_A2_Intermediate,Tolerant
+AG-1659,Muturu,Female,4.0,73.7,38.19,22.9,3.98,288.2,HSP70_B1_Susceptible,Tolerant
+AG-1660,Muturu,Female,3.0,78.1,38.04,30.6,4.17,268.9,HSP70_B1_Susceptible,Tolerant
+AG-1661,Muturu,Male,2.5,80.7,38.86,36.1,,312.4,HSP70_A2_Intermediate,Tolerant
+AG-1662,Muturu,Female,6.4,83.5,39.03,34.3,2.67,281.5,HSP70_A1_Resistant,Tolerant
+AG-1663,Muturu,Female,5.0,81.9,39.13,36.5,2.93,276.2,HSP70_B1_Susceptible,Tolerant
+AG-1664,Muturu,Female,7.4,85.5,39.35,40.2,2.58,299.4,HSP70_A2_Intermediate,Tolerant
+AG-1665,Muturu,Female,7.1,73.1,38.85,30.2,3.04,317.1,HSP70_A1_Resistant,Tolerant
+AG-1666,Muturu,Male,3.1,85.2,39.61,41.1,,293.1,HSP70_A2_Intermediate,Tolerant
+AG-1667,Muturu,Male,4.4,87.5,39.61,39.2,,320.2,HSP70_A1_Resistant,Tolerant
+AG-1668,Muturu,Male,3.8,85.9,39.21,43.7,,318.4,HSP70_A1_Resistant,Tolerant
+AG-1669,Muturu,Male,4.4,79.8,38.57,29.7,,342.8,HSP70_A1_Resistant,Tolerant
+AG-1670,Muturu,Female,4.0,80.4,38.61,36.6,4.54,272.6,HSP70_A1_Resistant,Tolerant
+AG-1671,Muturu,Female,7.1,83.6,39.52,40.8,3.02,300.6,HSP70_A2_Intermediate,Tolerant
+AG-1672,Muturu,Female,4.0,73.3,38.08,17.6,3.99,294.5,HSP70_A2_Intermediate,Tolerant
+AG-1673,Muturu,Female,6.1,74.7,38.26,21.2,3.21,280.7,HSP70_A2_Intermediate,Tolerant
+AG-1674,Muturu,Female,6.5,78.7,38.53,28.9,3.54,302.7,HSP70_A2_Intermediate,Tolerant
+AG-1675,Muturu,Female,4.9,72.6,38.5,26.5,3.83,285.6,HSP70_A1_Resistant,Tolerant
+AG-1676,Muturu,Male,5.7,73.0,37.9,25.3,,301.4,HSP70_A2_Intermediate,Tolerant
+AG-1677,Muturu,Female,2.9,80.1,38.29,33.8,3.95,262.5,HSP70_B1_Susceptible,Tolerant
+AG-1678,Muturu,Female,2.2,83.9,39.04,38.6,3.48,239.6,HSP70_A1_Resistant,Tolerant
+AG-1679,Muturu,Female,5.5,80.9,38.8,30.3,3.84,272.9,HSP70_A1_Resistant,Tolerant
+AG-1680,Muturu,Male,5.8,87.9,39.52,43.7,,312.7,HSP70_A1_Resistant,Tolerant
+AG-1681,Muturu,Female,6.7,82.9,38.94,37.4,2.84,311.7,HSP70_A1_Resistant,Tolerant
+AG-1682,Muturu,Female,7.2,72.8,38.53,24.6,3.04,299.5,HSP70_A1_Resistant,Tolerant
+AG-1683,Muturu,Female,7.0,84.2,39.2,38.3,2.48,303.6,HSP70_A1_Resistant,Tolerant
+AG-1684,Muturu,Female,2.9,87.2,39.22,45.9,3.53,264.1,HSP70_B1_Susceptible,Tolerant
+AG-1685,Muturu,Male,4.8,84.4,39.58,45.8,,302.0,HSP70_A1_Resistant,Tolerant
+AG-1686,Muturu,Female,2.2,81.5,38.91,36.0,3.22,235.1,HSP70_A2_Intermediate,Tolerant
+AG-1687,Muturu,Male,7.5,78.9,38.58,32.5,,355.6,HSP70_A1_Resistant,Tolerant
+AG-1688,Muturu,Female,4.2,72.7,37.98,23.1,3.99,272.7,HSP70_A1_Resistant,Tolerant
+AG-1689,Muturu,Male,2.3,80.6,38.94,37.1,,304.9,HSP70_B1_Susceptible,Tolerant
+AG-1690,Muturu,Female,7.1,80.3,38.99,32.7,2.71,308.7,HSP70_A1_Resistant,Tolerant
+AG-1691,Muturu,Female,2.1,75.1,38.05,28.3,3.79,226.2,HSP70_A2_Intermediate,Tolerant
+AG-1692,Muturu,Female,3.6,78.6,38.08,28.7,2.95,254.0,HSP70_A1_Resistant,Tolerant
+AG-1693,Muturu,Female,2.1,73.4,38.45,28.1,4.2,239.6,HSP70_A2_Intermediate,Tolerant
+AG-1694,Muturu,Male,6.4,80.1,38.75,34.2,,340.0,HSP70_A2_Intermediate,Tolerant
+AG-1695,Muturu,Male,2.9,75.6,38.46,23.8,,297.9,HSP70_A2_Intermediate,Tolerant
+AG-1696,Muturu,Female,7.0,86.8,39.65,45.0,1.9,302.0,HSP70_A2_Intermediate,Tolerant
+AG-1697,Muturu,Female,6.4,87.5,39.7,43.1,1.48,298.9,HSP70_A2_Intermediate,Tolerant
+AG-1698,Muturu,Female,4.4,77.3,38.23,36.9,4.04,260.0,HSP70_A1_Resistant,Tolerant
+AG-1699,Muturu,Male,7.3,75.8,38.65,22.5,,348.7,HSP70_A2_Intermediate,Tolerant
+AG-1700,Muturu,Female,4.0,83.2,38.5,40.5,3.95,237.6,HSP70_A1_Resistant,Tolerant
+AG-1701,Muturu,Female,6.8,73.2,38.42,26.8,3.33,281.2,HSP70_A2_Intermediate,Tolerant
+AG-1702,Muturu,Male,7.2,83.8,39.15,35.6,,344.1,HSP70_A1_Resistant,Tolerant
+AG-1703,Muturu,Female,6.3,79.3,38.01,27.8,2.53,302.7,HSP70_A1_Resistant,Tolerant
+AG-1704,Muturu,Female,3.4,86.7,39.53,45.6,4.08,235.0,HSP70_A2_Intermediate,Tolerant
+AG-1705,Muturu,Female,2.6,74.1,38.61,28.5,3.84,263.1,HSP70_A2_Intermediate,Tolerant
+AG-1706,Muturu,Female,2.2,73.6,38.2,23.0,4.19,246.9,HSP70_A2_Intermediate,Tolerant
+AG-1707,Muturu,Female,4.2,79.8,38.09,36.3,3.49,277.5,HSP70_A2_Intermediate,Tolerant
+AG-1708,Muturu,Female,5.8,78.6,38.44,31.3,2.99,323.4,HSP70_A1_Resistant,Tolerant
+AG-1709,Muturu,Male,5.2,73.4,38.4,31.5,,328.1,HSP70_A2_Intermediate,Tolerant
+AG-1710,Muturu,Female,6.9,76.3,38.55,25.7,3.95,313.0,HSP70_B1_Susceptible,Tolerant
+AG-1711,Muturu,Female,6.8,77.1,38.28,25.3,2.76,293.5,HSP70_A1_Resistant,Tolerant
+AG-1712,Muturu,Female,3.6,81.2,38.32,31.1,3.51,267.9,HSP70_A2_Intermediate,Tolerant
+AG-1713,Muturu,Female,6.1,74.4,38.21,23.0,3.44,304.1,HSP70_A1_Resistant,Tolerant
+AG-1714,Muturu,Female,6.7,82.1,39.0,29.6,4.39,306.3,HSP70_A1_Resistant,Tolerant
+AG-1715,Muturu,Male,3.7,83.1,39.16,29.4,,324.6,HSP70_A2_Intermediate,Tolerant
+AG-1716,Muturu,Female,6.1,82.6,38.69,39.8,2.76,301.9,HSP70_A2_Intermediate,Tolerant
+AG-1717,Muturu,Female,3.7,79.3,38.2,38.1,3.77,275.4,HSP70_A2_Intermediate,Tolerant
+AG-1718,Muturu,Male,4.3,73.4,38.05,20.7,,316.2,HSP70_A1_Resistant,Tolerant
+AG-1719,Muturu,Male,2.4,85.2,39.7,34.8,,295.1,HSP70_A1_Resistant,Tolerant
+AG-1720,Muturu,Male,6.4,79.4,38.47,27.6,,340.5,HSP70_A2_Intermediate,Tolerant
+AG-1721,Muturu,Male,2.0,75.8,38.34,22.6,,293.2,HSP70_B1_Susceptible,Tolerant
+AG-1722,Muturu,Female,2.4,87.9,39.77,38.2,2.07,221.7,HSP70_A1_Resistant,Tolerant
+AG-1723,Muturu,Female,4.5,85.4,39.37,36.6,2.18,269.2,HSP70_A1_Resistant,Tolerant
+AG-1724,Muturu,Male,7.0,87.6,39.38,44.9,,349.2,HSP70_A1_Resistant,Tolerant
+AG-1725,Muturu,Female,6.8,82.2,38.85,31.1,3.72,287.9,HSP70_A1_Resistant,Tolerant
+AG-1726,Muturu,Male,2.3,77.7,38.62,16.0,,314.7,HSP70_B1_Susceptible,Tolerant
+AG-1727,Muturu,Male,6.4,85.6,39.03,44.9,,350.1,HSP70_A1_Resistant,Tolerant
+AG-1728,Muturu,Female,3.7,79.5,38.49,30.2,3.0,265.5,HSP70_A1_Resistant,Tolerant
+AG-1729,Muturu,Female,4.6,78.9,38.75,33.2,2.37,262.4,HSP70_A1_Resistant,Tolerant
+AG-1730,Muturu,Male,2.3,72.2,38.27,31.0,,292.0,HSP70_B1_Susceptible,Tolerant
+AG-1731,Muturu,Male,5.9,79.7,38.55,33.1,,341.1,HSP70_B1_Susceptible,Tolerant
+AG-1732,Muturu,Female,6.5,75.2,38.46,22.2,4.21,295.3,HSP70_A1_Resistant,Tolerant
+AG-1733,Muturu,Female,7.1,86.5,39.25,38.1,2.0,310.3,HSP70_B1_Susceptible,Tolerant
+AG-1734,Muturu,Male,2.9,73.9,38.21,21.5,,337.7,HSP70_A1_Resistant,Tolerant
+AG-1735,Muturu,Female,7.1,86.5,39.07,45.6,1.76,312.3,HSP70_A2_Intermediate,Tolerant
+AG-1736,Muturu,Female,7.0,87.3,39.37,43.2,2.07,291.1,HSP70_A1_Resistant,Tolerant
+AG-1737,Muturu,Female,7.3,80.0,38.31,32.8,2.92,320.9,HSP70_A1_Resistant,Tolerant
+AG-1738,Muturu,Female,3.1,84.3,39.03,41.5,2.42,247.1,HSP70_A1_Resistant,Tolerant
+AG-1739,Muturu,Male,7.1,75.3,38.04,22.6,,349.6,HSP70_A2_Intermediate,Tolerant
+AG-1740,Muturu,Female,7.0,86.9,39.35,33.9,1.73,297.1,HSP70_A1_Resistant,Tolerant
+AG-1741,Muturu,Female,5.5,76.2,38.42,27.6,2.22,278.6,HSP70_B1_Susceptible,Tolerant
+AG-1742,Muturu,Female,3.2,76.7,38.26,23.1,3.86,269.7,HSP70_A1_Resistant,Tolerant
+AG-1743,Muturu,Male,2.3,75.4,38.8,30.0,,295.7,HSP70_A2_Intermediate,Tolerant
+AG-1744,Muturu,Female,5.5,77.1,38.29,27.2,3.16,256.4,HSP70_A2_Intermediate,Tolerant
+AG-1745,Muturu,Female,3.7,85.0,39.13,40.8,3.31,265.8,HSP70_A2_Intermediate,Tolerant
+AG-1746,Muturu,Female,3.3,86.1,39.17,32.0,1.91,268.4,HSP70_A2_Intermediate,Tolerant
+AG-1747,Muturu,Female,7.3,80.5,38.22,34.6,3.23,286.5,HSP70_A1_Resistant,Tolerant
+AG-1748,Muturu,Male,4.0,82.6,39.2,30.9,,315.9,HSP70_A2_Intermediate,Tolerant
+AG-1749,Muturu,Female,4.3,80.7,39.17,31.7,3.59,280.6,HSP70_A1_Resistant,Tolerant
+AG-1750,Muturu,Female,5.0,87.0,39.47,43.4,2.22,253.0,HSP70_A1_Resistant,Tolerant
+AG-1751,Sokoto Gudali,Female,2.2,87.2,41.49,77.1,4.81,448.9,HSP70_B1_Susceptible,Susceptible
+AG-1752,Sokoto Gudali,Female,2.2,75.0,39.03,40.2,6.06,414.0,HSP70_A2_Intermediate,Tolerant
+AG-1753,Sokoto Gudali,Female,3.1,76.0,38.75,41.0,6.81,426.9,HSP70_B1_Susceptible,Susceptible
+AG-1754,Sokoto Gudali,Female,4.0,84.0,41.22,68.6,4.51,495.0,HSP70_A1_Resistant,Susceptible
+AG-1755,Sokoto Gudali,Female,2.8,82.7,40.73,57.3,4.17,476.1,HSP70_B1_Susceptible,Susceptible
+AG-1756,Sokoto Gudali,Female,5.0,82.6,40.43,67.5,4.4,475.6,HSP70_B1_Susceptible,Susceptible
+AG-1757,Sokoto Gudali,Female,2.1,75.3,39.16,37.9,7.26,436.1,HSP70_A2_Intermediate,Susceptible
+AG-1758,Sokoto Gudali,Female,6.4,76.0,38.91,40.4,7.45,497.3,HSP70_A1_Resistant,Susceptible
+AG-1759,Sokoto Gudali,Female,4.7,74.5,38.78,34.1,7.99,450.6,HSP70_A1_Resistant,Susceptible
+AG-1760,Sokoto Gudali,Female,5.2,82.2,40.86,62.6,5.8,461.0,HSP70_A2_Intermediate,Susceptible
+AG-1761,Sokoto Gudali,Female,2.1,82.5,40.14,65.6,5.16,442.7,HSP70_A1_Resistant,Susceptible
+AG-1762,Sokoto Gudali,Female,6.6,72.7,39.0,37.0,6.87,496.0,HSP70_A2_Intermediate,Tolerant
+AG-1763,Sokoto Gudali,Female,3.3,86.1,41.83,73.7,3.92,461.7,HSP70_A1_Resistant,Susceptible
+AG-1764,Sokoto Gudali,Male,6.4,73.1,39.06,44.2,,552.7,HSP70_A2_Intermediate,Susceptible
+AG-1765,Sokoto Gudali,Female,3.5,77.2,39.22,42.2,6.58,482.3,HSP70_A1_Resistant,Susceptible
+AG-1766,Sokoto Gudali,Female,6.8,82.0,40.29,57.7,5.36,480.1,HSP70_B1_Susceptible,Susceptible
+AG-1767,Sokoto Gudali,Male,3.2,79.1,39.89,54.2,,507.2,HSP70_A1_Resistant,Susceptible
+AG-1768,Sokoto Gudali,Male,3.5,85.2,40.48,77.1,,513.3,HSP70_B1_Susceptible,Susceptible
+AG-1769,Sokoto Gudali,Female,5.8,83.4,40.31,59.8,4.59,478.6,HSP70_B1_Susceptible,Susceptible
+AG-1770,Sokoto Gudali,Female,2.5,79.6,39.4,51.6,4.92,433.1,HSP70_B1_Susceptible,Susceptible
+AG-1771,Sokoto Gudali,Female,7.1,81.5,39.91,58.7,3.86,512.6,HSP70_A2_Intermediate,Susceptible
+AG-1772,Sokoto Gudali,Female,6.5,80.7,40.58,56.8,5.22,473.4,HSP70_A2_Intermediate,Tolerant
+AG-1773,Sokoto Gudali,Male,3.0,76.0,38.83,32.2,,475.5,HSP70_B1_Susceptible,Susceptible
+AG-1774,Sokoto Gudali,Female,3.5,80.1,40.02,49.9,6.69,459.5,HSP70_B1_Susceptible,Susceptible
+AG-1775,Sokoto Gudali,Male,3.3,74.1,39.06,36.9,,497.7,HSP70_A2_Intermediate,Tolerant
+AG-1776,Sokoto Gudali,Female,3.9,79.6,39.79,54.8,6.0,444.7,HSP70_B1_Susceptible,Susceptible
+AG-1777,Sokoto Gudali,Female,4.9,76.6,39.51,40.5,6.44,467.1,HSP70_B1_Susceptible,Susceptible
+AG-1778,Sokoto Gudali,Male,3.5,86.5,41.55,79.2,,472.9,HSP70_A1_Resistant,Tolerant
+AG-1779,Sokoto Gudali,Female,4.4,76.1,39.07,34.8,6.58,427.3,HSP70_A2_Intermediate,Susceptible
+AG-1780,Sokoto Gudali,Male,5.5,72.4,39.16,37.3,,517.7,HSP70_B1_Susceptible,Susceptible
+AG-1781,Sokoto Gudali,Female,2.3,74.2,38.83,33.6,7.11,483.9,HSP70_A2_Intermediate,Susceptible
+AG-1782,Sokoto Gudali,Male,6.0,73.2,38.97,37.9,,517.0,HSP70_A1_Resistant,Susceptible
+AG-1783,Sokoto Gudali,Female,4.7,77.8,39.13,46.0,5.3,458.5,HSP70_B1_Susceptible,Tolerant
+AG-1784,Sokoto Gudali,Male,6.6,76.8,39.1,42.7,,524.3,HSP70_A1_Resistant,Susceptible
+AG-1785,Sokoto Gudali,Female,5.6,79.1,39.32,44.1,7.65,471.4,HSP70_A1_Resistant,Susceptible
+AG-1786,Sokoto Gudali,Female,3.0,81.2,40.24,59.0,5.16,446.9,HSP70_A2_Intermediate,Susceptible
+AG-1787,Sokoto Gudali,Female,3.5,82.5,40.69,64.6,5.05,475.7,HSP70_A2_Intermediate,Susceptible
+AG-1788,Sokoto Gudali,Female,4.5,79.5,39.57,52.3,5.91,459.8,HSP70_A2_Intermediate,Susceptible
+AG-1789,Sokoto Gudali,Female,6.2,87.8,41.81,83.4,3.98,512.9,HSP70_B1_Susceptible,Susceptible
+AG-1790,Sokoto Gudali,Female,4.7,81.3,39.67,61.6,6.22,469.8,HSP70_A1_Resistant,Tolerant
+AG-1791,Sokoto Gudali,Female,4.2,81.4,40.04,57.8,4.8,488.1,HSP70_A2_Intermediate,Tolerant
+AG-1792,Sokoto Gudali,Male,3.6,78.8,39.74,48.0,,503.4,HSP70_B1_Susceptible,Susceptible
+AG-1793,Sokoto Gudali,Female,2.3,74.6,38.98,40.3,7.2,464.6,HSP70_A2_Intermediate,Susceptible
+AG-1794,Sokoto Gudali,Female,5.7,87.5,41.87,77.1,2.73,446.3,HSP70_A2_Intermediate,Susceptible
+AG-1795,Sokoto Gudali,Female,5.0,76.9,38.9,43.5,6.01,493.4,HSP70_A2_Intermediate,Susceptible
+AG-1796,Sokoto Gudali,Female,2.6,77.0,39.45,45.9,6.34,413.7,HSP70_A1_Resistant,Susceptible
+AG-1797,Sokoto Gudali,Female,6.9,75.4,38.71,34.8,7.0,479.7,HSP70_A1_Resistant,Tolerant
+AG-1798,Sokoto Gudali,Female,3.9,83.3,40.33,66.8,4.29,461.2,HSP70_A2_Intermediate,Susceptible
+AG-1799,Sokoto Gudali,Female,5.3,85.9,41.04,73.6,3.98,448.5,HSP70_A2_Intermediate,Susceptible
+AG-1800,Sokoto Gudali,Female,4.1,78.1,39.55,49.5,5.27,474.9,HSP70_B1_Susceptible,Tolerant
+AG-1801,Sokoto Gudali,Male,4.8,78.4,40.02,46.8,,488.0,HSP70_A1_Resistant,Susceptible
+AG-1802,Sokoto Gudali,Female,4.2,82.9,40.45,65.5,4.86,479.5,HSP70_A1_Resistant,Susceptible
+AG-1803,Sokoto Gudali,Female,5.1,85.8,41.45,73.3,4.4,479.2,HSP70_B1_Susceptible,Tolerant
+AG-1804,Sokoto Gudali,Female,5.1,87.1,42.18,73.6,3.22,480.8,HSP70_B1_Susceptible,Susceptible
+AG-1805,Sokoto Gudali,Female,2.6,81.8,40.38,57.6,5.73,452.6,HSP70_A1_Resistant,Susceptible
+AG-1806,Sokoto Gudali,Female,5.1,83.7,40.64,71.0,3.75,489.7,HSP70_A2_Intermediate,Susceptible
+AG-1807,Sokoto Gudali,Female,2.7,75.6,39.46,42.3,6.8,456.4,HSP70_A2_Intermediate,Susceptible
+AG-1808,Sokoto Gudali,Female,3.1,73.0,39.07,38.5,6.82,435.9,HSP70_B1_Susceptible,Susceptible
+AG-1809,Sokoto Gudali,Male,4.2,82.6,40.75,70.4,,502.1,HSP70_A2_Intermediate,Susceptible
+AG-1810,Sokoto Gudali,Female,4.9,85.0,41.36,75.9,4.54,460.0,HSP70_A2_Intermediate,Susceptible
+AG-1811,Sokoto Gudali,Male,2.3,85.1,41.16,70.9,,470.2,HSP70_B1_Susceptible,Tolerant
+AG-1812,Sokoto Gudali,Female,5.2,83.4,40.79,66.7,5.05,457.4,HSP70_A1_Resistant,Tolerant
+AG-1813,Sokoto Gudali,Female,5.7,78.7,39.98,48.6,7.11,486.0,HSP70_B1_Susceptible,Tolerant
+AG-1814,Sokoto Gudali,Male,3.2,72.2,39.09,34.5,,505.6,HSP70_A2_Intermediate,Susceptible
+AG-1815,Sokoto Gudali,Female,5.7,75.0,38.53,42.0,6.4,462.8,HSP70_A1_Resistant,Susceptible
+AG-1816,Sokoto Gudali,Female,3.3,79.2,39.98,47.0,5.89,456.9,HSP70_B1_Susceptible,Susceptible
+AG-1817,Sokoto Gudali,Female,5.8,80.2,40.15,54.9,6.18,477.6,HSP70_B1_Susceptible,Susceptible
+AG-1818,Sokoto Gudali,Female,3.8,87.7,41.75,82.4,4.22,432.9,HSP70_A1_Resistant,Tolerant
+AG-1819,Sokoto Gudali,Female,3.8,79.0,39.47,47.5,6.06,485.4,HSP70_A2_Intermediate,Susceptible
+AG-1820,Sokoto Gudali,Female,2.4,74.4,39.11,40.9,7.37,457.0,HSP70_A2_Intermediate,Susceptible
+AG-1821,Sokoto Gudali,Female,5.4,84.4,40.45,69.7,4.99,454.9,HSP70_B1_Susceptible,Susceptible
+AG-1822,Sokoto Gudali,Female,6.2,81.0,40.16,60.3,7.02,493.8,HSP70_B1_Susceptible,Susceptible
+AG-1823,Sokoto Gudali,Female,2.3,87.0,42.23,81.4,3.23,436.9,HSP70_B1_Susceptible,Susceptible
+AG-1824,Sokoto Gudali,Female,3.7,85.4,41.4,68.0,4.32,461.0,HSP70_A2_Intermediate,Susceptible
+AG-1825,Sokoto Gudali,Female,3.5,87.9,42.07,87.3,3.25,450.2,HSP70_A1_Resistant,Susceptible
+AG-1826,Sokoto Gudali,Male,5.0,85.5,41.24,72.3,,514.8,HSP70_A1_Resistant,Susceptible
+AG-1827,Sokoto Gudali,Female,7.1,78.8,39.22,48.7,6.21,500.8,HSP70_A1_Resistant,Tolerant
+AG-1828,Sokoto Gudali,Female,7.1,80.7,40.13,51.5,5.57,499.1,HSP70_B1_Susceptible,Susceptible
+AG-1829,Sokoto Gudali,Female,2.4,81.7,40.14,61.0,4.81,434.0,HSP70_A2_Intermediate,Susceptible
+AG-1830,Sokoto Gudali,Female,3.7,82.6,40.08,64.4,4.46,450.9,HSP70_A2_Intermediate,Susceptible
+AG-1831,Sokoto Gudali,Female,6.8,86.3,41.21,78.1,3.24,489.1,HSP70_B1_Susceptible,Susceptible
+AG-1832,Sokoto Gudali,Female,3.6,78.0,39.22,46.7,5.91,480.7,HSP70_A2_Intermediate,Susceptible
+AG-1833,Sokoto Gudali,Female,2.1,77.5,39.27,43.6,6.41,393.2,HSP70_A1_Resistant,Susceptible
+AG-1834,Sokoto Gudali,Female,7.2,79.8,40.15,54.4,5.62,497.3,HSP70_A2_Intermediate,Susceptible
+AG-1835,Sokoto Gudali,Female,5.6,83.6,40.72,64.9,4.33,466.3,HSP70_A1_Resistant,Susceptible
+AG-1836,Sokoto Gudali,Male,3.4,72.3,38.81,37.4,,487.2,HSP70_A2_Intermediate,Susceptible
+AG-1837,Sokoto Gudali,Female,7.2,86.5,41.04,80.5,3.13,469.5,HSP70_B1_Susceptible,Susceptible
+AG-1838,Sokoto Gudali,Male,7.2,77.4,39.02,43.6,,540.6,HSP70_A2_Intermediate,Susceptible
+AG-1839,Sokoto Gudali,Female,4.5,81.7,39.99,56.1,6.15,467.0,HSP70_A2_Intermediate,Tolerant
+AG-1840,Sokoto Gudali,Female,6.5,81.8,40.62,59.8,5.96,504.4,HSP70_B1_Susceptible,Susceptible
+AG-1841,Sokoto Gudali,Female,4.3,78.6,39.27,45.8,5.87,439.7,HSP70_B1_Susceptible,Susceptible
+AG-1842,Sokoto Gudali,Female,4.0,72.1,39.16,46.0,7.92,440.2,HSP70_A2_Intermediate,Tolerant
+AG-1843,Sokoto Gudali,Female,4.5,80.8,40.49,54.2,5.82,440.1,HSP70_A2_Intermediate,Susceptible
+AG-1844,Sokoto Gudali,Female,6.4,79.1,39.43,53.7,5.94,485.6,HSP70_A2_Intermediate,Susceptible
+AG-1845,Sokoto Gudali,Female,3.2,76.3,39.45,37.5,7.49,464.3,HSP70_A2_Intermediate,Susceptible
+AG-1846,Sokoto Gudali,Female,2.0,75.9,38.89,35.4,7.02,430.9,HSP70_A2_Intermediate,Susceptible
+AG-1847,Sokoto Gudali,Female,2.4,87.0,41.43,81.7,3.49,444.8,HSP70_A1_Resistant,Susceptible
+AG-1848,Sokoto Gudali,Male,5.3,77.4,39.37,41.2,,518.0,HSP70_A2_Intermediate,Susceptible
+AG-1849,Sokoto Gudali,Female,4.6,77.8,39.54,45.7,6.07,448.9,HSP70_A1_Resistant,Susceptible
+AG-1850,Sokoto Gudali,Female,7.1,76.5,38.87,40.2,6.72,510.0,HSP70_B1_Susceptible,Susceptible
+AG-1851,Sokoto Gudali,Female,2.2,86.1,41.22,74.4,5.47,425.0,HSP70_A1_Resistant,Susceptible
+AG-1852,Sokoto Gudali,Female,4.3,86.3,41.18,76.9,4.03,464.5,HSP70_B1_Susceptible,Susceptible
+AG-1853,Sokoto Gudali,Female,3.2,83.0,40.57,59.2,5.27,457.9,HSP70_A2_Intermediate,Susceptible
+AG-1854,Sokoto Gudali,Male,5.6,75.7,38.67,34.0,,522.0,HSP70_A2_Intermediate,Susceptible
+AG-1855,Sokoto Gudali,Male,2.6,83.5,40.63,64.1,,495.2,HSP70_B1_Susceptible,Susceptible
+AG-1856,Sokoto Gudali,Female,6.2,76.1,38.91,38.5,6.66,502.1,HSP70_A2_Intermediate,Susceptible
+AG-1857,Sokoto Gudali,Female,6.2,79.6,39.59,59.1,5.81,499.6,HSP70_B1_Susceptible,Susceptible
+AG-1858,Sokoto Gudali,Female,3.3,78.5,39.4,49.5,6.95,450.9,HSP70_A2_Intermediate,Susceptible
+AG-1859,Sokoto Gudali,Female,2.6,84.7,41.01,68.9,4.16,455.2,HSP70_B1_Susceptible,Susceptible
+AG-1860,Sokoto Gudali,Female,2.2,83.3,40.49,64.9,4.71,434.2,HSP70_B1_Susceptible,Susceptible
+AG-1861,Sokoto Gudali,Male,4.2,77.4,39.22,37.6,,541.6,HSP70_A2_Intermediate,Susceptible
+AG-1862,Sokoto Gudali,Female,7.3,72.2,39.11,30.7,6.66,529.9,HSP70_A2_Intermediate,Susceptible
+AG-1863,Sokoto Gudali,Female,5.8,85.3,40.85,75.2,3.38,452.1,HSP70_A2_Intermediate,Susceptible
+AG-1864,Sokoto Gudali,Female,3.2,73.7,39.2,41.9,7.56,445.5,HSP70_A2_Intermediate,Susceptible
+AG-1865,Sokoto Gudali,Female,7.0,73.3,39.17,37.1,6.0,512.6,HSP70_B1_Susceptible,Susceptible
+AG-1866,Sokoto Gudali,Female,6.4,81.7,40.4,59.2,4.39,499.5,HSP70_A2_Intermediate,Susceptible
+AG-1867,Sokoto Gudali,Male,5.6,78.5,39.72,50.9,,513.9,HSP70_A2_Intermediate,Susceptible
+AG-1868,Sokoto Gudali,Female,3.6,82.1,40.5,57.9,4.91,460.7,HSP70_B1_Susceptible,Susceptible
+AG-1869,Sokoto Gudali,Male,4.1,82.9,40.59,61.6,,509.3,HSP70_A2_Intermediate,Tolerant
+AG-1870,Sokoto Gudali,Female,5.5,78.0,39.53,47.2,6.12,459.5,HSP70_A2_Intermediate,Susceptible
+AG-1871,Sokoto Gudali,Female,7.2,84.7,40.87,72.7,3.89,475.0,HSP70_B1_Susceptible,Susceptible
+AG-1872,Sokoto Gudali,Female,4.3,79.7,39.41,46.7,4.98,463.8,HSP70_A2_Intermediate,Susceptible
+AG-1873,Sokoto Gudali,Male,6.4,79.8,39.76,55.5,,516.0,HSP70_A2_Intermediate,Susceptible
+AG-1874,Sokoto Gudali,Female,2.2,73.5,38.71,36.4,5.45,441.7,HSP70_B1_Susceptible,Susceptible
+AG-1875,Sokoto Gudali,Female,3.1,78.0,39.7,41.5,6.61,422.5,HSP70_A1_Resistant,Susceptible
+AG-1876,Sokoto Gudali,Female,7.2,78.0,39.11,48.5,5.73,488.6,HSP70_A1_Resistant,Susceptible
+AG-1877,Sokoto Gudali,Female,5.1,78.1,40.13,46.8,5.55,455.3,HSP70_B1_Susceptible,Susceptible
+AG-1878,Sokoto Gudali,Female,2.5,86.4,41.66,69.8,3.42,435.5,HSP70_A2_Intermediate,Susceptible
+AG-1879,Sokoto Gudali,Female,4.5,84.8,40.87,71.5,5.49,470.3,HSP70_B1_Susceptible,Susceptible
+AG-1880,Sokoto Gudali,Female,5.9,82.8,40.59,62.4,5.66,462.7,HSP70_A2_Intermediate,Susceptible
+AG-1881,Sokoto Gudali,Male,6.4,86.7,41.27,84.5,,530.4,HSP70_B1_Susceptible,Susceptible
+AG-1882,Sokoto Gudali,Male,2.5,74.9,39.05,33.7,,511.0,HSP70_A2_Intermediate,Susceptible
+AG-1883,Sokoto Gudali,Female,2.6,73.1,39.05,46.9,6.84,466.6,HSP70_A2_Intermediate,Susceptible
+AG-1884,Sokoto Gudali,Female,3.8,87.6,41.71,84.4,4.28,460.4,HSP70_A2_Intermediate,Tolerant
+AG-1885,Sokoto Gudali,Female,4.8,87.5,41.67,81.9,3.98,457.8,HSP70_B1_Susceptible,Susceptible
+AG-1886,Sokoto Gudali,Female,2.2,85.3,41.04,75.6,3.68,446.3,HSP70_A1_Resistant,Susceptible
+AG-1887,Sokoto Gudali,Female,3.9,78.7,38.76,52.3,5.13,479.8,HSP70_A2_Intermediate,Susceptible
+AG-1888,Sokoto Gudali,Female,6.7,79.9,39.98,50.1,5.55,469.6,HSP70_A1_Resistant,Susceptible
+AG-1889,Sokoto Gudali,Female,7.0,85.8,41.77,74.0,4.83,500.8,HSP70_A2_Intermediate,Susceptible
+AG-1890,Sokoto Gudali,Female,7.2,79.8,40.21,51.5,5.89,515.4,HSP70_A1_Resistant,Susceptible
+AG-1891,Sokoto Gudali,Male,6.1,85.0,41.14,69.9,,549.3,HSP70_A1_Resistant,Susceptible
+AG-1892,Sokoto Gudali,Female,3.1,77.1,39.28,42.9,5.43,442.7,HSP70_A2_Intermediate,Susceptible
+AG-1893,Sokoto Gudali,Female,6.2,79.2,39.75,51.7,6.69,453.9,HSP70_B1_Susceptible,Susceptible
+AG-1894,Sokoto Gudali,Female,2.9,75.6,38.59,31.8,7.84,425.9,HSP70_B1_Susceptible,Susceptible
+AG-1895,Sokoto Gudali,Female,4.7,87.6,41.82,84.9,2.59,469.5,HSP70_A1_Resistant,Susceptible
+AG-1896,Sokoto Gudali,Female,6.3,83.3,40.52,61.0,6.12,497.5,HSP70_A2_Intermediate,Susceptible
+AG-1897,Sokoto Gudali,Female,3.2,72.1,38.9,38.2,5.83,434.1,HSP70_B1_Susceptible,Susceptible
+AG-1898,Sokoto Gudali,Female,2.7,72.8,38.37,39.3,7.67,433.9,HSP70_A2_Intermediate,Susceptible
+AG-1899,Sokoto Gudali,Female,2.1,74.1,39.01,35.5,6.59,430.6,HSP70_A2_Intermediate,Tolerant
+AG-1900,Sokoto Gudali,Male,7.3,75.9,38.82,36.6,,546.8,HSP70_A2_Intermediate,Susceptible
+AG-1901,Sokoto Gudali,Female,3.1,82.5,40.21,61.1,5.4,474.8,HSP70_B1_Susceptible,Tolerant
+AG-1902,Sokoto Gudali,Male,5.7,73.8,38.76,44.4,,509.4,HSP70_B1_Susceptible,Susceptible
+AG-1903,Sokoto Gudali,Male,7.0,76.3,39.37,37.8,,519.7,HSP70_A2_Intermediate,Susceptible
+AG-1904,Sokoto Gudali,Female,3.2,76.5,38.71,39.2,6.89,459.1,HSP70_A1_Resistant,Susceptible
+AG-1905,Sokoto Gudali,Female,7.3,72.0,38.94,37.7,6.89,501.7,HSP70_B1_Susceptible,Tolerant
+AG-1906,Sokoto Gudali,Female,3.3,74.9,38.82,38.9,7.23,448.5,HSP70_A1_Resistant,Susceptible
+AG-1907,Sokoto Gudali,Male,5.1,74.7,38.72,31.8,,504.0,HSP70_B1_Susceptible,Susceptible
+AG-1908,Sokoto Gudali,Female,2.0,81.5,40.04,57.9,5.56,441.8,HSP70_B1_Susceptible,Susceptible
+AG-1909,Sokoto Gudali,Female,3.4,87.3,41.45,80.1,4.17,448.2,HSP70_A2_Intermediate,Susceptible
+AG-1910,Sokoto Gudali,Female,5.0,72.4,39.2,43.1,6.63,485.6,HSP70_B1_Susceptible,Tolerant
+AG-1911,Sokoto Gudali,Female,6.3,80.7,40.42,52.6,5.28,484.8,HSP70_B1_Susceptible,Susceptible
+AG-1912,Sokoto Gudali,Female,6.4,82.5,40.79,63.7,3.5,479.6,HSP70_A2_Intermediate,Tolerant
+AG-1913,Sokoto Gudali,Male,2.5,82.4,40.79,55.9,,466.3,HSP70_B1_Susceptible,Tolerant
+AG-1914,Sokoto Gudali,Female,6.2,85.3,41.42,73.9,6.02,469.5,HSP70_B1_Susceptible,Susceptible
+AG-1915,Sokoto Gudali,Female,3.5,78.3,39.09,43.8,6.57,445.8,HSP70_A1_Resistant,Susceptible
+AG-1916,Sokoto Gudali,Female,3.9,73.0,39.12,35.3,6.64,462.2,HSP70_A2_Intermediate,Susceptible
+AG-1917,Sokoto Gudali,Male,6.2,80.2,40.18,55.3,,534.3,HSP70_B1_Susceptible,Susceptible
+AG-1918,Sokoto Gudali,Female,4.9,77.6,39.29,51.3,6.54,493.7,HSP70_B1_Susceptible,Susceptible
+AG-1919,Sokoto Gudali,Female,4.2,83.0,40.49,66.8,4.09,457.7,HSP70_B1_Susceptible,Susceptible
+AG-1920,Sokoto Gudali,Female,3.3,87.2,41.95,84.2,3.72,450.2,HSP70_A2_Intermediate,Susceptible
+AG-1921,Sokoto Gudali,Female,5.8,82.8,40.53,57.8,4.51,487.4,HSP70_A2_Intermediate,Susceptible
+AG-1922,Sokoto Gudali,Female,6.5,78.8,39.74,45.2,5.49,453.3,HSP70_A2_Intermediate,Tolerant
+AG-1923,Sokoto Gudali,Female,3.2,75.2,39.32,33.0,6.53,420.8,HSP70_A2_Intermediate,Susceptible
+AG-1924,Sokoto Gudali,Female,2.9,86.1,41.72,68.9,3.14,444.2,HSP70_A2_Intermediate,Susceptible
+AG-1925,Sokoto Gudali,Female,3.0,76.0,38.77,38.1,6.11,432.8,HSP70_B1_Susceptible,Susceptible
+AG-1926,Sokoto Gudali,Female,2.1,84.9,41.03,72.8,3.64,448.5,HSP70_A2_Intermediate,Tolerant
+AG-1927,Sokoto Gudali,Female,3.0,78.8,39.17,44.3,6.52,446.6,HSP70_A2_Intermediate,Susceptible
+AG-1928,Sokoto Gudali,Female,4.6,81.2,40.12,53.5,4.92,465.6,HSP70_B1_Susceptible,Susceptible
+AG-1929,Sokoto Gudali,Female,6.0,84.9,40.69,74.8,3.6,496.0,HSP70_B1_Susceptible,Susceptible
+AG-1930,Sokoto Gudali,Female,6.9,79.9,39.84,56.6,5.24,484.4,HSP70_B1_Susceptible,Susceptible
+AG-1931,Sokoto Gudali,Female,3.2,77.7,38.99,41.4,6.0,435.3,HSP70_A2_Intermediate,Susceptible
+AG-1932,Sokoto Gudali,Male,4.2,73.3,39.11,38.6,,497.6,HSP70_A2_Intermediate,Susceptible
+AG-1933,Sokoto Gudali,Female,2.3,80.3,39.67,54.0,5.77,425.0,HSP70_A1_Resistant,Susceptible
+AG-1934,Sokoto Gudali,Female,7.3,85.7,41.14,70.3,4.11,475.1,HSP70_A1_Resistant,Susceptible
+AG-1935,Sokoto Gudali,Female,6.9,74.6,39.04,40.1,6.64,478.6,HSP70_A1_Resistant,Susceptible
+AG-1936,Sokoto Gudali,Female,5.1,78.6,39.37,51.8,6.73,451.4,HSP70_A2_Intermediate,Susceptible
+AG-1937,Sokoto Gudali,Female,6.0,73.4,39.08,39.1,6.5,508.0,HSP70_A2_Intermediate,Tolerant
+AG-1938,Sokoto Gudali,Female,2.7,79.6,39.61,54.6,5.95,442.2,HSP70_B1_Susceptible,Susceptible
+AG-1939,Sokoto Gudali,Female,6.2,72.6,38.84,36.9,7.46,480.0,HSP70_A2_Intermediate,Susceptible
+AG-1940,Sokoto Gudali,Female,5.2,77.7,38.87,47.6,6.11,483.2,HSP70_B1_Susceptible,Susceptible
+AG-1941,Sokoto Gudali,Female,3.4,77.5,39.67,41.3,6.81,451.6,HSP70_A1_Resistant,Susceptible
+AG-1942,Sokoto Gudali,Female,7.1,72.8,39.18,38.8,7.1,489.6,HSP70_A1_Resistant,Susceptible
+AG-1943,Sokoto Gudali,Male,5.6,79.0,39.54,49.2,,524.6,HSP70_A1_Resistant,Susceptible
+AG-1944,Sokoto Gudali,Female,5.2,82.0,40.88,65.0,5.18,476.7,HSP70_A1_Resistant,Susceptible
+AG-1945,Sokoto Gudali,Female,5.1,82.4,40.75,64.2,4.9,477.2,HSP70_A1_Resistant,Susceptible
+AG-1946,Sokoto Gudali,Female,2.5,77.3,39.02,38.6,6.1,419.2,HSP70_A1_Resistant,Susceptible
+AG-1947,Sokoto Gudali,Male,5.8,83.6,41.32,62.7,,546.4,HSP70_A1_Resistant,Susceptible
+AG-1948,Sokoto Gudali,Male,7.4,79.9,40.07,46.4,,559.4,HSP70_B1_Susceptible,Susceptible
+AG-1949,Sokoto Gudali,Female,5.4,82.2,40.39,64.3,6.34,481.9,HSP70_A2_Intermediate,Tolerant
+AG-1950,Sokoto Gudali,Female,4.8,85.3,41.3,79.9,3.28,459.6,HSP70_A2_Intermediate,Susceptible
+AG-1951,Sokoto Gudali,Female,5.3,81.5,40.28,58.4,5.44,464.1,HSP70_B1_Susceptible,Susceptible
+AG-1952,Sokoto Gudali,Female,2.5,86.3,41.35,71.1,3.41,405.5,HSP70_B1_Susceptible,Susceptible
+AG-1953,Sokoto Gudali,Female,6.8,84.5,40.83,64.2,4.8,462.4,HSP70_A2_Intermediate,Susceptible
+AG-1954,Sokoto Gudali,Male,5.4,85.7,41.51,74.7,,498.3,HSP70_A2_Intermediate,Tolerant
+AG-1955,Sokoto Gudali,Female,5.6,81.5,40.39,64.1,4.36,487.6,HSP70_A1_Resistant,Susceptible
+AG-1956,Sokoto Gudali,Female,3.8,83.5,40.44,70.4,5.17,474.5,HSP70_A2_Intermediate,Susceptible
+AG-1957,Sokoto Gudali,Female,5.8,78.0,39.03,47.4,5.89,463.4,HSP70_A2_Intermediate,Susceptible
+AG-1958,Sokoto Gudali,Female,2.9,87.6,41.82,84.7,3.31,470.1,HSP70_A2_Intermediate,Susceptible
+AG-1959,Sokoto Gudali,Female,5.2,80.0,39.48,55.1,5.29,468.8,HSP70_A1_Resistant,Susceptible
+AG-1960,Sokoto Gudali,Female,2.6,85.0,41.18,70.7,4.7,435.0,HSP70_A2_Intermediate,Susceptible
+AG-1961,Sokoto Gudali,Female,4.1,81.0,39.69,53.6,4.87,480.1,HSP70_B1_Susceptible,Susceptible
+AG-1962,Sokoto Gudali,Female,2.6,85.5,41.07,76.2,3.92,428.5,HSP70_B1_Susceptible,Susceptible
+AG-1963,Sokoto Gudali,Female,2.2,78.4,39.63,47.2,6.95,437.0,HSP70_A2_Intermediate,Tolerant
+AG-1964,Sokoto Gudali,Female,5.2,87.2,41.6,81.8,3.33,462.8,HSP70_B1_Susceptible,Susceptible
+AG-1965,Sokoto Gudali,Male,4.2,80.1,39.5,52.4,,502.4,HSP70_A1_Resistant,Susceptible
+AG-1966,Sokoto Gudali,Male,4.3,80.3,39.97,58.8,,500.8,HSP70_B1_Susceptible,Susceptible
+AG-1967,Sokoto Gudali,Female,3.1,77.4,38.74,42.0,5.95,464.9,HSP70_A1_Resistant,Susceptible
+AG-1968,Sokoto Gudali,Male,3.2,81.8,40.16,59.3,,527.4,HSP70_A2_Intermediate,Susceptible
+AG-1969,Sokoto Gudali,Female,2.5,87.0,41.62,83.3,2.64,430.1,HSP70_B1_Susceptible,Tolerant
+AG-1970,Sokoto Gudali,Female,2.8,85.0,41.41,74.2,3.77,444.2,HSP70_A2_Intermediate,Susceptible
+AG-1971,Sokoto Gudali,Female,4.6,81.6,40.48,66.5,4.99,461.9,HSP70_B1_Susceptible,Susceptible
+AG-1972,Sokoto Gudali,Female,5.9,87.2,41.92,82.9,3.21,454.7,HSP70_B1_Susceptible,Susceptible
+AG-1973,Sokoto Gudali,Female,3.8,79.7,39.86,47.1,6.8,481.4,HSP70_A2_Intermediate,Susceptible
+AG-1974,Sokoto Gudali,Female,4.3,80.7,40.1,54.9,7.38,460.8,HSP70_A1_Resistant,Tolerant
+AG-1975,Sokoto Gudali,Male,5.3,82.6,40.26,65.4,,521.0,HSP70_A2_Intermediate,Susceptible
+AG-1976,Sokoto Gudali,Female,7.3,85.1,41.12,73.2,3.73,482.4,HSP70_A2_Intermediate,Susceptible
+AG-1977,Sokoto Gudali,Female,2.4,76.4,38.84,37.0,6.87,459.7,HSP70_A1_Resistant,Susceptible
+AG-1978,Sokoto Gudali,Female,2.6,82.8,40.87,67.0,5.36,468.8,HSP70_B1_Susceptible,Susceptible
+AG-1979,Sokoto Gudali,Female,4.6,86.9,41.63,76.1,4.41,475.2,HSP70_A2_Intermediate,Susceptible
+AG-1980,Sokoto Gudali,Male,2.4,78.4,39.73,47.4,,491.0,HSP70_A2_Intermediate,Susceptible
+AG-1981,Sokoto Gudali,Male,7.1,78.4,39.3,46.3,,558.2,HSP70_B1_Susceptible,Susceptible
+AG-1982,Sokoto Gudali,Female,7.1,79.3,39.52,55.0,7.08,494.7,HSP70_A2_Intermediate,Susceptible
+AG-1983,Sokoto Gudali,Female,5.9,79.9,39.86,55.6,4.9,477.0,HSP70_A2_Intermediate,Tolerant
+AG-1984,Sokoto Gudali,Female,3.4,76.9,38.94,45.2,6.17,442.7,HSP70_B1_Susceptible,Tolerant
+AG-1985,Sokoto Gudali,Female,4.8,83.0,40.94,66.0,4.85,466.1,HSP70_A2_Intermediate,Tolerant
+AG-1986,Sokoto Gudali,Female,3.7,80.4,39.71,59.7,5.05,473.1,HSP70_A2_Intermediate,Susceptible
+AG-1987,Sokoto Gudali,Female,2.4,78.7,39.59,48.7,6.48,461.3,HSP70_B1_Susceptible,Susceptible
+AG-1988,Sokoto Gudali,Female,4.8,80.8,40.69,60.8,5.63,472.3,HSP70_B1_Susceptible,Tolerant
+AG-1989,Sokoto Gudali,Female,4.7,85.5,41.7,73.9,3.93,457.7,HSP70_B1_Susceptible,Susceptible
+AG-1990,Sokoto Gudali,Female,3.5,77.6,39.07,49.0,5.81,453.4,HSP70_B1_Susceptible,Susceptible
+AG-1991,Sokoto Gudali,Female,6.0,75.4,38.97,41.1,6.03,477.6,HSP70_B1_Susceptible,Susceptible
+AG-1992,Sokoto Gudali,Female,3.9,85.0,41.4,74.3,5.37,449.2,HSP70_A2_Intermediate,Susceptible
+AG-1993,Sokoto Gudali,Female,7.4,77.0,39.64,40.1,7.26,500.6,HSP70_B1_Susceptible,Tolerant
+AG-1994,Sokoto Gudali,Male,6.1,85.8,41.59,76.2,,529.0,HSP70_B1_Susceptible,Susceptible
+AG-1995,Sokoto Gudali,Female,6.3,85.4,41.04,73.9,4.1,489.2,HSP70_B1_Susceptible,Susceptible
+AG-1996,Sokoto Gudali,Female,3.6,80.1,40.41,58.2,5.76,458.5,HSP70_B1_Susceptible,Susceptible
+AG-1997,Sokoto Gudali,Female,6.8,73.2,39.24,40.9,6.16,506.4,HSP70_A2_Intermediate,Tolerant
+AG-1998,Sokoto Gudali,Female,5.2,78.0,39.34,49.2,6.3,468.7,HSP70_A2_Intermediate,Susceptible
+AG-1999,Sokoto Gudali,Male,7.5,75.8,39.0,35.3,,571.4,HSP70_A1_Resistant,Tolerant
+AG-2000,Sokoto Gudali,Female,4.7,72.4,38.62,41.6,5.72,474.3,HSP70_A1_Resistant,Susceptible

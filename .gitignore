@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Secrets and environment variables
+.env
+.env.*
+.streamlit/secrets.toml
+secrets.toml
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Temporary scratch and audio/media exports
+scratch/
+extra files/
+extracted_media/
+*.log
+*.wav
+*_temp*
+
+# Working drafts
+After building.docx
+The BIG idea.docx

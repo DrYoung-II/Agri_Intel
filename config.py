@@ -1,0 +1,241 @@
+"""
+AgriIntel - Configuration and API Directory
+Leaf Green Theme & Comprehensive Domain Directory
+"""
+
+import os
+
+APP_NAME = "AgriIntel"
+APP_SUBTITLE = "The Generative Intelligence Platform for Agriculture"
+APP_TAGLINE = "Africa-First, Globally Relevant: The Intelligence Infrastructure Behind Resilient Agriculture"
+APP_MOTTO = "AGRICULTURE • RESEARCH • INSIGHT"
+LOGO_PATH = os.path.join("assets", "agriintel_logo.png")
+ICON_PATH = os.path.join("assets", "agriintel_icon.png")
+
+FOUNDER_STORY = """
+"I trained as an animal geneticist, spent years working with agricultural research problems, 
+transitioned into data science and artificial intelligence, and realised that one of Africa's 
+biggest agricultural problems is not merely lack of knowledge—it is the inability to connect 
+agricultural knowledge, data, research and decision-making at scale."
+"""
+
+# Theme Palette: Leaf Green & Digital Circuit Fusion (Matching Official Logo)
+THEME = {
+    "primary": "#2E7D32",       # Forest Leaf Green
+    "primary_dark": "#1B5E20",  # Deep Foliage Green
+    "primary_light": "#4CAF50", # Vibrant Grass Green
+    "accent": "#81C784",        # Sprout Green
+    "circuit_teal": "#00BFA5",  # Digital Circuit Node Cyan
+    "circuit_glow": "#64FFDA",  # Bioluminescent Node Glow
+    "circuit_amber": "#FFD54F", # Circuit Trace Gold
+    "accent_light": "#E8F5E9",  # Soft Leaf Mist
+    "accent_border": "#C8E6C9", # Pale Leaf Border
+    "text_dark": "#1B3B1D",     # Deep Forest Text
+    "warning": "#F57F17",       # Sun Amber
+    "info": "#0277BD",          # River Blue
+    "danger": "#C62828",        # Rust Red
+    "background_card": "#FFFFFF",
+}
+
+# API Directory & Subscriptions
+API_DIRECTORY = [
+    {
+        "category": "GenAI & Multi-Agent Reasoning",
+        "name": "Google Gemini API",
+        "provider": "Google DeepMind / Google Cloud",
+        "link": "https://ai.google.dev/",
+        "is_paid": True,
+        "pricing": "Generous FREE tier (15 requests/min free on Gemini 1.5/2.0 Flash); Pay-as-you-go thereafter (~$0.075-$0.30/1M tokens).",
+        "how_to_subscribe": "1. Visit https://aistudio.google.com/ \n2. Sign in with a Google account.\n3. Click 'Get API key' -> 'Create API key in new project'.\n4. Copy the key into AgriIntel settings.",
+        "usage_in_app": "Powering multi-agent synthesis, thesis tutoring, research question ideation, and literature matrix summaries.",
+        "accessible_domain": "ai.google.dev, aistudio.google.com",
+    },
+    {
+        "category": "GenAI & Multi-Agent Reasoning",
+        "name": "OpenAI API (GPT-4o / o1)",
+        "provider": "OpenAI",
+        "link": "https://platform.openai.com/signup",
+        "is_paid": True,
+        "pricing": "Paid pay-as-you-go. Requires credit card top-up (starts from $5). Pricing: ~$0.15-$2.50 per 1M tokens depending on model.",
+        "how_to_subscribe": "1. Go to https://platform.openai.com/signup \n2. Verify email and phone.\n3. Navigate to 'Billing' -> 'Add payment method' and add $5-$10 credit.\n4. Go to 'API Keys' -> 'Create new secret key'.",
+        "usage_in_app": "Alternative LLM engine for agent orchestration and proposal drafting.",
+        "accessible_domain": "platform.openai.com, api.openai.com",
+    },
+    {
+        "category": "GenAI & Multi-Agent Reasoning",
+        "name": "Groq Cloud API (Llama 3 / Mixtral)",
+        "provider": "Groq Inc.",
+        "link": "https://console.groq.com/",
+        "is_paid": True,
+        "pricing": "Free tier with high rate limits (~30 RPM). Pay-as-you-go for higher enterprise limits ($0.05-$0.79/1M tokens).",
+        "how_to_subscribe": "1. Visit https://console.groq.com/ \n2. Sign up with Google/GitHub.\n3. Click 'API Keys' -> 'Create API Key'.\n4. Paste into AgriIntel settings.",
+        "usage_in_app": "Ultra-fast low-latency real-time agent dispatch and reasoning.",
+        "accessible_domain": "console.groq.com, api.groq.com",
+    },
+    {
+        "category": "Agro-Weather & Environmental Data",
+        "name": "Open-Meteo Weather API",
+        "provider": "Open-Meteo GmbH",
+        "link": "https://open-meteo.com/en/docs",
+        "is_paid": False,
+        "pricing": "100% FREE for non-commercial, academic, and development use (up to 10,000 daily calls, no API key required). Paid commercial plans start from €29/month.",
+        "how_to_subscribe": "No key needed! Direct REST endpoint access: https://api.open-meteo.com/v1/forecast. Commercial tier available at https://open-meteo.com/en/pricing.",
+        "usage_in_app": "Historical and real-time precipitation, temperature, relative humidity, solar radiation, and soil moisture across African coordinates.",
+        "accessible_domain": "open-meteo.com, api.open-meteo.com",
+    },
+    {
+        "category": "Agro-Climatology & Solar Radiation",
+        "name": "NASA POWER API",
+        "provider": "NASA Langley Research Center",
+        "link": "https://power.larc.nasa.gov/docs/",
+        "is_paid": False,
+        "pricing": "100% FREE & Public Domain. No authentication key required.",
+        "how_to_subscribe": "Open access. Documentation at https://power.larc.nasa.gov/docs/services/api/.",
+        "usage_in_app": "Agro-climatological daily solar radiation, evapotranspiration, and precipitation records worldwide for crop growth simulation.",
+        "accessible_domain": "power.larc.nasa.gov",
+    },
+    {
+        "category": "Commercial Weather Services",
+        "name": "OpenWeatherMap API",
+        "provider": "OpenWeather Ltd",
+        "link": "https://openweathermap.org/api",
+        "is_paid": True,
+        "pricing": "Free tier includes 1,000 API calls/day (One Call 3.0). Paid usage is $0.0015 per call beyond free limit.",
+        "how_to_subscribe": "1. Sign up at https://home.openweathermap.org/users/sign_up \n2. Go to 'My API Keys' and generate a key.\n3. Activate the One Call 3.0 subscription (first 1,000 calls/day free).",
+        "usage_in_app": "High-resolution localized current weather alerts and forecast indices.",
+        "accessible_domain": "openweathermap.org, api.openweathermap.org",
+    },
+    {
+        "category": "Soil Intelligence & Spatial Mapping",
+        "name": "ISRIC SoilGrids REST API",
+        "provider": "ISRIC - World Soil Information",
+        "link": "https://www.isric.org/explore/soilgrids/faq-soilgrids",
+        "is_paid": False,
+        "pricing": "100% FREE Open Data (Creative Commons 4.0).",
+        "how_to_subscribe": "Public open API endpoint: https://rest.isric.org/soilgrids/v2.0/properties/query.",
+        "usage_in_app": "Automated retrieval of soil pH, Nitrogen, Organic Carbon, Sand/Clay texture, and CEC for any latitude/longitude in Africa.",
+        "accessible_domain": "isric.org, rest.isric.org",
+    },
+    {
+        "category": "Scientific Research & Literature",
+        "name": "Crossref REST API",
+        "provider": "Crossref",
+        "link": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+        "is_paid": False,
+        "pricing": "100% FREE open bibliographic API (request polite pool by providing email header).",
+        "how_to_subscribe": "Free open access: https://api.crossref.org/works?query=...",
+        "usage_in_app": "Verification of peer-reviewed agricultural papers, DOI retrieval, metadata validation.",
+        "accessible_domain": "crossref.org, api.crossref.org",
+    },
+    {
+        "category": "Biomedical & Genetic Literature",
+        "name": "NCBI PubMed E-Utilities API",
+        "provider": "National Center for Biotechnology Information (NCBI / NIH)",
+        "link": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
+        "is_paid": False,
+        "pricing": "100% FREE. Up to 3 requests/sec without key; up to 10 requests/sec with free NCBI API key.",
+        "how_to_subscribe": "1. Create free NCBI account at https://www.ncbi.nlm.nih.gov/account/ \n2. Go to Account Settings -> 'API Key Management' -> 'Create an API Key'.",
+        "usage_in_app": "Genetic trait and QTL literature extraction for cattle, sheep, goats, poultry, and crops.",
+        "accessible_domain": "ncbi.nlm.nih.gov, eutils.ncbi.nlm.nih.gov",
+    },
+    {
+        "category": "Global Agricultural Statistics",
+        "name": "FAOSTAT API & Data Service",
+        "provider": "Food and Agriculture Organization of the United Nations (FAO)",
+        "link": "https://www.fao.org/faostat/en/#data",
+        "is_paid": False,
+        "pricing": "100% FREE open UN statistical repository.",
+        "how_to_subscribe": "Direct access via FAOSTAT bulk download API or endpoints at https://fenixservices.fao.org/faostat/api/v1/.",
+        "usage_in_app": "National crop yields, trade flows, fertilizer consumption, and livestock populations.",
+        "accessible_domain": "fao.org, fenixservices.fao.org",
+    },
+]
+
+# Pan-African Regional Context & Multi-Currency System
+PAN_AFRICAN_REGIONS = {
+    "🇳🇬 Nigeria (NGN ₦)": {
+        "country": "Nigeria",
+        "currency_symbol": "₦",
+        "currency_code": "NGN",
+        "fx_to_usd": 1500.0,
+        "flag": "🇳🇬",
+        "budget_unit": "₦1.0 Billion",
+        "commercial_bag_price": 38_000,
+        "base_maize_price": 450_000,
+        "base_fert_cost": 240_000,
+        "base_other_cost": 180_000,
+        "total_smallholders": 18_000_000,
+        "agro_zones": ["Sudan Savanna", "Guinea Savanna", "Rainforest", "Derived Savanna"],
+    },
+    "🇰🇪 Kenya (KES KSh)": {
+        "country": "Kenya",
+        "currency_symbol": "KSh ",
+        "currency_code": "KES",
+        "fx_to_usd": 130.0,
+        "flag": "🇰🇪",
+        "budget_unit": "KSh 100 Million",
+        "commercial_bag_price": 3_500,
+        "base_maize_price": 42_000,
+        "base_fert_cost": 22_000,
+        "base_other_cost": 16_000,
+        "total_smallholders": 4_500_000,
+        "agro_zones": ["Rift Valley", "Western Highlands", "Central Highlands", "Semi-Arid East"],
+    },
+    "🇬🇭 Ghana (GHS GH₵)": {
+        "country": "Ghana",
+        "currency_symbol": "GH₵ ",
+        "currency_code": "GHS",
+        "fx_to_usd": 15.5,
+        "flag": "🇬🇭",
+        "budget_unit": "GH₵ 10 Million",
+        "commercial_bag_price": 420,
+        "base_maize_price": 5_200,
+        "base_fert_cost": 2_700,
+        "base_other_cost": 1_900,
+        "total_smallholders": 2_800_000,
+        "agro_zones": ["Northern Savanna", "Transitional Zone", "Forest Zone", "Coastal Savanna"],
+    },
+    "🇪🇹 Ethiopia (ETB Br)": {
+        "country": "Ethiopia",
+        "currency_symbol": "Br ",
+        "currency_code": "ETB",
+        "fx_to_usd": 120.0,
+        "flag": "🇪🇹",
+        "budget_unit": "Br 100 Million",
+        "commercial_bag_price": 3_200,
+        "base_maize_price": 38_000,
+        "base_fert_cost": 20_000,
+        "base_other_cost": 15_000,
+        "total_smallholders": 14_000_000,
+        "agro_zones": ["Highlands (Dega)", "Midlands (Weyna Dega)", "Lowlands (Kolla)", "Rift Valley"],
+    },
+    "🇿🇦 South Africa (ZAR R)": {
+        "country": "South Africa",
+        "currency_symbol": "R ",
+        "currency_code": "ZAR",
+        "fx_to_usd": 18.0,
+        "flag": "🇿🇦",
+        "budget_unit": "R 15 Million",
+        "commercial_bag_price": 480,
+        "base_maize_price": 5_600,
+        "base_fert_cost": 3_000,
+        "base_other_cost": 2_200,
+        "total_smallholders": 2_100_000,
+        "agro_zones": ["Highveld Maize Quad", "Free State", "KwaZulu-Natal Coast", "Eastern Cape"],
+    },
+    "🌐 Pan-Africa & Global (USD $)": {
+        "country": "Global / Pan-Africa",
+        "currency_symbol": "$",
+        "currency_code": "USD",
+        "fx_to_usd": 1.0,
+        "flag": "🌐",
+        "budget_unit": "$1.0 Million",
+        "commercial_bag_price": 26,
+        "base_maize_price": 300,
+        "base_fert_cost": 160,
+        "base_other_cost": 120,
+        "total_smallholders": 50_000_000,
+        "agro_zones": ["Sub-Saharan Africa Cereal Belt", "Humid Tropics", "Semi-Arid Tropics", "East African Plateau"],
+    },
+}
+

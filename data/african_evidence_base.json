@@ -1,0 +1,207 @@
+{
+  "trypanosomiasis_resistance": [
+    {
+      "Study": "Hanotte et al. (2003)",
+      "Population": "N'Dama x Boran Cross",
+      "Trait": "Parasitaemia & PCV Control",
+      "Sample_Size": 176,
+      "Method": "QTL Linkage Mapping",
+      "Major_Finding": "Identified 18 chromosome regions (BTA2, BTA7, BTA14) controlling anaemia and parasitaemia control.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Kim et al. (2020)",
+      "Population": "N'Dama, Muturu, Baoulé",
+      "Trait": "Trypanotolerance Signature",
+      "Sample_Size": 420,
+      "Method": "Whole-Genome Sequencing & XP-EHH",
+      "Major_Finding": "Selective sweep at TICAM1 and TLR signaling loci; indigenous West African taurines possess unique ancestral haplotypes.",
+      "Evidence_Strength": "Strong"
+    },
+    {
+      "Study": "Obeidat et al. (2022)",
+      "Population": "Muturu (Nigeria)",
+      "Trait": "Disease Response & Haematology",
+      "Sample_Size": 180,
+      "Method": "Targeted Candidate Gene Panel",
+      "Major_Finding": "Hemoglobin polymorphisms and cytokine expression profile contribute to mild parasitaemia without severe wasting.",
+      "Evidence_Strength": "Moderate"
+    }
+  ],
+  "heat_tolerance_cattle": [
+    {
+      "Study": "Dikmen et al. (2014)",
+      "Population": "SLICK Zebu x Dairy Cross",
+      "Trait": "Thermoregulation & Rectal Temp",
+      "Sample_Size": 350,
+      "Method": "Candidate Gene & Phenotyping",
+      "Major_Finding": "PRLR (Prolactin Receptor) slick hair gene mutation lowers core body temperature by 0.5-0.8°C under severe heat stress.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Taye et al. (2017)",
+      "Population": "African Indigenous Zebu (Fulani, Boran)",
+      "Trait": "Heat Shock Response",
+      "Sample_Size": 284,
+      "Method": "RNA-Seq & SNP Chip",
+      "Major_Finding": "HSP70 and HSP90 upregulation enhances cellular cytoprotection during peak solar radiation periods.",
+      "Evidence_Strength": "Strong"
+    },
+    {
+      "Study": "Gautier et al. (2019)",
+      "Population": "West African Zebu vs Taurine",
+      "Trait": "Arid Adaptation Signatures",
+      "Sample_Size": 512,
+      "Method": "Population Genomics (Fst scan)",
+      "Major_Finding": "Adaptive introgressions linked to water conservation (aquaporins) and cutaneous evaporation in Sahelian cattle.",
+      "Evidence_Strength": "Moderate"
+    }
+  ],
+  "maize_drought_tolerance": [
+    {
+      "Study": "Badu-Apraku et al. (2016)",
+      "Population": "Early-Maturity Maize (IITA)",
+      "Trait": "Drought & Heat Tolerance",
+      "Sample_Size": 140,
+      "Method": "GxE Biplot & Multi-Environment Trials",
+      "Major_Finding": "TZE-W Pop x TZE-Y Pop showed shortest anthesis-silking interval (ASI < 2.5 days) and 35% higher yield under moisture stress.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Menkir et al. (2020)",
+      "Population": "Sub-Saharan Intermediate Maize",
+      "Trait": "Stay-Green & Canopy Temperature",
+      "Sample_Size": 210,
+      "Method": "Spectral Phenotyping & GWAS",
+      "Major_Finding": "Significant QTL on chromosome 1 and 8 correlated with functional stay-green and prolonged photosynthesis during grain filling.",
+      "Evidence_Strength": "Strong"
+    }
+  ],
+  "poultry_bioclimatics": [
+    {
+      "Study": "Ojedapo et al. (2012)",
+      "Population": "Broilers (Tropical Nigeria)",
+      "Trait": "Diurnal Heat Fluctuation & Stocking Density",
+      "Sample_Size": 360,
+      "Method": "Factorial Bioclimatic Trial",
+      "Major_Finding": "Stocking density reduction to 8–10 birds/m² combined with night feeding lowered heat mortality from 14.2% to 2.8%.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Sonaiya & Swan (2007)",
+      "Population": "Tropical Commercial & Indigenous Flocks",
+      "Trait": "Electrolyte Balance & Respiratory Alkalosis",
+      "Sample_Size": 480,
+      "Method": "Blood Gas & Thermal Physiology",
+      "Major_Finding": "Supplementation with 1g/L Vitamin C and 0.2% sodium bicarbonate restored blood pH and egg shell thickness during peak afternoon panting.",
+      "Evidence_Strength": "Strong"
+    },
+    {
+      "Study": "Ezeibe et al. (2014)",
+      "Population": "Nigerian Broilers & Layers (UNN/NAPRI)",
+      "Trait": "Newcastle Disease Immune Response",
+      "Sample_Size": 240,
+      "Method": "Haemagglutination Inhibition (HI) Assay",
+      "Major_Finding": "Lasota booster at Day 28 following Day 14 vaccination maintained protective antibody titers (>4 log2) across Harmattan dust periods.",
+      "Evidence_Strength": "Strong (Replicated)"
+    }
+  ],
+  "rabbit_cuniculture": [
+    {
+      "Study": "Biobaku & Dosumu (2003)",
+      "Population": "Growing Rabbits (FUNAAB)",
+      "Trait": "Tropical Forage Utilization & Bloat Prevention",
+      "Sample_Size": 120,
+      "Method": "Digestibility & Growth Trial",
+      "Major_Finding": "Wilting Tridax procumbens for 4–6 hours reduced tympany/bloat incidence by 92% and improved cecal fiber digestion.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Iyeghe-Erakpotobor (2007)",
+      "Population": "New Zealand White x Chinchilla (NAPRI Zaria)",
+      "Trait": "Litter Size & Kit Viability",
+      "Sample_Size": 96,
+      "Method": "Crossbreeding Reproductive Trial",
+      "Major_Finding": "NZW buck x Chinchilla doe cross demonstrated superior heterosis with 7.2 kits/litter and 88% weaning survival under northern savanna heat.",
+      "Evidence_Strength": "Strong"
+    },
+    {
+      "Study": "Oseni & Lukefahr (2014)",
+      "Population": "Commercial Cuniculture Stocks (Nigeria/Ghana)",
+      "Trait": "Thermal Stress & Buck Sterility",
+      "Sample_Size": 210,
+      "Method": "Semen Quality & Thermal Chamber Study",
+      "Major_Finding": "Temperatures exceeding 28°C caused severe oligospermia and temporary buck sterility lasting 6 to 8 weeks post-exposure.",
+      "Evidence_Strength": "Strong (Replicated)"
+    }
+  ],
+  "tomato_horticulture": [
+    {
+      "Study": "Denton et al. (2010)",
+      "Population": "Determinate Tomatoes (NIHORT Ibadan)",
+      "Trait": "Fruit Firmness & Pericarp Cracking",
+      "Sample_Size": 180,
+      "Method": "Rainforest Field Evaluation",
+      "Major_Finding": "Cobra 26 F1 and Tropimech exhibited lowest fruit cracking (<5%) and highest bacterial wilt tolerance across humid southwestern Nigeria.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Hanson et al. (2016)",
+      "Population": "Tropical Tomato Hybrids (WorldVeg)",
+      "Trait": "TYLCV Resistance & Whitefly Defense",
+      "Sample_Size": 320,
+      "Method": "Marker-Assisted Introgression (Ty-1, Ty-3)",
+      "Major_Finding": "Pyramiding Ty-1 and Ty-3 resistance alleles conferred complete field protection against Begomovirus transmission by Bemisia tabaci.",
+      "Evidence_Strength": "Strong"
+    },
+    {
+      "Study": "Adepetu & Corey (2008)",
+      "Population": "Southwestern Ultisols (OAU Ile-Ife)",
+      "Trait": "Calcium Mobility & Blossom End Rot",
+      "Sample_Size": 150,
+      "Method": "Nutrient Partitioning Trial",
+      "Major_Finding": "Split application of Calcium Nitrate (50 kg/ha) or foliar Calcium-Boron chelate eradicated Blossom End Rot on acidic soils.",
+      "Evidence_Strength": "Strong (Replicated)"
+    }
+  ],
+  "cassava_genomics": [
+    {
+      "Study": "Rabbi et al. (2014)",
+      "Population": "IITA Diversity Panel (Nigeria)",
+      "Trait": "CMD2 & CMD3 Mosaic Immunity",
+      "Sample_Size": 620,
+      "Method": "Genome-Wide Association Study (GWAS)",
+      "Major_Finding": "Mapped major dominant resistance loci CMD2 on Chromosome 12 and CMD3 on Chromosome 14 explaining 65% of phenotypic variance.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "Egesi et al. (2021)",
+      "Population": "NextGen Cassava Elite Clones (NRCRI Umudike)",
+      "Trait": "Dry Matter Content & Fresh Root Yield",
+      "Sample_Size": 1100,
+      "Method": "Genomic Selection (GBLUP)",
+      "Major_Finding": "TME 419 and TMS 98/0505 achieved high dry matter stability (>32%) across multiple agro-ecological zones.",
+      "Evidence_Strength": "Strong"
+    }
+  ],
+  "rice_submergence": [
+    {
+      "Study": "AfricaRice Research Report (2019)",
+      "Population": "Lowland Rice Varieties (Nigeria/Benin)",
+      "Trait": "Submergence Flash-Flooding Tolerance",
+      "Sample_Size": 280,
+      "Method": "Sub1 Gene Marker Validation",
+      "Major_Finding": "Introgression of Sub1A QTL into FARO 44 background enabled complete survival under 14 days of full submergence.",
+      "Evidence_Strength": "Strong (Replicated)"
+    },
+    {
+      "Study": "NCRI Badeggi Bulletins (2022)",
+      "Population": "Rainfed Lowland Rice (Niger State)",
+      "Trait": "Urea Deep Placement (UDP) Efficiency",
+      "Sample_Size": 450,
+      "Method": "On-Farm Agronomic Verification",
+      "Major_Finding": "Deep placement of urea briquettes at 7–10 cm depth reduced nitrogen volatilization by 38% and elevated grain yield by 1.2 t/ha.",
+      "Evidence_Strength": "Strong"
+    }
+  ]
+}

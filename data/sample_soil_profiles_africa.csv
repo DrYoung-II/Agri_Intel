@@ -1,0 +1,7 @@
+Location,Zone,Soil_pH,Nitrogen_pct,Phosphorus_ppm,Potassium_cmol_kg,Organic_Carbon_pct,Texture,CEC_cmol_kg,Annual_Rainfall_mm
+Kaduna (Zaria),Northern Guinea Savanna,5.8,0.08,7.4,0.22,0.65,Sandy Loam,6.5,1050
+Kano (Bichi),Sudan Savanna,6.3,0.05,5.1,0.18,0.42,Loamy Sand,4.8,780
+Ibadan (IITA),Derived Savanna / Forest,6.2,0.14,12.8,0.38,1.15,Sandy Clay Loam,11.2,1320
+Sokoto (Wamakko),Sahelian Zone,6.7,0.03,3.8,0.15,0.28,Sand,3.5,550
+Enugu (Nsukka),Humid Forest Margin,4.9,0.12,6.2,0.25,1.05,Sandy Clay,9.8,1680
+Nairobi (Kabete),East African Highland,5.6,0.18,14.5,0.55,2.1,Clay (Nitisol),18.4,1020

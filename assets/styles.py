@@ -223,62 +223,6 @@ p, span, label, li {
     opacity: 0.92;
 }
 
-/* Integrated Bottom Scope Bar */
-.agri-hero-scope {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(0, 0, 0, 0.16);
-    padding: 8px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.agri-scope-label {
-    font-size: 0.70rem;
-    font-weight: 700;
-    color: #A5D6A7;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    white-space: nowrap;
-}
-
-.agri-scope-chips {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.agri-chip {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 6px;
-    padding: 3px 9px;
-    font-size: 0.76rem;
-    font-weight: 600;
-    color: #E8F5E9;
-    transition: background 0.2s ease;
-}
-
-.agri-chip:hover {
-    background: rgba(255, 255, 255, 0.14);
-    color: #FFFFFF;
-}
-
-.agri-chip-icon {
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #81C784;
-}
-
 /* Sidebar Brand Card */
 .sidebar-brand-card {
     background: #FFFFFF;
@@ -690,36 +634,6 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
         display: none !important;
     }
 
-    /* Integrated scope chips on mobile */
-    .agri-hero-scope {
-        padding: 7px 12px !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 6px !important;
-    }
-
-    .agri-scope-label {
-        font-size: 0.65rem !important;
-    }
-
-    .agri-scope-chips {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 5px !important;
-        width: 100% !important;
-    }
-
-    .agri-chip {
-        padding: 4px 6px !important;
-        font-size: 0.72rem !important;
-        border-radius: 6px !important;
-    }
-
-    .agri-chip-icon {
-        width: 15px !important;
-        height: 15px !important;
-    }
-
     /* Sidebar Mobile Optimization */
     section[data-testid="stSidebar"] {
         max-width: 86vw !important;
@@ -798,11 +712,6 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
     .agri-hero-logo img {
         width: 36px !important;
         height: 36px !important;
-    }
-
-    .agri-chip {
-        font-size: 0.68rem !important;
-        padding: 3px 5px !important;
     }
 }
 </style>

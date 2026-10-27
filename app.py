@@ -34,7 +34,6 @@ st.set_page_config(
 # Import assets, config, and modules
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS
 from assets.styles import LEAF_GREEN_CSS
-from assets.silhouettes import CATTLE_SVG, MAIZE_SVG, POULTRY_SVG, LEAF_SVG
 from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key
 from core.exporter import render_download_buttons
 
@@ -106,15 +105,6 @@ def main():
         <div class="agri-hero-cert">
             <div class="agri-cert-tag">Africa-First Biometrics</div>
             <div class="agri-cert-status">100% Offline &bull; Live Multi-Agent AI</div>
-        </div>
-    </div>
-    <div class="agri-hero-scope">
-        <div class="agri-scope-label">Calibrated Systems:</div>
-        <div class="agri-scope-chips">
-            <div class="agri-chip"><span class="agri-chip-icon">{CATTLE_SVG}</span><span>Indigenous Cattle</span></div>
-            <div class="agri-chip"><span class="agri-chip-icon">{MAIZE_SVG}</span><span>Drought Maize</span></div>
-            <div class="agri-chip"><span class="agri-chip-icon">{POULTRY_SVG}</span><span>Poultry & Ruminants</span></div>
-            <div class="agri-chip"><span class="agri-chip-icon">{LEAF_SVG}</span><span>Cassava & Soils</span></div>
         </div>
     </div>
 </div>

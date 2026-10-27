@@ -47,6 +47,35 @@ from modules.suites import (
     render_suite_tools
 )
 
+# -------------------------------------------------------------
+# Google Gemini API Client Configuration
+# -------------------------------------------------------------
+try:
+    import google.generativeai as genai
+    HAS_GENAI = True
+except ImportError:
+    HAS_GENAI = False
+    genai = None
+
+# Fetch the key securely from Streamlit secrets (or environment fallback)
+gemini_key = ""
+if hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+    gemini_key = st.secrets["GEMINI_API_KEY"]
+elif not gemini_key:
+    gemini_key = os.getenv("GEMINI_API_KEY", "")
+
+# Configure the Gemini API client & model
+gemini_model = None
+if gemini_key:
+    set_gemini_api_key(gemini_key)
+    if HAS_GENAI and genai is not None:
+        try:
+            genai.configure(api_key=gemini_key)
+            gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+            st.session_state["gemini_model"] = gemini_model
+        except Exception:
+            pass
+
 # Inject Leaf Green CSS styling
 st.markdown(LEAF_GREEN_CSS, unsafe_allow_html=True)
 
@@ -163,6 +192,12 @@ def main():
             cleaned_sb_key = (sb_gemini_key or "").strip().strip("'\"")
             if cleaned_sb_key and cleaned_sb_key != get_gemini_api_key():
                 set_gemini_api_key(cleaned_sb_key)
+                if HAS_GENAI and genai is not None:
+                    try:
+                        genai.configure(api_key=cleaned_sb_key)
+                        st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
+                    except Exception:
+                        pass
                 val = validate_gemini_key(cleaned_sb_key)
                 if val.get("valid"):
                     st.success(f"🟢 {val.get('message')}")
@@ -293,6 +328,12 @@ def render_orchestrator_home():
             cleaned_key = (input_gemini_key or get_gemini_api_key()).strip().strip("'\"")
             if cleaned_key:
                 set_gemini_api_key(cleaned_key)
+                if HAS_GENAI and genai is not None:
+                    try:
+                        genai.configure(api_key=cleaned_key)
+                        st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
+                    except Exception:
+                        pass
                 val = validate_gemini_key(cleaned_key)
                 if val.get("valid"):
                     st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")

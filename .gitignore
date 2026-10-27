@@ -19,8 +19,9 @@ ENV/
 # Secrets and environment variables
 .env
 .env.*
-.streamlit/secrets.toml
-secrets.toml
+.streamlit/secrets*
+secrets*
+
 
 # IDEs and Editors
 .vscode/

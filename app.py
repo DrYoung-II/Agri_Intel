@@ -32,6 +32,12 @@ st.set_page_config(
 )
 
 # Import assets, config, and modules
+import importlib
+import config
+try:
+    importlib.reload(config)
+except Exception:
+    pass
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS
 from assets.styles import LEAF_GREEN_CSS
 from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key

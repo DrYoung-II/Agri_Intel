@@ -34,8 +34,10 @@ st.set_page_config(
 # Import assets, config, and modules
 import importlib
 import config
+import assets.styles
 try:
     importlib.reload(config)
+    importlib.reload(assets.styles)
 except Exception:
     pass
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS
@@ -91,11 +93,11 @@ def main():
     # UNIFIED INSTITUTIONAL HERO BANNER
     # -------------------------------------------------------------
     st.markdown(f"""
-<div class="agri-hero-banner">
-    <div class="agri-hero-main">
-        <div class="agri-hero-identity">
-            <div class="agri-hero-logo">
-                <img src="data:image/png;base64,{ICON_B64}" alt="AgroBiometrix Emblem" />
+<div class="agri-hero-banner" style="background: linear-gradient(135deg, #0A2F10 0%, #134B1B 45%, #1B5E20 85%, #103B14 100%); border-radius: 14px; color: #FFFFFF; overflow: hidden; margin-bottom: 1.15rem; border: 1px solid rgba(129, 199, 132, 0.32);">
+    <div class="agri-hero-main" style="display: flex; justify-content: space-between; align-items: center; padding: 1.15rem 1.40rem 1.0rem 1.40rem; gap: 18px;">
+        <div class="agri-hero-identity" style="display: flex; align-items: center; gap: 16px; min-width: 0;">
+            <div class="agri-hero-logo" style="background: #FFFFFF; border-radius: 12px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 64px; height: 64px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);">
+                <img src="data:image/png;base64,{ICON_B64}" alt="AgroBiometrix Emblem" style="width: 52px; height: 52px; max-width: 52px; max-height: 52px; object-fit: contain; display: block;" />
             </div>
             <div class="agri-hero-text">
                 <div class="agri-hero-title-row">
@@ -108,7 +110,7 @@ def main():
                 </div>
             </div>
         </div>
-        <div class="agri-hero-cert">
+        <div class="agri-hero-cert" style="text-align: right; flex-shrink: 0;">
             <div class="agri-cert-tag">Africa-First Biometrics</div>
             <div class="agri-cert-status">100% Offline &bull; Live Multi-Agent AI</div>
         </div>

@@ -76,6 +76,18 @@ p, span, label, li {
 }
 
 
+
+/* KaTeX math error safety styling - prevents jarring red text blocks */
+.katex-error {
+    color: #1B3B1D !important;
+    background: #F1F8F2 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    border-left: 3px solid #2E7D32 !important;
+    font-family: inherit !important;
+    white-space: pre-wrap !important;
+}
+
 /* Background watermark styling */
 .main {
     background-color: #F8FAF8;

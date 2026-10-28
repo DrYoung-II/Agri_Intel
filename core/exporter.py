@@ -1,3 +1,4 @@
+from core.orchestrator import repair_markdown_math
 """
 AgroBiometrix Document Export Engine
 Converts Markdown, Tables, and Scientific Synthesis into Publication-Grade:
@@ -88,6 +89,7 @@ def clean_markdown_for_reportlab(text: str) -> str:
 
 def markdown_to_pdf(markdown_text: str, title: str = "AgroBiometrix Report") -> bytes:
     """Converts markdown text to a styled, publication-grade PDF buffer."""
+    markdown_text = repair_markdown_math(markdown_text)
     buf = io.BytesIO()
     doc = SimpleDocTemplate(
         buf,
@@ -288,6 +290,7 @@ def sanitize_xml_text(text: str) -> str:
 
 def markdown_to_docx(markdown_text: str, title: str = "AgroBiometrix Report") -> bytes:
     """Converts markdown text to a styled, publication-grade Microsoft Word (.docx) buffer."""
+    markdown_text = repair_markdown_math(markdown_text)
     doc = docx.Document()
     
     # Page setup

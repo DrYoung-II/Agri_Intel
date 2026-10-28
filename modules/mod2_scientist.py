@@ -12,7 +12,7 @@ import requests
 import json
 import math
 from core.exporter import render_download_buttons
-from core.orchestrator import sanitize_api_error, get_gemini_api_key, set_gemini_api_key, validate_gemini_key
+from core.orchestrator import sanitize_api_error, get_gemini_api_key, set_gemini_api_key, validate_gemini_key, repair_markdown_math
 
 # =============================================================================
 # 1. PAN-AFRICAN AGRO-ECOLOGICAL & INSTITUTIONAL CONTEXT ENGINE
@@ -809,7 +809,14 @@ def call_live_ai_proposal(topic: str, api_key: str = "", provider: str = "gemini
 6. 5. ETHICAL CONSIDERATIONS & BIOSAFETY
 7. 6. 12-MONTH WORK PLAN TIMELINE
 8. 7. REFERENCES: Comprehensive reference list in APA 7th edition. EVERY citation in the text MUST appear in this list with full title, authors, year, journal, volume, and active DOI (https://doi.org/...).
-Prioritize African agro-ecological realities and rigorous biometrical statistical pipelines."""
+Prioritize African agro-ecological realities and rigorous biometrical statistical pipelines.
+
+CRITICAL MATHEMATICAL & MARKDOWN FORMATTING RULES:
+- Every display equation using $$ MUST be placed on its own line with blank lines before and after. Never place text or headings on the same line as $$.
+- If you use \begin{{aligned}}, always close it with \end{{aligned}} inside the same $$ block before closing $$.
+- Always wrap non-mathematical words/units in \text{{...}} inside equations (e.g. \text{{samples per zone}}).
+- NEVER put dollar signs $ around normal numbers, percentages, sample sizes, or currency (e.g. write "1,095 cattle" not "$1,095$ cattle", "20% dropout" not "$\approx 20\%$"). Use $ only for mathematical variables ($Z$, $p$, $e$, $\alpha$).
+- Ensure all Markdown headings (###, ####) and bullet points (*) start on fresh lines with empty lines preceding them."""
 
     api_key = (api_key or "").strip().strip("'\"")
     if provider.lower() == "gemini" and api_key:
@@ -859,7 +866,7 @@ Prioritize African agro-ecological realities and rigorous biometrical statistica
                     if candidates and "content" in candidates[0]:
                         parts = candidates[0]["content"].get("parts", [])
                         if parts and "text" in parts[0]:
-                            return parts[0]["text"]
+                            return repair_markdown_math(parts[0]["text"])
             except Exception:
                 continue
 
@@ -869,7 +876,7 @@ Prioritize African agro-ecological realities and rigorous biometrical statistica
             resp = requests.post(url, headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                                  json={"model": "gpt-4o-mini", "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": topic}], "temperature": 0.4}, timeout=30)
             if resp.status_code == 200:
-                return resp.json()["choices"][0]["message"]["content"]
+                return repair_markdown_math(resp.json()["choices"][0]["message"]["content"])
         except Exception:
             pass
 
@@ -879,13 +886,13 @@ Prioritize African agro-ecological realities and rigorous biometrical statistica
             resp = requests.post(url, headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                                  json={"model": "llama-3.3-70b-versatile", "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": topic}], "temperature": 0.4}, timeout=25)
             if resp.status_code == 200:
-                return resp.json()["choices"][0]["message"]["content"]
+                return repair_markdown_math(resp.json()["choices"][0]["message"]["content"])
         except Exception:
             pass
 
     # Fallback to offline engine
     offline_data = generate_offline_research_proposal(topic, academic_level=academic_level, geo_hint=geo_hint)
-    return offline_data["full_markdown"]
+    return repair_markdown_math(offline_data["full_markdown"])
 
 
 # =============================================================================
@@ -1041,7 +1048,8 @@ def render_research_scientist():
 
         # Render Generated Proposal if present in session_state
         if "last_proposal_text" in st.session_state:
-            p_text = st.session_state["last_proposal_text"]
+            p_text = repair_markdown_math(st.session_state["last_proposal_text"])
+            st.session_state["last_proposal_text"] = p_text
             p_meta = st.session_state.get("last_proposal_meta", {})
             
             st.markdown("---")
@@ -1081,19 +1089,19 @@ def render_research_scientist():
                 # Segmented display
                 if "intro" in p_meta:
                     with st.expander("📌 1. INTRODUCTION & HYPOTHESES", expanded=True):
-                        st.markdown(p_meta["intro"])
+                        st.markdown(repair_markdown_math(p_meta["intro"]))
                     with st.expander("📚 2. COMPREHENSIVE LITERATURE REVIEW", expanded=True):
-                        st.markdown(p_meta["literature"])
+                        st.markdown(repair_markdown_math(p_meta["literature"]))
                     with st.expander("🔬 3. MATERIALS AND METHODS (SAMPLING & BIOMETRICS)", expanded=True):
-                        st.markdown(p_meta["methods"])
+                        st.markdown(repair_markdown_math(p_meta["methods"]))
                     with st.expander("🎯 4. EXPECTED OUTCOMES & IMPACT", expanded=False):
-                        st.markdown(p_meta["outcomes"])
+                        st.markdown(repair_markdown_math(p_meta["outcomes"]))
                     with st.expander("🛡️ 5. ETHICAL CONSIDERATIONS & BIOSAFETY", expanded=False):
-                        st.markdown(p_meta["ethics"])
+                        st.markdown(repair_markdown_math(p_meta["ethics"]))
                     with st.expander("📅 6. 12-MONTH GANTT WORK PLAN", expanded=False):
-                        st.markdown(p_meta["timeline"])
+                        st.markdown(repair_markdown_math(p_meta["timeline"]))
                     with st.expander("📖 7. REFERENCES (PEER-REVIEWED ONLINE JOURNALS)", expanded=True):
-                        st.markdown(p_meta["references"])
+                        st.markdown(repair_markdown_math(p_meta["references"]))
                 else:
                     st.markdown(p_text)
 

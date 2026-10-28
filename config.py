@@ -1,16 +1,16 @@
 """
-AgriIntel - Configuration and API Directory
+AgroBiometrix - Configuration and API Directory
 Leaf Green Theme & Comprehensive Domain Directory
 """
 
 import os
 
-APP_NAME = "AgriIntel"
-APP_SUBTITLE = "The Generative Intelligence Platform for Agriculture"
+APP_NAME = "AgroBiometrix"
+APP_SUBTITLE = "The Quantitative Biometrics & Generative Intelligence Platform for Agriculture"
 APP_TAGLINE = "Africa-First, Globally Relevant: The Intelligence Infrastructure Behind Resilient Agriculture"
 APP_MOTTO = "AGRICULTURE • RESEARCH • INSIGHT"
-LOGO_PATH = os.path.join("assets", "agriintel_logo.png")
-ICON_PATH = os.path.join("assets", "agriintel_icon.png")
+LOGO_PATH = os.path.join("assets", "agrobiometrix_logo.png")
+ICON_PATH = os.path.join("assets", "agrobiometrix_icon.png")
 
 FOUNDER_STORY = """
 "I trained as an animal geneticist, spent years working with agricultural research problems, 
@@ -46,7 +46,7 @@ API_DIRECTORY = [
         "link": "https://ai.google.dev/",
         "is_paid": True,
         "pricing": "Generous FREE tier (15 requests/min free on Gemini 1.5/2.0 Flash); Pay-as-you-go thereafter (~$0.075-$0.30/1M tokens).",
-        "how_to_subscribe": "1. Visit https://aistudio.google.com/ \n2. Sign in with a Google account.\n3. Click 'Get API key' -> 'Create API key in new project'.\n4. Copy the key into AgriIntel settings.",
+        "how_to_subscribe": "1. Visit https://aistudio.google.com/ \n2. Sign in with a Google account.\n3. Click 'Get API key' -> 'Create API key in new project'.\n4. Copy the key into AgroBiometrix settings.",
         "usage_in_app": "Powering multi-agent synthesis, thesis tutoring, research question ideation, and literature matrix summaries.",
         "accessible_domain": "ai.google.dev, aistudio.google.com",
     },

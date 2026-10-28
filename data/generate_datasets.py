@@ -1,5 +1,5 @@
 """
-Generates benchmark agricultural datasets for AgriIntel
+Generates benchmark agricultural datasets for AgroBiometrix
 """
 
 import json

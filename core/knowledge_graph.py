@@ -1,5 +1,5 @@
 """
-AgriIntel - Agricultural Knowledge Graph Engine
+AgroBiometrix - Agricultural Knowledge Graph Engine
 Connects: Gene -> Trait -> Breed/Crop -> Soil -> Climate -> Phenotype -> Economic Outcome -> Policy
 Interactive visual graph visualization with Plotly
 """
@@ -117,7 +117,7 @@ def create_knowledge_graph_figure(domain_filter="All"):
         data=[edge_trace, node_trace],
         layout=go.Layout(
             title=dict(
-                text="<b>AgriIntel Agricultural Knowledge Graph</b><br><sup>Tracing Gene ➔ Trait ➔ Breed ➔ Environment ➔ Phenotype ➔ Economic Outcome</sup>",
+                text="<b>AgroBiometrix Agricultural Knowledge Graph</b><br><sup>Tracing Gene ➔ Trait ➔ Breed ➔ Environment ➔ Phenotype ➔ Economic Outcome</sup>",
                 font=dict(size=15, color="#1B5E20")
             ),
             showlegend=False,

@@ -1,4 +1,4 @@
-# AgriIntel: A Hybrid Multi-Agent Autonomous Artificial Intelligence and Biometrical Computing Infrastructure for African Agro-Ecosystems
+# AgroBiometrix: A Hybrid Multi-Agent Autonomous Artificial Intelligence and Biometrical Computing Infrastructure for African Agro-Ecosystems
 
 **Target Journal**: *Computers and Electronics in Agriculture* (Elsevier, Impact Factor: ~7.7, CiteScore: 12.4, Q1)  
 **Article Type**: Original Software and Application Article / Research Paper  
@@ -9,13 +9,13 @@
 ## ABSTRACT
 Agricultural production across Sub-Saharan Africa remains critically constrained by biophysical vulnerabilities, fragmented advisory services, and a severe digital computational divide. While general-purpose Large Language Models (LLMs) have emerged as powerful text synthesis engines, their direct application to agricultural science is severely hindered by domain-specific hallucinations, Western agro-climatic biases, mathematically invalid biometrical assertions, and zero guarantees of statistical reproducibility. 
 
-In this paper, we introduce **AgriIntel**, an Africa-first, open-access, hybrid multi-agent artificial intelligence infrastructure that bridges the gap between deterministic biometrical computing and generative contextual reasoning. AgriIntel is architected upon a novel **Two-Tier Hybrid Computing Paradigm**: 
+In this paper, we introduce **AgroBiometrix**, an Africa-first, open-access, hybrid multi-agent artificial intelligence infrastructure that bridges the gap between deterministic biometrical computing and generative contextual reasoning. AgroBiometrix is architected upon a novel **Two-Tier Hybrid Computing Paradigm**: 
 1. **Tier 1 (Deterministic Scientific Moat)** executes over 85% of platform analytical workloads locally via deterministic algorithms with zero cloud latency and zero remote egress overhead. Tier 1 implements exact mathematical formalisms including Linear Mixed Models (LMM), Henderson’s Mixed Model Equations for Best Linear Unbiased Prediction (BLUP), Randomized Complete Block Design (RCBD) Analysis of Variance (ANOVA), Duncan’s Multiple Range Test (DMRT) mean separation, titratable exchangeable aluminum ($\text{Al}^{3+}$) liming kinetics, and FAO-56 Penman-Monteith reference evapotranspiration ($ET_0$).
 2. **Tier 2 (Generative Reasoning Ensemble)** deploys a coordinated multi-agent orchestration layer consisting of 12 specialized autonomous agents (veterinary epidemiology, quantitative genetics, vector climatology, biosecurity protocols, farm economics, and institutional evidence) integrated with dynamic cloud LLMs (Google Gemini 1.5/2.0 Flash) for contextual hypothesis synthesis and publication-grade academic proposal architecture.
 
-Crucially, AgriIntel is architected in strict compliance with the empirical protocols and research standards of leading international and national agricultural bodies: the **CGIAR AI Hub & Biometrics Working Group** (reproducible Multi-Environment Trial SOPs and ethical AI governance), **IITA** (cassava mosaic CMD2/CBSD scoring and drought-tolerant maize evaluation), **ILRI** (ruminant heat tolerance indices and tropical dairy breeding values), **IFPRI** (macroeconomic agricultural investment prioritization and poverty transition thresholds), **FAO** (FAO-56 bioclimatic water balance and animal health guidelines), **FUNAAB** (academic dissertation defense viva standards and indigenous livestock genetic improvement), **NIHORT** (tropical horticultural crop biometrics), and **NVRI Vom / NAPRI Shika** (national veterinary vaccine schedules and reproductive kinetics).
+Crucially, AgroBiometrix is architected in strict compliance with the empirical protocols and research standards of leading international and national agricultural bodies: the **CGIAR AI Hub & Biometrics Working Group** (reproducible Multi-Environment Trial SOPs and ethical AI governance), **IITA** (cassava mosaic CMD2/CBSD scoring and drought-tolerant maize evaluation), **ILRI** (ruminant heat tolerance indices and tropical dairy breeding values), **IFPRI** (macroeconomic agricultural investment prioritization and poverty transition thresholds), **FAO** (FAO-56 bioclimatic water balance and animal health guidelines), **FUNAAB** (academic dissertation defense viva standards and indigenous livestock genetic improvement), **NIHORT** (tropical horticultural crop biometrics), and **NVRI Vom / NAPRI Shika** (national veterinary vaccine schedules and reproductive kinetics).
 
-We benchmark AgriIntel’s biometrical engine against gold-standard statistical packages (SAS v9.4 and R `agricolae` v1.3-5) across multi-location African cattle trial and cereal breeding datasets. AgriIntel achieves **100.0% mathematical parity ($R^2 = 1.0000, P < 10^{-15}$)** with zero rounding drift, while reducing end-to-end proposal and experimental design generation time from weeks to **$4.2 \pm 0.6$ seconds**. Furthermore, resource profiling demonstrates that AgriIntel delivers comprehensive 15-page academic research proposals and ministerial policy memoranda within a compact, highly optimized budget of **~8,028 total tokens**, ensuring long-term operational sustainability in resource-constrained environments. AgriIntel establishes a legally compliant, mathematically verifiable, and computationally scalable foundation for national agricultural research systems, academic faculties, and sovereign policy planners across the Global South.
+We benchmark AgroBiometrix’s biometrical engine against gold-standard statistical packages (SAS v9.4 and R `agricolae` v1.3-5) across multi-location African cattle trial and cereal breeding datasets. AgroBiometrix achieves **100.0% mathematical parity ($R^2 = 1.0000, P < 10^{-15}$)** with zero rounding drift, while reducing end-to-end proposal and experimental design generation time from weeks to **$4.2 \pm 0.6$ seconds**. Furthermore, resource profiling demonstrates that AgroBiometrix delivers comprehensive 15-page academic research proposals and ministerial policy memoranda within a compact, highly optimized budget of **~8,028 total tokens**, ensuring long-term operational sustainability in resource-constrained environments. AgroBiometrix establishes a legally compliant, mathematically verifiable, and computationally scalable foundation for national agricultural research systems, academic faculties, and sovereign policy planners across the Global South.
 
 ---
 
@@ -31,8 +31,8 @@ Historically, addressing these multifaceted constraints has required specialized
   3. *Western Agro-Climatic Bias*: Base training corpora predominantly reflect North American and European agricultural paradigms (e.g., temperate Corn Belt soils, Holstein-Friesian dairy confinement, subsidized monocultures), offering advice that is ecologically unfeasible or lethal in tropical Sahelian or Guinean savanna environments.
   4. *Lack of Institutional Grounding*: Generic models fail to cite authentic regional research protocols established by National Agricultural Research Systems (NARS) such as Nigeria’s National Animal Production Research Institute (NAPRI), the National Veterinary Research Institute (NVRI Vom), Kenya’s KALRO, the Federal University of Agriculture Abeokuta (FUNAAB), NIHORT, or CGIAR centers (IITA, ILRI, AfricaRice, IFPRI).
 
-To resolve this critical dichotomy between **deterministic mathematical rigor** and **flexible generative contextualization**, we developed **AgriIntel**. AgriIntel is a production-grade, Africa-first generative artificial intelligence and biometrical computing infrastructure. This paper details:
-1. The architectural design of AgriIntel’s Two-Tier Hybrid Computing Engine.
+To resolve this critical dichotomy between **deterministic mathematical rigor** and **flexible generative contextualization**, we developed **AgroBiometrix**. AgroBiometrix is a production-grade, Africa-first generative artificial intelligence and biometrical computing infrastructure. This paper details:
+1. The architectural design of AgroBiometrix’s Two-Tier Hybrid Computing Engine.
 2. The mathematical and algorithmic formulation of its deterministic biometrical, edaphic, and epidemiological pipelines.
 3. Its formal compliance architecture aligned with CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, and NIHORT benchmarks.
 4. Rigorous validation against SAS v9.4 and R v4.3.2 benchmarks.
@@ -43,11 +43,11 @@ To resolve this critical dichotomy between **deterministic mathematical rigor** 
 ## 2. SYSTEM ARCHITECTURE & COMPUTATIONAL FRAMEWORK
 
 ### 2.1 The Two-Tier Hybrid Architecture
-AgriIntel addresses the latency, cost, and hallucination limitations of generative AI by bifurcating computation into two coordinated tiers:
+AgroBiometrix addresses the latency, cost, and hallucination limitations of generative AI by bifurcating computation into two coordinated tiers:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              AGRIINTEL PLATFORM ARCHITECTURE                            │
+│                              AGROBIOMETRIX PLATFORM ARCHITECTURE                            │
 ├────────────────────────────────────────────────────────┬───────────────────────────────┤
 │ TIER 1: DETERMINISTIC SCIENTIFIC ENGINES (85%)         │ TIER 2: MULTI-AGENT ENSEMBLE  │
 │ • Local Python / SciPy / NumPy / Pandas runtime        │ • Dynamic Cloud LLM Orchestrator│
@@ -73,7 +73,7 @@ For quantitative animal and crop breeding evaluations, phenotype is partitioned 
 $$y = X\beta + Zu + e$$
 where $y$ is the $n \times 1$ vector of observed phenotypic traits (e.g., cattle rectal temperature under heat stress, grain yield); $\beta$ is a $p \times 1$ vector of fixed effects (e.g., contemporary group, sex, herd management); $u$ is a $q \times 1$ vector of random additive genetic effects; $X$ ($n \times p$) and $Z$ ($n \times q$) are incidence matrices; and $e$ is the residual error vector.
 
-Assuming $u \sim \mathcal{N}(0, A\sigma_g^2)$ and $e \sim \mathcal{N}(0, I\sigma_e^2)$, where $A$ is Wright’s numerator relationship matrix and $\lambda = \frac{\sigma_e^2}{\sigma_g^2} = \frac{1 - h^2}{h^2}$ ($h^2$ being narrow-sense heritability), AgriIntel solves Henderson’s Mixed Model Equations (MME):
+Assuming $u \sim \mathcal{N}(0, A\sigma_g^2)$ and $e \sim \mathcal{N}(0, I\sigma_e^2)$, where $A$ is Wright’s numerator relationship matrix and $\lambda = \frac{\sigma_e^2}{\sigma_g^2} = \frac{1 - h^2}{h^2}$ ($h^2$ being narrow-sense heritability), AgroBiometrix solves Henderson’s Mixed Model Equations (MME):
 
 ```
   ┌                       ┐ ┌   ┐   ┌     ┐
@@ -92,20 +92,20 @@ $$\begin{bmatrix} X'X & X'Z \\ Z'X & Z'Z + A^{-1}\lambda \end{bmatrix} \begin{bm
 For multi-treatment agronomic trials, total variance is partitioned into treatment, block, and residual error components:
 $$y_{ij} = \mu + \tau_i + \beta_j + \epsilon_{ij}, \quad i=1,\dots,t; \quad j=1,\dots,r$$
 
-AgriIntel computes the standard ANOVA table:
+AgroBiometrix computes the standard ANOVA table:
 $$SS_{Total} = \sum_{i=1}^t \sum_{j=1}^r y_{ij}^2 - \frac{Y_{\cdot\cdot}^2}{rt}, \quad SS_{Treat} = \frac{1}{r}\sum_{i=1}^t Y_{i\cdot}^2 - \frac{Y_{\cdot\cdot}^2}{rt}, \quad SS_{Block} = \frac{1}{t}\sum_{j=1}^r Y_{\cdot j}^2 - \frac{Y_{\cdot\cdot}^2}{rt}$$
 $$SS_{Error} = SS_{Total} - SS_{Treat} - SS_{Block}$$
 $$F_{calc} = \frac{MS_{Treat}}{MS_{Error}} = \frac{SS_{Treat}/(t-1)}{SS_{Error}/((t-1)(r-1))}$$
 
-When $F_{calc}$ is statistically significant ($P < \alpha$), AgriIntel executes Duncan's Multiple Range Test (DMRT) (Duncan, 1955). Unlike pairwise Student’s $t$-tests or Tukey’s HSD, DMRT adjusts protection levels based on the range parameter $p$ ($p = 2, \dots, t$):
+When $F_{calc}$ is statistically significant ($P < \alpha$), AgroBiometrix executes Duncan's Multiple Range Test (DMRT) (Duncan, 1955). Unlike pairwise Student’s $t$-tests or Tukey’s HSD, DMRT adjusts protection levels based on the range parameter $p$ ($p = 2, \dots, t$):
 $$R_p = r_{\alpha}(p, f_{error}) \cdot s_{\bar{y}}, \quad \text{where } s_{\bar{y}} = \sqrt{\frac{MS_{Error}}{r}}$$
 where $r_{\alpha}(p, f_{error})$ is the Studentized Range Factor at significance level $\alpha$ and error degrees of freedom $f_{error} = (t-1)(r-1)$, and $s_{\bar{y}}$ is the standard error of the treatment mean.
 
-AgriIntel embeds an exact mathematical lookup table for $r_{\alpha}(p, f)$ and executes an automated ascending-lettering algorithm (`'a'`, `'b'`, `'ab'`, etc.) enforcing strict transitivity rules without user intervention.
+AgroBiometrix embeds an exact mathematical lookup table for $r_{\alpha}(p, f)$ and executes an automated ascending-lettering algorithm (`'a'`, `'b'`, `'ab'`, etc.) enforcing strict transitivity rules without user intervention.
 * **Plain-English Mathematical Interpretation**: When ANOVA confirms that significant differences exist among treatments, Duncan's Test identifies exactly which cultivar or fertilizer treatment statistically outperforms the others. By computing variable critical ranges ($R_p$), it prevents false discoveries while automatically assigning letter groups ('a', 'b', 'bc') so researchers can publish results immediately.
 
 #### 2.2.3 Edaphic Liming Kinetics and Stoichiometric Fertilizer Balancing
-Across acid soils of the Guinea Savanna and humid forest zones ($\text{pH} < 5.2$), toxic trivalent aluminum ($\text{Al}^{3+}$) depresses crop root elongation. AgriIntel models the Agricultural Limestone Requirement (LR in metric tonnes $\text{CaCO}_3$ equivalent per hectare) based on exchangeable acidity titration:
+Across acid soils of the Guinea Savanna and humid forest zones ($\text{pH} < 5.2$), toxic trivalent aluminum ($\text{Al}^{3+}$) depresses crop root elongation. AgroBiometrix models the Agricultural Limestone Requirement (LR in metric tonnes $\text{CaCO}_3$ equivalent per hectare) based on exchangeable acidity titration:
 $$\text{LR } (\text{t/ha}) = \left[ \text{Al}^{3+}_{\text{exch}} \times 1.5 \times \text{CEC}_{\text{buffer}} \right] \times \left( \frac{100}{\text{CCE}} \right) \times \left( \frac{\text{Depth}_{\text{plow}}}{20} \right)$$
 where $\text{Al}^{3+}_{\text{exch}}$ is exchangeable aluminum in $\text{cmol}_{(+)}/\text{kg}$ extracted with $1.0\text{ M KCl}$; $\text{CCE}$ is the Calcium Carbonate Equivalent purity percentage of local lime quarries; and $\text{Depth}_{\text{plow}}$ is effective tillage incorporation depth ($20\text{ cm}$).
 
@@ -145,13 +145,13 @@ Tier 2 deploys an ensemble of 12 specialized autonomous agent personas configure
 ---
 
 ### 2.4 Pan-African Institutional Compliance & Standards Alignment
-A foundational differentiator of AgriIntel is that its algorithms, evidence matrices, and diagnostic decision trees are not generic; they are directly grounded in the published guidelines, field manuals, and regulatory frameworks of leading agricultural institutions:
+A foundational differentiator of AgroBiometrix is that its algorithms, evidence matrices, and diagnostic decision trees are not generic; they are directly grounded in the published guidelines, field manuals, and regulatory frameworks of leading agricultural institutions:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                        AGRIINTEL INSTITUTIONAL COMPLIANCE MATRIX                        │
+│                        AGROBIOMETRIX INSTITUTIONAL COMPLIANCE MATRIX                        │
 ├──────────────────┬──────────────────────────────────────────┬──────────────────────────┤
-│ Institution      │ Regulatory Standard / Protocol           │ AgriIntel Module & Action │
+│ Institution      │ Regulatory Standard / Protocol           │ AgroBiometrix Module & Action │
 ├──────────────────┼──────────────────────────────────────────┼──────────────────────────┤
 │ CGIAR AI Hub     │ Ethical AI in Agriculture; SOPs for MET  │ Reproducible code export │
 │                  │ Multi-Environment Trials Governance      │ (R agricolae & Python)   │
@@ -179,12 +179,12 @@ A foundational differentiator of AgriIntel is that its algorithms, evidence matr
 └──────────────────┴──────────────────────────────────────────┴──────────────────────────┘
 ```
 
-1. **CGIAR AI Hub & Biometrics Working Group (CGIAR, 2021; CGIAR AI Hub, 2023)**: AgriIntel adheres strictly to the CGIAR Ethical AI Framework for Smallholder Systems (CGIAR, 2021). It enforces zero hallucination in statistical calculations by ensuring that all ANOVA, $F$-tests, and DMRT letter assignments are computed through deterministic local mathematical libraries rather than generative text completions, following the biometric standard operating procedures established for multi-environment trials (CGIAR AI Hub, 2023). All analyses generate fully reproducible R (`agricolae`) and Python (`statsmodels`) code, adhering to FAIR (Findable, Accessible, Interoperable, and Reusable) scientific data standards.
-2. **IITA (International Institute of Tropical Agriculture) (IITA, 2020; Sanginga & Mbabu, 2015; Vanlauwe et al., 2021)**: AgriIntel incorporates IITA’s standardized protocols for root, tuber, and cereal evaluation. For cassava phenotyping, it embeds the 1–5 visual symptom severity indexing scales for Cassava Mosaic Begomoviruses (CMD) and Cassava Brown Streak Disease (CBSD) developed under the NextGen Cassava project (IITA, 2020; Sanginga & Mbabu, 2015). For maize, it benchmarks cultivar performance using IITA/IAR SAMMAZ drought-tolerant trial guidelines and incorporates Integrated Soil Fertility Management (ISFM) principles combining inorganic fertilizers with organic amendments and local lime amendments (Vanlauwe et al., 2021).
+1. **CGIAR AI Hub & Biometrics Working Group (CGIAR, 2021; CGIAR AI Hub, 2023)**: AgroBiometrix adheres strictly to the CGIAR Ethical AI Framework for Smallholder Systems (CGIAR, 2021). It enforces zero hallucination in statistical calculations by ensuring that all ANOVA, $F$-tests, and DMRT letter assignments are computed through deterministic local mathematical libraries rather than generative text completions, following the biometric standard operating procedures established for multi-environment trials (CGIAR AI Hub, 2023). All analyses generate fully reproducible R (`agricolae`) and Python (`statsmodels`) code, adhering to FAIR (Findable, Accessible, Interoperable, and Reusable) scientific data standards.
+2. **IITA (International Institute of Tropical Agriculture) (IITA, 2020; Sanginga & Mbabu, 2015; Vanlauwe et al., 2021)**: AgroBiometrix incorporates IITA’s standardized protocols for root, tuber, and cereal evaluation. For cassava phenotyping, it embeds the 1–5 visual symptom severity indexing scales for Cassava Mosaic Begomoviruses (CMD) and Cassava Brown Streak Disease (CBSD) developed under the NextGen Cassava project (IITA, 2020; Sanginga & Mbabu, 2015). For maize, it benchmarks cultivar performance using IITA/IAR SAMMAZ drought-tolerant trial guidelines and incorporates Integrated Soil Fertility Management (ISFM) principles combining inorganic fertilizers with organic amendments and local lime amendments (Vanlauwe et al., 2021).
 3. **ILRI (International Livestock Research Institute) (ILRI, 2021; Mrode et al., 2020; Murray et al., 1983)**: Livestock thermal stress algorithms are calibrated to tropical breeds using ILRI’s African Dairy Genetic Gains (ADGG) benchmarks (ILRI, 2021; Mrode et al., 2020). Physiological resilience under trypanosomiasis challenge is evaluated using ILRI’s hematocrit packed cell volume (PCV) benchmark ($< 25\%$ anemia diagnostic cutoff), coupled with standard field diagnostic protocols (Murray et al., 1983) and verified trypanocidal treatment regimens (Diminazene aceturate @ 3.5 mg/kg body weight).
 4. **IFPRI (International Food Policy Research Institute) (IFPRI, 2022; Mogues et al., 2015)**: The agricultural policy simulator embeds IFPRI’s macroeconomic public investment prioritization methodologies (Mogues et al., 2015; IFPRI, 2022). Budgetary allocations across public agricultural goods (irrigation, inputs, cold-chain hubs) are evaluated through fiscal multiplier matrices, computing Net Present Value (NPV), Benefit-Cost Ratios (BCR), and household transition metrics across the World Bank/IFPRI \$2.15/day extreme poverty baseline (World Bank, 2023).
 5. **FAO (Food and Agriculture Organization of the United Nations) (Allen et al., 1998; FAO, 2021, 2023)**: Evapotranspiration modeling adheres strictly to the FAO-56 Penman-Monteith equation, the global standard for irrigation scheduling and crop water requirement determination (Allen et al., 1998; FAO, 2023). Epizootic surveillance models align with FAO Animal Health manuals for African Swine Fever (ASF; FAO, 2021), Peste des Petits Ruminants (PPR), and Newcastle Disease.
-6. **FUNAAB (Federal University of Agriculture, Abeokuta) (Adebambo et al., 2018; FUNAAB, 2022)**: Academic thesis coaching in AgriIntel is tailored to the rigorous postgraduate defense viva standards established in leading African agricultural universities, following the structural formatting and statistical scrutiny guidelines of FUNAAB Postgraduate School (FUNAAB, 2022). Furthermore, poultry genetic evaluation modules embed performance parameters from the FUNAAB-Alpha improved indigenous chicken breeding program (dual-purpose meat and egg production under scavenge-feed and heat-stress conditions; Adebambo et al., 2018), alongside West African Dwarf (WAD) goat and sheep biometrics.
+6. **FUNAAB (Federal University of Agriculture, Abeokuta) (Adebambo et al., 2018; FUNAAB, 2022)**: Academic thesis coaching in AgroBiometrix is tailored to the rigorous postgraduate defense viva standards established in leading African agricultural universities, following the structural formatting and statistical scrutiny guidelines of FUNAAB Postgraduate School (FUNAAB, 2022). Furthermore, poultry genetic evaluation modules embed performance parameters from the FUNAAB-Alpha improved indigenous chicken breeding program (dual-purpose meat and egg production under scavenge-feed and heat-stress conditions; Adebambo et al., 2018), alongside West African Dwarf (WAD) goat and sheep biometrics.
 7. **NIHORT (National Horticultural Research Institute, Ibadan) (NIHORT, 2020; Olaniyi et al., 2010)**: Horticultural modules incorporate NIHORT’s agronomic standards for tomato, pepper, and indigenous leafy vegetable (*Amaranthus cruentus*, *Telfairia occidentalis*) trials (NIHORT, 2020; Olaniyi et al., 2010), including physiological fruit-cracking scoring, pericarp firmness evaluation, and organo-mineral fertilizer formulations.
 8. **NVRI (National Veterinary Research Institute, Vom) & NAPRI (National Animal Production Research Institute, Shika) (NVRI, 2021; NAPRI, 2019)**: Animal health biosecurity modules reflect NVRI’s national vaccine schedules for ruminants and poultry (NVRI, 2021), including cold-chain storage parameters ($+2^\circ\text{C}$ to $+8^\circ\text{C}$), lyophilized vaccine reconstitution protocols, and maternal antibody interference decay timelines. Herd reproduction models incorporate NAPRI benchmarks for estrus synchronization and artificial insemination kinetics in tropical cattle (NAPRI, 2019).
 
@@ -193,13 +193,13 @@ A foundational differentiator of AgriIntel is that its algorithms, evidence matr
 ## 3. BENCHMARKING & EXPERIMENTAL VERIFICATION
 
 ### 3.1 Verification 1: Cereal Breeding Trial ANOVA and Duncan's Multiple Range Test
-To evaluate mathematical precision, AgriIntel was benchmarked against SAS v9.4 (`PROC GLM`) and R v4.3.2 (`agricolae` v1.3-5) on an empirical multi-location maize trial dataset ($N = 20$, 5 cultivars $\times$ 4 replicates):
+To evaluate mathematical precision, AgroBiometrix was benchmarked against SAS v9.4 (`PROC GLM`) and R v4.3.2 (`agricolae` v1.3-5) on an empirical multi-location maize trial dataset ($N = 20$, 5 cultivars $\times$ 4 replicates):
 
 ```
 ========================================================================================
-AGRIINTEL VS. SAS V9.4 VS. R AGRICOLAE: MAIZE TRIAL ANOVA BENCHMARK
+AGROBIOMETRIX VS. SAS V9.4 VS. R AGRICOLAE: MAIZE TRIAL ANOVA BENCHMARK
 ========================================================================================
-Source of Variation     DF      SAS v9.4 MS     R agricolae MS  AgriIntel MS    Numerical Error
+Source of Variation     DF      SAS v9.4 MS     R agricolae MS  AgroBiometrix MS    Numerical Error
 ----------------------------------------------------------------------------------------
 Blocks (Replicates)     3       1.42850         1.42850         1.42850         0.00000 (0.000%)
 Treatments (Cultivars)  4       8.74212         8.74212         8.74212         0.00000 (0.000%)
@@ -210,7 +210,7 @@ P-Value (Treatments)    -       1.842 × 10^-5   1.842 × 10^-5   1.842 × 10^-5
 ========================================================================================
 
 TREATMENT MEAN SEPARATION (DUNCAN'S MULTIPLE RANGE TEST, alpha = 0.05)
-Cultivar                Mean Yield (t/ha)       SAS Lettering   R Lettering     AgriIntel       Status
+Cultivar                Mean Yield (t/ha)       SAS Lettering   R Lettering     AgroBiometrix       Status
 ----------------------------------------------------------------------------------------
 SAMMAZ-15 (T5)          6.84                    a               a               a               PERFECT MATCH
 SAMMAZ-27 (T4)          6.12                    b               b               b               PERFECT MATCH
@@ -220,10 +220,10 @@ LOCAL CONTROL (T1)      3.20                    d               d               
 ========================================================================================
 Statistical Correlation: R^2 = 1.00000 (P < 10^-15). Numerical Drift: 0.000000%.
 ```
-AgriIntel replicated the exact $F$-statistics, mean squares, and Duncan group lettering with zero deviation.
+AgroBiometrix replicated the exact $F$-statistics, mean squares, and Duncan group lettering with zero deviation.
 
 ### 3.2 Verification 2: Henderson’s BLUP Animal Model
-A three-generation pedigree dataset ($N = 120$ indigenous Muturu cattle) with known pedigree relationships was evaluated for body weight at 12 months ($h^2 = 0.35$). AgriIntel’s Henderson MME solver was benchmarked against R `pedigreemm` and SAS `PROC MIXED`:
+A three-generation pedigree dataset ($N = 120$ indigenous Muturu cattle) with known pedigree relationships was evaluated for body weight at 12 months ($h^2 = 0.35$). AgroBiometrix’s Henderson MME solver was benchmarked against R `pedigreemm` and SAS `PROC MIXED`:
 * **Pearson Correlation ($r$) of EBVs**: $r = 0.99998$ ($P < 10^{-16}$).
 * **Rank Correlation (Spearman's $\rho$)**: $\rho = 1.00000$. Top 10 breeding sires identified were identical in ranking.
 
@@ -232,7 +232,7 @@ Platform resource profiling across 1,000 standardized evaluation trials confirme
 * **Tier 1 (Deterministic ANOVA, DMRT, Liming kinetics, BLUP)**: Mean execution latency of $\mathbf{12.4 \pm 1.8\text{ ms}}$ on standard local hardware ($0\text{ cloud API calls}$, fully sovereign and offline-capable).
 * **Tier 2 (Multi-Agent Synthesis Engine)**: Mean end-to-end cloud pipeline latency of $\mathbf{4.21 \pm 0.58\text{ seconds}}$.
 * **Inference Resource Footprint**: Complete multi-agent consensus, 15-page document synthesis, and automated citation matching are completed within an average profile of $\mathbf{2,048\text{ input tokens}}$ and $\mathbf{5,980\text{ output tokens}}$ (~$8,028\text{ total tokens}$).
-* **Sovereign Edge Deployment**: By offloading $85.3\%$ of analytical compute to local deterministic execution, AgriIntel reduces remote bandwidth demands by over $85\%$, validating its operational sustainability for institutions with intermittent internet connectivity.
+* **Sovereign Edge Deployment**: By offloading $85.3\%$ of analytical compute to local deterministic execution, AgroBiometrix reduces remote bandwidth demands by over $85\%$, validating its operational sustainability for institutions with intermittent internet connectivity.
 
 ---
 
@@ -240,21 +240,21 @@ Platform resource profiling across 1,000 standardized evaluation trials confirme
 
 ### 4.1 Case Study 1: Heat Tolerance and Trypanosomiasis in West African Cattle
 * **Context**: Dissecting genomic and physiological resilience in indigenous Zebu (Bunaji) and Taurine (Muturu, N'Dama) cattle under concurrent heat stress ($\text{THI} \ge 82$) and *Trypanosoma vivax* challenge in the Derived Savanna zone of Oyo State, Nigeria.
-* **AgriIntel Execution**:
+* **AgroBiometrix Execution**:
   - Deterministic module calculated diurnal THI curves, heat-load indexes, and Cochran’s minimum sample size ($n = 384$ head across 4 agro-ecological zones).
   - Biometrics module fitted an RCBD factorial LMM (Breed $\times$ Physiological Status) with animal nested as random effect.
   - Multi-Agent Ensemble synthesized a 15-page publication-grade research proposal incorporating NVRI Vom diagnostic trypanocidal protocols (Diminazene aceturate @ 3.5 mg/kg), packed cell volume (PCV) hematocrit cutoffs ($< 25\%$), and 25 peer-reviewed citations with active DOIs.
 
 ### 4.2 Case Study 2: Acid Soil Liming and Stoichiometric NPK Optimization
 * **Context**: Remediating severely weathered Ultisols ($\text{pH} = 4.62, \text{Al}^{3+} = 2.45\text{ cmol/kg}$) for soybean-maize rotations in the Northern Guinea Savanna of Kaduna, Nigeria.
-* **AgriIntel Execution**:
+* **AgroBiometrix Execution**:
   - Titration engine derived an exact agricultural limestone requirement of $2.20\text{ t/ha}$ ($\text{CaCO}_3$ equivalent) to neutralize toxic $\text{Al}^{3+}$ saturation below $15\%$.
   - Stoichiometric nutrient balancing formulated an ISFM blend of $60\text{ kg N} - 40\text{ kg } \text{P}_2\text{O}_5 - 40\text{ kg } \text{K}_2\text{O} + 4\text{ t/ha}$ poultry manure.
   - Resulted in a modeled 72.4% reduction in exchangeable aluminum toxicity and a projected 114% grain yield increase.
 
 ### 4.3 Case Study 3: Macroeconomic National Policy Simulation (Cabinet Memo)
 * **Context**: Federal Ministry of Agriculture and Food Security (FMAFS) allocating a ₦100.0 Billion national agricultural capital appropriation.
-* **AgriIntel Execution**:
+* **AgroBiometrix Execution**:
   - What-If simulator performed Pareto-optimal frontier optimization across 5 public pillars: Smart E-Vouchers (35%), Solar Irrigation (25%), Hermetic Grain Hubs (15%), Livestock NVRI Vaccines (15%), and Credit Guarantees (10%).
   - Computed macro socio-economic impact: Aggregate Benefit-Cost Ratio of **2.84 to 1.00**; **385,420 direct rural jobs created**; **182,500 households lifted above the \$2.15/day extreme poverty line**; and **\$34.2 Million USD** in FX import substitution.
   - Generated a complete, formal Executive Cabinet Memorandum submitted for Federal Executive Council (FEC) ratification.
@@ -264,13 +264,13 @@ Platform resource profiling across 1,000 standardized evaluation trials confirme
 ## 5. DISCUSSION & INSTITUTIONAL IMPLICATIONS
 
 ### 5.1 Overcoming the Global South Computational Divide
-AgriIntel proves that advanced generative AI can be deployed responsibly in agriculture only when coupled with **deterministic mathematical guardrails**. By grounding LLMs in local biometrical algorithms, verified NARS protocols, and regional currency/agro-ecological contexts, AgriIntel eliminates the risk of hallucinated advice. 
+AgroBiometrix proves that advanced generative AI can be deployed responsibly in agriculture only when coupled with **deterministic mathematical guardrails**. By grounding LLMs in local biometrical algorithms, verified NARS protocols, and regional currency/agro-ecological contexts, AgroBiometrix eliminates the risk of hallucinated advice. 
 
 ### 5.2 Software Governance & Academic Citation Pipeline
-A fundamental contribution of this platform is establishing a citation standard for agricultural research in developing nations. When researchers cite AgriIntel for ANOVA, DMRT, or proposal synthesis, they anchor their methodologies in peer-reviewed, reproducible mathematical code rather than opaque black-box APIs.
+A fundamental contribution of this platform is establishing a citation standard for agricultural research in developing nations. When researchers cite AgroBiometrix for ANOVA, DMRT, or proposal synthesis, they anchor their methodologies in peer-reviewed, reproducible mathematical code rather than opaque black-box APIs.
 
 ### 5.3 Limitations and Future Work
-While AgriIntel's current architecture achieves 100% mathematical parity in classical biometrics, future iterations will integrate:
+While AgroBiometrix's current architecture achieves 100% mathematical parity in classical biometrics, future iterations will integrate:
 1. Edge-computing IoT sensor streams (soil moisture capacitance probes, LoRaWAN weather stations).
 2. Multi-spectral drone imagery processing for real-time NDVI and crop canopy nitrogen estimation.
 3. Expanded sovereign offline Small Language Models (SLMs) such as quantized Llama-3-8B deployed directly on air-gapped ministry servers.
@@ -278,7 +278,7 @@ While AgriIntel's current architecture achieves 100% mathematical parity in clas
 ---
 
 ## 6. CONCLUSION & SOFTWARE AVAILABILITY
-AgriIntel represents the first fully integrated, Africa-first generative artificial intelligence and biometrical computing platform engineered specifically for tropical agriculture. By merging deterministic variance partitioning, Henderson's BLUP breeding equations, and soil liming kinetics with a 12-agent LLM orchestration layer aligned with CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, and NIHORT benchmarks, AgriIntel delivers institutional-grade analytical power at zero barrier to entry.
+AgroBiometrix represents the first fully integrated, Africa-first generative artificial intelligence and biometrical computing platform engineered specifically for tropical agriculture. By merging deterministic variance partitioning, Henderson's BLUP breeding equations, and soil liming kinetics with a 12-agent LLM orchestration layer aligned with CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, and NIHORT benchmarks, AgroBiometrix delivers institutional-grade analytical power at zero barrier to entry.
 
 * **Software Platform**: Live web application available at: `http://localhost:8501` (Institutional Edition).
 * **Source Code & Documentation**: Hosted on GitHub under open academic license.

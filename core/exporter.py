@@ -1,5 +1,5 @@
 """
-AgriIntel Document Export Engine
+AgroBiometrix Document Export Engine
 Converts Markdown, Tables, and Scientific Synthesis into Publication-Grade:
 1. Portable Document Format (.pdf) via ReportLab with two-pass NumberedCanvas
 2. Microsoft Word (.docx) via python-docx with styled headers, XML tables, and runs
@@ -49,7 +49,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL SCIENTIFIC ADVISORY & RESEARCH REPORT")
+            self.drawString(54, 755, "AGROBIOMETRIX SCIENTIFIC ADVISORY & RESEARCH REPORT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#666666"))
             self.drawRightString(558, 755, "Pan-African Agronomic Intelligence")
@@ -61,7 +61,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel Platform | Verified Institutional Report")
+        self.drawString(54, 34, "AgroBiometrix Platform | Verified Institutional Report")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -86,7 +86,7 @@ def clean_markdown_for_reportlab(text: str) -> str:
     return text
 
 
-def markdown_to_pdf(markdown_text: str, title: str = "AgriIntel Report") -> bytes:
+def markdown_to_pdf(markdown_text: str, title: str = "AgroBiometrix Report") -> bytes:
     """Converts markdown text to a styled, publication-grade PDF buffer."""
     buf = io.BytesIO()
     doc = SimpleDocTemplate(
@@ -286,7 +286,7 @@ def sanitize_xml_text(text: str) -> str:
     return clean.strip()
 
 
-def markdown_to_docx(markdown_text: str, title: str = "AgriIntel Report") -> bytes:
+def markdown_to_docx(markdown_text: str, title: str = "AgroBiometrix Report") -> bytes:
     """Converts markdown text to a styled, publication-grade Microsoft Word (.docx) buffer."""
     doc = docx.Document()
     
@@ -429,8 +429,8 @@ def _add_markdown_runs(paragraph, text: str):
 
 def render_download_buttons(
     content_text: str,
-    filename_prefix: str = "AgriIntel_Document",
-    title: str = "AgriIntel Scientific Report",
+    filename_prefix: str = "AgroBiometrix_Document",
+    title: str = "AgroBiometrix Scientific Report",
     key_prefix: str = "dl"
 ):
     """

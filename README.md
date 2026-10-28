@@ -1,4 +1,4 @@
-# 🌱 AgriIntel — The Generative Intelligence Platform for Agriculture
+# 🌱 AgroBiometrix — The Generative Intelligence Platform for Agriculture
 > **Africa-First, Globally Relevant: The Intelligence Infrastructure Behind Resilient Agriculture**
 
 ---
@@ -6,7 +6,7 @@
 ## 📖 Executive Summary & Founder Story
 > *"I trained as an animal geneticist, spent years working with agricultural research problems, transitioned into data science and artificial intelligence, and realised that one of Africa's biggest agricultural problems is not merely lack of knowledge—it is the inability to connect agricultural knowledge, data, research and decision-making at scale."*
 
-While generic agricultural AI applications stop at *"upload a photo of your tomato leaf and I'll identify the disease"*, **AgriIntel** builds the underlying intelligence infrastructure. It connects genomics, biometrical field trials, edaphic soil chemistry, climate projections, farm economics, and macro-policy simulations to generate actionable, evidence-grounded knowledge for farmers, researchers, students, agribusinesses, and governments.
+While generic agricultural AI applications stop at *"upload a photo of your tomato leaf and I'll identify the disease"*, **AgroBiometrix** builds the underlying intelligence infrastructure. It connects genomics, biometrical field trials, edaphic soil chemistry, climate projections, farm economics, and macro-policy simulations to generate actionable, evidence-grounded knowledge for farmers, researchers, students, agribusinesses, and governments.
 
 ---
 
@@ -14,12 +14,12 @@ While generic agricultural AI applications stop at *"upload a photo of your toma
 
 ### 1. How Novel is This Project?
 - **Current Landscape**: 95% of agricultural AI applications deployed in Africa focus strictly on basic farmer-facing diagnostics. While useful, they address symptoms rather than agricultural systems, and fail researchers, breeders, policy analysts, and commercial agribusinesses.
-- **The AgriIntel Moat**: AgriIntel moves upstream to the **intelligence infrastructure** of agriculture. By connecting:
+- **The AgroBiometrix Moat**: AgroBiometrix moves upstream to the **intelligence infrastructure** of agriculture. By connecting:
   1. **Quantitative Genetics & Biometrics** (Pedigree/genomic BLUP, mixed-effects models, Duncan's Multiple Range Test, ANOVA),
   2. **Evidence-Grounded Knowledge Graphs** (linking Gene $\rightarrow$ Trait $\rightarrow$ Breed $\rightarrow$ Soil $\rightarrow$ Climate $\rightarrow$ Economic Outcome),
   3. **Institutional Macro-Policy & Economic Simulators** (multi-ministerial fiscal impact, 12-commodity import substitution balance sheets, macro-shock resilience, and AU CAADP/FEC cabinet policy briefs), and
   4. **Multi-Agent Orchestration** (Climate, Crop, Genetics, Soil, Economics, and Evidence Agents collaborating on a single inquiry),
-  AgriIntel creates a **systemic decision engine** with no direct equivalent in the African or global tech ecosystem.
+  AgroBiometrix creates a **systemic decision engine** with no direct equivalent in the African or global tech ecosystem.
 
 ### 2. Can It Reach Millions of Users?
 **Yes, through a 4-Tier Flywheel:**
@@ -43,7 +43,7 @@ While generic agricultural AI applications stop at *"upload a photo of your toma
 
 ## 🏛️ 7 Unified Power Suites (Scientific Architecture)
 
-AgriIntel consolidates agricultural inquiries into **7 cohesive, domain-specific Power Suites** that mirror natural scientific workflows:
+AgroBiometrix consolidates agricultural inquiries into **7 cohesive, domain-specific Power Suites** that mirror natural scientific workflows:
 
 1. **🌟 Multi-Agent Orchestrator**
    - Decomposes complex inquiries across 6 autonomous specialist agents (Veterinary, Genetics, Soil, Climate, Economics, Evidence).
@@ -85,7 +85,7 @@ AgriIntel consolidates agricultural inquiries into **7 cohesive, domain-specific
 
 ## 📄 Universal Multi-Format Document Export
 
-AgriIntel features a unified document export architecture in `core/exporter.py`:
+AgroBiometrix features a unified document export architecture in `core/exporter.py`:
 - **Publication-Grade PDF**: Formatted with running headers/footers, dynamic two-pass page numbering, and institutional Leaf Green branding via ReportLab.
 - **Microsoft Word (.docx)**: Generated via `python-docx` with **XML control character sanitization** (regex filtering ASCII 0x00–0x1F), preventing document corruption when opened in desktop Word or Google Docs.
 - **Standard Markdown (.md)**: UTF-8 encoded plain markdown for direct import into Notion, Obsidian, GitHub, or institutional knowledge management portals.
@@ -94,7 +94,7 @@ AgriIntel features a unified document export architecture in `core/exporter.py`:
 
 ## 🔬 Statistical Analysis Explainer & Post-Hoc Suite
 
-AgriIntel features a publication-grade biometrical engine that runs:
+AgroBiometrix features a publication-grade biometrical engine that runs:
 - **One-Way ANOVA & Two-Way Factorial ANOVA** (with interaction analysis).
 - **Duncan's Multiple Range Test (DMRT)**: Stepwise variable range test balancing Type I and Type II errors for agronomic and livestock evaluations.
 - **Tukey's Honest Significant Difference (HSD)**: Strict experiment-wise error control across all pairwise comparisons.
@@ -139,7 +139,7 @@ cd "c:\Users\USER\Documents\ML Projects\Agri_Intel"
 python -m pip install -r requirements.txt
 ```
 
-### Step 3: Launch AgriIntel
+### Step 3: Launch AgroBiometrix
 ```powershell
 streamlit run app.py
 ```
@@ -150,7 +150,7 @@ The application will launch automatically in your default browser at:
 ---
 
 ## 🏆 Aligned Organizations & Acknowledgments
-AgriIntel is built in alignment with the digital agriculture priorities of:
+AgroBiometrix is built in alignment with the digital agriculture priorities of:
 - **CGIAR AI Hub** (2025/2026 Initiative)
 - **International Institute of Tropical Agriculture (IITA)**
 - **International Livestock Research Institute (ILRI)**

@@ -1,12 +1,12 @@
 """
-Leaf Green Theme CSS for AgriIntel
+Leaf Green Theme CSS for AgroBiometrix
 Includes refined, compact font sizing for all module outputs, metrics, and cards
 """
 
 LEAF_GREEN_CSS = """
 <style>
 /* ============================================================
-   AgriIntel - Leaf Green Theme & Compact Typography
+   AgroBiometrix - Leaf Green Theme & Compact Typography
    ============================================================ */
 
 :root {
@@ -85,7 +85,7 @@ p, span, label, li {
 }
 
 /* ============================================================
-   AgriIntel Unified Institutional Hero Banner
+   AgroBiometrix Unified Institutional Hero Banner
    ============================================================ */
 .agri-hero-banner {
     background: linear-gradient(135deg, #0A2F10 0%, #134B1B 45%, #1B5E20 85%, #103B14 100%);

@@ -1,5 +1,5 @@
 """
-Generates the executive PDF: AgriIntel Strategic Roadmap and Next Steps.
+Generates the executive PDF: AgroBiometrix Strategic Roadmap and Next Steps.
 """
 
 from reportlab.lib.pagesizes import letter
@@ -10,7 +10,7 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Strategic_Roadmap_and_Next_Steps.pdf"
+PDF_FILENAME = "AgroBiometrix_Strategic_Roadmap_and_Next_Steps.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -37,7 +37,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AgriIntel Strategic Roadmap — Execution, Funding & Monetization Plan")
+            self.drawString(54, 755, "AgroBiometrix Strategic Roadmap — Execution, Funding & Monetization Plan")
             self.drawRightString(558, 755, "Africa-First, Globally Relevant")
             self.setStrokeColor(colors.HexColor("#C8E6C9"))
             self.setLineWidth(0.6)
@@ -45,7 +45,7 @@ class NumberedCanvas(canvas.Canvas):
             
         # Footer
         page_text = f"Page {self._pageNumber} of {page_count}"
-        self.drawString(54, 35, "AgriIntel Commercial Strategy — Confidential Executive Brief")
+        self.drawString(54, 35, "AgroBiometrix Commercial Strategy — Confidential Executive Brief")
         self.drawRightString(558, 35, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -149,7 +149,7 @@ def create_roadmap_pdf():
     story = []
 
     # Title & Banner
-    story.append(Paragraph("AgriIntel: What Next? Strategic Execution Plan", title_style))
+    story.append(Paragraph("AgroBiometrix: What Next? Strategic Execution Plan", title_style))
     story.append(Paragraph("<b>The 4-Horizon Roadmap: Deployment, Grant Funding, Planetary APIs & Commercial Scale</b>", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=leaf_green, spaceBefore=0, spaceAfter=8))
 
@@ -157,7 +157,7 @@ def create_roadmap_pdf():
     overview_box = [
         [Paragraph("<b>STRATEGIC OBJECTIVE: MOVING FROM MVP TO VENTURE/INSTITUTIONAL SCALE</b>", body_bold)],
         [Paragraph(
-            "<i>\"With the core AgriIntel engine running live—complete with the publication-grade Duncan Multiple Range Test (DMRT) biometrics, "
+            "<i>\"With the core AgroBiometrix engine running live—complete with the publication-grade Duncan Multiple Range Test (DMRT) biometrics, "
             "the 14 specialized intelligence modules, and the Leaf Green design system—the critical objective is now to execute a structured "
             "commercial and institutional transition: moving from a local prototype to a deployed cloud platform, securing non-dilutive grant funding "
             "(CGIAR AI Hub / Gates Foundation), and scaling toward multi-tiered monetization.\"</i>",
@@ -176,16 +176,16 @@ def create_roadmap_pdf():
     # HORIZON 1
     story.append(Paragraph("Horizon 1: Immediate Cloud Deployment & Pilot User Testing (Days 1 – 30)", h1_style))
     story.append(Paragraph(
-        "<b>Goal</b>: Make AgriIntel accessible via a single URL so researchers, students, and extension officers can test it on mobile phones and laptops without touching a terminal.",
+        "<b>Goal</b>: Make AgroBiometrix accessible via a single URL so researchers, students, and extension officers can test it on mobile phones and laptops without touching a terminal.",
         body_style
     ))
     story.append(Paragraph(
-        "• <b>One-Click Cloud Deployment</b>: Host AgriIntel on <b>Streamlit Community Cloud</b> (free public tier) or <b>Hugging Face Spaces</b>, connected to a custom domain (e.g. <code>agriintel.ai</code> or <code>agriintel.africa</code>).<br/>"
+        "• <b>One-Click Cloud Deployment</b>: Host AgroBiometrix on <b>Streamlit Community Cloud</b> (free public tier) or <b>Hugging Face Spaces</b>, connected to a custom domain (e.g. <code>agrobiometrix.ai</code> or <code>agrobiometrix.africa</code>).<br/>"
         "• <b>Closed Beta Pilot with 3 Target Cohorts</b>:<br/>"
         "&nbsp;&nbsp;&nbsp;&nbsp;1. <i>Cohort A (Postgraduate Students & Lecturers)</i>: Validate the <b>AI Statistical Geneticist (DMRT/ANOVA)</b> and <b>Thesis Tutor</b> against historical SPSS/SAS/R datasets.<br/>"
         "&nbsp;&nbsp;&nbsp;&nbsp;2. <i>Cohort B (Breeders & Agronomists at IITA/NAPRI/Universities)</i>: Test the <b>Maize Trait Prioritizer</b> and <b>Agricultural Experiment Designer (RCBD layouts)</b>.<br/>"
         "&nbsp;&nbsp;&nbsp;&nbsp;3. <i>Cohort C (Commercial Farm Managers & Extension Officers)</i>: Test the <b>Soil & Climate What-If Scenario Simulators</b> under economic and rainfall stress.<br/>"
-        "• <b>Quantitative Case Studies</b>: Document time saved (e.g., <i>'Reduced trial biometric analysis and post-hoc Duncan testing time from 4 days in SAS to 4 minutes in AgriIntel'</i>).",
+        "• <b>Quantitative Case Studies</b>: Document time saved (e.g., <i>'Reduced trial biometric analysis and post-hoc Duncan testing time from 4 days in SAS to 4 minutes in AgroBiometrix'</i>).",
         body_style
     ))
 
@@ -197,13 +197,13 @@ def create_roadmap_pdf():
     ))
 
     grant_data = [
-        ("CGIAR AI Hub (2025/2026)", "CGIAR launched its AI Hub specifically around turning agricultural science into practical AI products.", "Position AgriIntel as the <i>operational intelligence delivery infrastructure</i> for CGIAR Dataverse and regional breeding programs."),
-        ("Bill & Melinda Gates Foundation (BMGF)", "Digital Agricultural Public Infrastructure & Climate Adaptation Grants.", "Pitch AgriIntel's genomic thermotolerance and drought-escape breeding tools as smallholder resilience infrastructure."),
-        ("IFPRI / AFAAS Generative AI Pilots", "AFAAS is piloting GenAI extension services across Nigeria, Kenya, Uganda, and Liberia.", "Integrate AgriIntel as the verified evidence-grounded backend, eliminating hallucinations in extension advisory."),
+        ("CGIAR AI Hub (2025/2026)", "CGIAR launched its AI Hub specifically around turning agricultural science into practical AI products.", "Position AgroBiometrix as the <i>operational intelligence delivery infrastructure</i> for CGIAR Dataverse and regional breeding programs."),
+        ("Bill & Melinda Gates Foundation (BMGF)", "Digital Agricultural Public Infrastructure & Climate Adaptation Grants.", "Pitch AgroBiometrix's genomic thermotolerance and drought-escape breeding tools as smallholder resilience infrastructure."),
+        ("IFPRI / AFAAS Generative AI Pilots", "AFAAS is piloting GenAI extension services across Nigeria, Kenya, Uganda, and Liberia.", "Integrate AgroBiometrix as the verified evidence-grounded backend, eliminating hallucinations in extension advisory."),
         ("AfDB TAAT & Agri-Pitch", "African Development Bank Technologies for African Agricultural Transformation.", "Demonstrate macro-policy decision support and seed-system intervention optimization.")
     ]
     g_rows = [[Paragraph(f"<b>{g[0]}</b>", table_cell_style), Paragraph(g[1], table_cell_style), Paragraph(g[2], table_cell_style)] for g in grant_data]
-    g_table = Table([[Paragraph("<b>Target Institution / Grant</b>", table_header_style), Paragraph("<b>Strategic Mandate</b>", table_header_style), Paragraph("<b>AgriIntel Value Proposition</b>", table_header_style)]] + g_rows, colWidths=[120, 180, 204])
+    g_table = Table([[Paragraph("<b>Target Institution / Grant</b>", table_header_style), Paragraph("<b>Strategic Mandate</b>", table_header_style), Paragraph("<b>AgroBiometrix Value Proposition</b>", table_header_style)]] + g_rows, colWidths=[120, 180, 204])
     g_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), primary_green),
         ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
@@ -283,7 +283,7 @@ def create_roadmap_pdf():
     story.append(Spacer(1, 10))
 
     story.append(Paragraph(
-        "<b>Summary Conclusion:</b> AgriIntel is positioned at the exact historical moment when agricultural research centers and international funders are actively demanding agentic AI products. Following this 4-horizon roadmap ensures that AgriIntel transitions from an inspiring concept into an enduring, venture-scale agricultural intelligence institution.",
+        "<b>Summary Conclusion:</b> AgroBiometrix is positioned at the exact historical moment when agricultural research centers and international funders are actively demanding agentic AI products. Following this 4-horizon roadmap ensures that AgroBiometrix transitions from an inspiring concept into an enduring, venture-scale agricultural intelligence institution.",
         body_bold
     ))
 

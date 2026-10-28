@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier 11: 7-Module Architecture & Functional Blueprint
+AgroBiometrix Technical Dossier 11: 7-Module Architecture & Functional Blueprint
 Generates publication-grade PDF:
-- Primary: AgriIntel_7_Module_Architecture_and_Functional_Blueprint.pdf
-- Mirror: 11_AgriIntel_7_Module_Architecture_and_Functional_Blueprint.pdf
+- Primary: AgroBiometrix_7_Module_Architecture_and_Functional_Blueprint.pdf
+- Mirror: 11_AgroBiometrix_7_Module_Architecture_and_Functional_Blueprint.pdf
 """
 
 import os
@@ -15,8 +15,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_7_Module_Architecture_and_Functional_Blueprint.pdf"
-ALT_FILENAME = "11_AgriIntel_7_Module_Architecture_and_Functional_Blueprint.pdf"
+PDF_FILENAME = "AgroBiometrix_7_Module_Architecture_and_Functional_Blueprint.pdf"
+ALT_FILENAME = "11_AgroBiometrix_7_Module_Architecture_and_Functional_Blueprint.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -44,7 +44,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL 7-MODULE ARCHITECTURE & MASTER FUNCTIONAL BLUEPRINT")
+            self.drawString(54, 755, "AGROBIOMETRIX 7-MODULE ARCHITECTURE & MASTER FUNCTIONAL BLUEPRINT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 11 (v2.1)")
@@ -56,7 +56,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Pan-African Generative AI Infrastructure for Agronomic Science | Master Blueprint")
+        self.drawString(54, 34, "AgroBiometrix: Pan-African Generative AI Infrastructure for Agronomic Science | Master Blueprint")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -194,11 +194,11 @@ def build_pdf():
     # -------------------------------------------------------------------------
     banner_data = [
         [
-            Paragraph("<b>AGRIINTEL TECHNICAL DOSSIER 11</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
+            Paragraph("<b>AGROBIOMETRIX TECHNICAL DOSSIER 11</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
             Paragraph("<b>OCTOBER 2026 | PRODUCTION MASTER BLUEPRINT</b>", ParagraphStyle('B2', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"), alignment=2))
         ],
         [
-            Paragraph("AgriIntel 7-Module Architecture & Master Functional Blueprint", title_style),
+            Paragraph("AgroBiometrix 7-Module Architecture & Master Functional Blueprint", title_style),
             Paragraph("Production Specification", ParagraphStyle('B4', fontName='Helvetica-Bold', fontSize=9, leading=12, textColor=leaf_green, alignment=2))
         ],
         [
@@ -224,7 +224,7 @@ def build_pdf():
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=4))
     
     story.append(Paragraph(
-        "AgriIntel is an enterprise-grade agricultural intelligence platform engineered to power scientific research, biometrical trials, "
+        "AgroBiometrix is an enterprise-grade agricultural intelligence platform engineered to power scientific research, biometrical trials, "
         "and smallholder advisory across 48+ sub-Saharan African nations. The platform operates on an unconstrained <b>Dual-Core Architecture</b>:",
         body_style
     ))
@@ -568,7 +568,7 @@ def build_pdf():
     # Institutional Sign-Off Table
     signoff_data = [
         [
-            Paragraph("<b>Chief Technology Officer</b><br/>AgriIntel AI Platform<br/><i>Approved & Released: Oct 2026</i>", table_cell_style),
+            Paragraph("<b>Chief Technology Officer</b><br/>AgroBiometrix AI Platform<br/><i>Approved & Released: Oct 2026</i>", table_cell_style),
             Paragraph("<b>Head of Macro-Policy & Biometrics</b><br/>Institutional Governance Unit<br/><i>Mathematically Certified</i>", table_cell_style),
             Paragraph("<b>Lead Agronomic Systems Engineer</b><br/>Pan-African Deployment Team<br/><i>Production Verified (v2.1)</i>", table_cell_style)
         ]

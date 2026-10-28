@@ -1,5 +1,5 @@
 """
-AgriIntel - Core Statistical & Biometrics Engine
+AgroBiometrix - Core Statistical & Biometrics Engine
 Comprehensive Mean Comparison, Post-Hoc Testing, BLUP, and Pedagogical Explainers
 """
 
@@ -627,7 +627,7 @@ def generate_reproducible_code(dataset_name, group_col, value_col, test_type="du
     Generates reproducible R and Python code for agricultural researchers and thesis students.
     """
     r_code = f"""# Reproducible Agricultural Biometrics Script in R
-# AgriIntel Automated Pipeline
+# AgroBiometrix Automated Pipeline
 library(agricolae)
 
 # 1. Load data
@@ -652,7 +652,7 @@ plot(out_tukey, main = "Tukey HSD Mean Separation")
 plot(out_lsd, main = "Fisher Protected LSD Mean Separation")
 """
 
-    python_code = f"""# Reproducible Python Code with AgriIntel Engine
+    python_code = f"""# Reproducible Python Code with AgroBiometrix Engine
 import pandas as pd
 from statsmodels.formula.api import ols
 import statsmodels.api as sm
@@ -837,7 +837,7 @@ def generate_reproducible_batch_code(dataset_name, group_col, value_cols, test_t
     """
     traits_r = ", ".join(f'"{col}"' for col in value_cols)
     r_code = f"""# ==============================================================================
-# AgriIntel Multi-Trait Biometrics Pipeline in R
+# AgroBiometrix Multi-Trait Biometrics Pipeline in R
 # Batch Analysis of {len(value_cols)} Traits with agricolae package
 # ==============================================================================
 library(agricolae)
@@ -882,7 +882,7 @@ for (tr in traits) {{
 
     traits_py = ", ".join(f'"{col}"' for col in value_cols)
     python_code = f"""# ==============================================================================
-# AgriIntel Multi-Trait Biometrics Pipeline in Python
+# AgroBiometrix Multi-Trait Biometrics Pipeline in Python
 # Batch Analysis of {len(value_cols)} Traits with statsmodels
 # ==============================================================================
 import pandas as pd

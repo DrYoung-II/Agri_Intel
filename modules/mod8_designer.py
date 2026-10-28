@@ -133,7 +133,7 @@ def render_experiment_designer():
             else:
                 formula = f"{primary_metric} ~ {clean_fa}"
 
-        r_script = f"""# Auto-generated R script by AgriIntel for {exp_design} ({target_crop})
+        r_script = f"""# Auto-generated R script by AgroBiometrix for {exp_design} ({target_crop})
 library(agricolae)
 
 # 1. Load your populated field data

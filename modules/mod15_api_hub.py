@@ -16,7 +16,7 @@ def render_api_hub():
     st.markdown("""
 <div class="agri-explainer-box">
 <div class="agri-explainer-title">💡 Zero-Cost Test Running Guarantee</div>
-<b>AgriIntel is designed to run 100% free out of the box!</b><br>
+<b>AgroBiometrix is designed to run 100% free out of the box!</b><br>
 All core statistical models (ANOVA, Duncan's Multiple Range Test, BLUP), soil diagnostic algorithms, climate scenario engines, 
 and knowledge graphs execute locally using deterministic scientific pipelines and preloaded African agricultural databases.<br>
 Connecting Google Gemini is strictly <b>optional</b> (free tier available at Google AI Studio) and is only required if you want live real-time LLM agent synthesis.
@@ -67,5 +67,5 @@ Connecting Google Gemini is strictly <b>optional</b> (free tier available at Goo
             st.markdown(f"**Direct Subscription Link**: [{api['link']}]({api['link']})")
             st.markdown(f"**Accessible Domains**: `{api['accessible_domain']}`")
             st.markdown(f"**Pricing Details**: {api['pricing']}")
-            st.markdown(f"**Usage in AgriIntel**: {api['usage_in_app']}")
+            st.markdown(f"**Usage in AgroBiometrix**: {api['usage_in_app']}")
             st.markdown(f"**How to Subscribe / Setup**:\n```\n{api['how_to_subscribe']}\n```")

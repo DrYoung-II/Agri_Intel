@@ -1,5 +1,5 @@
 """
-Script to generate AgriIntel Global Dominance & Pitch Mastery PDF.
+Script to generate AgroBiometrix Global Dominance & Pitch Mastery PDF.
 """
 
 from reportlab.lib.pagesizes import letter
@@ -10,7 +10,7 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Global_Dominance_and_Pitch_Mastery.pdf"
+PDF_FILENAME = "AgroBiometrix_Global_Dominance_and_Pitch_Mastery.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -37,7 +37,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AgriIntel Global Blueprint — Pitch Mastery & Commercial Dominance")
+            self.drawString(54, 755, "AgroBiometrix Global Blueprint — Pitch Mastery & Commercial Dominance")
             self.drawRightString(558, 755, "Africa-First, Globally Scalable")
             self.setStrokeColor(colors.HexColor("#C8E6C9"))
             self.setLineWidth(0.6)
@@ -45,7 +45,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Footer (all pages)
         page_text = f"Page {self._pageNumber} of {page_count}"
-        self.drawString(54, 35, "AgriIntel: The Generative Intelligence Platform for Agriculture")
+        self.drawString(54, 35, "AgroBiometrix: The Generative Intelligence Platform for Agriculture")
         self.drawRightString(558, 35, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -149,14 +149,14 @@ def create_pitch_pdf():
     elements = []
 
     # Title & Banner
-    elements.append(Paragraph("🚀 AgriIntel: Global Dominance & Pitch Mastery Blueprint", title_style))
+    elements.append(Paragraph("🚀 AgroBiometrix: Global Dominance & Pitch Mastery Blueprint", title_style))
     elements.append(Paragraph("Executive Investor Script, 10-Slide Pitch Deck Framework, and Institutional Defense Strategy", subtitle_style))
     elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#2E7D32"), spaceBefore=2, spaceAfter=8))
 
     # Executive Verdict Banner
     banner_text = (
-        "<b>The Global Position:</b> AgriIntel is in the top 1% of agricultural AI architectures worldwide. While competitors build "
-        "shallow leaf-photo classifiers or generic ChatGPT wrappers, AgriIntel connects quantitative genetics, exact biometrics (DMRT), "
+        "<b>The Global Position:</b> AgroBiometrix is in the top 1% of agricultural AI architectures worldwide. While competitors build "
+        "shallow leaf-photo classifiers or generic ChatGPT wrappers, AgroBiometrix connects quantitative genetics, exact biometrics (DMRT), "
         "PRISMA systematic reviews, real-time climate telemetry, and macroeconomic policy sovereignty. This document provides the "
         "exact words, pitch structure, and defensive strategies to dominate grant competitions and venture capital meetings."
     )
@@ -181,11 +181,11 @@ def create_pitch_pdf():
         "Generic Silicon Valley AI cannot solve this because it hallucinates, lacks African biological ground truth, and doesn't understand "
         "pastoral zebu cattle or tropical ultisol soils. Meanwhile, existing African agricultural apps merely say: 'Upload a picture of your "
         "leaf and I will identify the pest.' Useful, but narrow.<br/><br/>"
-        "We built <b>AgriIntel</b>: the generative intelligence infrastructure behind African agriculture. Give AgriIntel a crop, an indigenous "
+        "We built <b>AgroBiometrix</b>: the generative intelligence infrastructure behind African agriculture. Give AgroBiometrix a crop, an indigenous "
         "animal breed, a GPS coordinate, a soil profile, a climate scenario, or a policy goal—and it unites scientific research, runs exact "
         "biometrics like Duncan's Multiple Range Test, simulates climate shocks via live satellite APIs, and translates findings into "
         "multilingual voice advisories in Hausa, Yoruba, and Swahili for the rural farmer.<br/><br/>"
-        "From the university research lab to the smallholder field, and straight to the Minister of Agriculture's desk: AgriIntel connects "
+        "From the university research lab to the smallholder field, and straight to the Minister of Agriculture's desk: AgroBiometrix connects "
         "agricultural intelligence at continental scale.\"</i>"
     )
     script_table = Table([[Paragraph(script_box, pitch_quote_style)]], colWidths=[504])
@@ -198,13 +198,13 @@ def create_pitch_pdf():
     elements.append(Spacer(1, 12))
 
     # SECTION 2: Competitive Positioning Matrix
-    elements.append(Paragraph("2. Competitive Moat: AgriIntel vs. Market Alternatives", h1_style))
+    elements.append(Paragraph("2. Competitive Moat: AgroBiometrix vs. Market Alternatives", h1_style))
     matrix_data = [
         [
             Paragraph("Capability Dimension", table_header),
             Paragraph("Generic LLMs (ChatGPT/Claude)", table_header),
             Paragraph("Farmer Diagnostic Apps (Plantix)", table_header),
-            Paragraph("AgriIntel Platform", table_header)
+            Paragraph("AgroBiometrix Platform", table_header)
         ],
         [
             Paragraph("<b>Statistical Biometrics</b>", table_cell),
@@ -255,10 +255,10 @@ def create_pitch_pdf():
     elements.append(Paragraph(deck_intro, body_style))
 
     deck_slides = [
-        ("Slide 1: Title & The Bold Vision", "AgriIntel: The Generative Intelligence Infrastructure Behind African & Global Agriculture. Africa-first, globally relevant."),
+        ("Slide 1: Title & The Bold Vision", "AgroBiometrix: The Generative Intelligence Infrastructure Behind African & Global Agriculture. Africa-first, globally relevant."),
         ("Slide 2: The Continental Paradox", "$50B spent importing food while 60% of global arable land lies uncultivated due to knowledge fragmentation."),
         ("Slide 3: The Critical Problem", "Agricultural research exists in silos: breeding data, satellite weather, soil maps, and farm decisions never talk to each other."),
-        ("Slide 4: The AgriIntel Solution", "One unified intelligence layer with specialized agents: Climate, Genetics, Biometrics, Soil, Policy, and Evidence."),
+        ("Slide 4: The AgroBiometrix Solution", "One unified intelligence layer with specialized agents: Climate, Genetics, Biometrics, Soil, Policy, and Evidence."),
         ("Slide 5: Live Product Demonstration", "Walk through Module 3 (exact DMRT report generation) and Module 11 (national policy budget simulator in local currency)."),
         ("Slide 6: The Last-Mile Bridge", "Multilingual voice synthesis (Hausa, Swahili, Yoruba) connecting PhD genetic discoveries directly to rural extension radio."),
         ("Slide 7: Total Addressable Market (TAM)", "$45B African AgTech & digital extension opportunity; 50M smallholders, 400 universities, 54 ministries of agriculture."),
@@ -287,11 +287,11 @@ def create_pitch_pdf():
          "Genomic BLUP, tropical soil acidity interactions, and African indigenous livestock breeds require domain-specific biometric "
          "pipelines and localized evidence bases that horizontal tech giants cannot curate or maintain."),
         ("Q: 'How do you handle rural connectivity and cost?'",
-         "A: AgriIntel is designed from African realities outward. All core biometric and simulation engines operate 100% offline "
+         "A: AgroBiometrix is designed from African realities outward. All core biometric and simulation engines operate 100% offline "
          "with zero API fees. For field deployment, our voice advisory engine compresses advisories into ultra-low-bandwidth audio "
          "compatible with 2G Interactive Voice Response (IVR) and community radio broadcasts."),
         ("Q: 'How do you monetize when farmers have little money?'",
-         "A: Farmers do NOT pay directly. AgriIntel monetizes via B2B institutional lab subscriptions (universities, seed companies, "
+         "A: Farmers do NOT pay directly. AgroBiometrix monetizes via B2B institutional lab subscriptions (universities, seed companies, "
          "livestock breeding conglomerates) and B2G government policy modeling licenses. Farmers receive subsidized extension delivery "
          "funded by donor programs and agribusiness outgrower schemes.")
     ]

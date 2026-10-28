@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier 9: Cross-Module Audit & Defect Resolution Report
+AgroBiometrix Technical Dossier 9: Cross-Module Audit & Defect Resolution Report
 Generates publication-grade PDF:
-- Primary: 9 AgriIntel_Cross_Module_Audit_and_Defect_Resolution_Report.pdf
-- Mirror: AgriIntel_Summary_of_Issues_Resolved_Across_All_Modules.pdf
+- Primary: 9 AgroBiometrix_Cross_Module_Audit_and_Defect_Resolution_Report.pdf
+- Mirror: AgroBiometrix_Summary_of_Issues_Resolved_Across_All_Modules.pdf
 """
 
 import os
@@ -16,8 +16,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "9 AgriIntel_Cross_Module_Audit_and_Defect_Resolution_Report.pdf"
-ALT_FILENAME = "AgriIntel_Summary_of_Issues_Resolved_Across_All_Modules.pdf"
+PDF_FILENAME = "9 AgroBiometrix_Cross_Module_Audit_and_Defect_Resolution_Report.pdf"
+ALT_FILENAME = "AgroBiometrix_Summary_of_Issues_Resolved_Across_All_Modules.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -45,7 +45,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL CROSS-MODULE AUDIT & DEFECT RESOLUTION REPORT")
+            self.drawString(54, 755, "AGROBIOMETRIX CROSS-MODULE AUDIT & DEFECT RESOLUTION REPORT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 9")
@@ -57,7 +57,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Generative Intelligence Platform for Resilient Agriculture | System Verification")
+        self.drawString(54, 34, "AgroBiometrix: Generative Intelligence Platform for Resilient Agriculture | System Verification")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -193,12 +193,12 @@ def build_pdf():
     # -------------------------------------------------------------
     # 1. HEADER & METADATA BANNER WITH OFFICIAL LOGO
     # -------------------------------------------------------------
-    logo_file = "assets/agriintel_logo.png"
+    logo_file = "assets/agrobiometrix_logo.png"
     if os.path.exists(logo_file):
         header_table_data = [
             [
                 RLImage(logo_file, width=64, height=70),
-                Paragraph("<b>AGRIINTEL PLATFORM ENGINEERING DOSSIER 9</b><br/><b>Cross-Module Audit, Defect Resolution &amp; Biometric System Hardening</b><br/><font size='7' color='#2E7D32'><b>AGRICULTURE &bull; RESEARCH &bull; INSIGHT</b> &bull; Africa-First Infrastructure</font>", title_style),
+                Paragraph("<b>AGROBIOMETRIX PLATFORM ENGINEERING DOSSIER 9</b><br/><b>Cross-Module Audit, Defect Resolution &amp; Biometric System Hardening</b><br/><font size='7' color='#2E7D32'><b>AGRICULTURE &bull; RESEARCH &bull; INSIGHT</b> &bull; Africa-First Infrastructure</font>", title_style),
                 Paragraph("<b>Status: Verified &amp; Production Ready</b><br/>Date: October 2026<br/>CGIAR &bull; IITA &bull; ILRI &bull; FAO Aligned", ParagraphStyle('RightMeta', parent=subtitle_style, alignment=2))
             ]
         ]
@@ -213,7 +213,7 @@ def build_pdf():
     else:
         header_table_data = [
             [
-                Paragraph("<b>AGRIINTEL PLATFORM ENGINEERING DOSSIER 9</b><br/><b>Cross-Module Audit, Defect Resolution &amp; Biometric System Hardening</b>", title_style),
+                Paragraph("<b>AGROBIOMETRIX PLATFORM ENGINEERING DOSSIER 9</b><br/><b>Cross-Module Audit, Defect Resolution &amp; Biometric System Hardening</b>", title_style),
                 Paragraph("<b>Status: Verified &amp; Production Ready</b><br/>Date: October 2026<br/>CGIAR &bull; IITA &bull; ILRI &bull; FAO Aligned", ParagraphStyle('RightMeta', parent=subtitle_style, alignment=2))
             ]
         ]
@@ -255,7 +255,7 @@ def build_pdf():
     # -------------------------------------------------------------
     story.append(Paragraph("1. Core Statistical &amp; Biometrics Engine Hardening (<code>core/stats_engine.py</code>)", h1_style))
     story.append(Paragraph(
-        "The biometrics engine forms the scientific computational backbone of AgriIntel. It provides ANOVA, Duncan's Multiple "
+        "The biometrics engine forms the scientific computational backbone of AgroBiometrix. It provides ANOVA, Duncan's Multiple "
         "Range Test (DMRT), Tukey's HSD, Fisher's LSD, Dunnett's test, Dunn's non-parametric test, Two-Way Factorial ANOVA, and "
         "reproducible code generation. Four critical architectural enhancements were landed:", body_style
     ))
@@ -628,7 +628,7 @@ def build_pdf():
     story.append(Paragraph("5. Master Cross-Module Resolution Matrix", h1_style))
     story.append(Paragraph(
         "A consolidated summary of all architectural defects, vulnerability classifications, deployed fixes, "
-        "and operational verification statuses across the AgriIntel platform:", body_style
+        "and operational verification statuses across the AgroBiometrix platform:", body_style
     ))
 
     matrix_headers = [
@@ -822,7 +822,7 @@ ALL 26 CROSS-ENTERPRISE & CROSS-MODULE TESTS PASSED WITH 100% VERIFICATION!"""
     story.append(Paragraph("7. Architectural Standards Established for Future Development", h1_style))
     story.append(Paragraph(
         "To guarantee lasting stability as new features, crops, and biometrical models are introduced, six mandatory "
-        "engineering conventions have been formalized across the AgriIntel repository:", body_style
+        "engineering conventions have been formalized across the AgroBiometrix repository:", body_style
     ))
 
     story.append(Paragraph("<b>1. Defensive Dictionary Lookups:</b> Never access dictionary keys with direct square brackets (<code>d['key']</code>) unless guaranteed by an earlier schema assertion. Always use <code>d.get('key', fallback)</code> with sensible biological or numerical fallbacks.", bullet_style))
@@ -836,7 +836,7 @@ ALL 26 CROSS-ENTERPRISE & CROSS-MODULE TESTS PASSED WITH 100% VERIFICATION!"""
 
     # Sign-off box
     signoff_text = (
-        "<b>Platform Certification:</b> All 14 modules of AgriIntel are certified operational, robust against edge-case inputs, "
+        "<b>Platform Certification:</b> All 14 modules of AgroBiometrix are certified operational, robust against edge-case inputs, "
         "and 100% executable offline without forcing external paid API dependencies. The live Streamlit application server "
         "is running smoothly with zero active defect tickets."
     )
@@ -860,7 +860,7 @@ ALL 26 CROSS-ENTERPRISE & CROSS-MODULE TESTS PASSED WITH 100% VERIFICATION!"""
         if os.path.exists(brain_dir):
             shutil.copyfile(PDF_FILENAME, os.path.join(brain_dir, PDF_FILENAME))
             shutil.copyfile(PDF_FILENAME, os.path.join(brain_dir, ALT_FILENAME))
-            shutil.copyfile(PDF_FILENAME, os.path.join(brain_dir, "9_AgriIntel_Cross_Module_Audit_and_Defect_Resolution_Report.pdf"))
+            shutil.copyfile(PDF_FILENAME, os.path.join(brain_dir, "9_AgroBiometrix_Cross_Module_Audit_and_Defect_Resolution_Report.pdf"))
         print(f"Successfully generated: {PDF_FILENAME}")
         print(f"Successfully mirrored: {ALT_FILENAME}")
 

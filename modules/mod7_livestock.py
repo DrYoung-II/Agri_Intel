@@ -507,7 +507,7 @@ def render_small_ruminants_section():
 """, unsafe_allow_html=True)
 
         # Export report for Small Ruminants
-        rum_report = f"""# AgriIntel Small Ruminant Fattening & Nutritional Advisory Report
+        rum_report = f"""# AgroBiometrix Small Ruminant Fattening & Nutritional Advisory Report
 
 ## 1. Enterprise Profile & Simulation Parameters
 - **Target Breed / Ecotype**: {breed_choice}
@@ -545,8 +545,8 @@ def render_small_ruminants_section():
 """
         render_download_buttons(
             content_text=rum_report,
-            filename_prefix="AgriIntel_Small_Ruminant_Advisory",
-            title="AgriIntel Small Ruminant Fattening Advisory",
+            filename_prefix="AgroBiometrix_Small_Ruminant_Advisory",
+            title="AgroBiometrix Small Ruminant Fattening Advisory",
             key_prefix="btn_dl_rum"
         )
 
@@ -736,7 +736,7 @@ def render_small_ruminants_section():
 </div>
 """, unsafe_allow_html=True)
 
-        swine_report = f"""# AgriIntel Swine Bioclimatics & Heat Stress Abatement Report
+        swine_report = f"""# AgroBiometrix Swine Bioclimatics & Heat Stress Abatement Report
 
 ## 1. Herd & Thermal Configuration
 - **Swine Physiological Class**: {swine_class}
@@ -770,8 +770,8 @@ def render_small_ruminants_section():
 """
         render_download_buttons(
             content_text=swine_report,
-            filename_prefix="AgriIntel_Swine_Bioclimatic_Advisory",
-            title="AgriIntel Swine Bioclimatics Advisory",
+            filename_prefix="AgroBiometrix_Swine_Bioclimatic_Advisory",
+            title="AgroBiometrix Swine Bioclimatics Advisory",
             key_prefix="btn_dl_swine"
         )
 

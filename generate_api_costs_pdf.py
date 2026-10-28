@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier: API Dependencies, Pricing Models, and Annual Naira Cost Analysis
+AgroBiometrix Technical Dossier: API Dependencies, Pricing Models, and Annual Naira Cost Analysis
 Generates publication-grade PDF:
-- Primary: 8 AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf
-- Mirror: AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf
+- Primary: 8 AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf
+- Mirror: AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf
 Exchange Rate Benchmark: $1.00 USD = 1,400 NGN
 """
 
@@ -16,8 +16,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"
-NUMBERED_FILENAME = "8 AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"
+PDF_FILENAME = "AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"
+NUMBERED_FILENAME = "8 AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -45,7 +45,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL API DEPENDENCY MATRIX & NAIRA ANNUAL COST ANALYSIS")
+            self.drawString(54, 755, "AGROBIOMETRIX API DEPENDENCY MATRIX & NAIRA ANNUAL COST ANALYSIS")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 8")
@@ -57,7 +57,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Generative Intelligence Infrastructure Behind Resilient Agriculture ($1 = NGN 1,400)")
+        self.drawString(54, 34, "AgroBiometrix: Generative Intelligence Infrastructure Behind Resilient Agriculture ($1 = NGN 1,400)")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -211,14 +211,14 @@ def create_api_costs_pdf():
     # =========================================================================
     # PAGE 1: TITLE, EXECUTIVE SUMMARY, ZERO-COST PRINCIPLE & API TAXONOMY
     # =========================================================================
-    story.append(Paragraph("AgriIntel &mdash; Technical Dossier 8: API Dependencies, Pricing Models &amp; Annual Naira Cost Analysis", title_style))
+    story.append(Paragraph("AgroBiometrix &mdash; Technical Dossier 8: API Dependencies, Pricing Models &amp; Annual Naira Cost Analysis", title_style))
     story.append(Paragraph("<b>Exhaustive Module-by-Module Dependency Audit, Operational Independence &amp; FX Conversion ($1.00 USD = 1,400 NGN)</b>", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=leaf_green, spaceBefore=0, spaceAfter=4))
 
     # Meta Banner
     meta_data = [
         [
-            Paragraph("<b>Target Architecture:</b> AgriIntel v2.6 Core", table_cell_style),
+            Paragraph("<b>Target Architecture:</b> AgroBiometrix v2.6 Core", table_cell_style),
             Paragraph("<b>FX Benchmark:</b> $1.00 USD = NGN 1,400", table_cell_style),
             Paragraph("<b>Analysis Horizon:</b> 1 Full Year (12 Mos)", table_cell_style),
             Paragraph("<b>Baseline Cost:</b> $0.00 / NGN 0.00", table_cell_bold)
@@ -239,8 +239,8 @@ def create_api_costs_pdf():
 
     story.append(Paragraph("1. Executive Summary &amp; The Zero-Cost Architectural Principle", h1_style))
     story.append(Paragraph(
-        "A foundational design objective of the AgriIntel platform is <b>complete scientific sovereignty and zero mandatory subscription dependency</b>. "
-        "Unlike conventional commercial AI applications that fail when an API credit lapses or an external server throttles traffic, AgriIntel is architected "
+        "A foundational design objective of the AgroBiometrix platform is <b>complete scientific sovereignty and zero mandatory subscription dependency</b>. "
+        "Unlike conventional commercial AI applications that fail when an API credit lapses or an external server throttles traffic, AgroBiometrix is architected "
         "with an autonomous, offline-first local biometrics engine. All mathematical computations&mdash;including Henderson's Mixed Model Equations (BLUP), "
         "Duncan's Multiple Range Test (DMRT), ANOVA, Smith-Hazel selection index matrices, stoichiometric soil balancing, and PRISMA systematic flow "
         "generation&mdash;execute deterministically on the local CPU with <b>zero API keys and zero monetary cost ($0.00 / NGN 0.00)</b>.",
@@ -257,7 +257,7 @@ def create_api_costs_pdf():
 
     # Highlight Callout Box
     box_p = Paragraph(
-        "<b>Architectural Guarantee:</b> AgriIntel requires <b>NGN 0.00 ($0.00)</b> to install, test, and operate in production. "
+        "<b>Architectural Guarantee:</b> AgroBiometrix requires <b>NGN 0.00 ($0.00)</b> to install, test, and operate in production. "
         "Connecting commercial paid APIs is purely discretionary for institutions seeking high-frequency cloud LLM token generation or commercial weather SLAs. "
         "This dossier provides exact unit prices, volume models, and full annual cost projections in Nigerian Naira (NGN) at the official benchmark rate of <b>$1 = NGN 1,400</b>.",
         box_text_style
@@ -276,14 +276,14 @@ def create_api_costs_pdf():
 
     story.append(Paragraph("Platform API Taxonomy &amp; Service Categorization", h2_style))
     story.append(Paragraph(
-        "AgriIntel categorizes external connections into five functional technological pillars:",
+        "AgroBiometrix categorizes external connections into five functional technological pillars:",
         body_style
     ))
 
     tax_data = [
         [
             Paragraph("Category Pillar", table_header_style),
-            Paragraph("Core Function &amp; Usage in AgriIntel", table_header_style),
+            Paragraph("Core Function &amp; Usage in AgroBiometrix", table_header_style),
             Paragraph("Primary Endpoints / Providers", table_header_style),
             Paragraph("Default Cost Status", table_header_style)
         ],
@@ -488,7 +488,7 @@ def create_api_costs_pdf():
     verdict_p = Paragraph(
         "<b>EXECUTIVE VERDICT: ZERO MODULES FAIL WITHOUT API SUBSCRIPTIONS (14 / 14 FULLY OPERATIONAL)</b><br/>"
         "An exhaustive architectural audit and runtime stress test confirm that <b>NOT A SINGLE MODULE stops working, fails, or raises fatal errors</b> "
-        "in the absence of paid API subscriptions. AgriIntel delivers <b>100% functional completeness</b> out-of-the-box using local deterministic biometrics, "
+        "in the absence of paid API subscriptions. AgroBiometrix delivers <b>100% functional completeness</b> out-of-the-box using local deterministic biometrics, "
         "preloaded African agricultural databases, and open-access public domain research APIs. Paid APIs serve strictly as optional conversational enhancements.",
         box_text_style
     )
@@ -505,7 +505,7 @@ def create_api_costs_pdf():
     story.append(Spacer(1, 3))
 
     story.append(Paragraph(
-        "AgriIntel's operational independence is anchored in four core architectural design principles: "
+        "AgroBiometrix's operational independence is anchored in four core architectural design principles: "
         "(1) <b>Local Deterministic Biometrics:</b> Statistical calculations (BLUP, ANOVA, Duncan's MRT, Smith-Hazel, NPK stoichiometric balance) run locally on CPU; "
         "(2) <b>Bundled African Ground-Truth Data:</b> Curated soil profiles, 7 climate zones, livestock economic models, and 16 departmental syllabi require no external fetch; "
         "(3) <b>Open-Access Scientific APIs:</b> Open-Meteo, NASA POWER, ISRIC SoilGrids, Crossref, and PubMed provide live data at zero cost; and "
@@ -637,7 +637,7 @@ def create_api_costs_pdf():
 
     # Fault Tolerance Callout Box
     ft_p = Paragraph(
-        "<b>Architectural Resilience &amp; Zero-Crash Guarantee:</b> AgriIntel incorporates defensive exception handlers and fallback pathways across every module. "
+        "<b>Architectural Resilience &amp; Zero-Crash Guarantee:</b> AgroBiometrix incorporates defensive exception handlers and fallback pathways across every module. "
         "If an external API key is omitted, invalid, or reaches a rate limit, the system never halts or raises unhandled exceptions. Instead, it activates "
         "its internal deterministic engines, displays an informative non-blocking status badge, and completes the requested analysis using local scientific baselines.",
         box_text_style
@@ -946,11 +946,11 @@ def create_api_costs_pdf():
     
     recom_p = Paragraph(
         "<b>Recommendation 1 (Zero-Budget Universities &amp; Colleges of Agriculture):</b><br/>"
-        "Deploy AgriIntel in <b>Tier 0 Mode</b>. Utilize the built-in deterministic statistical geneticist (BLUP/DMRT), local soil calculators, "
+        "Deploy AgroBiometrix in <b>Tier 0 Mode</b>. Utilize the built-in deterministic statistical geneticist (BLUP/DMRT), local soil calculators, "
         "and public Open-Meteo weather. Configure a single free Google Gemini API key via <font face='Courier'>aistudio.google.com</font> to unlock live LLM reasoning within "
         "the 15 RPM free ceiling. <b>Total Annual Budget = NGN 0.00</b>.<br/><br/>"
         "<b>Recommendation 2 (Funded Research Institutes &amp; CGIAR Centers - IITA/ILRI/NIHORT):</b><br/>"
-        "Deploy AgriIntel in <b>Tier 1/2 Mode</b>. Allocate an annual API allowance of <b>NGN 138,600 ($99.00 USD)</b> on Google Gemini 1.5 Flash. "
+        "Deploy AgroBiometrix in <b>Tier 1/2 Mode</b>. Allocate an annual API allowance of <b>NGN 138,600 ($99.00 USD)</b> on Google Gemini 1.5 Flash. "
         "This comfortably supports up to 600,000 comprehensive multi-agent scientific analyses per year across 500 postgraduate researchers.<br/><br/>"
         "<b>Recommendation 3 (Commercial Agribusinesses &amp; Federal Ministries):</b><br/>"
         "Deploy in <b>Tier 3 Commercial Mode</b>. Pair high-throughput Gemini Flash reasoning with a dedicated Open-Meteo Commercial SLA (€29–€99/mo) "
@@ -980,12 +980,12 @@ def create_api_costs_pdf():
     except PermissionError:
         print(f"Notice: {NUMBERED_FILENAME} is currently open in Adobe Acrobat / viewer and locked. Main document generated at {PDF_FILENAME}")
 
-    shutil.copyfile(PDF_FILENAME, "8 AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis_Updated.pdf")
+    shutil.copyfile(PDF_FILENAME, "8 AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis_Updated.pdf")
 
     # Sync to artifact directory
     art_dir = r"C:\Users\USER\.gemini\antigravity\brain\1e91af0e-0faf-4a71-9df3-64f967526da0"
     if os.path.exists(art_dir):
-        for name in [PDF_FILENAME, NUMBERED_FILENAME, "8_AgriIntel_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"]:
+        for name in [PDF_FILENAME, NUMBERED_FILENAME, "8_AgroBiometrix_API_Dependencies_Pricing_and_Naira_Cost_Analysis.pdf"]:
             try:
                 shutil.copyfile(PDF_FILENAME, os.path.join(art_dir, name))
             except Exception:

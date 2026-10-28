@@ -1,5 +1,5 @@
 """
-AgriIntel: The Generative Intelligence Platform for Agriculture
+AgroBiometrix: The Quantitative Biometrics & Generative Intelligence Platform for Agriculture
 Africa-First, Globally Relevant Agricultural Intelligence Infrastructure
 """
 
@@ -18,14 +18,14 @@ def get_base64_image(image_path):
             return base64.b64encode(img_file.read()).decode("utf-8")
     return ""
 
-LOGO_B64 = get_base64_image(os.path.join("assets", "agriintel_logo.png"))
-ICON_B64 = get_base64_image(os.path.join("assets", "agriintel_icon.png"))
-icon_path = os.path.join("assets", "agriintel_icon.png")
+LOGO_B64 = get_base64_image(os.path.join("assets", "agrobiometrix_logo.png"))
+ICON_B64 = get_base64_image(os.path.join("assets", "agrobiometrix_icon.png"))
+icon_path = os.path.join("assets", "agrobiometrix_icon.png")
 page_icon_obj = Image.open(icon_path) if os.path.exists(icon_path) else "🌱"
 
 # Page configuration
 st.set_page_config(
-    page_title="AgriIntel | Generative Intelligence Platform for Agriculture",
+    page_title="AgroBiometrix | Quantitative Biometrics & Generative Intelligence for Agriculture",
     page_icon=page_icon_obj,
     layout="wide",
     initial_sidebar_state="expanded"
@@ -89,7 +89,7 @@ def main():
     <div class="agri-hero-main">
         <div class="agri-hero-identity">
             <div class="agri-hero-logo">
-                <img src="data:image/png;base64,{ICON_B64}" alt="AgriIntel Emblem" />
+                <img src="data:image/png;base64,{ICON_B64}" alt="AgroBiometrix Emblem" />
             </div>
             <div class="agri-hero-text">
                 <div class="agri-hero-title-row">
@@ -118,7 +118,7 @@ def main():
         if LOGO_B64:
             st.markdown(f"""
 <div class="sidebar-brand-card">
-    <img src="data:image/png;base64,{LOGO_B64}" alt="AgriIntel Official Logo" />
+    <img src="data:image/png;base64,{LOGO_B64}" alt="AgroBiometrix Official Logo" />
 </div>
 """, unsafe_allow_html=True)
         else:
@@ -199,7 +199,7 @@ def main():
         {APP_MOTTO}
     </div>
     <div style="font-size: 0.70rem; color: #A5D6A7; margin-top: 2px;">
-        AgriIntel v1.0 &bull; Africa-First Institutional Edition
+        AgroBiometrix v1.0 &bull; Africa-First Institutional Edition
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -230,14 +230,14 @@ def render_orchestrator_home():
     st.markdown("### 🤖 Multi-Agent Orchestration Layer")
     st.markdown(
         "A normal agricultural AI says: *'Upload a picture of your tomato leaf, and I will tell you what disease it has.'*<br>"
-        "**AgriIntel says**: *'Give me a crop, animal, location, genotype, soil condition, climate scenario, production objective, "
+        "**AgroBiometrix says**: *'Give me a crop, animal, location, genotype, soil condition, climate scenario, production objective, "
         "research question or policy problem—and I will assemble the relevant evidence, analyze the available data, run appropriate models, "
         "explain the results, and recommend what should be done.'*",
         unsafe_allow_html=True
     )
 
     st.markdown("---")
-    st.markdown("#### 💬 Ask AgriIntel Anything (Cross-Agent Query)")
+    st.markdown("#### 💬 Ask AgroBiometrix Anything (Cross-Agent Query)")
     
     # Preset query chips
     sample_queries = [
@@ -287,7 +287,7 @@ def render_orchestrator_home():
         "Select Engine:",
         options=engine_choices,
         index=0,
-        help="Select whether AgriIntel runs with live Google Gemini cloud reasoning or local offline African scientific models."
+        help="Select whether AgroBiometrix runs with live Google Gemini cloud reasoning or local offline African scientific models."
     )
 
     api_key_to_use = ""
@@ -365,11 +365,11 @@ def render_orchestrator_home():
                 if result.get("is_live_cloud"):
                     st.info(f"🟢 **Live Cloud AI Consultation**: Generated via **{result.get('provider')} ({result.get('model')})** with your Google AI Studio API key.")
                 elif result.get("live_api_error"):
-                    st.warning(f"⚠️ **Live Cloud AI Notice**: Google Gemini API returned: `{result['live_api_error']}`. AgriIntel automatically served this consultation using its built-in **Offline African Agronomic Science Engine**.")
+                    st.warning(f"⚠️ **Live Cloud AI Notice**: Google Gemini API returned: `{result['live_api_error']}`. AgroBiometrix automatically served this consultation using its built-in **Offline African Agronomic Science Engine**.")
                 elif not api_key_to_use and selected_engine == engine_choices[0]:
                     st.info(
                         "💡 **Offline Mode Notice**: No Gemini API key detected. "
-                        "AgriIntel synthesized this consultation using its built-in **Offline African Agronomic Science Engine**. "
+                        "AgroBiometrix synthesized this consultation using its built-in **Offline African Agronomic Science Engine**. "
                         "To activate live unconstrained generative reasoning on any question, configure a free key from Google AI Studio above."
                     )
 
@@ -397,8 +397,8 @@ def render_orchestrator_home():
                     clean_title = re.sub(r'[^a-zA-Z0-9_]', '_', user_query[:30]).strip('_')
                     render_download_buttons(
                         content_text=result["final_synthesis"],
-                        filename_prefix=f"AgriIntel_Advisory_{clean_title}",
-                        title=f"AgriIntel Scientific Advisory: {user_query[:60]}",
+                        filename_prefix=f"AgroBiometrix_Advisory_{clean_title}",
+                        title=f"AgroBiometrix Scientific Advisory: {user_query[:60]}",
                         key_prefix="orch_advisory"
                     )
 

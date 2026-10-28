@@ -1,5 +1,5 @@
 """
-Script to generate the AgriIntel Comprehensive Platform Audit & Strategic Gap Analysis PDF.
+Script to generate the AgroBiometrix Comprehensive Platform Audit & Strategic Gap Analysis PDF.
 """
 
 import sys
@@ -12,7 +12,7 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Platform_Audit_and_Gap_Analysis.pdf"
+PDF_FILENAME = "AgroBiometrix_Platform_Audit_and_Gap_Analysis.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -39,7 +39,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AgriIntel Strategic Audit — Platform Architecture & Gap Analysis")
+            self.drawString(54, 755, "AgroBiometrix Strategic Audit — Platform Architecture & Gap Analysis")
             self.drawRightString(558, 755, "Institutional & Founder Alignment")
             self.setStrokeColor(colors.HexColor("#C8E6C9"))
             self.setLineWidth(0.6)
@@ -47,7 +47,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Footer (all pages)
         page_text = f"Page {self._pageNumber} of {page_count}"
-        self.drawString(54, 35, "AgriIntel: Generative Intelligence Platform for African & Global Agriculture")
+        self.drawString(54, 35, "AgroBiometrix: Generative Intelligence Platform for African & Global Agriculture")
         self.drawRightString(558, 35, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -152,12 +152,12 @@ def create_audit_pdf():
     elements = []
 
     # Title block with official logo
-    logo_file = "assets/agriintel_logo.png"
+    logo_file = "assets/agrobiometrix_logo.png"
     if os.path.exists(logo_file):
         header_data = [
             [
                 RLImage(logo_file, width=64, height=70),
-                Paragraph("<b>AgriIntel Platform Audit &amp; Strategic Gap Analysis</b><br/><font size='8' color='#2E7D32'><b>AGRICULTURE &bull; RESEARCH &bull; INSIGHT</b></font><br/><font size='7.5' color='#555555'>Benchmarking Against 'The BIG Idea' Founder Document, CGIAR/FAO Standards &amp; Production Roadmap</font>", title_style),
+                Paragraph("<b>AgroBiometrix Platform Audit &amp; Strategic Gap Analysis</b><br/><font size='8' color='#2E7D32'><b>AGRICULTURE &bull; RESEARCH &bull; INSIGHT</b></font><br/><font size='7.5' color='#555555'>Benchmarking Against 'The BIG Idea' Founder Document, CGIAR/FAO Standards &amp; Production Roadmap</font>", title_style),
             ]
         ]
         t_head = Table(header_data, colWidths=[70, 434])
@@ -170,13 +170,13 @@ def create_audit_pdf():
         ]))
         elements.append(t_head)
     else:
-        elements.append(Paragraph("🌱 AgriIntel Platform Audit & Strategic Gap Analysis", title_style))
+        elements.append(Paragraph("🌱 AgroBiometrix Platform Audit & Strategic Gap Analysis", title_style))
         elements.append(Paragraph("Benchmarking Against 'The BIG Idea' Founder Document, CGIAR/FAO Standards & Production Roadmap", subtitle_style))
     elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#2E7D32"), spaceBefore=3, spaceAfter=8))
 
     # Executive Summary Card
     summary_text = (
-        "<b>Executive Verdict:</b> AgriIntel has successfully established the core biometrics, statistical genetics, "
+        "<b>Executive Verdict:</b> AgroBiometrix has successfully established the core biometrics, statistical genetics, "
         "soil, climate, and policy intelligence infrastructure. To achieve full parity with the founder's original design and "
         "meet international enterprise and donor standards (CGIAR AI Hub, Gates Foundation, World Bank), this audit identifies "
         "<b>7 critical capability gaps</b> and defines an immediate 3-step action plan to finalize institutional readiness."
@@ -194,7 +194,7 @@ def create_audit_pdf():
     # SECTION 1: Current System Inventory
     elements.append(Paragraph("1. System Inventory: Current vs. Complete Architecture", h1_style))
     inventory_intro = (
-        "AgriIntel currently operates 12 live modules, an exact Duncan's Multiple Range Test (DMRT) biometrics engine, "
+        "AgroBiometrix currently operates 12 live modules, an exact Duncan's Multiple Range Test (DMRT) biometrics engine, "
         "and a multi-agent orchestration layer. The table below audits current modules against the complete 15-module blueprint:"
     )
     elements.append(Paragraph(inventory_intro, body_style))
@@ -386,7 +386,7 @@ def create_audit_pdf():
         [
             Paragraph("Institutional Criterion", table_header),
             Paragraph("Benchmark Standard", table_header),
-            Paragraph("AgriIntel Capability Post-Upgrade", table_header),
+            Paragraph("AgroBiometrix Capability Post-Upgrade", table_header),
             Paragraph("Readiness", table_header)
         ],
         [
@@ -429,7 +429,7 @@ def create_audit_pdf():
     doc.build(elements, canvasmaker=NumberedCanvas)
     
     import shutil
-    alt_file = "4 AgriIntel_Platform_Audit_and_Gap_Analysis.pdf"
+    alt_file = "4 AgroBiometrix_Platform_Audit_and_Gap_Analysis.pdf"
     brain_dir = r"C:\Users\USER\.gemini\antigravity\brain\1e91af0e-0faf-4a71-9df3-64f967526da0"
     if os.path.exists(PDF_FILENAME):
         shutil.copyfile(PDF_FILENAME, alt_file)

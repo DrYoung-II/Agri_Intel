@@ -1,3 +1,3 @@
 """
-AgriIntel Core Modules Package
+AgroBiometrix Core Modules Package
 """

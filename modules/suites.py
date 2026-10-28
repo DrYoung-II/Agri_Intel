@@ -1,5 +1,5 @@
 """
-AgriIntel Consolidated Intelligence Suites
+AgroBiometrix Consolidated Intelligence Suites
 Organizes the 14 individual domain engines into 7 cohesive, publication-grade Power Suites:
 1. Multi-Agent Orchestrator (Central Home)
 2. Agricultural Biometrics & Breeding Suite (Design + DMRT/ANOVA + Trait Selection)

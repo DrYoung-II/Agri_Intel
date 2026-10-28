@@ -1,5 +1,5 @@
 """
-Script to generate the updated AgriIntel Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope PDF.
+Script to generate the updated AgroBiometrix Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope PDF.
 Includes:
 - Technical Diagnostics (Blank Dropdown, Tomato Maize Mismatch, Poultry Cattle Conflation)
 - Specialized Multi-Agent Avian Science Advisory (October/November Transition Bioclimatics)
@@ -19,8 +19,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "6 AgriIntel_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
-ALT_FILENAME = "AgriIntel_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
+PDF_FILENAME = "6 AgroBiometrix_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
+ALT_FILENAME = "AgroBiometrix_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -47,7 +47,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL TECHNICAL DOSSIER — SYSTEM DIAGNOSTICS & CONTINENTAL SCOPE")
+            self.drawString(54, 755, "AGROBIOMETRIX TECHNICAL DOSSIER — SYSTEM DIAGNOSTICS & CONTINENTAL SCOPE")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Enterprise Build v2.5")
@@ -59,7 +59,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
+        self.drawString(54, 34, "AgroBiometrix: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -185,14 +185,14 @@ def build_pdf():
     # =========================================================================
     # HEADER / COVER BLOCK
     # =========================================================================
-    story.append(Paragraph("AgriIntel Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope", title_style))
+    story.append(Paragraph("AgroBiometrix Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope", title_style))
     story.append(Paragraph("<b>Enterprise Session Dossier</b> | System Audit, Multi-Enterprise Decoupling (Poultry, Cattle, Aquaculture & Crops), Specialized Agronomic Science & Module 7 Bioclimatic Architecture", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#1B5E20"), spaceBefore=1, spaceAfter=6))
 
     # Metadata Banner
     meta_data = [
         [
-            Paragraph("<b>Platform:</b> AgriIntel Enterprise v2.5", table_cell),
+            Paragraph("<b>Platform:</b> AgroBiometrix Enterprise v2.5", table_cell),
             Paragraph("<b>Target Region:</b> Pan-Africa & Global Ag", table_cell),
             Paragraph("<b>Execution Mode:</b> Dual Offline / Cloud AI", table_cell),
             Paragraph("<b>Updated:</b> October 13, 2026", table_cell)
@@ -216,7 +216,7 @@ def build_pdf():
     # =========================================================================
     story.append(Paragraph("1. Forensic Root Cause Analysis: System Debugging & Enterprise Decoupling", h1_style))
     story.append(Paragraph(
-        "During progressive user testing of AgriIntel's Multi-Agent Orchestration Layer, three distinct behavioral anomalies "
+        "During progressive user testing of AgroBiometrix's Multi-Agent Orchestration Layer, three distinct behavioral anomalies "
         "were identified and resolved. A comprehensive forensic audit pinpointed their structural origins in code, leading "
         "to permanent architectural rectifications across the engine.",
         body_style
@@ -332,7 +332,7 @@ def build_pdf():
         Paragraph("3. Specialized Agricultural Science: Tomato Advisory for Western Nigeria", h1_style),
         Paragraph(
             "<b>Inquiry Addressed:</b> <i>'Best tomatoes variety for western Nigeria at this period (October/November Transition).'</i><br/>"
-            "The AgriIntel Multi-Agent Ensemble synthesized a comprehensive agronomic strategy calibrated to the rainforest/derived savanna "
+            "The AgroBiometrix Multi-Agent Ensemble synthesized a comprehensive agronomic strategy calibrated to the rainforest/derived savanna "
             "agro-ecological zones (Oyo, Ogun, Osun, Ondo, Ekiti, and Lagos).",
             body_style
         )
@@ -385,7 +385,7 @@ def build_pdf():
     story.append(KeepTogether([
         Paragraph("4. Continental Platform Scope: Multi-Commodity Agricultural Matrix", h1_style),
         Paragraph(
-            "AgriIntel's offline intelligence engine covers all major African agricultural sub-sectors, ensuring that "
+            "AgroBiometrix's offline intelligence engine covers all major African agricultural sub-sectors, ensuring that "
             "queries across diverse livestock species, tree crops, roots, and cereals receive specialized, evidence-grounded responses:",
             body_style
         )
@@ -486,7 +486,7 @@ def build_pdf():
     story.append(KeepTogether([
         Paragraph("5. Enterprise Architecture: Upgraded Module 7 & Platform Suite", h1_style),
         Paragraph(
-            "AgriIntel's sidebar modules deliver specialized scientific capability beyond conversational queries. "
+            "AgroBiometrix's sidebar modules deliver specialized scientific capability beyond conversational queries. "
             "In response to live testing, <b>Module 7</b> was upgraded into a comprehensive multi-species livestock and poultry suite:",
             body_style
         )
@@ -588,7 +588,7 @@ def build_pdf():
     story.append(KeepTogether([
         Paragraph("6. Dual-Tier Intelligence Architecture & Live Verification Status", h1_style),
         Paragraph(
-            "AgriIntel maintains a unified dual-tier intelligence model providing maximum resilience in rural "
+            "AgroBiometrix maintains a unified dual-tier intelligence model providing maximum resilience in rural "
             "connectivity-constrained African environments while retaining top-tier cloud reasoning:",
             body_style
         )

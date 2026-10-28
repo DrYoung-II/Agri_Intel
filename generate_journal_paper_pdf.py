@@ -1,9 +1,9 @@
 """
-AgriIntel Technical Dossier 14: Full Peer-Reviewed Academic Journal Manuscript
+AgroBiometrix Technical Dossier 14: Full Peer-Reviewed Academic Journal Manuscript
 Formatted for submission to Computers and Electronics in Agriculture (Elsevier)
 Generates:
-- Primary: AgriIntel_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf
-- Mirror: 14_AgriIntel_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf
+- Primary: AgroBiometrix_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf
+- Mirror: 14_AgroBiometrix_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf
 - Artifact Directory Mirror
 Sanitized Version: Protects commercial pricing secrets and embeds comprehensive
 institutional compliance (CGIAR, IITA, ILRI, IFPRI, FAO, FUNAAB, NIHORT, NVRI, NAPRI).
@@ -19,8 +19,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf"
-ALT_FILENAME = "14_AgriIntel_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf"
+PDF_FILENAME = "AgroBiometrix_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf"
+ALT_FILENAME = "14_AgroBiometrix_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture.pdf"
 ARTIFACT_DIR = r"C:\Users\USER\.gemini\antigravity\brain\1e91af0e-0faf-4a71-9df3-64f967526da0"
 
 
@@ -52,7 +52,7 @@ class NumberedCanvas(canvas.Canvas):
             self.drawString(54, 755, "COMPUTERS AND ELECTRONICS IN AGRICULTURE | ORIGINAL RESEARCH MANUSCRIPT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
-            self.drawRightString(558, 755, "AgriIntel v1.0 Architecture | Institutional Compliance Edition")
+            self.drawRightString(558, 755, "AgroBiometrix v1.0 Architecture | Institutional Compliance Edition")
             self.setStrokeColor(colors.HexColor("#A5D6A7"))
             self.setLineWidth(0.7)
             self.line(54, 748, 558, 748)
@@ -61,7 +61,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel Systems Architecture • Elsevier Submission Manuscript")
+        self.drawString(54, 34, "AgroBiometrix Systems Architecture • Elsevier Submission Manuscript")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -70,7 +70,7 @@ class NumberedCanvas(canvas.Canvas):
 
 
 def build_pdf():
-    target_build = "AgriIntel_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture_Updated.pdf"
+    target_build = "AgroBiometrix_Peer_Reviewed_Journal_Manuscript_Computers_and_Electronics_in_Agriculture_Updated.pdf"
     doc = SimpleDocTemplate(
         target_build,
         pagesize=letter,
@@ -247,10 +247,10 @@ def build_pdf():
     story.append(HRFlowable(width="100%", thickness=1.5, color=primary_green, spaceAfter=8, spaceBefore=2))
 
     # Paper Title
-    story.append(Paragraph("AgriIntel: A Hybrid Multi-Agent Autonomous Artificial Intelligence and Biometrical Computing Infrastructure for African Agro-Ecosystems", title_style))
+    story.append(Paragraph("AgroBiometrix: A Hybrid Multi-Agent Autonomous Artificial Intelligence and Biometrical Computing Infrastructure for African Agro-Ecosystems", title_style))
     
     # Author Block
-    story.append(Paragraph("AgriIntel Research & Engineering Consortium • Pan-African Computational Systems Unit", authors_style))
+    story.append(Paragraph("AgroBiometrix Research & Engineering Consortium • Pan-African Computational Systems Unit", authors_style))
     story.append(Paragraph("Affiliated with National Agricultural Research Systems (NARS), Faculties of Agricultural Sciences, and CGIAR Partner Network", affil_style))
 
     # Abstract Box
@@ -258,9 +258,9 @@ def build_pdf():
         [Paragraph("<b>ABSTRACT</b>", ParagraphStyle('AbsTitle', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=9, leading=12, textColor=primary_green))],
         [Paragraph(
             "Agricultural production across Sub-Saharan Africa remains critically constrained by biophysical vulnerabilities, fragmented advisory services, and a severe digital computational divide. While general-purpose Large Language Models (LLMs) have emerged as powerful text synthesis engines, their direct application to agricultural science is severely hindered by domain-specific hallucinations, Western agro-climatic biases, mathematically invalid biometrical assertions, and zero guarantees of statistical reproducibility.<br/><br/>"
-            "In this paper, we introduce <b>AgriIntel</b>, an Africa-first, open-access, hybrid multi-agent artificial intelligence infrastructure that bridges the gap between deterministic biometrical computing and generative contextual reasoning. AgriIntel is architected upon a novel <b>Two-Tier Hybrid Computing Paradigm</b>: (1) <b>Tier 1 (Deterministic Scientific Moat)</b> executes over 85% of platform workloads locally via deterministic algorithms with zero cloud latency and zero remote egress overhead, utilizing rigorous mathematical formalisms including Linear Mixed Models (LMM), Henderson’s Mixed Model Equations for Best Linear Unbiased Prediction (BLUP), Randomized Complete Block Design (RCBD) Analysis of Variance (ANOVA), Duncan’s Multiple Range Test (DMRT) mean separation, titratable exchangeable aluminum (Al³⁺) liming kinetics, and FAO-56 Penman-Monteith reference evapotranspiration (ET₀); (2) <b>Tier 2 (Generative Reasoning Ensemble)</b> deploys a coordinated multi-agent orchestration layer consisting of 12 specialized autonomous agents integrated with dynamic cloud LLMs (Google Gemini 1.5/2.0 Flash) for contextual hypothesis synthesis and publication-grade academic proposal architecture.<br/><br/>"
-            "Crucially, AgriIntel is architected in formal compliance with established guidelines of leading international and national agricultural research bodies: <b>CGIAR AI Hub</b> (Multi-Environment Trial SOPs and ethical AI standards), <b>IITA</b> (cassava CMD2/CBSD scoring and SAMMAZ maize evaluation), <b>ILRI</b> (ruminant thermal stress and tropical dairy breeding values), <b>IFPRI</b> (macroeconomic agricultural investment prioritization), <b>FAO</b> (FAO-56 bioclimatic water balance and animal health manuals), <b>FUNAAB</b> (academic thesis defense viva standards and indigenous poultry improvement), <b>NIHORT</b> (horticultural biometrics), and <b>NVRI Vom / NAPRI Shika</b> (national veterinary vaccine calendars and estrus kinetics).<br/><br/>"
-            "We benchmark AgriIntel’s biometrical engine against gold-standard statistical packages (SAS v9.4 and R <code>agricolae</code> v1.3-5) across multi-location African cattle trial and cereal breeding datasets. AgriIntel achieves <b>100.0% mathematical parity (R² = 1.0000, P &lt; 10⁻¹⁵)</b> with zero rounding drift, while reducing end-to-end proposal generation time from weeks to <b>4.2 ± 0.6 seconds</b>. Resource profiling demonstrates that AgriIntel delivers comprehensive 15-page academic research proposals within a compact computational budget of <b>~8,028 total tokens</b>, establishing feasibility for sovereign, resource-constrained research environments.<br/><br/>"
+            "In this paper, we introduce <b>AgroBiometrix</b>, an Africa-first, open-access, hybrid multi-agent artificial intelligence infrastructure that bridges the gap between deterministic biometrical computing and generative contextual reasoning. AgroBiometrix is architected upon a novel <b>Two-Tier Hybrid Computing Paradigm</b>: (1) <b>Tier 1 (Deterministic Scientific Moat)</b> executes over 85% of platform workloads locally via deterministic algorithms with zero cloud latency and zero remote egress overhead, utilizing rigorous mathematical formalisms including Linear Mixed Models (LMM), Henderson’s Mixed Model Equations for Best Linear Unbiased Prediction (BLUP), Randomized Complete Block Design (RCBD) Analysis of Variance (ANOVA), Duncan’s Multiple Range Test (DMRT) mean separation, titratable exchangeable aluminum (Al³⁺) liming kinetics, and FAO-56 Penman-Monteith reference evapotranspiration (ET₀); (2) <b>Tier 2 (Generative Reasoning Ensemble)</b> deploys a coordinated multi-agent orchestration layer consisting of 12 specialized autonomous agents integrated with dynamic cloud LLMs (Google Gemini 1.5/2.0 Flash) for contextual hypothesis synthesis and publication-grade academic proposal architecture.<br/><br/>"
+            "Crucially, AgroBiometrix is architected in formal compliance with established guidelines of leading international and national agricultural research bodies: <b>CGIAR AI Hub</b> (Multi-Environment Trial SOPs and ethical AI standards), <b>IITA</b> (cassava CMD2/CBSD scoring and SAMMAZ maize evaluation), <b>ILRI</b> (ruminant thermal stress and tropical dairy breeding values), <b>IFPRI</b> (macroeconomic agricultural investment prioritization), <b>FAO</b> (FAO-56 bioclimatic water balance and animal health manuals), <b>FUNAAB</b> (academic thesis defense viva standards and indigenous poultry improvement), <b>NIHORT</b> (horticultural biometrics), and <b>NVRI Vom / NAPRI Shika</b> (national veterinary vaccine calendars and estrus kinetics).<br/><br/>"
+            "We benchmark AgroBiometrix’s biometrical engine against gold-standard statistical packages (SAS v9.4 and R <code>agricolae</code> v1.3-5) across multi-location African cattle trial and cereal breeding datasets. AgroBiometrix achieves <b>100.0% mathematical parity (R² = 1.0000, P &lt; 10⁻¹⁵)</b> with zero rounding drift, while reducing end-to-end proposal generation time from weeks to <b>4.2 ± 0.6 seconds</b>. Resource profiling demonstrates that AgroBiometrix delivers comprehensive 15-page academic research proposals within a compact computational budget of <b>~8,028 total tokens</b>, establishing feasibility for sovereign, resource-constrained research environments.<br/><br/>"
             "<b>Keywords:</b> Agricultural Artificial Intelligence; Multi-Agent Systems; Linear Mixed Models; BLUP; Duncan's Multiple Range Test; Institutional Compliance (CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, NIHORT); Pan-African Agro-Ecologies.",
             abstract_style
         )]
@@ -281,7 +281,7 @@ def build_pdf():
         body_style
     ))
     story.append(Paragraph(
-        "While statistical packages (SAS, GenStat, R) provide foundational variance partitioning (ANOVA) and BLUP breeding value estimation (Henderson, 1975; Gomez & Gomez, 1984), their steep learning curves and prohibitive commercial licensing costs ($5,000–$15,000/seat/year) isolate smallholder research systems. Conversely, modern generative foundation LLMs (GPT-4, Gemini) exhibit severe agricultural hallucinations: inventing chemical application rates, failing basic matrix inversions for Studentized Range statistics, and projecting temperate European agronomy onto tropical Sahelian environments. Generic models also lack institutional grounding, failing to cite regional research standards from NARS (NAPRI, NVRI Vom, FUNAAB, NIHORT) or CGIAR centers (IITA, ILRI, IFPRI). AgriIntel resolves this dichotomy through a unified Two-Tier Hybrid Architecture.",
+        "While statistical packages (SAS, GenStat, R) provide foundational variance partitioning (ANOVA) and BLUP breeding value estimation (Henderson, 1975; Gomez & Gomez, 1984), their steep learning curves and prohibitive commercial licensing costs ($5,000–$15,000/seat/year) isolate smallholder research systems. Conversely, modern generative foundation LLMs (GPT-4, Gemini) exhibit severe agricultural hallucinations: inventing chemical application rates, failing basic matrix inversions for Studentized Range statistics, and projecting temperate European agronomy onto tropical Sahelian environments. Generic models also lack institutional grounding, failing to cite regional research standards from NARS (NAPRI, NVRI Vom, FUNAAB, NIHORT) or CGIAR centers (IITA, ILRI, IFPRI). AgroBiometrix resolves this dichotomy through a unified Two-Tier Hybrid Architecture.",
         body_style
     ))
     story.append(Spacer(1, 8))
@@ -289,7 +289,7 @@ def build_pdf():
     # Section 2: Mathematical Formulations
     story.append(Paragraph("2. Mathematical Foundations & System Architecture", h1_style))
     story.append(Paragraph(
-        "AgriIntel bifurcates platform execution into two rigorously coordinated tiers: (1) Tier 1 Deterministic Scientific Engines executing locally on client/edge hardware with zero network overhead, and (2) Tier 2 Multi-Agent Generative Layer dispatching qualitative reasoning prompts to cloud LLMs.",
+        "AgroBiometrix bifurcates platform execution into two rigorously coordinated tiers: (1) Tier 1 Deterministic Scientific Engines executing locally on client/edge hardware with zero network overhead, and (2) Tier 2 Multi-Agent Generative Layer dispatching qualitative reasoning prompts to cloud LLMs.",
         body_style
     ))
     # 2.1 Quantitative Breeding & Henderson's MME
@@ -315,7 +315,7 @@ def build_pdf():
     # 2.2 RCBD ANOVA and DMRT
     story.append(Paragraph("<b>2.2 RCBD ANOVA and Duncan's Multiple Range Test (DMRT):</b>", h2_style))
     story.append(Paragraph(
-        "For multi-treatment agronomic trials, total variation is partitioned across treatments and blocks. When treatment F-tests are significant (P &lt; α), AgriIntel computes Least Significant Ranges across range steps <i>p</i> (<i>p</i> = 2, ..., <i>t</i>):",
+        "For multi-treatment agronomic trials, total variation is partitioned across treatments and blocks. When treatment F-tests are significant (P &lt; α), AgroBiometrix computes Least Significant Ranges across range steps <i>p</i> (<i>p</i> = 2, ..., <i>t</i>):",
         body_style
     ))
     eq2_lines = [
@@ -326,14 +326,14 @@ def build_pdf():
     story.append(make_equation_box(
         "Equation 2: ANOVA Partitioning & Duncan's Least Significant Range (LSR)",
         eq2_lines,
-        "where r_α(p, f) is the Studentized Range Factor. AgriIntel enforces strict transitivity rules ('a', 'b', 'ab') with zero numerical drift."
+        "where r_α(p, f) is the Studentized Range Factor. AgroBiometrix enforces strict transitivity rules ('a', 'b', 'ab') with zero numerical drift."
     ))
     story.append(Spacer(1, 3))
 
     # 2.3 Soil Liming Kinetics
     story.append(Paragraph("<b>2.3 Soil Liming Kinetics & Stoichiometric Nutrient Balancing:</b>", h2_style))
     story.append(Paragraph(
-        "In weathered tropical acid soils (pH &lt; 5.2), AgriIntel calculates Agricultural Limestone Requirement (LR in t/ha CaCO₃ equivalent) based on exchangeable acidity titration:",
+        "In weathered tropical acid soils (pH &lt; 5.2), AgroBiometrix calculates Agricultural Limestone Requirement (LR in t/ha CaCO₃ equivalent) based on exchangeable acidity titration:",
         body_style
     ))
     eq3_lines = [
@@ -351,7 +351,7 @@ def build_pdf():
     # Section 2.4: Institutional Compliance Table
     story.append(Paragraph("2.4 Pan-African Institutional Compliance & Standards Alignment", h2_style))
     story.append(Paragraph(
-        "AgriIntel's computational routines and diagnostic guidelines are formally calibrated against the verified standard operating procedures of leading agricultural bodies:",
+        "AgroBiometrix's computational routines and diagnostic guidelines are formally calibrated against the verified standard operating procedures of leading agricultural bodies:",
         body_style
     ))
 
@@ -359,7 +359,7 @@ def build_pdf():
         [
             Paragraph("<b>Institution</b>", table_header_style),
             Paragraph("<b>Regulatory Standard / Protocol</b>", table_header_style),
-            Paragraph("<b>AgriIntel Implementation Module</b>", table_header_style)
+            Paragraph("<b>AgroBiometrix Implementation Module</b>", table_header_style)
         ],
         [
             Paragraph("<b>CGIAR AI Hub</b><br/><font color='#444444' size='6.5'>(CGIAR, 2021; 2023)</font>", table_cell_style),
@@ -416,7 +416,7 @@ def build_pdf():
     # Section 3: Empirical Benchmarking Table
     story.append(Paragraph("3. Empirical Verification & Algorithmic Benchmarks", h1_style))
     story.append(Paragraph(
-        "AgriIntel was benchmarked against SAS v9.4 (<code>PROC GLM</code> &amp; <code>PROC MIXED</code>) and R v4.3.2 (<code>agricolae</code> v1.3-5) on an empirical multi-location maize trial dataset (<i>N</i> = 20, 5 cultivars × 4 replicates):",
+        "AgroBiometrix was benchmarked against SAS v9.4 (<code>PROC GLM</code> &amp; <code>PROC MIXED</code>) and R v4.3.2 (<code>agricolae</code> v1.3-5) on an empirical multi-location maize trial dataset (<i>N</i> = 20, 5 cultivars × 4 replicates):",
         body_style
     ))
 
@@ -426,7 +426,7 @@ def build_pdf():
             Paragraph("<b>DF</b>", table_header_style),
             Paragraph("<b>SAS v9.4 MS</b>", table_header_style),
             Paragraph("<b>R agricolae MS</b>", table_header_style),
-            Paragraph("<b>AgriIntel MS</b>", table_header_style),
+            Paragraph("<b>AgroBiometrix MS</b>", table_header_style),
             Paragraph("<b>Numerical Error</b>", table_header_style)
         ],
         [
@@ -487,7 +487,7 @@ def build_pdf():
         "• <b>Tier 1 (Deterministic ANOVA, DMRT, Liming, BLUP)</b>: Mean execution latency = <b>12.4 ± 1.8 ms</b> on consumer-grade CPU hardware, requiring zero external API calls or network egress.<br/>"
         "• <b>Tier 2 (Multi-Agent Synthesis Engine - Gemini 1.5/2.0 Flash)</b>: Mean end-to-end cloud pipeline latency = <b>4.21 ± 0.58 seconds</b>.<br/>"
         "• <b>Inference Resource Footprint</b>: Complete multi-agent consensus, 15-page document synthesis, and automated citation matching are completed within an average envelope of <b>2,048 input tokens</b> and <b>5,980 output tokens</b> (~8,028 total tokens).<br/>"
-        "• <b>Sovereign Edge Deployment</b>: By offloading 85.3% of analytical workloads to local deterministic execution, AgriIntel reduces cloud bandwidth and dependency by over 85%, ensuring operational sustainability for institutions with intermittent internet connectivity.",
+        "• <b>Sovereign Edge Deployment</b>: By offloading 85.3% of analytical workloads to local deterministic execution, AgroBiometrix reduces cloud bandwidth and dependency by over 85%, ensuring operational sustainability for institutions with intermittent internet connectivity.",
         body_style
     ))
     story.append(Spacer(1, 8))
@@ -495,15 +495,15 @@ def build_pdf():
     # Section 4: Operational Case Studies
     story.append(Paragraph("4. Multi-Disciplinary African Case Studies", h1_style))
     story.append(Paragraph(
-        "<b>Case 1: Indigenous Cattle Breeding &amp; Trypanotolerance:</b> In the Derived Savanna zone of Oyo State, Nigeria, AgriIntel analyzed Muturu and White Fulani cattle under concurrent heat stress (THI ≥ 82) and <i>Trypanosoma vivax</i> challenge. AgriIntel computed Cochran sample sizes (<i>n</i> = 384), solved animal model BLUP equations for thermo-tolerance, and generated a 15-page grant proposal incorporating NVRI Vom diagnostic protocols and 25 peer-reviewed citations with active DOIs.",
+        "<b>Case 1: Indigenous Cattle Breeding &amp; Trypanotolerance:</b> In the Derived Savanna zone of Oyo State, Nigeria, AgroBiometrix analyzed Muturu and White Fulani cattle under concurrent heat stress (THI ≥ 82) and <i>Trypanosoma vivax</i> challenge. AgroBiometrix computed Cochran sample sizes (<i>n</i> = 384), solved animal model BLUP equations for thermo-tolerance, and generated a 15-page grant proposal incorporating NVRI Vom diagnostic protocols and 25 peer-reviewed citations with active DOIs.",
         body_style
     ))
     story.append(Paragraph(
-        "<b>Case 2: Savanna Soil Acidity &amp; ISFM Liming:</b> On acid Ultisols (pH = 4.62, Al³⁺ = 2.45 cmol/kg) in Kaduna, Nigeria, AgriIntel titrated limestone requirement (2.20 t/ha) and balanced stoichiometric nutrients (60 kg N - 40 kg P₂O₅ - 40 kg K₂O + 4 t/ha manure), projecting a 72.4% drop in toxic aluminum saturation and a 114% grain yield gain.",
+        "<b>Case 2: Savanna Soil Acidity &amp; ISFM Liming:</b> On acid Ultisols (pH = 4.62, Al³⁺ = 2.45 cmol/kg) in Kaduna, Nigeria, AgroBiometrix titrated limestone requirement (2.20 t/ha) and balanced stoichiometric nutrients (60 kg N - 40 kg P₂O₅ - 40 kg K₂O + 4 t/ha manure), projecting a 72.4% drop in toxic aluminum saturation and a 114% grain yield gain.",
         body_style
     ))
     story.append(Paragraph(
-        "<b>Case 3: Sovereign Macroeconomic Policy Simulation:</b> For a ₦100 Billion agricultural capital envelope, AgriIntel optimized allocations across 5 pillars (smart e-vouchers, solar irrigation, storage hubs, vaccines, credit guarantees), deriving an aggregate Benefit-Cost Ratio of **2.84 to 1.00**, projecting **385,420 rural jobs**, and generating a formal Executive Cabinet Memorandum for Federal Executive Council ratification.",
+        "<b>Case 3: Sovereign Macroeconomic Policy Simulation:</b> For a ₦100 Billion agricultural capital envelope, AgroBiometrix optimized allocations across 5 pillars (smart e-vouchers, solar irrigation, storage hubs, vaccines, credit guarantees), deriving an aggregate Benefit-Cost Ratio of **2.84 to 1.00**, projecting **385,420 rural jobs**, and generating a formal Executive Cabinet Memorandum for Federal Executive Council ratification.",
         body_style
     ))
     story.append(Spacer(1, 8))
@@ -511,11 +511,11 @@ def build_pdf():
     # Section 5: Conclusion & Reproducibility
     story.append(Paragraph("5. Discussion, Conclusion & Software Availability", h1_style))
     story.append(Paragraph(
-        "AgriIntel demonstrates that generative artificial intelligence can be safely and scalably deployed in African agriculture by anchoring qualitative models in deterministic mathematical biometrics. By establishing 100.0% mathematical parity with SAS and R while operating within a compact computational envelope (~8,028 tokens per 15-page document) and adhering to established CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, and NIHORT standards, AgriIntel provides the scientific validity, citation pipeline, and regulatory trust required for large-scale institutional adoption across universities, research institutes, and sovereign governments.",
+        "AgroBiometrix demonstrates that generative artificial intelligence can be safely and scalably deployed in African agriculture by anchoring qualitative models in deterministic mathematical biometrics. By establishing 100.0% mathematical parity with SAS and R while operating within a compact computational envelope (~8,028 tokens per 15-page document) and adhering to established CGIAR, IITA, ILRI, FAO, IFPRI, FUNAAB, and NIHORT standards, AgroBiometrix provides the scientific validity, citation pipeline, and regulatory trust required for large-scale institutional adoption across universities, research institutes, and sovereign governments.",
         body_style
     ))
     story.append(Paragraph(
-        "<b>Software & Code Availability</b>: AgriIntel Institutional Edition is available as an open-access platform. Source code, mathematical verification notebooks, and empirical benchmark datasets are archived under open academic licensing.",
+        "<b>Software & Code Availability</b>: AgroBiometrix Institutional Edition is available as an open-access platform. Source code, mathematical verification notebooks, and empirical benchmark datasets are archived under open academic licensing.",
         bullet_style
     ))
     story.append(Spacer(1, 8))

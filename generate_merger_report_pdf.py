@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier: Module Merger & Architecture Consolidation Report
+AgroBiometrix Technical Dossier: Module Merger & Architecture Consolidation Report
 Generates publication-grade PDF:
-- Primary: AgriIntel_Module_Merger_and_Architecture_Consolidation_Report.pdf
-- Mirror: 10_AgriIntel_Module_Merger_and_Architecture_Consolidation_Report.pdf
+- Primary: AgroBiometrix_Module_Merger_and_Architecture_Consolidation_Report.pdf
+- Mirror: 10_AgroBiometrix_Module_Merger_and_Architecture_Consolidation_Report.pdf
 """
 
 import os
@@ -15,8 +15,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Module_Merger_and_Architecture_Consolidation_Report.pdf"
-ALT_FILENAME = "10_AgriIntel_Module_Merger_and_Architecture_Consolidation_Report.pdf"
+PDF_FILENAME = "AgroBiometrix_Module_Merger_and_Architecture_Consolidation_Report.pdf"
+ALT_FILENAME = "10_AgroBiometrix_Module_Merger_and_Architecture_Consolidation_Report.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -44,7 +44,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL ARCHITECTURE CONSOLIDATION & MODULE MERGER REPORT")
+            self.drawString(54, 755, "AGROBIOMETRIX ARCHITECTURE CONSOLIDATION & MODULE MERGER REPORT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 10 (v2.1)")
@@ -56,7 +56,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Generative Intelligence Platform for Resilient Agriculture | Architecture Council")
+        self.drawString(54, 34, "AgroBiometrix: Generative Intelligence Platform for Resilient Agriculture | Architecture Council")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -194,7 +194,7 @@ def build_pdf():
     # -------------------------------------------------------------------------
     banner_data = [
         [
-            Paragraph("<b>AGRIINTEL ARCHITECTURE DOSSIER 10</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
+            Paragraph("<b>AGROBIOMETRIX ARCHITECTURE DOSSIER 10</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
             Paragraph("<b>OCTOBER 2026 | INSTITUTIONAL SPECIFICATION</b>", ParagraphStyle('B2', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"), alignment=2))
         ],
         [
@@ -224,7 +224,7 @@ def build_pdf():
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=5))
     
     story.append(Paragraph(
-        "AgriIntel was initially structured into 14 distinct functional modules to provide comprehensive coverage across "
+        "AgroBiometrix was initially structured into 14 distinct functional modules to provide comprehensive coverage across "
         "biometrics, agronomy, livestock science, soil modeling, climate simulations, and academic research tutoring. "
         "While each module proved scientifically sound and fully validated, user telemetry and agronomic workflow analysis "
         "revealed a critical usability bottleneck: <b>excessive navigational fragmentation</b>.",
@@ -455,15 +455,15 @@ def build_pdf():
     story.append(Paragraph("5. Technical Verification & Sign-Off", h1_style))
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=5))
     story.append(Paragraph(
-        "The AgriIntel Architecture Council has formally validated this consolidation plan. By restructuring fragmented "
-        "entry points into 7 cohesive Power Suites, AgriIntel achieves maximum usability, intuitive research workflows, "
+        "The AgroBiometrix Architecture Council has formally validated this consolidation plan. By restructuring fragmented "
+        "entry points into 7 cohesive Power Suites, AgroBiometrix achieves maximum usability, intuitive research workflows, "
         "and superior ergonomic design while guaranteeing 100% functional fidelity and zero code loss.",
         body_style
     ))
     
     signoff_data = [
         [
-            Paragraph("<b>Lead AI System Architect</b><br/>AgriIntel Core Engineering<br/><i>Approved: October 2026</i>", table_cell_style),
+            Paragraph("<b>Lead AI System Architect</b><br/>AgroBiometrix Core Engineering<br/><i>Approved: October 2026</i>", table_cell_style),
             Paragraph("<b>Senior Agricultural Biometrician</b><br/>Pan-African Biometrics Unit<br/><i>Verified: October 2026</i>", table_cell_style),
             Paragraph("<b>Quality Assurance Director</b><br/>Platform Verification Team<br/><i>Certified: Production v2.1</i>", table_cell_style)
         ]

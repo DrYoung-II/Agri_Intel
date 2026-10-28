@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier 13: Production API Architecture, Token Economics & Institutional Governance
+AgroBiometrix Technical Dossier 13: Production API Architecture, Token Economics & Institutional Governance
 Generates publication-grade PDF:
-- Primary: AgriIntel_Production_API_Architecture_and_Token_Economics.pdf
-- Mirror: 13_AgriIntel_Production_API_Architecture_and_Token_Economics.pdf
+- Primary: AgroBiometrix_Production_API_Architecture_and_Token_Economics.pdf
+- Mirror: 13_AgroBiometrix_Production_API_Architecture_and_Token_Economics.pdf
 - Artifact Directory Mirror
 """
 
@@ -16,8 +16,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Production_API_Architecture_and_Token_Economics.pdf"
-ALT_FILENAME = "13_AgriIntel_Production_API_Architecture_and_Token_Economics.pdf"
+PDF_FILENAME = "AgroBiometrix_Production_API_Architecture_and_Token_Economics.pdf"
+ALT_FILENAME = "13_AgroBiometrix_Production_API_Architecture_and_Token_Economics.pdf"
 ARTIFACT_DIR = r"C:\Users\USER\.gemini\antigravity\brain\1e91af0e-0faf-4a71-9df3-64f967526da0"
 
 
@@ -46,7 +46,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL PRODUCTION API ARCHITECTURE & TOKEN ECONOMICS")
+            self.drawString(54, 755, "AGROBIOMETRIX PRODUCTION API ARCHITECTURE & TOKEN ECONOMICS")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 13")
@@ -58,7 +58,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Pan-African Generative AI Infrastructure for Agronomic Science | Production Blueprint")
+        self.drawString(54, 34, "AgroBiometrix: Pan-African Generative AI Infrastructure for Agronomic Science | Production Blueprint")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -203,7 +203,7 @@ def build_pdf():
     story = []
 
     # Title Block
-    story.append(Paragraph("AGRIINTEL TECHNICAL DOSSIER 13: PRODUCTION API ARCHITECTURE, TOKEN ECONOMICS & INSTITUTIONAL GOVERNANCE", title_style))
+    story.append(Paragraph("AGROBIOMETRIX TECHNICAL DOSSIER 13: PRODUCTION API ARCHITECTURE, TOKEN ECONOMICS & INSTITUTIONAL GOVERNANCE", title_style))
     story.append(Paragraph("<b>Strategic Roadmap</b>: Transitioning from Development Prototyping (Google Gemini Free Tier) to Enterprise Government, Federal Agency & Commercial Scale", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=primary_green, spaceAfter=8, spaceBefore=2))
 
@@ -233,9 +233,9 @@ def build_pdf():
     # Section 1: Executive Summary
     story.append(Paragraph("1. Executive Summary & The Production Question", h1_style))
     story.append(Paragraph(
-        "A foundational milestone was achieved by integrating Google Gemini's free API key tier across AgriIntel's "
+        "A foundational milestone was achieved by integrating Google Gemini's free API key tier across AgroBiometrix's "
         "Multi-Agent Orchestrator, AI Proposal Studio, Thesis Mentor, and Policy Cabinet Memorandum generator. "
-        "However, as AgriIntel prepares to scale into commercial production to serve <b>Federal and State Ministries of Agriculture, "
+        "However, as AgroBiometrix prepares to scale into commercial production to serve <b>Federal and State Ministries of Agriculture, "
         "Central Banks, Agricultural Research Institutes (NARS/CGIAR), and corporate commercial agribusinesses</b>, "
         "a critical engineering and business question arises: <i>'Does this mean paid API keys are no longer needed in the future?'</i>",
         body_style
@@ -248,7 +248,7 @@ def build_pdf():
             "<b>No, you cannot rely on free-tier API keys in commercial production.</b> While the free tier is ideal for "
             "development, testing, and investor demos, production contracts with government agencies and paying subscribers "
             "strictly mandate enterprise SLAs, guaranteed concurrency, zero data-logging compliance, and seamless turnkey UX. "
-            "However, because AgriIntel's proprietary architecture executes <b>85% of all computations locally at $0</b>, "
+            "However, because AgroBiometrix's proprietary architecture executes <b>85% of all computations locally at $0</b>, "
             "your actual paid LLM token costs will be virtually negligible—averaging <b>$0.00195 per 15-page document (< 1/5th of a US cent)</b>, "
             "delivering over <b>99.5% gross software margin</b> on institutional subscriptions.",
             callout_style
@@ -323,7 +323,7 @@ def build_pdf():
             Paragraph("<b>Dimension</b>", table_header_style),
             Paragraph("<b>Google AI Studio (Free Tier)</b>", table_header_style),
             Paragraph("<b>Google Cloud Vertex AI (Paid Tier)</b>", table_header_style),
-            Paragraph("<b>Production Impact for AgriIntel</b>", table_header_style)
+            Paragraph("<b>Production Impact for AgroBiometrix</b>", table_header_style)
         ],
         [
             Paragraph("<b>Data Privacy & Training</b>", table_cell_style),
@@ -368,10 +368,10 @@ def build_pdf():
     story.append(Spacer(1, 10))
 
     # Section 4: Token Economics & The 85% Zero-Cost Moat
-    story.append(Paragraph("4. AgriIntel Token Economics: The 85% Zero-Cost Moat", h1_style))
+    story.append(Paragraph("4. AgroBiometrix Token Economics: The 85% Zero-Cost Moat", h1_style))
     story.append(Paragraph(
         "A common misconception among software entrepreneurs is that adopting paid enterprise LLM APIs will generate unsustainable "
-        "operational bills. For AgriIntel, this risk is completely eliminated by our <b>Two-Tier Hybrid Architecture</b>:",
+        "operational bills. For AgroBiometrix, this risk is completely eliminated by our <b>Two-Tier Hybrid Architecture</b>:",
         body_style
     ))
 
@@ -445,9 +445,9 @@ def build_pdf():
     story.append(Spacer(1, 6))
 
     # Section 5: The 3 Production Architectures
-    story.append(Paragraph("5. The 3 Viable Production Architectures for Scaling AgriIntel", h1_style))
+    story.append(Paragraph("5. The 3 Viable Production Architectures for Scaling AgroBiometrix", h1_style))
     story.append(Paragraph(
-        "To commercialize AgriIntel across government ministries, multilateral agencies, and universities, "
+        "To commercialize AgroBiometrix across government ministries, multilateral agencies, and universities, "
         "three architectural deployment options are established:",
         body_style
     ))
@@ -461,7 +461,7 @@ def build_pdf():
         ],
         [
             Paragraph("<b>Model 1: Managed Enterprise SaaS</b><br/><i>(Recommended Default)</i>", table_cell_style),
-            Paragraph("AgriIntel backend authenticates with a centralized paid Google Cloud Vertex AI service account. End-users receive turnkey accounts with zero key friction.", table_cell_style),
+            Paragraph("AgroBiometrix backend authenticates with a centralized paid Google Cloud Vertex AI service account. End-users receive turnkey accounts with zero key friction.", table_cell_style),
             Paragraph("Federal/State Ministries of Agriculture, Commodity Boards, Agribusinesses.", table_cell_style),
             Paragraph("Annual Institutional Licensing (<b>$10,000 – $50,000 / year</b>) with user seats and premium support.", table_cell_style)
         ],
@@ -473,7 +473,7 @@ def build_pdf():
         ],
         [
             Paragraph("<b>Model 3: Sovereign Air-Gapped SLM</b><br/><i>(100% Offline AI)</i>", table_cell_style),
-            Paragraph("AgriIntel deployed on private government servers or national data centers, paired with a self-hosted quantized model (Llama-3-8B / Mistral-7B via vLLM).", table_cell_style),
+            Paragraph("AgroBiometrix deployed on private government servers or national data centers, paired with a self-hosted quantized model (Llama-3-8B / Mistral-7B via vLLM).", table_cell_style),
             Paragraph("National Security Agencies, Central Banks, Strategic Grain Reserves.", table_cell_style),
             Paragraph("Enterprise On-Premises License (<b>$50,000 – $150,000</b> setup + 20% annual maintenance). $0 API fees forever.", table_cell_style)
         ]
@@ -492,7 +492,7 @@ def build_pdf():
     # Section 6: Phased Implementation Roadmap
     story.append(Paragraph("6. Phased Commercial Scaling Roadmap", h1_style))
     story.append(Paragraph(
-        "To ensure a seamless transition from development to commercial maturity, AgriIntel follows a disciplined three-phase roadmap:",
+        "To ensure a seamless transition from development to commercial maturity, AgroBiometrix follows a disciplined three-phase roadmap:",
         body_style
     ))
 
@@ -519,7 +519,7 @@ def build_pdf():
     # Sign-Off Block
     signoff_data = [
         [
-            Paragraph("<b>Chief Technology Officer</b><br/>AgriIntel AI Platform<br/><i>Architecture Certified</i>", table_cell_style),
+            Paragraph("<b>Chief Technology Officer</b><br/>AgroBiometrix AI Platform<br/><i>Architecture Certified</i>", table_cell_style),
             Paragraph("<b>Head of Enterprise Cloud Infrastructure</b><br/>Production Engineering Unit<br/><i>SLA & Security Verified</i>", table_cell_style),
             Paragraph("<b>Lead Agronomic Systems Architect</b><br/>Pan-African Agricultural Core<br/><i>Economics & Margins Approved</i>", table_cell_style)
         ]

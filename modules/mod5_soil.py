@@ -164,7 +164,7 @@ def render_soil_intelligence():
 
         st.markdown(f"""
 <div class="agri-explainer-box">
-<div class="agri-explainer-title">💡 AgriIntel Decision Support & Hedging Strategy ({country_name}) for {sim_crop_name}</div>
+<div class="agri-explainer-title">💡 AgroBiometrix Decision Support & Hedging Strategy ({country_name}) for {sim_crop_name}</div>
 Under a <b>{fert_price_change:+d}% fertilizer price shift</b> and <b>{rainfall_change:+d}% rainfall shock</b>:<br>
 • Gross margin changes by <b>{curr_sym}{sim_gross_margin - base_gross_margin:+,.0f}</b> per hectare ({pct_margin_change:+.1f}%).<br>
 • <b>Mitigation Action</b>: Combine <i>micro-dosing</i> with organo-mineral compost or indigenous rhizobium/mycorrhizal bio-inoculants, maintaining target crop yield while hedging against chemical fertilizer inflation.

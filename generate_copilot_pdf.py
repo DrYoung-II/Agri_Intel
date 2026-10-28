@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Guide: AgriResearch Copilot & African Evidence Engine
+AgroBiometrix Technical Guide: AgriResearch Copilot & African Evidence Engine
 Generates publication-quality technical PDF dossier:
-- Primary: 7 AgriIntel_AgriResearch_Copilot_and_Evidence_Engine.pdf
-- Mirror: AgriIntel_AgriResearch_Copilot_and_Evidence_Engine.pdf
+- Primary: 7 AgroBiometrix_AgriResearch_Copilot_and_Evidence_Engine.pdf
+- Mirror: AgroBiometrix_AgriResearch_Copilot_and_Evidence_Engine.pdf
 """
 
 import os
@@ -15,8 +15,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "7 AgriIntel_AgriResearch_Copilot_and_Evidence_Engine.pdf"
-ALT_FILENAME = "AgriIntel_AgriResearch_Copilot_and_Evidence_Engine.pdf"
+PDF_FILENAME = "7 AgroBiometrix_AgriResearch_Copilot_and_Evidence_Engine.pdf"
+ALT_FILENAME = "AgroBiometrix_AgriResearch_Copilot_and_Evidence_Engine.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -43,7 +43,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL TECHNICAL GUIDE — AGRIRESEARCH COPILOT & EVIDENCE ENGINE")
+            self.drawString(54, 755, "AGROBIOMETRIX TECHNICAL GUIDE — AGRIRESEARCH COPILOT & EVIDENCE ENGINE")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Enterprise Build v2.6")
@@ -55,7 +55,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
+        self.drawString(54, 34, "AgroBiometrix: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -169,14 +169,14 @@ def build_pdf():
     # =========================================================================
     # PAGE 1: EXECUTIVE OVERVIEW, ARCHITECTURE & TAB 1 DETAILED BREAKDOWN
     # =========================================================================
-    story.append(Paragraph("AgriIntel Technical Guide: AgriResearch Copilot & African Evidence Engine", title_style))
+    story.append(Paragraph("AgroBiometrix Technical Guide: AgriResearch Copilot & African Evidence Engine", title_style))
     story.append(Paragraph("<b>System Architecture & Operational Manual</b> | Zero-Fabrication Scientific Evidence Matrices, Knowledge Gap Finder & Multilingual Radio Extension", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.2, color=colors.HexColor("#1B5E20"), spaceBefore=1, spaceAfter=4))
 
     # Metadata Banner
     meta_data = [
         [
-            Paragraph("<b>Platform:</b> AgriIntel Enterprise v2.6", table_cell),
+            Paragraph("<b>Platform:</b> AgroBiometrix Enterprise v2.6", table_cell),
             Paragraph("<b>Sub-Module:</b> Module 1, 9 & 14 Copilot", table_cell),
             Paragraph("<b>Target Audience:</b> Agronomists & Extension", table_cell),
             Paragraph("<b>Live Status:</b> Verified Active (HTTP 200)", table_cell)
@@ -309,7 +309,7 @@ def build_pdf():
     # =========================================================================
     story.append(Paragraph("4. The African Evidence Base: 8 Calibrated Systematic Domains", h1_style))
     story.append(Paragraph(
-        "AgriIntel's evidence base (<font face='Courier'>data/african_evidence_base.json</font>) has been expanded to 8 fully calibrated research domains. "
+        "AgroBiometrix's evidence base (<font face='Courier'>data/african_evidence_base.json</font>) has been expanded to 8 fully calibrated research domains. "
         "Below is the verified research corpus powering Tab 1:",
         body_style
     ))
@@ -491,7 +491,7 @@ def build_pdf():
     # =========================================================================
     story.append(Paragraph("7. Indigenous Radio Broadcast Transcripts & English Equivalents", h1_style))
     story.append(Paragraph(
-        "Below are authentic on-air broadcast scripts synthesized by AgriIntel for agricultural community extension radio:",
+        "Below are authentic on-air broadcast scripts synthesized by AgroBiometrix for agricultural community extension radio:",
         body_style
     ))
 
@@ -517,7 +517,7 @@ def build_pdf():
             Paragraph("'Good morning farmers! A severe heat wave is forecasted. Do not apply Urea onto parched soil as heat will volatilize nutrients. Wait for soaking rains and apply small crown micro-dosing to safeguard crop yields.'", table_cell)
         ],
         [
-            Paragraph("<b>🇳🇬 Pidgin</b><br/>Uncle Joe Extension Master<br/><i>AgriIntel Grassroots FM</i>", table_cell_bold),
+            Paragraph("<b>🇳🇬 Pidgin</b><br/>Uncle Joe Extension Master<br/><i>AgroBiometrix Grassroots FM</i>", table_cell_bold),
             Paragraph("<i>'Make all rabbit farmers open their ears! Too much hot sun dey make male rabbit lose power to give birth for 6 to 8 weeks. Put frozen water bottle inside their cage for afternoon make them hug am cool body. And any grass wey you cut, make you spread am for shade for 4 to 6 hours before you give them make belly swell (bloat) no kill them!'</i>", table_cell),
             Paragraph("'Attention rabbit keepers! Heat above 30°C triggers buck sterility for 6 to 8 weeks. Place frozen bottles inside hutches for cooling. Always wilt fresh forage 4 to 6 hours before feeding to prevent deadly tympany (bloat).'", table_cell)
         ]

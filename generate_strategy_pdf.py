@@ -1,5 +1,5 @@
 """
-Generates the executive PDF on AgriIntel's Pan-African and Global Scope.
+Generates the executive PDF on AgroBiometrix's Pan-African and Global Scope.
 """
 
 from reportlab.lib.pagesizes import letter
@@ -10,7 +10,7 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Pan_African_and_Global_Strategy.pdf"
+PDF_FILENAME = "AgroBiometrix_Pan_African_and_Global_Strategy.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -37,7 +37,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AgriIntel Strategic Brief — Geographic Scope & Global Architecture")
+            self.drawString(54, 755, "AgroBiometrix Strategic Brief — Geographic Scope & Global Architecture")
             self.drawRightString(558, 755, "Africa-First, Globally Relevant")
             self.setStrokeColor(colors.HexColor("#C8E6C9"))
             self.setLineWidth(0.6)
@@ -45,7 +45,7 @@ class NumberedCanvas(canvas.Canvas):
             
         # Footer
         page_text = f"Page {self._pageNumber} of {page_count}"
-        self.drawString(54, 35, "AgriIntel Platform Strategy — Executive Assessment")
+        self.drawString(54, 35, "AgroBiometrix Platform Strategy — Executive Assessment")
         self.drawRightString(558, 35, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -149,15 +149,15 @@ def create_strategy_pdf():
     story = []
 
     # Title & Banner
-    story.append(Paragraph("AgriIntel: Geographic Scope & Global Scale", title_style))
-    story.append(Paragraph("<b>Is AgriIntel Focused Only on Nigeria? An Architectural & Strategic Evaluation</b>", subtitle_style))
+    story.append(Paragraph("AgroBiometrix: Geographic Scope & Global Scale", title_style))
+    story.append(Paragraph("<b>Is AgroBiometrix Focused Only on Nigeria? An Architectural & Strategic Evaluation</b>", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=leaf_green, spaceBefore=0, spaceAfter=8))
 
     # Core Thesis Callout Box
     thesis_box = [
         [Paragraph("<b>CORE STRATEGIC THESIS: AFRICA-FIRST, GLOBALLY RELEVANT</b>", body_bold)],
         [Paragraph(
-            "<i>\"No, AgriIntel is not focused only on Nigeria. AgriIntel is founded on a bold global thesis: "
+            "<i>\"No, AgroBiometrix is not focused only on Nigeria. AgroBiometrix is founded on a bold global thesis: "
             "<b>'The world's agricultural intelligence layer, built from African realities outward.'</b> "
             "While Nigeria serves as an ideal initial proving ground due to its enormous population and rich agro-ecological diversity, "
             "the platform is architected for Pan-African deployment and Global South relevance from Day 1.\"</i>",
@@ -187,7 +187,7 @@ def create_strategy_pdf():
     # SECTION 2: PAN-AFRICAN ARCHITECTURE
     story.append(Paragraph("2. Pan-African Scope & Multi-Regional Coverage", h1_style))
     story.append(Paragraph(
-        "AgriIntel is built to serve agricultural ecosystems across Eastern, Western, Central, and Southern Africa:",
+        "AgroBiometrix is built to serve agricultural ecosystems across Eastern, Western, Central, and Southern Africa:",
         body_style
     ))
 
@@ -213,20 +213,20 @@ def create_strategy_pdf():
 
     # SECTION 3: GLOBAL RELEVANCE
     story.append(PageBreak())
-    story.append(Paragraph("3. Why AgriIntel is Globally Relevant", h1_style))
+    story.append(Paragraph("3. Why AgroBiometrix is Globally Relevant", h1_style))
     story.append(Paragraph(
-        "AgriIntel is not merely a regional software package; it addresses global scientific and economic imperatives:",
+        "AgroBiometrix is not merely a regional software package; it addresses global scientific and economic imperatives:",
         body_style
     ))
     story.append(Paragraph(
         "<b>1. Agricultural Biometrics Know No Geographic Boundaries:</b><br/>"
-        "The biometrical engine at the heart of AgriIntel—implementing <b>Duncan's Multiple Range Test (DMRT)</b>, <b>Tukey's HSD</b>, <b>Fisher's Protected LSD</b>, <b>Dunnett's Test</b>, <b>Two-Way Factorial ANOVA</b>, and <b>Henderson's Mixed Model BLUP</b>—is universally applicable. "
-        "A field agronomist or quantitative geneticist at <i>Wageningen University (Netherlands)</i>, <i>Cornell University (USA)</i>, <i>EMBRAPA (Brazil)</i>, <i>ICAR (India)</i>, or the <i>University of Nairobi (Kenya)</i> uses the exact same mathematical formulas, degrees of freedom, and error protection levels. Any researcher on Earth can upload their trial data into AgriIntel and receive instant publication-grade analysis.",
+        "The biometrical engine at the heart of AgroBiometrix—implementing <b>Duncan's Multiple Range Test (DMRT)</b>, <b>Tukey's HSD</b>, <b>Fisher's Protected LSD</b>, <b>Dunnett's Test</b>, <b>Two-Way Factorial ANOVA</b>, and <b>Henderson's Mixed Model BLUP</b>—is universally applicable. "
+        "A field agronomist or quantitative geneticist at <i>Wageningen University (Netherlands)</i>, <i>Cornell University (USA)</i>, <i>EMBRAPA (Brazil)</i>, <i>ICAR (India)</i>, or the <i>University of Nairobi (Kenya)</i> uses the exact same mathematical formulas, degrees of freedom, and error protection levels. Any researcher on Earth can upload their trial data into AgroBiometrix and receive instant publication-grade analysis.",
         body_style
     ))
     story.append(Paragraph(
         "<b>2. Global South Climate & Agro-Ecological Analogues:</b><br/>"
-        "The challenges AgriIntel solves—thermal stress in livestock (THI > 78), vegetative water deficit, sudden drought spells during flowering, low-CEC weathered soils, phosphorus fixation in acidic profiles, and fertilizer price volatility—are shared by over <b>500 million smallholders worldwide</b> across:<br/>"
+        "The challenges AgroBiometrix solves—thermal stress in livestock (THI > 78), vegetative water deficit, sudden drought spells during flowering, low-CEC weathered soils, phosphorus fixation in acidic profiles, and fertilizer price volatility—are shared by over <b>500 million smallholders worldwide</b> across:<br/>"
         "• <b>South Asia</b> (India, Pakistan, Bangladesh, Nepal)<br/>"
         "• <b>Southeast Asia</b> (Vietnam, Indonesia, Philippines)<br/>"
         "• <b>Latin America</b> (Cerrado in Brazil, Llanos in Colombia/Venezuela, Dry corridors in Central America).",
@@ -234,7 +234,7 @@ def create_strategy_pdf():
     ))
     story.append(Paragraph(
         "<b>3. Planetary-Scale Global Open APIs:</b><br/>"
-        "The environmental, soil, and bibliographic engines powering AgriIntel are not restricted to Nigerian coordinates:<br/>"
+        "The environmental, soil, and bibliographic engines powering AgroBiometrix are not restricted to Nigerian coordinates:<br/>"
         "• <b>NASA POWER API</b>: Delivers global solar radiation, precipitation, and relative humidity for any latitude/longitude on Earth.<br/>"
         "• <b>Open-Meteo API</b>: Global numerical weather models and high-resolution forecasts worldwide.<br/>"
         "• <b>ISRIC SoilGrids</b>: Planetary soil profile database mapped at 250m resolution across all continents.<br/>"
@@ -271,7 +271,7 @@ def create_strategy_pdf():
     story.append(Spacer(1, 12))
 
     story.append(Paragraph(
-        "<b>Summary Conclusion:</b> AgriIntel is fundamentally built to be <b>the world's agricultural intelligence layer</b>. "
+        "<b>Summary Conclusion:</b> AgroBiometrix is fundamentally built to be <b>the world's agricultural intelligence layer</b>. "
         "Anchored in African realities, powered by universal mathematical and biometrical principles, and accessible across the globe.",
         body_bold
     ))

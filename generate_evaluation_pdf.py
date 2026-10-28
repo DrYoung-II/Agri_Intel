@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier 12: Strategic Assessment & Executive Platform Evaluation
+AgroBiometrix Technical Dossier 12: Strategic Assessment & Executive Platform Evaluation
 Generates publication-grade PDF:
-- Primary: AgriIntel_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf
-- Mirror: 12_AgriIntel_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf
+- Primary: AgroBiometrix_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf
+- Mirror: 12_AgroBiometrix_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf
 """
 
 import os
@@ -15,8 +15,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf"
-ALT_FILENAME = "12_AgriIntel_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf"
+PDF_FILENAME = "AgroBiometrix_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf"
+ALT_FILENAME = "12_AgroBiometrix_Strategic_Assessment_and_Executive_Platform_Evaluation.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -44,7 +44,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL STRATEGIC ASSESSMENT & EXECUTIVE PLATFORM EVALUATION")
+            self.drawString(54, 755, "AGROBIOMETRIX STRATEGIC ASSESSMENT & EXECUTIVE PLATFORM EVALUATION")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 12")
@@ -56,7 +56,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Pan-African Generative AI Infrastructure for Agronomic Science | Strategic Review")
+        self.drawString(54, 34, "AgroBiometrix: Pan-African Generative AI Infrastructure for Agronomic Science | Strategic Review")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -195,11 +195,11 @@ def build_pdf():
     # -------------------------------------------------------------------------
     banner_data = [
         [
-            Paragraph("<b>AGRIINTEL TECHNICAL DOSSIER 12</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
+            Paragraph("<b>AGROBIOMETRIX TECHNICAL DOSSIER 12</b>", ParagraphStyle('B1', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"))),
             Paragraph("<b>OCTOBER 2026 | STRATEGIC REVIEW & EVALUATION</b>", ParagraphStyle('B2', fontName='Helvetica-Bold', fontSize=8, leading=10, textColor=colors.HexColor("#C8E6C9"), alignment=2))
         ],
         [
-            Paragraph("AgriIntel Strategic Assessment & Executive Platform Evaluation", title_style),
+            Paragraph("AgroBiometrix Strategic Assessment & Executive Platform Evaluation", title_style),
             Paragraph("Institutional Review & Monetization Analysis", ParagraphStyle('B4', fontName='Helvetica-Bold', fontSize=9, leading=12, textColor=leaf_green, alignment=2))
         ],
         [
@@ -225,7 +225,7 @@ def build_pdf():
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=4))
     
     story.append(Paragraph(
-        "Over recent engineering cycles, <b>AgriIntel</b> has undergone a profound structural transformation: evolving from an early-stage, "
+        "Over recent engineering cycles, <b>AgroBiometrix</b> has undergone a profound structural transformation: evolving from an early-stage, "
         "fragmented prototype into an <b>institutional-grade, multi-sector agricultural intelligence infrastructure</b>. "
         "The software moves decisively upstream from consumer-level symptoms into systemic agronomic science, biometrical genetics, "
         "and sovereign macroeconomic decision-making.",
@@ -274,14 +274,14 @@ def build_pdf():
     story.append(Spacer(1, 8))
 
     # -------------------------------------------------------------------------
-    # 2. THE AGRIINTEL TRIPLE MOAT
+    # 2. THE AGROBIOMETRIX TRIPLE MOAT
     # -------------------------------------------------------------------------
     story.append(Paragraph("2. The Unfair Strategic Advantage (The Triple Moat)", h1_style))
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=4))
     
     story.append(Paragraph(
         "Across Africa and the Global South, 95% of agricultural AI applications focus strictly on consumer leaf disease photo diagnostics. "
-        "While helpful, this retail market is saturated and low-margin. AgriIntel captures an unassailable moat by operating upstream:",
+        "While helpful, this retail market is saturated and low-margin. AgroBiometrix captures an unassailable moat by operating upstream:",
         body_style
     ))
 
@@ -329,7 +329,7 @@ def build_pdf():
     story.append(HRFlowable(width="100%", thickness=1, color=leaf_green, spaceBefore=2, spaceAfter=5))
     
     story.append(Paragraph(
-        "AgriIntel is architected to scale from individual academic researchers to national sovereign ministries via a structured 4-tier flywheel:",
+        "AgroBiometrix is architected to scale from individual academic researchers to national sovereign ministries via a structured 4-tier flywheel:",
         body_style
     ))
 
@@ -337,7 +337,7 @@ def build_pdf():
         [
             Paragraph("User Tier", table_header_style),
             Paragraph("Traditional Pain Points", table_header_style),
-            Paragraph("AgriIntel Solution", table_header_style),
+            Paragraph("AgroBiometrix Solution", table_header_style),
             Paragraph("Pricing & Monetization Model", table_header_style)
         ],
         [
@@ -401,7 +401,7 @@ def build_pdf():
         bullet_style
     ))
     story.append(Paragraph(
-        "• <b>Phase 3: B2B Intelligence API Monetization (Months 5–6)</b>: Expose AgriIntel's biometrical DMRT/ANOVA calculators, thermal stress indexes, and crop edaphic "
+        "• <b>Phase 3: B2B Intelligence API Monetization (Months 5–6)</b>: Expose AgroBiometrix's biometrical DMRT/ANOVA calculators, thermal stress indexes, and crop edaphic "
         "APIs as high-speed metered REST endpoints, monetizing third-party developer traffic across African fintech and agtech apps.",
         bullet_style
     ))
@@ -416,7 +416,7 @@ def build_pdf():
     verdict_text = [
         [Paragraph("<b>FINAL ARCHITECTURAL & STRATEGIC VERDICT:</b>", table_cell_bold)],
         [Paragraph(
-            "<i>\"AgriIntel has successfully evolved beyond an academic prototype into one of the most comprehensive, scientifically rigorous, "
+            "<i>\"AgroBiometrix has successfully evolved beyond an academic prototype into one of the most comprehensive, scientifically rigorous, "
             "and institutionally relevant agricultural AI platforms built for the African continent. By connecting quantitative biometrics, "
             "academic grant engineering, full-spectrum livestock models, and sovereign macroeconomic policy simulators, the platform possesses "
             "the depth, defensibility, and executive polish required to command serious commercial and government subscription licensing.\"</i>",
@@ -438,7 +438,7 @@ def build_pdf():
     # Sign-Off Table
     signoff_data = [
         [
-            Paragraph("<b>Chief Technology Officer</b><br/>AgriIntel AI Platform<br/><i>Approved & Released</i>", table_cell_style),
+            Paragraph("<b>Chief Technology Officer</b><br/>AgroBiometrix AI Platform<br/><i>Approved & Released</i>", table_cell_style),
             Paragraph("<b>Head of Strategic Review</b><br/>Platform Governance Council<br/><i>Certified & Production-Ready</i>", table_cell_style),
             Paragraph("<b>Lead Agronomic Systems Architect</b><br/>Pan-African Engineering Unit<br/><i>Mathematically Validated</i>", table_cell_style)
         ]

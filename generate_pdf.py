@@ -1,8 +1,8 @@
 """
-AgriIntel Complete Platform Architectural Blueprint (Enterprise Build v2.6)
-Generates the comprehensive executive-grade AgriIntel Platform Blueprint:
-- Primary: 1 AgriIntel_Complete_Platform_Blueprint.pdf
-- Mirror: AgriIntel_Complete_Platform_Blueprint.pdf
+AgroBiometrix Complete Platform Architectural Blueprint (Enterprise Build v2.6)
+Generates the comprehensive executive-grade AgroBiometrix Platform Blueprint:
+- Primary: 1 AgroBiometrix_Complete_Platform_Blueprint.pdf
+- Mirror: AgroBiometrix_Complete_Platform_Blueprint.pdf
 """
 
 import os
@@ -15,8 +15,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_Complete_Platform_Blueprint.pdf"
-ALT_FILENAME = "1 AgriIntel_Complete_Platform_Blueprint.pdf"
+PDF_FILENAME = "AgroBiometrix_Complete_Platform_Blueprint.pdf"
+ALT_FILENAME = "1 AgroBiometrix_Complete_Platform_Blueprint.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -44,7 +44,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL COMPLETE PLATFORM ARCHITECTURAL BLUEPRINT")
+            self.drawString(54, 755, "AGROBIOMETRIX COMPLETE PLATFORM ARCHITECTURAL BLUEPRINT")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Enterprise Build v2.6")
@@ -56,7 +56,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
+        self.drawString(54, 34, "AgroBiometrix: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -64,7 +64,7 @@ class NumberedCanvas(canvas.Canvas):
         self.restoreState()
 
 
-def create_agriintel_pdf():
+def create_agrobiometrix_pdf():
     doc = SimpleDocTemplate(
         PDF_FILENAME,
         pagesize=letter,
@@ -192,14 +192,14 @@ def create_agriintel_pdf():
     # =========================================================================
     # PAGE 1: COVER, METADATA, FOUNDER'S VISION & SYSTEM PARADIGM
     # =========================================================================
-    story.append(Paragraph("AgriIntel — The Complete Platform Architectural Blueprint", title_style))
+    story.append(Paragraph("AgroBiometrix — The Complete Platform Architectural Blueprint", title_style))
     story.append(Paragraph("<b>Enterprise Build v2.6</b> | Africa-First, Globally Scalable Generative Intelligence Infrastructure for Agriculture", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=leaf_green, spaceBefore=0, spaceAfter=4))
 
     # Metadata Banner
     meta_data = [
         [
-            Paragraph("<b>Platform:</b> AgriIntel Enterprise v2.6", table_cell_style),
+            Paragraph("<b>Platform:</b> AgroBiometrix Enterprise v2.6", table_cell_style),
             Paragraph("<b>Suite:</b> 14 Modules + Orchestrator", table_cell_style),
             Paragraph("<b>Scope:</b> Pan-African Ag Intelligence", table_cell_style),
             Paragraph("<b>Audit Date:</b> October 13, 2026", table_cell_style)
@@ -243,14 +243,14 @@ def create_agriintel_pdf():
     story.append(Paragraph("1. The Big Idea & The Strategic Gap", h1_style))
     story.append(Paragraph(
         "A typical agricultural AI application says: <i>'Upload a picture of your tomato leaf, and I will tell you what disease it has.'</i> "
-        "While useful, this treats symptoms rather than systems. In contrast, <b>AgriIntel says:</b><br/>"
+        "While useful, this treats symptoms rather than systems. In contrast, <b>AgroBiometrix says:</b><br/>"
         "<i>'Give me a crop, animal, location, genotype, soil condition, climate scenario, production objective, research question or policy problem—and I will assemble the relevant evidence, analyse the available data, run appropriate models, explain the results, identify uncertainty, and recommend what should be done.'</i>",
         body_style
     ))
     story.append(Paragraph(
         "<b>The Fundamental Gap</b>: Agriculture does not suffer from a lack of information; it suffers from <b>extreme fragmentation</b>. "
         "Critical agricultural knowledge is isolated across scientific papers, theses, genomic databases, soil maps, weather stations, field trials, "
-        "extension manuals, and policy repositories. AgriIntel bridges this fragmentation by acting as the multimodal intelligence infrastructure of agriculture.",
+        "extension manuals, and policy repositories. AgroBiometrix bridges this fragmentation by acting as the multimodal intelligence infrastructure of agriculture.",
         body_style
     ))
 
@@ -285,7 +285,7 @@ def create_agriintel_pdf():
     # =========================================================================
     story.append(Paragraph("3. Continental Platform Scope: 12-Enterprise Agricultural Matrix", h1_style))
     story.append(Paragraph(
-        "AgriIntel's offline intelligence engine covers 12 major African agricultural sub-sectors with dedicated models. "
+        "AgroBiometrix's offline intelligence engine covers 12 major African agricultural sub-sectors with dedicated models. "
         "If an inquiry falls outside these calibrated domains, the engine withholds synthesis rather than returning mismatched data:",
         body_style
     ))
@@ -411,7 +411,7 @@ def create_agriintel_pdf():
     # =========================================================================
     story.append(Paragraph("4. The 14 Multi-Layered Intelligence Modules", h1_style))
     story.append(Paragraph(
-        "AgriIntel's modular architecture delivers end-to-end scientific, biometrical, pedagogical, and policy capabilities:",
+        "AgroBiometrix's modular architecture delivers end-to-end scientific, biometrical, pedagogical, and policy capabilities:",
         body_style
     ))
     
@@ -452,7 +452,7 @@ def create_agriintel_pdf():
     # =========================================================================
     story.append(Paragraph("5. Statistical Biometrics & Pedagogical Explainer (DMRT)", h1_style))
     story.append(Paragraph(
-        "A cornerstone of AgriIntel is its publication-grade statistical biometrics engine. Rather than producing raw numbers, the engine generates an <b>auditable methodological summary</b> explaining test selection, degrees of freedom, and error protection levels:",
+        "A cornerstone of AgroBiometrix is its publication-grade statistical biometrics engine. Rather than producing raw numbers, the engine generates an <b>auditable methodological summary</b> explaining test selection, degrees of freedom, and error protection levels:",
         body_style
     ))
 
@@ -489,7 +489,7 @@ def create_agriintel_pdf():
         [
             Paragraph(
                 "<b>🎓 Complete Disciplinary Coverage in Module 10 (AI Thesis & Research Mentor)</b><br/>"
-                "Rather than generic advice, AgriIntel provides specialized Socratic research guidance across 16 university departments:<br/>"
+                "Rather than generic advice, AgroBiometrix provides specialized Socratic research guidance across 16 university departments:<br/>"
                 "• <b>🐄 Animal Science Departments:</b><br/>"
                 "  1. <i>Animal Science (General)</i> | 2. <i>Animal Nutrition & Feed Technology</i> (AOAC, metabolic crates, FCR, VFA kinetics)<br/>"
                 "  3. <i>Animal Breeding & Genetics</i> (Animal Model BLUP, EBVs, heritability, QTL/GWAS) | 4. <i>Animal Physiology & Bioclimatology</i> (Thermoregulation, diurnal heat stress, HSP70, hormone assays)<br/>"
@@ -525,7 +525,7 @@ def create_agriintel_pdf():
     # =========================================================================
     story.append(Paragraph("6. Strategic Assessment: Novelty & Path to Millions of Users", h1_style))
     story.append(Paragraph(
-        "<b>How Novel is AgriIntel?</b> Moves upstream from retail leaf-photo diagnostic apps into the <b>core scientific, biometrical, and economic infrastructure</b> of agriculture. "
+        "<b>How Novel is AgroBiometrix?</b> Moves upstream from retail leaf-photo diagnostic apps into the <b>core scientific, biometrical, and economic infrastructure</b> of agriculture. "
         "It integrates Quantitative Genetics, Biometrical ANOVA/DMRT, Multi-Enterprise Decoupling, Macro-policy models, and Last-Mile Radio Extension.",
         body_style
     ))
@@ -541,7 +541,7 @@ def create_agriintel_pdf():
     # Section 7: APIs Directory
     story.append(Paragraph("7. Paid & Free APIs Guide & Subscription Directory", h1_style))
     story.append(Paragraph(
-        "AgriIntel operates <b>100% free offline</b> out of the box. For cloud scaling, the platform seamlessly connects to:",
+        "AgroBiometrix operates <b>100% free offline</b> out of the box. For cloud scaling, the platform seamlessly connects to:",
         body_style
     ))
 
@@ -558,7 +558,7 @@ def create_agriintel_pdf():
     ]
 
     api_rows = [[Paragraph(f"<b>{a[0]}</b>", table_cell_bold), Paragraph(f"<font color='#1B5E20'><u>{a[1]}</u></font>", table_cell_style), Paragraph(a[2], table_cell_style), Paragraph(a[3], table_cell_style)] for a in api_data]
-    api_table = Table([[Paragraph("<b>API / Service</b>", table_header_style), Paragraph("<b>Host URL</b>", table_header_style), Paragraph("<b>Pricing & Free Tier</b>", table_header_style), Paragraph("<b>Usage in AgriIntel</b>", table_header_style)]] + api_rows, colWidths=[90, 85, 165, 164])
+    api_table = Table([[Paragraph("<b>API / Service</b>", table_header_style), Paragraph("<b>Host URL</b>", table_header_style), Paragraph("<b>Pricing & Free Tier</b>", table_header_style), Paragraph("<b>Usage in AgroBiometrix</b>", table_header_style)]] + api_rows, colWidths=[90, 85, 165, 164])
     api_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), primary_green),
         ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
@@ -589,7 +589,7 @@ def create_agriintel_pdf():
         "&nbsp;&nbsp;&nbsp;&nbsp;<code>python -m pip install -r requirements.txt</code><br/>"
         "3. Launch the Streamlit application:<br/>"
         "&nbsp;&nbsp;&nbsp;&nbsp;<code>python -m streamlit run app.py</code><br/>"
-        "4. Your default browser will immediately open to the Leaf Green AgriIntel workspace.",
+        "4. Your default browser will immediately open to the Leaf Green AgroBiometrix workspace.",
         body_style
     ))
     story.append(Paragraph(
@@ -638,7 +638,7 @@ def create_agriintel_pdf():
         doc.build(story, canvasmaker=NumberedCanvas)
         print(f"Generated {PDF_FILENAME} successfully!")
     except PermissionError:
-        target_generated = "AgriIntel_Complete_Platform_Blueprint_Updated.pdf"
+        target_generated = "AgroBiometrix_Complete_Platform_Blueprint_Updated.pdf"
         print(f"Notice: {PDF_FILENAME} is currently open in a PDF viewer. Writing to {target_generated}...")
         doc = SimpleDocTemplate(target_generated, pagesize=letter, leftMargin=54, rightMargin=54, topMargin=54, bottomMargin=54)
         doc.build(story, canvasmaker=NumberedCanvas)
@@ -652,4 +652,4 @@ def create_agriintel_pdf():
 
 
 if __name__ == "__main__":
-    create_agriintel_pdf()
+    create_agrobiometrix_pdf()

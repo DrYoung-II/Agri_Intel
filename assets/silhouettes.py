@@ -1,5 +1,5 @@
 """
-SVG Silhouettes and Vector Artwork for AgriIntel
+SVG Silhouettes and Vector Artwork for AgroBiometrix
 Farm animals (Cattle, Poultry, Goat) and Crops (Maize, Cassava, Rice/Sorghum)
 """
 

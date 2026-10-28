@@ -1,5 +1,5 @@
 """
-AGRIINTEL -- MODULE 2: AI RESEARCH SCIENTIST & PROPOSAL BUILDER
+AGROBIOMETRIX -- MODULE 2: AI RESEARCH SCIENTIST & PROPOSAL BUILDER
 High-Impact Autonomous Proposal Architecture & Biometric Experimental Planning
 Pan-African Agro-Ecological Alignment • Peer-Reviewed Academic Literature Engine
 """
@@ -795,7 +795,7 @@ def call_live_ai_proposal(topic: str, api_key: str = "", provider: str = "gemini
         api_key = get_gemini_api_key()
 
     geo_ctx = f" (Target Geography / Regional Focus: {geo_hint})" if geo_hint else ""
-    system_prompt = f"""You are the AgriIntel Autonomous AI Research Scientist. Generate a comprehensive, publication-grade academic research proposal tailored for {academic_level}{geo_ctx}. The output must be fully structured with:
+    system_prompt = f"""You are the AgroBiometrix Autonomous AI Research Scientist. Generate a comprehensive, publication-grade academic research proposal tailored for {academic_level}{geo_ctx}. The output must be fully structured with:
 1. Academic Title & Executive Meta-Card
 2. 1. INTRODUCTION (Background, Problem Statement, Justification, Specific Objectives, Hypotheses H0 and H1)
 3. 2. LITERATURE REVIEW
@@ -1006,7 +1006,7 @@ def render_research_scientist():
                     else:
                         st.info("🔑 **Zero-Cost Live AI**: You can generate a free API key at [Google AI Studio](https://aistudio.google.com/) with no credit card required. Paste it above to enable real-time generative proposal synthesis.")
                 with c_gk2:
-                    st.caption("🌐 **Universal Key Synchronization**: An API key entered here is automatically shared across all suites in AgriIntel!")
+                    st.caption("🌐 **Universal Key Synchronization**: An API key entered here is automatically shared across all suites in AgroBiometrix!")
 
         col_btn, col_info = st.columns([1, 2])
         with col_btn:
@@ -1051,7 +1051,7 @@ def render_research_scientist():
             st.markdown(f"""
 <div class="agri-card" style="border-left: 5px solid #1B5E20; background: #F1F8F2; padding: 16px 20px; border-radius: 6px; margin-bottom: 20px;">
     <div style="font-size: 0.82rem; font-weight: 700; color: #2E7D32; text-transform: uppercase; letter-spacing: 0.5px;">
-        🏛️ AgriIntel Academic Research Protocol • {p_meta.get('domain_title', 'Agricultural Science')}
+        🏛️ AgroBiometrix Academic Research Protocol • {p_meta.get('domain_title', 'Agricultural Science')}
     </div>
     <div style="font-size: 1.15rem; font-weight: 800; color: #1B5E20; margin: 6px 0;">
         {p_meta.get('title', 'Academic Research Proposal')}
@@ -1067,8 +1067,8 @@ def render_research_scientist():
             # Download Action Bar
             render_download_buttons(
                 content_text=p_text,
-                filename_prefix="AgriIntel_Research_Proposal",
-                title="AgriIntel Research Proposal",
+                filename_prefix="AgroBiometrix_Research_Proposal",
+                title="AgroBiometrix Research Proposal",
                 key_prefix="btn_dl_prop"
             )
 
@@ -1151,7 +1151,7 @@ def render_research_scientist():
                 counts = df_inspect[selected_cat].value_counts()
                 st.bar_chart(counts)
 
-            st.markdown("##### 🤖 AgriIntel Biometrics Recommendation")
+            st.markdown("##### 🤖 AgroBiometrix Biometrics Recommendation")
             st.markdown(f"""
 <div class="agri-card" style="border-left: 4px solid #1B5E20; background: #F1F8F2; padding: 12px 16px; border-radius: 4px; margin-top: 10px;">
 <div style="font-weight: 700; color: #1B5E20; font-size: 0.95rem; margin-bottom: 4px;">📊 Statistical Architecture Audit</div>

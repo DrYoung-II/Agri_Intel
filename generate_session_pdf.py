@@ -1,5 +1,5 @@
 """
-AgriIntel Technical Dossier (Enterprise Build v2.6)
+AgroBiometrix Technical Dossier (Enterprise Build v2.6)
 Comprehensive PDF Generator incorporating:
 1. Forensic Root Cause Analysis (Blank Dropdown, Tomato Maize Mismatch, Poultry Cattle Conflation, Rabbit Maize Mismatch)
 2. Strict Zero-Hallucination Policy: Elimination of the monolithic fallback ("Never produce output when you don't have the answer")
@@ -21,8 +21,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "6 AgriIntel_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
-ALT_FILENAME = "AgriIntel_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
+PDF_FILENAME = "6 AgroBiometrix_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
+ALT_FILENAME = "AgroBiometrix_Technical_Diagnostics_and_Comprehensive_Platform_Scope.pdf"
 
 
 class NumberedCanvas(canvas.Canvas):
@@ -49,7 +49,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL TECHNICAL DOSSIER — SYSTEM DIAGNOSTICS & CONTINENTAL SCOPE")
+            self.drawString(54, 755, "AGROBIOMETRIX TECHNICAL DOSSIER — SYSTEM DIAGNOSTICS & CONTINENTAL SCOPE")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Enterprise Build v2.6")
@@ -61,7 +61,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
+        self.drawString(54, 34, "AgroBiometrix: Africa-First, Globally Scalable Generative Intelligence Platform for Agriculture")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -175,14 +175,14 @@ def build_pdf():
     # =========================================================================
     # PAGE 1: FORENSIC ROOT CAUSE ANALYSIS & STRICT ZERO-HALLUCINATION FRAMEWORK
     # =========================================================================
-    story.append(Paragraph("AgriIntel Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope", title_style))
+    story.append(Paragraph("AgroBiometrix Technical Diagnostics, Multi-Agent Advisory & Continental Platform Scope", title_style))
     story.append(Paragraph("<b>Enterprise Technical Dossier</b> | System Diagnostics, Strict Zero-Hallucination Policy, Multi-Enterprise Decoupling (Poultry, Rabbits, Cattle, Aquaculture & Crops) & Bioclimatic Architecture", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.2, color=colors.HexColor("#1B5E20"), spaceBefore=1, spaceAfter=4))
 
     # Metadata Banner
     meta_data = [
         [
-            Paragraph("<b>Platform:</b> AgriIntel Enterprise v2.6", table_cell),
+            Paragraph("<b>Platform:</b> AgroBiometrix Enterprise v2.6", table_cell),
             Paragraph("<b>Target Region:</b> Pan-Africa & Global Ag", table_cell),
             Paragraph("<b>Execution Mode:</b> Dual Offline / Cloud AI", table_cell),
             Paragraph("<b>Audit Date:</b> October 13, 2026", table_cell)
@@ -204,7 +204,7 @@ def build_pdf():
     # Section 1
     story.append(Paragraph("1. Forensic Root Cause Analysis: Platform Diagnostics & Resolutions", h1_style))
     story.append(Paragraph(
-        "During live stress testing of AgriIntel's Multi-Agent Orchestration Layer, four behavioral anomalies were audited. "
+        "During live stress testing of AgroBiometrix's Multi-Agent Orchestration Layer, four behavioral anomalies were audited. "
         "The overarching operating directive established: <b>Never produce output when you don't have the answer.</b> "
         "Below is the forensic code-level diagnostic of each incident and the permanent resolutions implemented.",
         body_style
@@ -259,7 +259,7 @@ def build_pdf():
             Paragraph(
                 "<b>🛡️ The Zero-Hallucination Contract: 'Don't produce output when you don't have the answer'</b><br/>"
                 "• <b>Monolithic Fallback Elimination:</b> In <font face='Courier'>core/orchestrator.py</font>, the legacy unconditional <font face='Courier'>else:</font> branch that routed unmapped queries to Savanna Maize has been replaced with an explicit <font face='Courier'>elif is_maize:</font> parser.<br/>"
-                "• <b>Offline Knowledge Boundary Policy:</b> When a query falls outside AgriIntel's 12 calibrated agricultural domains (e.g., non-agricultural topics or unbenchmarked species), the engine returns <font face='Courier'>unsupported: True</font> and an explicit boundary notification: <i>'⚠️ The Built-in Offline Science Engine does not have calibrated, peer-reviewed agronomic datasets for this specific topic. Offline synthesis was withheld to prevent hallucinations.'</i><br/>"
+                "• <b>Offline Knowledge Boundary Policy:</b> When a query falls outside AgroBiometrix's 12 calibrated agricultural domains (e.g., non-agricultural topics or unbenchmarked species), the engine returns <font face='Courier'>unsupported: True</font> and an explicit boundary notification: <i>'⚠️ The Built-in Offline Science Engine does not have calibrated, peer-reviewed agronomic datasets for this specific topic. Offline synthesis was withheld to prevent hallucinations.'</i><br/>"
                 "• <b>UI Guardrail in <font face='Courier'>app.py</font>:</b> Unsupported queries render a prominent warning banner and direct the user to connect a live AI API key (Gemini, OpenAI, Groq) or select from calibrated enterprises. No fake agent cards or surrogate answers are rendered.<br/>"
                 "• <b>Deterministic Integrity:</b> Ensures every output produced offline is 100% peer-reviewed, agronomically verified, and scientifically accurate.",
                 callout_style
@@ -456,7 +456,7 @@ def build_pdf():
     # =========================================================================
     story.append(Paragraph("5. Continental Platform Scope: Multi-Commodity Agricultural Matrix", h1_style))
     story.append(Paragraph(
-        "AgriIntel's offline intelligence engine covers 12 major African agricultural sub-sectors with dedicated models. "
+        "AgroBiometrix's offline intelligence engine covers 12 major African agricultural sub-sectors with dedicated models. "
         "If an inquiry falls outside these calibrated domains, the engine withholds synthesis rather than returning mismatched data:",
         body_style
     ))

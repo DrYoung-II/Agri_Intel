@@ -1,5 +1,5 @@
 """
-AgriIntel - Multi-Agent Orchestration Layer
+AgroBiometrix - Multi-Agent Orchestration Layer
 Africa-First, Globally Relevant Agricultural Artificial Intelligence Infrastructure.
 
 Specialized Multi-Agent Dispatch:
@@ -592,7 +592,7 @@ def rule_based_agent_synthesis(query: str, selected_agents: list = None, active_
             "selected_agents": [],
             "agent_outputs": {},
             "message": (
-                f"⚠️ **Geographical Calibration Notice**: AgriIntel is specifically calibrated for Sub-Saharan agro-ecological zones. "
+                f"⚠️ **Geographical Calibration Notice**: AgroBiometrix is specifically calibrated for Sub-Saharan agro-ecological zones. "
                 f"Its offline empirical knowledge base does not currently provide calibrated datasets for **{country_name}** under this specific inquiry (*'{query}'*).\n\n"
                 "To uphold scientific integrity and prevent geographic mismatch or false country substitution, offline recommendations for foreign/uncalibrated locations are withheld."
             ),
@@ -696,7 +696,7 @@ def rule_based_agent_synthesis(query: str, selected_agents: list = None, active_
 | **Blackquarter & Anthrax**<br>*(Clostridium chauvoei / Bacillus anthracis)* | Soil-borne spore ingestion along floodplains and dried riverbeds | Sudden peracute death of prime young stock (6–24 months), septicemic shock | Crepitant muscle swellings, uncoagulated tarry blood from natural orifices (Anthrax) | **NVRI Blackquarter / Anthrax Spore Vaccine** (annual pre-rain). High-dose Penicillin if caught early. Never open an anthrax carcass! |
 """
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Veterinary & Breeding Advisory: Bovine Health in {loc_title}
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Veterinary & Breeding Advisory: Bovine Health in {loc_title}
 
 #### 🎯 Executive Epidemiological Summary
 In **{loc_title}**, cattle breeding enterprises face an intense convergence of **endemic reproductive pathogens**, **vector-borne blood parasites**, and **respiratory epizootics**. Transboundary livestock movements across the Lake Chad Basin (connecting Chad, Niger, and Cameroon), seasonal congregation along riverine floodplains (Komadugu Yobe and Benue), and extreme climate stresses (Harmattan dust and severe dry-season heat exceeding 42°C) make proactive disease management the single most critical determinant of breeding herd survival and reproductive longevity.
@@ -797,7 +797,7 @@ In **{loc_title}**, cattle breeding enterprises face an intense convergence of *
             )
             out_evid = f"**Institutional Evidence Grounding**: Grounded in {target_inst} breed registries."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Breeding & Genetics Advisory: Cattle Production ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Breeding & Genetics Advisory: Cattle Production ({country_lbl})
 
 #### 🎯 Strategic Breeding Recommendation
 Maximizing reproductive efficiency in **{country_lbl}** requires matching the genetic architecture of the cattle herd to local climatic, disease, and forage realities. Pure exotic taurines fail under high thermal load and tick challenges; the gold standard is **structured selection of elite indigenous breeds (Bunaji, Gudali, Boran)** or **controlled 50% F1 composite crossing** with strict reproductive health monitoring.
@@ -843,7 +843,7 @@ Maximizing reproductive efficiency in **{country_lbl}** requires matching the ge
             )
             out_evid = f"**Evidence Standards**: NAPRI Animal Feeding Trials and ILRI Feedipedia."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Advisory: Cattle Nutrition & Forage Management ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Advisory: Cattle Nutrition & Forage Management ({country_lbl})
 #### 🎯 Strategic Nutrition Summary
 In **{country_lbl}**, the primary constraint to cattle production is the severe quality collapse of natural pastures during the 5–7 month dry season. Deploying **urea-ammoniated crop residues**, **forage legumes (*Stylosanthes*, *Lablab*)**, and **strategic mineral-urea blocks** sustains rumen microbial fermentation, preventing the typical 15%–25% seasonal liveweight loss.
 """
@@ -877,7 +877,7 @@ In **{country_lbl}**, the primary constraint to cattle production is the severe 
             out_econ = f"**Livestock Market Returns ({country_lbl})**:\n• {c_econ}"
             out_evid = f"**Evidence Grounding**: Verified against {target_inst}."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Recommendation: Cattle Production & Pastoral Resilience ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Recommendation: Cattle Production & Pastoral Resilience ({country_lbl})
 1. **Breed Selection**: Prioritize adapted breeds ({c_breeds}) carrying natural thermotolerance and disease resilience alleles.
 2. **Heat Mitigation**: Graze during early mornings and late evenings; provide deep shade and cool drinking water.
 3. **Economics & Valuation**: {c_econ}
@@ -926,7 +926,7 @@ In **{country_lbl}**, the primary constraint to cattle production is the severe 
             out_econ = f"Flock mortality >8% erodes enterprise profit margins; vaccination investment costs <{cur_sym}120 per bird with a 25:1 return on investment."
             out_evid = "NVRI Vom Avian Vaccine Production Standards and FAO Biosecurity Guidelines."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Veterinary Advisory: Poultry Flock Health & Disease Defense ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Veterinary Advisory: Poultry Flock Health & Disease Defense ({country_lbl})
 #### 🎯 Strategic Flock Biosecurity
 In **{country_lbl}**, poultry profitability hinges on strict prevention of **Newcastle Disease (ND)** and **Gumboro (IBD)**. Once clinical signs emerge, mortality in unvaccinated flocks can reach 80%–100%. Maintaining a strict **NVRI vaccination calendar**, **water-sanitation protocol**, and **prophylactic dust/respiratory mitigation** is non-negotiable.
 """
@@ -963,7 +963,7 @@ In **{country_lbl}**, poultry profitability hinges on strict prevention of **New
             out_econ = f"**Festive Farmgate Pricing**: Live broilers trade at {cur_sym}11,000 – {cur_sym}16,000 in Nigeria (or local equivalent), delivering net operating margins >35%."
             out_evid = f"Verified against {target_inst} Avian Research."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Assessment: Poultry Bioclimatics & Festive Production ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Assessment: Poultry Bioclimatics & Festive Production ({country_lbl})
 1. **Stocking & Brooding**: Stock DOCs immediately to achieve 2.2–2.6 kg for peak markets. Protect against cold nocturnal drafts while maintaining daytime ventilation.
 2. **Heat Stress & Electrolytes**: Add Vitamin C and electrolytes to drinking water between 10:00 AM and 4:00 PM to combat respiratory alkalosis.
 3. **Split-Feeding**: Feed 60% early morning and 40% evening; withdraw feed during peak afternoon heat.
@@ -1017,7 +1017,7 @@ In **{country_lbl}**, poultry profitability hinges on strict prevention of **New
         )
         out_evid = "Grounding: NAPRI Cuniculture Research Division, FUNAAB Rabbitry Project, and FAO Rabbit Farming Guide."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Cuniculture Advisory: Rabbit Production ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Cuniculture Advisory: Rabbit Production ({country_lbl})
 #### 🎯 Strategic Breed & Housing Recommendation
 1. **Breed Selection**: Crossbred **New Zealand White &times; Chinchilla** provides the optimal combination of rapid meat growth, large litter sizes (6–8 kits), and robust heat hardiness for **{country_lbl}**.
 2. **Buck Heat Sterility**: Protect herd sires from temperatures above 30°C using double-thatch shade and evaporative misting to prevent 2-month summer infertility.
@@ -1097,7 +1097,7 @@ In **{country_lbl}**, poultry profitability hinges on strict prevention of **New
 | **Contagious Ecthyma (Orf)**<br>*(Parapoxvirus)* | Contact via abrasions from prickly forages | Proliferative scabs and wart-like crusts on lips, muzzle, and teats | Clinical pathology; transmission to human handlers (zoonotic) | Topical antiseptic (iodine/glycerin), gentian violet; isolate infected suckling kids. |
 """
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Veterinary Advisory: Small Ruminant Health in {country_lbl}
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Veterinary Advisory: Small Ruminant Health in {country_lbl}
 
 #### 🎯 Strategic Epidemiological Overview
 In **{country_lbl}**, small ruminant production represents an indispensable source of rural household liquidity and food security. However, smallholder flocks remain under persistent threat from **Peste des Petits Ruminants (PPR)**, **CCPP in arid/Sahelian zones**, and rampant **gastrointestinal helminthiasis** during the wet season. Proactive vaccination and raised-housing biosecurity eliminate up to 85% of flock mortalities.
@@ -1144,7 +1144,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
             out_econ = f"90-day intensive festive ram fattening generates profit margins > 45%–60%, with mature rams selling for {cur_sym}120,000 – {cur_sym}280,000."
             out_evid = f"Grounded in {target_inst} Small Ruminant Trials."
 
-            final_synthesis = f"""### 🏛️ AgriIntel Consolidated Small Ruminant Advisory: Goat & Sheep Systems ({country_lbl})
+            final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Small Ruminant Advisory: Goat & Sheep Systems ({country_lbl})
 1. **Disease Priority**: Vaccinate all stock annually with **PPR Homologous Vaccine**; deworm strategically to eliminate *Haemonchus*.
 2. **Housing**: Construct raised slatted floors to prevent foot rot, pneumonia, and coccidiosis.
 3. **Breed Deployment**: Prioritize {sr_breeds} adapted to your specific agro-ecological moisture gradient.
@@ -1182,7 +1182,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
         out_econ = f"Off-season drip-irrigated tomato production delivers farmgate returns 2.5x to 4x higher than rainfed glut harvests."
         out_evid = "NIHORT (National Horticultural Research Institute, Ibadan) and WorldVeg (AVRDC) Tropical Guidelines."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Horticultural Advisory: Vegetable Systems ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Horticultural Advisory: Vegetable Systems ({country_lbl})
 1. **Disease Management**: Plant TYLCV-resistant hybrids; install yellow sticky cards for whitefly vector monitoring.
 2. **Water & Calcium**: Maintain uniform soil moisture with drip lines and apply foliar calcium nitrate to eradicate Blossom-End Rot.
 3. **Bacterial Wilt Defense**: Never follow tomatoes with peppers or Irish potatoes; practice 4-season rotation with maize or legumes.
@@ -1223,7 +1223,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
         out_econ = f"Clean commercial grain yields 4.5–6.0 t/ha under optimal management, generating net returns exceeding {cur_sym}380,000 per hectare."
         out_evid = "IITA Maize Breeding Program, CIMMYT Tropical Savanna Trials, and NCRI Badeggi."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Cereal Advisory: Grain Systems ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Cereal Advisory: Grain Systems ({country_lbl})
 1. **Cultivar Choice**: Select certified drought-tolerant hybrids with short ASI to guarantee synchronized flowering under heat.
 2. **Pest Control**: Monitor leaf whorls for Fall Armyworm and apply targeted bio-insecticides at first egg-hatch.
 3. **Fertilizer Split**: Practice two-way nitrogen splitting (basal NPK at planting + urea at knee-high) to prevent leaching.
@@ -1260,7 +1260,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
         out_econ = f"Fresh cassava roots deliver 25–35 t/ha, fetching stable farmgate value at industrial starch and ethanol factories."
         out_evid = "IITA Root & Tuber Program and National Root Crops Research Institute (NRCRI, Umudike)."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Root & Tuber Advisory ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Root & Tuber Advisory ({country_lbl})
 1. **Clean Seed Stock**: Use only certified, virus-free stem cuttings possessing CMD2/CMD3 genetic resistance.
 2. **Potassium Nutrition**: Ensure adequate potassium nutrition at early bulking (Month 2–3) to maximize starch density.
 3. **Weed Suppression**: Apply pre-emergence herbicide within 24 hours of planting; maintain clean canopy coverage.
@@ -1296,7 +1296,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
         out_econ = f"Dual-purpose varieties provide high-value grain plus nutritious fodder for dry season livestock integration."
         out_evid = "IITA Legume Genetics Program and ICRISAT Groundnut & Chickpea Hub."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Legume Advisory ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Legume Advisory ({country_lbl})
 1. **Maruca Pod Borer Defense**: Deploy Bt cowpea (*SAMPEA 20-T*) or apply targeted sprays at flowering and podding.
 2. **Rhizobium Inoculation**: Coat seeds with effective *Bradyrhizobium* inoculants to stimulate deep nodulation.
 3. **Phosphorus Priming**: Apply basal phosphorus (SSP) to satisfy the high ATP demand of biological nitrogen fixation.
@@ -1332,7 +1332,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
         out_econ = f"Premium grade fermented beans capture high export premiums while complying with deforestation-free supply chains (EUDR)."
         out_evid = "Cocoa Research Institute of Nigeria (CRIN), NIFOR, and World Agroforestry (ICRAF)."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Cash & Tree Crop Advisory ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Cash & Tree Crop Advisory ({country_lbl})
 1. **Sanitary Harvesting**: Strip and bury all black pods every 7–10 days to break the *Phytophthora* spore cycle.
 2. **Shade & Pruning**: Maintain balanced shade canopy to prevent sun scorch while promoting airflow to lower humidity.
 3. **Mirid Control**: Inspect canopies in late rains and spot-treat mirid pockets before widespread stem dieback occurs.
@@ -1376,7 +1376,7 @@ In **{country_lbl}**, small ruminant production represents an indispensable sour
 | **Nitrogen Leaching** | Sandy savanna topsoils | General chlorosis, yellowing of lower older leaves | Two-way nitrogen split: 1/3 basal NPK at planting + 2/3 urea side-dressing at knee-high (V6). |
 """
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Soil Health & Fertility Advisory ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Soil Health & Fertility Advisory ({country_lbl})
 
 #### 🎯 Strategic Overview & Edaphic Dynamics
 In **{country_lbl}**, soil fertility management requires transitioning from blind broadcasting to **Integrated Soil Fertility Management (ISFM)**. Tropical soils frequently suffer from low cation exchange capacity (CEC), acidity-induced phosphorus fixation, and acute organic matter depletion. Synchronizing inorganic fertilizers with organic amendments and liming guarantees maximum nutrient use efficiency.
@@ -1452,7 +1452,7 @@ In **{country_lbl}**, soil fertility management requires transitioning from blin
 | **Swine Dysentery**<br>*(Brachyspira hyodysenteriae)* | Ingestion of feces-contaminated water or feed | Mucohemorrhagic colitis, watery diarrhea with gray mucus/blood | Enforce all-in/all-out hygiene; Tiamulin or Lincomycin in drinking water; fly and rodent eradication. |
 """
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Veterinary Advisory: Swine Health & Piggery Systems ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Veterinary Advisory: Swine Health & Piggery Systems ({country_lbl})
 
 #### 🎯 Strategic Overview & African Swine Fever Warning
 In **{country_lbl}**, commercial and smallholder piggery operations operate under extreme risk from **African Swine Fever (ASFV)**. Because ASFV has **no commercial vaccine or clinical cure**, farm biosecurity, double-fencing, and total elimination of untreated swill feeding represent the absolute dividing line between high enterprise profitability and total herd eradication.
@@ -1526,7 +1526,7 @@ In **{country_lbl}**, commercial and smallholder piggery operations operate unde
 | **Fingerling Cannibalism** | Size variance > 25% | Sudden drop in fingerling inventory, missing tails/fins | **Mandatory mechanical grading** every 10–14 days into uniform size batches. |
 """
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Aquaculture Advisory: Catfish & Tilapia Systems ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Aquaculture Advisory: Catfish & Tilapia Systems ({country_lbl})
 
 #### 🎯 Strategic Overview
 In **{country_lbl}**, freshwater aquaculture profitability is dictated by **water quality biophysics** and **cannibalism control**. Over 75% of fish mortalities in ponds and recirculating systems (RAS) stem from unionized ammonia toxicity and bacterial septicemia induced by unconsumed feed breakdown. Strict water monitoring and routine sorting guarantee survival rates exceeding 85%.
@@ -1588,7 +1588,7 @@ In **{country_lbl}**, freshwater aquaculture profitability is dictated by **wate
         )
         out_evid = "Grounding: Federal University of Agriculture Abeokuta (FUNAAB) Snail Project and Forestry Research Institute of Nigeria (FRIN)."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Heliculture Advisory: Snail Production ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Heliculture Advisory: Snail Production ({country_lbl})
 
 #### 🎯 Strategic Overview
 Commercial snail farming with **Archachatina marginata** offers high capital returns in **{country_lbl}** when three critical limiting factors are controlled: **substrate hygiene**, **dietary calcium saturation**, and **humidity-mediated aestivation prevention**.
@@ -1639,7 +1639,7 @@ Commercial snail farming with **Archachatina marginata** offers high capital ret
         )
         out_evid = "Grounding: International Centre of Insect Physiology and Ecology (ICIPE, Nairobi) and FAO Beekeeping Bulletin."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Apiculture Advisory: Beekeeping Systems ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Apiculture Advisory: Beekeeping Systems ({country_lbl})
 
 #### 🎯 Strategic Overview
 Modern beekeeping with **Apis mellifera** in **{country_lbl}** delivers exceptional returns with minimal land requirements. The primary management challenge is preventing seasonal **colony absconding** caused by excessive heat, ant attacks, and dry-season floral dearth.
@@ -1714,7 +1714,7 @@ Modern beekeeping with **Apis mellifera** in **{country_lbl}** delivers exceptio
 
         out_evid = f"Grounded in verified scientific empirical research and guidelines from {target_inst}."
 
-        final_synthesis = f"""### 🏛️ AgriIntel Consolidated Scientific Advisory: {target_subject} ({country_lbl})
+        final_synthesis = f"""### 🏛️ AgroBiometrix Consolidated Scientific Advisory: {target_subject} ({country_lbl})
 
 #### 🎯 Strategic Analysis for: *'{query}'*
 **Target Enterprise**: {target_subject} &bull; **Jurisdiction**: {country_lbl} &bull; **Primary Inquiries**: {intent_label}
@@ -1807,7 +1807,7 @@ def validate_gemini_key(api_key: str) -> dict:
 
 def get_gemini_api_key() -> str:
     """
-    Unified resolver for Google Gemini API key across all AgriIntel modules.
+    Unified resolver for Google Gemini API key across all AgroBiometrix modules.
     Checks st.session_state, st.secrets (Streamlit Cloud), and os.environ.
     """
     key = ""
@@ -1857,7 +1857,7 @@ def call_live_llm_orchestration(query: str, api_key: str = "", provider: str = "
         region_info = f" Prioritize agricultural realities, local breeds/cultivars, and economics for {c_name} (Currency: {c_code} {c_sym})."
 
     system_prompt = (
-        "You are AgriIntel Multi-Agent Orchestrator, an Africa-first, globally relevant agricultural AI. "
+        "You are AgroBiometrix Multi-Agent Orchestrator, an Africa-first, globally relevant agricultural AI. "
         "Directly and exhaustively answer the user's specific inquiry. When diseases, breeding, nutrition, or specific regions are queried, "
         "provide full veterinary/agronomic pathology, specific etiologies, vectors, diagnostic symptoms, reproductive impacts, "
         "vaccination calendars (e.g. NVRI Vom vaccines), and structured diagnostic tables followed by a phased action protocol."

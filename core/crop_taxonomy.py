@@ -1,5 +1,5 @@
 """
-AGRIINTEL -- CORE CROP & AGRO-ECOLOGICAL TAXONOMY ENGINE
+AGROBIOMETRIX -- CORE CROP & AGRO-ECOLOGICAL TAXONOMY ENGINE
 Exhaustive Pan-African Crop Species, Agro-Ecological Environments,
 and Biometrical Trait Profiles
 """

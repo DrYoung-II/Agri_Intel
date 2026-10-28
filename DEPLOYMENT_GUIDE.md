@@ -1,6 +1,6 @@
-# 🚀 AgriIntel: 1-Click Public Cloud Deployment Guide
+# 🚀 AgroBiometrix: 1-Click Public Cloud Deployment Guide
 
-This guide explains how to deploy **AgriIntel** to a public URL in 2 minutes so you can share it with investors, research partners, and grant committees worldwide.
+This guide explains how to deploy **AgroBiometrix** to a public URL in 2 minutes so you can share it with investors, research partners, and grant committees worldwide.
 
 ---
 
@@ -8,23 +8,23 @@ This guide explains how to deploy **AgriIntel** to a public URL in 2 minutes so 
 *Best for instant public URL with zero server management.*
 
 1. **Push your code to GitHub**:
-   - Create a repository on [GitHub](https://github.com/) (e.g. `agriintel`).
+   - Create a repository on [GitHub](https://github.com/) (e.g. `agrobiometrix`).
    - Push this workspace to your GitHub repository:
      ```bash
      git init
      git add .
-     git commit -m "AgriIntel initial release"
+     git commit -m "AgroBiometrix initial release"
      git branch -M main
-     git remote add origin https://github.com/YOUR_USERNAME/agriintel.git
+     git remote add origin https://github.com/YOUR_USERNAME/agrobiometrix.git
      git push -u origin main
      ```
 2. **Deploy on Streamlit Community Cloud**:
    - Go to [share.streamlit.io](https://share.streamlit.io/) and sign in with GitHub.
    - Click **"New app"**.
-   - Select your repository (`YOUR_USERNAME/agriintel`), Branch (`main`), and Main file path (`app.py`).
+   - Select your repository (`YOUR_USERNAME/agrobiometrix`), Branch (`main`), and Main file path (`app.py`).
    - Click **"Deploy!"**.
 3. **Live Public URL**:
-   - Your application will be live at `https://agriintel.streamlit.app` in under 90 seconds!
+   - Your application will be live at `https://agrobiometrix.streamlit.app` in under 90 seconds!
    - You can copy this link and open it on your smartphone or send it to anyone globally.
 
 ---
@@ -34,7 +34,7 @@ This guide explains how to deploy **AgriIntel** to a public URL in 2 minutes so 
 
 1. **Build the Docker container**:
    ```bash
-   docker build -t agriintel:latest .
+   docker build -t agrobiometrix:latest .
    ```
 2. **Run with Docker Compose**:
    ```bash
@@ -57,7 +57,7 @@ This guide explains how to deploy **AgriIntel** to a public URL in 2 minutes so 
 ---
 
 ## 🔐 Managing API Keys in Production
-AgriIntel functions **100% offline out-of-the-box** using deterministic biometrics engines and pre-loaded African evidence bases. 
+AgroBiometrix functions **100% offline out-of-the-box** using deterministic biometrics engines and pre-loaded African evidence bases. 
 To enable Live Gemini or OpenAI orchestration in production:
 1. In Streamlit Cloud: Go to **App Settings $\to$ Secrets**.
 2. Paste the contents of `.streamlit/secrets.toml.example` with your real keys.

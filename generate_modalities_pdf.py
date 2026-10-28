@@ -1,8 +1,8 @@
 """
-AgriIntel Technical Dossier 15: Strategic Editorial Modalities & High-Impact Journal Acceptance Blueprint
+AgroBiometrix Technical Dossier 15: Strategic Editorial Modalities & High-Impact Journal Acceptance Blueprint
 Generates publication-grade PDF:
-- Primary: AgriIntel_High_Impact_Journal_Acceptance_Modalities_Guide.pdf
-- Mirror: 15_AgriIntel_High_Impact_Journal_Acceptance_Modalities_Guide.pdf
+- Primary: AgroBiometrix_High_Impact_Journal_Acceptance_Modalities_Guide.pdf
+- Mirror: 15_AgroBiometrix_High_Impact_Journal_Acceptance_Modalities_Guide.pdf
 - Artifact Directory Mirror
 """
 
@@ -16,8 +16,8 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-PDF_FILENAME = "AgriIntel_High_Impact_Journal_Acceptance_Modalities_Guide.pdf"
-ALT_FILENAME = "15_AgriIntel_High_Impact_Journal_Acceptance_Modalities_Guide.pdf"
+PDF_FILENAME = "AgroBiometrix_High_Impact_Journal_Acceptance_Modalities_Guide.pdf"
+ALT_FILENAME = "15_AgroBiometrix_High_Impact_Journal_Acceptance_Modalities_Guide.pdf"
 ARTIFACT_DIR = r"C:\Users\USER\.gemini\antigravity\brain\1e91af0e-0faf-4a71-9df3-64f967526da0"
 
 
@@ -46,7 +46,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 755, "AGRIINTEL HIGH-IMPACT JOURNAL ACCEPTANCE MODALITIES GUIDE")
+            self.drawString(54, 755, "AGROBIOMETRIX HIGH-IMPACT JOURNAL ACCEPTANCE MODALITIES GUIDE")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
             self.drawRightString(558, 755, "October 2026 | Technical Dossier 15")
@@ -58,7 +58,7 @@ class NumberedCanvas(canvas.Canvas):
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#2E7D32"))
-        self.drawString(54, 34, "AgriIntel: Pan-African Generative AI Infrastructure | Editorial Publication Blueprint")
+        self.drawString(54, 34, "AgroBiometrix: Pan-African Generative AI Infrastructure | Editorial Publication Blueprint")
         self.drawRightString(558, 34, page_text)
         self.setStrokeColor(colors.HexColor("#C8E6C9"))
         self.setLineWidth(0.6)
@@ -182,7 +182,7 @@ def build_pdf():
     story = []
 
     # Title Block
-    story.append(Paragraph("AGRIINTEL TECHNICAL DOSSIER 15: HIGH-IMPACT JOURNAL ACCEPTANCE MODALITIES & PEER-REVIEW STRATEGY", title_style))
+    story.append(Paragraph("AGROBIOMETRIX TECHNICAL DOSSIER 15: HIGH-IMPACT JOURNAL ACCEPTANCE MODALITIES & PEER-REVIEW STRATEGY", title_style))
     story.append(Paragraph("<b>Editorial Framework</b>: Roadmap and Strict Methodological Standards for Publication in Premier Agricultural Computing Journals (Q1)", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=primary_green, spaceAfter=8, spaceBefore=2))
 
@@ -213,7 +213,7 @@ def build_pdf():
     story.append(Paragraph("1. Executive Overview: Why High-Impact Acceptance Matters", h1_style))
     story.append(Paragraph(
         "Publishing an academic software and methodology paper in a top-tier agricultural journal is not merely an academic exercise. "
-        "For AgriIntel, it serves as the <b>scientific certification, legal defensibility, and procurement bedrock</b> necessary to "
+        "For AgroBiometrix, it serves as the <b>scientific certification, legal defensibility, and procurement bedrock</b> necessary to "
         "command enterprise subscription contracts with Federal Ministries of Agriculture, National Agricultural Research Systems (NARS), "
         "and international development partners (CGIAR, World Bank, FAO). High-impact journals enforce rigorous editorial standards "
         "designed to filter out trivial commercial wrappers, unverified AI claims, and irreproducible statistical assertions.",
@@ -226,7 +226,7 @@ def build_pdf():
             "<b>THE REVIEWER'S MINDSET:</b><br/>"
             "Editors and peer reviewers at journals like <i>Computers and Electronics in Agriculture</i> evaluate hundreds of "
             "AI submissions monthly. Over 70% of LLM-related papers are desk-rejected within 72 hours because they are classified as "
-            "<i>'thin API wrappers'</i> that merely prompt commercial models. To pass peer review with flying colors, AgriIntel must "
+            "<i>'thin API wrappers'</i> that merely prompt commercial models. To pass peer review with flying colors, AgroBiometrix must "
             "prove three non-negotiable fundamentals: <b>(1) True Systemic Novelty</b> via its Two-Tier Hybrid Architecture, "
             "<b>(2) 100% Mathematical Reproducibility</b> against established statistical gold standards (SAS & R), and "
             "<b>(3) Grounded Empirical Relevance</b> to real tropical farming systems across Sub-Saharan Africa.",
@@ -249,7 +249,7 @@ def build_pdf():
         "<b>Modality 1: Scientific Novelty Beyond a 'Standard Wrapper' (The Architectural Moat):</b><br/>"
         "• <i>Why Papers Get Rejected</i>: Reviewers reject any paper where the system simply takes user input, calls ChatGPT or Gemini, "
         "and returns output. Reviewers identify this as lack of methodological innovation.<br/>"
-        "• <i>AgriIntel's Winning Moat</i>: AgriIntel demonstrates a <b>Two-Tier Hybrid Computing Architecture</b> where 85% of execution "
+        "• <i>AgroBiometrix's Winning Moat</i>: AgroBiometrix demonstrates a <b>Two-Tier Hybrid Computing Architecture</b> where 85% of execution "
         "is executed deterministically by local mathematical models (Henderson's BLUP, RCBD ANOVA, Studentized Range DMRT, soil titration), "
         "and the generative LLM layer is strictly constrained by domain-specific guardrails. This eliminates AI hallucinations and guarantees "
         "statistical validity.",
@@ -259,7 +259,7 @@ def build_pdf():
     story.append(Paragraph(
         "<b>Modality 2: Mathematical Rigor & Gold-Standard Benchmarking (The Empirical Proof):</b><br/>"
         "• Reviewers in agricultural engineering and quantitative genetics demand empirical proof that the calculations are correct.<br/>"
-        "• AgriIntel provides side-by-side benchmark tables comparing its $F$-statistics, mean squares, and Duncan grouping letters "
+        "• AgroBiometrix provides side-by-side benchmark tables comparing its $F$-statistics, mean squares, and Duncan grouping letters "
         "directly against <b>SAS v9.4</b> (`PROC GLM` / `PROC MIXED`) and <b>R v4.3.2</b> (`agricolae` v1.3-5). Demonstrating $R^2 = 1.0000$ "
         "and zero numerical drift removes all statistical doubts from peer reviewers.",
         bullet_style
@@ -268,7 +268,7 @@ def build_pdf():
     story.append(Paragraph(
         "<b>Modality 3: Multi-Disciplinary Real-World African Case Studies:</b><br/>"
         "• High-impact journals require demonstrable real-world utility across distinct agro-ecological domains.<br/>"
-        "• AgriIntel satisfies this through three heterogeneous case studies: (1) <i>Genomics & Bioclimatology</i>: heat tolerance and "
+        "• AgroBiometrix satisfies this through three heterogeneous case studies: (1) <i>Genomics & Bioclimatology</i>: heat tolerance and "
         "trypanosomiasis in West African cattle; (2) <i>Edaphology & Soil Chemistry</i>: exchangeable aluminum ($\text{Al}^{3+}$) titration and lime "
         "calibration in savanna soils; and (3) <i>Macroeconomic Policy</i>: Pareto-optimal public capital budgeting for national food reserves.",
         bullet_style
@@ -284,7 +284,7 @@ def build_pdf():
 
     story.append(Paragraph(
         "<b>Modality 5: Computational Efficiency & Token Unit Economics:</b><br/>"
-        "• Modern computing reviewers look for scalability and energy/token efficiency. AgriIntel's documentation of its <b>$0.00195 USD "
+        "• Modern computing reviewers look for scalability and energy/token efficiency. AgroBiometrix's documentation of its <b>$0.00195 USD "
         "per 15-page document</b> unit economics and sub-second deterministic execution proves that the platform is computationally feasible "
         "for low-bandwidth, resource-constrained environments in developing nations.",
         bullet_style
@@ -292,7 +292,7 @@ def build_pdf():
 
     story.append(Paragraph(
         "<b>Modality 6: Open-Science & FAIR Principles (Findable, Accessible, Interoperable, Reusable):</b><br/>"
-        "• Top journals require that the reported results can be audited and reproduced by independent researchers. AgriIntel fulfills "
+        "• Top journals require that the reported results can be audited and reproduced by independent researchers. AgroBiometrix fulfills "
         "this by hosting reproducible benchmark datasets and open validation test suites.",
         bullet_style
     ))
@@ -366,7 +366,7 @@ def build_pdf():
         bullet_style
     ))
     story.append(Paragraph(
-        "• <b>Cover Letter to Editor-in-Chief</b>: Highlight that AgriIntel is the first Africa-first multi-agent architecture solving "
+        "• <b>Cover Letter to Editor-in-Chief</b>: Highlight that AgroBiometrix is the first Africa-first multi-agent architecture solving "
         "the dual challenges of AI hallucination and statistical inaccessibility in tropical developing agro-ecosystems.",
         bullet_style
     ))
@@ -375,7 +375,7 @@ def build_pdf():
     # Sign-Off Block
     signoff_data = [
         [
-            Paragraph("<b>Director of Academic Publications</b><br/>AgriIntel Research Consortium<br/><i>Editorial Standards Verified</i>", table_cell_style),
+            Paragraph("<b>Director of Academic Publications</b><br/>AgroBiometrix Research Consortium<br/><i>Editorial Standards Verified</i>", table_cell_style),
             Paragraph("<b>Lead Biometrical Methodologist</b><br/>Pan-African Computing Lab<br/><i>Mathematical Parity Certified</i>", table_cell_style),
             Paragraph("<b>Principal Systems Architect</b><br/>Enterprise Infrastructure<br/><i>Software Reproducibility Approved</i>", table_cell_style)
         ]

@@ -285,7 +285,7 @@ def render_literature_scientist():
         st.download_button(
             label="📥 Export Evidence Matrix as CSV (Journal Format)",
             data=csv_data,
-            file_name=f"AgriIntel_Evidence_Matrix_{benchmark_choice[:15].strip()}.csv",
+            file_name=f"AgroBiometrix_Evidence_Matrix_{benchmark_choice[:15].strip()}.csv",
             mime="text/csv",
             key="btn_dl_evidence_matrix"
         )

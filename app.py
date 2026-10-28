@@ -99,10 +99,10 @@ def main():
             </div>
             <div class="agri-hero-text">
                 <div class="agri-hero-title-row">
-                    <span class="agri-hero-title">{APP_NAME}</span>
+                    <span class="agri-hero-title"><span style="color: #81C784; font-weight: 800;">Agro</span><span style="color: #FFFFFF; font-weight: 800;">Biometrix</span></span>
                     <span class="agri-hero-pill">v1.0 Institutional</span>
                 </div>
-                <div class="agri-hero-subtitle">{APP_SUBTITLE}</div>
+                <div class="agri-hero-subtitle">The Quantitative Biometrics &amp; Generative Intelligence Platform for Agriculture</div>
                 <div class="agri-hero-framework">
                     <span>🏛️ Aligned with <b>CGIAR AI Hub &bull; IITA &bull; ILRI &bull; FAO &bull; IFPRI</b> &bull; Sub-Saharan NARS</span>
                 </div>
@@ -121,14 +121,15 @@ def main():
     # -------------------------------------------------------------
     with st.sidebar:
         # Official Brand Logo Card
-        if LOGO_B64:
+        curr_logo = get_base64_image(os.path.join("assets", "agrobiometrix_logo.png")) or LOGO_B64
+        if curr_logo:
             st.markdown(f"""
 <div class="sidebar-brand-card">
-    <img src="data:image/png;base64,{LOGO_B64}" alt="AgroBiometrix Official Logo" />
+    <img src="data:image/png;base64,{curr_logo}" alt="AgroBiometrix Official Logo" />
 </div>
 """, unsafe_allow_html=True)
         else:
-            st.markdown(f"### 🌿 **{APP_NAME} Engine**")
+            st.markdown("### 🌿 **<span style='color: #4CAF50;'>Agro</span><span style='color: #1B5E20;'>Biometrix</span> Engine**", unsafe_allow_html=True)
             st.caption("Intelligence infrastructure behind African agriculture")
         
         # Pan-African Regional & Currency Selector

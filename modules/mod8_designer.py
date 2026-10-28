@@ -17,7 +17,13 @@ def render_experiment_designer():
     with c1:
         exp_design = st.selectbox("Experimental Design:", ["Randomized Complete Block Design (RCBD)", "Completely Randomized Design (CRD)", "Split-Plot Design"])
     with c2:
-        num_reps = st.slider("Number of Replications / Blocks:", 2, 8, 4)
+        num_reps = st.slider(
+            "Number of Replications / Blocks:",
+            min_value=2,
+            max_value=30,
+            value=4,
+            help="Field trials (RCBD) typically use 3–6 blocks. Laboratory, greenhouse pots, poultry, and animal feeding trials routinely use 8–30 replications."
+        )
     with c3:
         crop_choice_raw = st.selectbox(
             "Trial Crop / Organism:",

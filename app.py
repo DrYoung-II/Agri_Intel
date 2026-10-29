@@ -20,6 +20,7 @@ def get_base64_image(image_path):
 
 LOGO_B64 = get_base64_image(os.path.join("assets", "agrobiometrix_logo.png"))
 ICON_B64 = get_base64_image(os.path.join("assets", "agrobiometrix_icon.png"))
+NAYSA_B64 = get_base64_image(os.path.join("assets", "naysa84_labs_logo.png"))
 icon_path = os.path.join("assets", "agrobiometrix_icon.png")
 page_icon_obj = Image.open(icon_path) if os.path.exists(icon_path) else "🌱"
 
@@ -213,6 +214,19 @@ def main():
 </div>
 """, unsafe_allow_html=True)
 
+
+        # Naysa-84 Labs Sidebar Attribution Card
+        curr_naysa = get_base64_image(os.path.join("assets", "naysa84_labs_logo.png")) or NAYSA_B64
+        if curr_naysa:
+            st.markdown(f'''
+<div class="sidebar-naysa-card">
+    <div style="font-size: 0.65rem; font-weight: 800; color: #81C784; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px;">POWERED BY</div>
+    <img src="data:image/png;base64,{curr_naysa}" alt="Naysa-84 Labs" />
+    <div style="font-size: 0.76rem; color: #FFFFFF; font-weight: 700; margin-top: 5px; letter-spacing: 0.2px;">Naysa-84 Labs</div>
+    <div style="font-size: 0.68rem; color: #80DEEA; font-style: italic;">Unlocking the power of data</div>
+</div>
+''', unsafe_allow_html=True)
+
     # -------------------------------------------------------------
     # ROUTE TO SELECTED INTELLIGENCE SUITE
     # -------------------------------------------------------------
@@ -230,6 +244,42 @@ def main():
         render_suite_policy()
     elif menu == "⚙️ Knowledge Graph & Developer API Hub":
         render_suite_tools()
+
+    # -------------------------------------------------------------
+    # INSTITUTIONAL FOOTER (POWERED BY NAYSA-84 LABS)
+    # -------------------------------------------------------------
+    render_page_footer()
+
+
+def render_page_footer():
+    """Renders the unified institutional footer at the base of every page."""
+    naysa_b64 = get_base64_image(os.path.join("assets", "naysa84_labs_logo.png")) or NAYSA_B64
+    st.markdown("---")
+    st.markdown(f'''
+<div class="agri-footer-card">
+    <div class="agri-footer-inner">
+        <div class="agri-footer-brand">
+            <span class="agri-footer-badge">ENTERPRISE AGRO-INTELLIGENCE INFRASTRUCTURE</span>
+            <div class="agri-footer-title">AgroBiometrix Platform</div>
+            <div class="agri-footer-subtitle">Quantitative Biometrics, Genomic Breeding & Generative Multi-Agent Intelligence for Agriculture</div>
+            <div class="agri-footer-legal">Designed for Pan-African NARS, CGIAR Centers, Agricultural Universities & Enterprise Agribusinesses.</div>
+        </div>
+        <div class="agri-footer-attribution">
+            <div class="agri-footer-powered-label">POWERED BY</div>
+            <div class="agri-footer-naysa-card">
+                <img src="data:image/png;base64,{naysa_b64}" alt="Naysa-84 Labs Logo" />
+            </div>
+            <div class="agri-footer-naysa-name">Naysa-84 Labs</div>
+            <div class="agri-footer-naysa-tagline"><i>Unlocking the power of data</i></div>
+        </div>
+    </div>
+    <div class="agri-footer-bottom">
+        <div>&copy; 2026 AgroBiometrix &bull; Powered by Naysa-84 Labs. All rights reserved.</div>
+        <div class="agri-footer-links">Pan-African AgTech &bull; Offline & Cloud Intelligence &bull; Production v2.4</div>
+    </div>
+</div>
+''', unsafe_allow_html=True)
+
 
 
 def render_orchestrator_home():

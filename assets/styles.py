@@ -239,10 +239,10 @@ p, span, label, li {
 .sidebar-brand-card {
     background: #FFFFFF;
     border-radius: 14px;
-    padding: 12px 14px 10px 14px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    padding: 14px 14px 12px 14px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(129, 199, 132, 0.40);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
     text-align: center;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
@@ -253,7 +253,7 @@ p, span, label, li {
 }
 
 .sidebar-brand-card img {
-    max-width: 180px;
+    max-width: 250px;
     width: 100%;
     height: auto;
     display: block;
@@ -579,6 +579,166 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
    Engineered for clean Android / iOS browser viewing
    ============================================================ */
 
+
+/* ============================================================
+   AgroBiometrix Footer & Powered by Naysa-84 Labs
+   ============================================================ */
+.agri-footer-card {
+    background: linear-gradient(135deg, #0A2F10 0%, #134B1B 45%, #1B5E20 85%, #0D3310 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(129, 199, 132, 0.35);
+    box-shadow: 0 8px 24px rgba(10, 38, 14, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08);
+    color: #FFFFFF;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.agri-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.8rem 1.3rem 1.8rem;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.agri-footer-brand {
+    flex: 1 1 360px;
+    min-width: 0;
+}
+
+.agri-footer-badge {
+    display: inline-block;
+    background: rgba(129, 199, 132, 0.18);
+    border: 1px solid rgba(129, 199, 132, 0.45);
+    color: #C8E6C9;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.agri-footer-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    line-height: 1.25;
+}
+
+.agri-footer-subtitle {
+    font-size: 0.88rem;
+    color: #E8F5E9;
+    margin-top: 4px;
+    line-height: 1.45;
+}
+
+.agri-footer-legal {
+    font-size: 0.76rem;
+    color: #A5D6A7;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.agri-footer-attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(129, 199, 132, 0.35);
+    border-radius: 12px;
+    padding: 12px 18px 10px 18px;
+    min-width: 220px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+
+.agri-footer-powered-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #81C784;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.agri-footer-naysa-card {
+    background: #646768;
+    border-radius: 8px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    margin-bottom: 6px;
+}
+
+.agri-footer-naysa-card img {
+    max-height: 48px;
+    width: auto;
+    max-width: 170px;
+    object-fit: contain;
+    display: block;
+}
+
+.agri-footer-naysa-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.4px;
+}
+
+.agri-footer-naysa-tagline {
+    font-size: 0.72rem;
+    color: #80DEEA;
+    font-style: italic;
+    margin-top: 1px;
+}
+
+.agri-footer-bottom {
+    background: rgba(0, 0, 0, 0.28);
+    border-top: 1px solid rgba(129, 199, 132, 0.22);
+    padding: 10px 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.74rem;
+    color: #A5D6A7;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.agri-footer-links {
+    color: #C8E6C9;
+    font-weight: 500;
+}
+
+/* Sidebar Naysa Attribution Card */
+.sidebar-naysa-card {
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(129, 199, 132, 0.32);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.sidebar-naysa-card img {
+    max-width: 145px;
+    width: 90%;
+    height: auto;
+    border-radius: 6px;
+    margin: 4px auto;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
 @media (max-width: 768px) {
     /* Optimize Streamlit viewport margins on mobile phones */
     .block-container {
@@ -652,12 +812,13 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
     }
 
     .sidebar-brand-card {
-        padding: 8px 10px !important;
-        margin-bottom: 8px !important;
+        padding: 10px 12px !important;
+        margin-bottom: 10px !important;
     }
 
     .sidebar-brand-card img {
-        max-width: 125px !important;
+        max-width: 220px !important;
+        width: 100% !important;
     }
 
     section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
@@ -712,6 +873,25 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
         max-width: 100% !important;
+    }
+
+    /* Footer Mobile Responsiveness */
+    .agri-footer-inner {
+        padding: 1.2rem 1.1rem 1.0rem 1.1rem !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 16px !important;
+    }
+
+    .agri-footer-attribution {
+        width: 100% !important;
+    }
+
+    .agri-footer-bottom {
+        padding: 8px 1.1rem !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 4px !important;
     }
 }
 

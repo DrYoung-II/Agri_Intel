@@ -8,9 +8,12 @@ import os
 APP_NAME = "AgroBiometrix"
 APP_SUBTITLE = "The Quantitative Biometrics & Generative Intelligence Platform for Agriculture"
 APP_TAGLINE = "Africa-First, Globally Relevant: The Intelligence Infrastructure Behind Resilient Agriculture"
-APP_MOTTO = "AGRICULTURE • RESEARCH • INSIGHT"
+APP_MOTTO = "AGRICULTURE • RESEARCH • DATA • INSIGHT"
 LOGO_PATH = os.path.join("assets", "agrobiometrix_logo.png")
 ICON_PATH = os.path.join("assets", "agrobiometrix_icon.png")
+COMPANY_NAME = "Naysa-84 Labs"
+COMPANY_TAGLINE = "Unlocking the power of data"
+NAYSA_LOGO_PATH = os.path.join("assets", "naysa84_labs_logo.png")
 
 FOUNDER_STORY = """
 "I trained as an animal geneticist, spent years working with agricultural research problems, 

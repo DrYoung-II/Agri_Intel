@@ -47,11 +47,62 @@ def generate_radio_jingle():
             
     return buffer.getvalue()
 
+def get_gtts_lang(lang_key: str) -> tuple[str, str]:
+    """Returns (lang_code, tld) for gTTS matching indigenous African and international languages."""
+    l_lower = lang_key.lower()
+    if "hausa" in l_lower:
+        return "ha", "com"
+    elif "swahili" in l_lower or "kiswahili" in l_lower:
+        return "sw", "com"
+    elif "français" in l_lower or "french" in l_lower:
+        return "fr", "com"
+    elif "pidgin" in l_lower:
+        return "en", "co.za"
+    elif "yoruba" in l_lower:
+        return "en", "com"
+    elif "igbo" in l_lower:
+        return "en", "com"
+    else:
+        return "en", "com"
+
+
+@st.cache_data(show_spinner=False)
+def synthesize_radio_voice(text: str, lang_code: str = "en", tld: str = "com") -> bytes:
+    """Generates authentic MP3 spoken audio bytes using gTTS."""
+    try:
+        from gtts import gTTS
+        buf = io.BytesIO()
+        tts = gTTS(text=text, lang=lang_code, tld=tld, slow=False)
+        tts.write_to_fp(buf)
+        return buf.getvalue()
+    except Exception:
+        return b""
+
 
 LOCAL_RADIO_BROADCASTS = {
     "🌦️ Kaduna/Kano Maize: Heat Wave & Fertilizer Advisory": {
         "context": "Delayed rainfall anomaly (-18%) with daytime temperature spike > 37.5°C during early vegetative stage.",
         "languages": {
+                        "🇨🇮 / 🇸🇳 / 🇨🇲 Français Agricole (Bulletin Rural Panafricain)": {
+                "broadcaster": "Ingénieur Amadou Diallo • Radio Rurale Communautaire AgroBiometrix (Bouaké / Kaolack / Garoua)",
+                "headline": "Alerte Canicule et Retard des Pluies pour les Producteurs de Maïs",
+                "audio_script": (
+                    "Chers agriculteurs et producteurs de maïs, bonjour ! Voici un bulletin d'urgence de l'Institut AgroBiometrix : "
+                    "Durant les deux prochaines semaines, une forte vague de chaleur et une interruption des pluies toucheront nos bassins de production. "
+                    "Les agronomes vous avertissent formellement : n'épandez surtout pas d'engrais Urée sur un sol sec en ce moment ! "
+                    "La chaleur intense va volatiliser l'azote dans l'atmosphère et brûler les jeunes racines de votre maïs. "
+                    "Recommandation essentielle : attendez le retour des pluies régulières pour que le sol soit bien humide. "
+                    "Appliquez ensuite la technique du micro-dosage, soit un bouchon d'engrais par pied de maïs. "
+                    "Cette pratique préserve votre récolte tout en divisant vos dépenses d'engrais par deux. Bonne campagne à tous !"
+                ),
+                "english_translation": (
+                    "Dear farmers and maize growers, greetings! Here is an urgent bulletin from the AgroBiometrix Institute: "
+                    "Over the next two weeks, an intense heat wave and rainfall pause will affect our production basins. "
+                    "Agronomists strictly warn: do not apply Urea fertilizer onto dry topsoil at this time! "
+                    "Extreme heat will volatilize nitrogen into the atmosphere and burn tender maize roots. "
+                    "Wait until steady rains thoroughly soak the earth, then apply the micro-dosing technique—one bottle cap per maize plant."
+                )
+            },
             "🇳🇬 Hausa (Harshen Hausa)": {
                 "broadcaster": "Malam Ibrahim Dan-Kano • AgroBiometrix Radio FM 98.5 (Kano/Kaduna)",
                 "headline": "Gargaɗin Zafi da Jinkirin Damina ga Manoman Masara",
@@ -132,6 +183,23 @@ LOCAL_RADIO_BROADCASTS = {
     "🐄 Pastoral Zebu Cattle: THI Heat Stress & Grazing Advisory": {
         "context": "Temperature-Humidity Index (THI) projected to exceed 80 across Sudan Savanna rangelands, causing milk depression and thermal exhaustion.",
         "languages": {
+            "🇨🇮 / 🇸🇳 / 🇨🇲 Français Pastoral (Conseil Vétérinaire & Zootechnique)": {
+                "broadcaster": "Docteur Vétérinaire Ousmane Traoré • Radio Pastorale AgroBiometrix (Sahel & Savane)",
+                "headline": "Protection des Bovins contre le Stress Thermique et l'Indice THI Élevé",
+                "audio_script": (
+                    "Avis important à tous les éleveurs et pasteurs de la région ! Les capteurs agrométéorologiques d'AgroBiometrix "
+                    "indiquent que l'indice de stress thermique dépassera le seuil critique de 80 dans les prochains jours. "
+                    "Cette forte chaleur entraîne une baisse brutale de la production laitière et un risque d'épuisement des animaux. "
+                    "Conseils pratiques immédiats : déplacez les heures de pâturage tôt le matin et en fin d'après-midi. "
+                    "Entre midi et 15 heures, gardez vos troupeaux à l'ombre dense des arbres et fournissez-leur de l'eau fraîche "
+                    "à volonté enrichie de pierres à lécher minérales. Protégez vos vaches laitières et vos veaux contre le coup de chaleur !"
+                ),
+                "english_translation": (
+                    "Important notice to all livestock keepers and pastoralists! AgroBiometrix sensors indicate that the heat index "
+                    "will exceed the critical threshold of 80. Guidance: shift grazing to dawn and dusk. "
+                    "Between 12 PM and 3 PM, hold cattle under dense tree shade and provide cool water with mineral salt licks."
+                )
+            },
             "🇳🇬 Hausa (Harshen Hausa)": {
                 "broadcaster": "Garba Makiyayi • AgroBiometrix Fulani Pastoral Dispatch",
                 "headline": "Kariya Daga Zafin Rana ga Shanun Bunaji da Gudali",
@@ -169,6 +237,21 @@ LOCAL_RADIO_BROADCASTS = {
     "🐔 Poultry: Diurnal Temperature Shift & Harmattan Dust Alert": {
         "context": "Diurnal shift (33°C afternoons vs 19°C chilly mornings) and Harmattan dust haze elevating respiratory disease risk.",
         "languages": {
+            "🇨🇮 / 🇸🇳 / 🇨🇲 Français Avicole (Guide de Conduite d'Élevage)": {
+                "broadcaster": "Mme Fatou Sow • AgroBiometrix Flash Élevage Avicole (Abidjan / Thiès / Douala)",
+                "headline": "Gestion de l'Écart Thermique et de la Poussière d'Harmattan en Aviculture",
+                "audio_script": (
+                    "Chers éleveurs de volailles, soyez très attentifs ! Les fortes variations de température entre la chaleur de l'après-midi "
+                    "et la fraîcheur nocturne, associées aux vents de poussière, mettent en péril la santé de vos bandes de poulets. "
+                    "Consigne stricte : retirez l'aliment aux heures chaudes entre 11h30 et 15h30 pour éviter la mortalité par choc thermique. "
+                    "Distribuez de l'eau fraîche additionnée de vitamine C et d'électrolytes. Assurez-vous d'avoir administré le vaccin "
+                    "de rappel contre la maladie de Newcastle pour prémunir vos oiseaux contre les affections respiratoires !"
+                ),
+                "english_translation": (
+                    "Poultry farmers, take note: Significant diurnal temperature swings paired with dust winds pose severe mortality risks. "
+                    "Withdraw daytime feed between 11:30 AM and 3:30 PM. Provide Vitamin C in cool water and administer Newcastle Lasota boosters."
+                )
+            },
             "🇳🇬 Yoruba (Èdè Yorùbá)": {
                 "broadcaster": "Baale Agbe Olusegun • AgroBiometrix Poultry Extension Radio (Oyo/Ogun)",
                 "headline": "Itoju Adiye ni Akoko Ooru ati Erupe Oye (Harmattan)",
@@ -215,6 +298,22 @@ LOCAL_RADIO_BROADCASTS = {
     "🐇 Smallholder Cuniculture: Heat Stress, Buck Sterility & Wilted Forages": {
         "context": "Ambient temperatures > 28°C–30°C causing temporary buck sterility and fresh forage causing fatal bloat (tympany).",
         "languages": {
+            "🇨🇮 / 🇸🇳 / 🇨🇲 Français Cuniculture (Conseil Élevage de Lapins)": {
+                "broadcaster": "Dr. Jean-Baptiste Koffi • AgroBiometrix Studio Cuniculture",
+                "headline": "Prévention de l'Infertilité des Mâles et du Ballonnement chez le Lapin",
+                "audio_script": (
+                    "Chers cunichulteurs et éleveurs de lapins, écoutez attentivement ! Lorsque la température ambiante dépasse 28 à 30 degrés, "
+                    "les mâles reproducteurs subissent une stérilité thermique temporaire qui peut durer 6 à 8 semaines. "
+                    "Placez des bouteilles d'eau congelée dans les clapiers aux heures les plus chaudes pour rafraîchir vos animaux. "
+                    "De plus, ne donnez jamais d'herbe fraîchement coupée ou mouillée : faites toujours faner les fourrages à l'ombre "
+                    "pendant 4 à 6 heures avant la distribution pour éliminer tout risque de météorisation et de ballonnement mortel !"
+                ),
+                "english_translation": (
+                    "Rabbit breeders: Ambient temperatures above 28C-30C cause buck sterility lasting 6 to 8 weeks. "
+                    "Place frozen bottles in hutches for cooling during peak afternoon hours. "
+                    "Always wilt forages in shade for 4 to 6 hours before feeding to eliminate fatal bloat."
+                )
+            },
             "🇳🇬 Hausa (Harshen Hausa)": {
                 "broadcaster": "Malam Ibrahim Dan-Kano • AgroBiometrix Cuniculture Advisory",
                 "headline": "Kula da Zoman Noma da Hana Bakon Zafi",
@@ -1217,11 +1316,53 @@ def render_research_copilot():
         col_audio, col_txt = st.columns([1, 1])
         with col_audio:
             st.markdown("##### 🔊 Broadcast Audio Player")
-            st.caption("Click to trigger broadcast audio chime tone and local extension bulletin:")
+            st.caption("Listen to the authentic vernacular radio voice bulletin broadcasted for rural smallholders:")
             
-            # Generate and embed audio chime
-            jingle_wav = generate_radio_jingle()
-            st.audio(jingle_wav, format="audio/wav")
+            # Generate real spoken voice audio using gTTS
+            lang_code, tld = get_gtts_lang(lang_choice)
+            spoken_mp3 = synthesize_radio_voice(broadcast_data['audio_script'], lang_code=lang_code, tld=tld)
+            
+            if spoken_mp3:
+                st.audio(spoken_mp3, format="audio/mp3")
+                st.caption(f"🎙️ **Live Vernacular Voice Stream Active** ({lang_choice} • Full Audio Broadcast)")
+            else:
+                jingle_wav = generate_radio_jingle()
+                st.audio(jingle_wav, format="audio/wav")
+                st.caption("📻 *Radio jingle station chime loaded.*")
+            
+            # Browser-based speech button (Web Speech API) as instant client-side playback
+            safe_script = broadcast_data['audio_script'].replace("'", "\\'").replace('"', '\\"').replace("\n", " ")
+            bcp47 = "ha-NG" if "hausa" in lang_choice.lower() else ("sw-KE" if "swahili" in lang_choice.lower() else ("fr-FR" if "français" in lang_choice.lower() else "en-NG"))
+            
+            st.markdown(f'''
+<div style="margin: 8px 0 12px 0; display: flex; gap: 8px; flex-wrap: wrap;">
+    <button onclick="
+        if ('speechSynthesis' in window) {{
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance('{safe_script}');
+            u.lang = '{bcp47}';
+            u.rate = 0.95;
+            window.speechSynthesis.speak(u);
+        }} else {{
+            alert('Speech synthesis not available in this browser.');
+        }}
+    " style="background: #2E7D32; color: #FFFFFF; border: none; border-radius: 6px; padding: 6px 12px; font-size: 0.80rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+        📢 Read Aloud on Device Speaker
+    </button>
+    <button onclick="
+        if ('speechSynthesis' in window) {{
+            window.speechSynthesis.cancel();
+        }}
+    " style="background: #F3F4F6; color: #374151; border: 1px solid #D1D5DB; border-radius: 6px; padding: 6px 10px; font-size: 0.80rem; font-weight: 600; cursor: pointer;">
+        ⏹️ Stop
+    </button>
+</div>
+''', unsafe_allow_html=True)
+
+            with st.expander("🔔 Play Radio Station Chime Tone (Marimba Jingle)", expanded=False):
+                jingle_wav = generate_radio_jingle()
+                st.audio(jingle_wav, format="audio/wav")
+                st.caption("Traditional 3-note broadcast cue tone (C5-E5-G5).")
 
             st.markdown(f"""
 <div class="agri-card" style="border: 1px dashed #81C784; background: #FFFFFF; font-size: 0.85rem; line-height: 1.5;">

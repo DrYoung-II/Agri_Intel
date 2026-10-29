@@ -45,6 +45,7 @@ from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY
 from assets.styles import LEAF_GREEN_CSS
 from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key
 from core.exporter import render_download_buttons
+from core.i18n import t, get_current_lang
 
 from modules.suites import (
     render_suite_biometrics,
@@ -105,9 +106,9 @@ def main():
                     <span class="agri-hero-title"><span style="color: #81C784; font-weight: 800;">Agro</span><span style="color: #FFFFFF; font-weight: 800;">Biometrix</span></span>
                     <span class="agri-hero-pill">v1.0 Institutional</span>
                 </div>
-                <div class="agri-hero-subtitle">The Quantitative Biometrics &amp; Generative Intelligence Platform for Agriculture</div>
+                <div class="agri-hero-subtitle">{t("hero_sub", st.session_state.get("app_lang", "en"))}</div>
                 <div class="agri-hero-framework">
-                    <span>🏛️ Aligned with <b>CGIAR AI Hub &bull; IITA &bull; ILRI &bull; FAO &bull; IFPRI</b> &bull; Sub-Saharan NARS</span>
+                    <span>🏛️ {t("hero_framework", st.session_state.get("app_lang", "en"))}</span>
                 </div>
             </div>
         </div>
@@ -135,6 +136,17 @@ def main():
             st.markdown("### 🌿 **<span style='color: #4CAF50;'>Agro</span><span style='color: #1B5E20;'>Biometrix</span> Engine**", unsafe_allow_html=True)
             st.caption("Intelligence infrastructure behind African agriculture")
         
+        # Bilingual Language Switcher (English / Français)
+        lang_choice = st.radio(
+            "🌐 Langue / Language:",
+            options=["English 🇬🇧", "Français 🇫🇷"],
+            index=0 if st.session_state.get("app_lang", "en") == "en" else 1,
+            horizontal=True,
+            key="app_language_toggle"
+        )
+        cur_lang = "fr" if "Français" in lang_choice else "en"
+        st.session_state["app_lang"] = cur_lang
+        
         # Pan-African Regional & Currency Selector
         selected_region_label = st.selectbox(
             "🌍 Regional Context & Currency:",
@@ -145,17 +157,19 @@ def main():
         st.session_state["active_region"] = PAN_AFRICAN_REGIONS[selected_region_label]
         st.session_state["active_region_label"] = selected_region_label
 
+        cur_lang = st.session_state.get("app_lang", "en")
+        suite_options = [
+            t("suite_orchestrator", cur_lang),
+            t("suite_biometrics", cur_lang),
+            t("suite_scientist", cur_lang),
+            t("suite_agro", cur_lang),
+            t("suite_livestock", cur_lang),
+            t("suite_policy", cur_lang),
+            t("suite_api", cur_lang)
+        ]
         menu = st.radio(
-            "Select Intelligence Suite:",
-            [
-                "🌟 Multi-Agent Orchestrator",
-                "🧬 Agricultural Biometrics & Breeding Suite",
-                "🔬 AI Research Scientist & Proposal Studio",
-                "🌍 Agro-Ecosystems: Soil & Climate Intelligence",
-                "🐄 Livestock & Veterinary Intelligence",
-                "🏛️ Agricultural Policy & Economic Simulator",
-                "⚙️ Knowledge Graph & Developer API Hub"
-            ],
+            t("suite_selector_label", cur_lang),
+            suite_options,
             index=0
         )
 
@@ -230,19 +244,19 @@ def main():
     # -------------------------------------------------------------
     # ROUTE TO SELECTED INTELLIGENCE SUITE
     # -------------------------------------------------------------
-    if menu == "🌟 Multi-Agent Orchestrator":
+    if "Orchestrator" in menu or "Orchestrateur" in menu:
         render_orchestrator_home()
-    elif menu == "🧬 Agricultural Biometrics & Breeding Suite":
+    elif "Biometrics" in menu or "Biométrie" in menu:
         render_suite_biometrics()
-    elif menu == "🔬 AI Research Scientist & Proposal Studio":
+    elif "Scientist" in menu or "Chercheur" in menu:
         render_suite_research_studio()
-    elif menu == "🌍 Agro-Ecosystems: Soil & Climate Intelligence":
+    elif "Agro-Ecosystems" in menu or "Agro-Écosystèmes" in menu:
         render_suite_agro_ecosystems()
-    elif menu == "🐄 Livestock & Veterinary Intelligence":
+    elif "Livestock" in menu or "Zootechnique" in menu or "Vétérinaire" in menu:
         render_suite_livestock()
-    elif menu == "🏛️ Agricultural Policy & Economic Simulator":
+    elif "Policy" in menu or "Politique" in menu:
         render_suite_policy()
-    elif menu == "⚙️ Knowledge Graph & Developer API Hub":
+    elif "Knowledge" in menu or "Connaissances" in menu or "API" in menu:
         render_suite_tools()
 
     # -------------------------------------------------------------
@@ -255,27 +269,28 @@ def render_page_footer():
     """Renders the unified institutional footer at the base of every page."""
     naysa_b64 = get_base64_image(os.path.join("assets", "naysa84_labs_logo.png")) or NAYSA_B64
     st.markdown("---")
+    cur_lang = st.session_state.get("app_lang", "en")
     st.markdown(f'''
 <div class="agri-footer-card">
     <div class="agri-footer-inner">
         <div class="agri-footer-brand">
-            <span class="agri-footer-badge">ENTERPRISE AGRO-INTELLIGENCE INFRASTRUCTURE</span>
-            <div class="agri-footer-title">AgroBiometrix Platform</div>
-            <div class="agri-footer-subtitle">Quantitative Biometrics, Genomic Breeding & Generative Multi-Agent Intelligence for Agriculture</div>
-            <div class="agri-footer-legal">Designed for Pan-African NARS, CGIAR Centers, Agricultural Universities & Enterprise Agribusinesses.</div>
+            <span class="agri-footer-badge">{t("footer_badge", cur_lang)}</span>
+            <div class="agri-footer-title">{t("footer_title", cur_lang)}</div>
+            <div class="agri-footer-subtitle">{t("footer_subtitle", cur_lang)}</div>
+            <div class="agri-footer-legal">{t("footer_legal", cur_lang)}</div>
         </div>
         <div class="agri-footer-attribution">
-            <div class="agri-footer-powered-label">POWERED BY</div>
+            <div class="agri-footer-powered-label">{t("powered_by", cur_lang)}</div>
             <div class="agri-footer-naysa-card">
                 <img src="data:image/png;base64,{naysa_b64}" alt="Naysa-84 Labs Logo" />
             </div>
             <div class="agri-footer-naysa-name">Naysa-84 Labs</div>
-            <div class="agri-footer-naysa-tagline"><i>Unlocking the power of data</i></div>
+            <div class="agri-footer-naysa-tagline"><i>{t("unlocking_data", cur_lang)}</i></div>
         </div>
     </div>
     <div class="agri-footer-bottom">
-        <div>&copy; 2026 AgroBiometrix &bull; Powered by Naysa-84 Labs. All rights reserved.</div>
-        <div class="agri-footer-links">Pan-African AgTech &bull; Offline & Cloud Intelligence &bull; Production v2.4</div>
+        <div>{t("footer_rights", cur_lang)}</div>
+        <div class="agri-footer-links">{t("footer_meta", cur_lang)}</div>
     </div>
 </div>
 ''', unsafe_allow_html=True)

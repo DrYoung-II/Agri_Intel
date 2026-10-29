@@ -818,6 +818,19 @@ CRITICAL MATHEMATICAL & MARKDOWN FORMATTING RULES:
 - NEVER put dollar signs $ around normal numbers, percentages, sample sizes, or currency (e.g. write "1,095 cattle" not "$1,095$ cattle", "20% dropout" not "$\approx 20\%$"). Use $ only for mathematical variables ($Z$, $p$, $e$, $\alpha$).
 - Ensure all Markdown headings (###, ####) and bullet points (*) start on fresh lines with empty lines preceding them."""
 
+    # Check language preference for bilingual synthesis
+    active_lang = "en"
+    try:
+        import streamlit as st
+        active_lang = st.session_state.get("app_lang", "en")
+    except Exception:
+        pass
+
+    if active_lang == "fr":
+        system_prompt += """
+DIRECTIVE CRITIQUE DE LANGUE (FRANÇAIS OBLIGATOIRE) :
+L'utilisateur a sélectionné l'interface en français. Vous devez rédiger l'INTÉGRALITÉ de cette proposition de recherche en FRANÇAIS académique formel et rigoureux (Titres, Introduction, Problématique, Objectifs, Revue de littérature, Matériels et Méthodes, Équations de Cochran, Considérations éthiques, Chronogramme, et Références). La terminologie scientifique doit être irréprochable et respecter les normes des institutions de recherche francophones (ex: SNRA, CIRAD, IRAD, ISRA, CNRA)."""
+
     api_key = (api_key or "").strip().strip("'\"")
     if provider.lower() == "gemini" and api_key:
         discovered_models = []

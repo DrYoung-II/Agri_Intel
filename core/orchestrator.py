@@ -1942,6 +1942,22 @@ def call_live_llm_orchestration(query: str, api_key: str = "", provider: str = "
         f"{region_info}"
     )
 
+    lang_pref = kwargs.get("lang") or ""
+    if not lang_pref:
+        try:
+            import streamlit as st
+            lang_pref = st.session_state.get("app_lang", "en")
+        except Exception:
+            lang_pref = "en"
+
+    if lang_pref == "fr":
+        system_prompt += (
+            " DIRECTIVE DE LANGUE OBLIGATOIRE : L'utilisateur a configuré son interface en français. "
+            "Vous devez rédiger l'intégralité de votre analyse, de vos synthèses disciplinaires, de vos diagnostics "
+            "et de vos recommandations exclusivement en FRANÇAIS académique, technique et professionnel, "
+            "en employant la terminologie agronomique francophone appropriée."
+        )
+
     api_key = (api_key or "").strip().strip("'\"")
     if not api_key:
         return rule_based_agent_synthesis(query, active_region=active_region)

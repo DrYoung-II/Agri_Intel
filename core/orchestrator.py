@@ -478,35 +478,37 @@ def parse_query_semantics(query: str):
         commodity = "cattle"
     elif any(w in q_lower for w in [
         "poultry", "chicken", "chickens", "broiler", "broilers", "layer", "layers", "cockerel", "cockerels",
-        "pullet", "pullets", "doc", "chick", "chicks", "turkey", "turkeys", "bird", "birds", "egg", "eggs", "avian", "fowl"
+        "pullet", "pullets", "doc", "chick", "chicks", "turkey", "turkeys", "bird", "birds", "egg", "eggs", "avian", "fowl",
+        "volaille", "volailles", "poulet", "poulets", "poussin", "poussins", "aviculture", "pondeuse", "pondeuses", "poule", "poules", "coq", "oeuf", "oeufs"
     ]):
         commodity = "poultry"
     elif any(w in q_lower for w in [
         "goat", "goats", "sheep", "ram", "rams", "ewe", "ewes", "buck", "bucks", "shoat", "shoats",
-        "lamb", "lambs", "boer", "red sokoto", "wad goat", "sahelian", "dorper", "red maasai", "ladoum"
+        "lamb", "lambs", "boer", "red sokoto", "wad goat", "sahelian", "dorper", "red maasai", "ladoum",
+        "chèvre", "chèvres", "mouton", "moutons", "bélier", "béliers", "brebis", "agneau", "agneaux", "chevreau", "caprin", "caprins", "ovin", "ovins", "djalonké"
     ]):
         commodity = "small_ruminants"
-    elif any(w in q_lower for w in ["pig", "pigs", "swine", "pork", "sow", "sows", "boar", "piglet", "piglets", "asf"]):
+    elif any(w in q_lower for w in ["pig", "pigs", "swine", "pork", "sow", "sows", "boar", "piglet", "piglets", "asf", "porc", "porcs", "porcin", "porcins", "truie", "truies", "verrat", "verrats", "porcelet", "porcelets", "peste porcine"]):
         commodity = "pig"
-    elif any(w in q_lower for w in ["fish", "catfish", "tilapia", "aquaculture", "fingerling", "fingerlings", "pond", "ponds", "clarias", "oreochromis"]):
+    elif any(w in q_lower for w in ["fish", "catfish", "tilapia", "aquaculture", "fingerling", "fingerlings", "pond", "ponds", "clarias", "oreochromis", "poisson", "poissons", "silure", "silures", "pisciculture", "alevin", "alevins", "bassin", "étang"]):
         commodity = "fish"
-    elif any(w in q_lower for w in ["rabbit", "rabbits", "cuniculture", "doe", "does", "buck", "kit", "kits", "hutch", "hutches"]):
+    elif any(w in q_lower for w in ["rabbit", "rabbits", "cuniculture", "doe", "does", "buck", "kit", "kits", "hutch", "hutches", "lapin", "lapins", "lapine", "lapines", "clapier", "clapiers", "lapereau", "lapereaux"]):
         commodity = "rabbit"
-    elif any(w in q_lower for w in ["snail", "snails", "heliculture", "archachatina", "achatina"]):
+    elif any(w in q_lower for w in ["snail", "snails", "heliculture", "archachatina", "achatina", "escargot", "escargots", "héliciculture", "achatine"]):
         commodity = "snail"
-    elif any(w in q_lower for w in ["bee", "bees", "apiculture", "honey", "apiary", "hive", "hives"]):
+    elif any(w in q_lower for w in ["bee", "bees", "apiculture", "honey", "apiary", "hive", "hives", "abeille", "abeilles", "miel", "ruche", "ruches", "rucher"]):
         commodity = "bee"
-    elif any(w in q_lower for w in ["tomato", "tomatoes", "pepper", "peppers", "onion", "onions", "okra", "vegetable", "vegetables", "horticulture", "garden egg", "eggplant", "chili"]):
+    elif any(w in q_lower for w in ["tomato", "tomatoes", "pepper", "peppers", "onion", "onions", "okra", "vegetable", "vegetables", "horticulture", "garden egg", "eggplant", "chili", "tomate", "tomates", "piment", "piments", "poivron", "poivrons", "oignon", "oignons", "gombo", "aubergine", "légume", "légumes", "maraîchage"]):
         commodity = "vegetables"
-    elif any(w in q_lower for w in ["cassava", "yam", "yams", "sweet potato", "irish potato", "potato", "tuber", "tubers", "cocoyam", "plantain"]):
+    elif any(w in q_lower for w in ["cassava", "yam", "yams", "sweet potato", "irish potato", "potato", "tuber", "tubers", "cocoyam", "plantain", "manioc", "igname", "ignames", "patate", "tubercules", "banane plantain"]):
         commodity = "root_tubers"
-    elif any(w in q_lower for w in ["maize", "corn", "sorghum", "millet", "guinea corn", "cereal", "cereals", "fonio", "teff", "wheat"]):
+    elif any(w in q_lower for w in ["maize", "corn", "sorghum", "millet", "guinea corn", "cereal", "cereals", "fonio", "teff", "wheat", "maïs", "sorgho", "mil", "céréale", "céréales", "blé"]):
         commodity = "cereals"
     elif any(w in q_lower for w in ["rice", "paddy", "oryza", "faro", "nerica"]):
         commodity = "rice"
     elif any(w in q_lower for w in ["cowpea", "bean", "beans", "soybean", "soybeans", "groundnut", "groundnuts", "peanut", "peanuts", "legume", "legumes", "bambara"]):
         commodity = "legumes"
-    elif any(w in q_lower for w in ["cocoa", "oil palm", "palm oil", "cashew", "coffee", "rubber", "cotton"]):
+    elif any(w in q_lower for w in ["cocoa", "oil palm", "palm oil", "cashew", "coffee", "rubber", "cotton", "cacao", "cacaoyer", "palmier à huile", "anacarde", "café", "coton", "hévéa"]):
         commodity = "cash_crops"
     elif any(w in q_lower for w in [
         "ginger", "garlic", "turmeric", "watermelon", "melon", "pineapple", "banana",

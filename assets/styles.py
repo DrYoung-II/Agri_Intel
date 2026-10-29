@@ -481,72 +481,144 @@ section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
     opacity: 0.95 !important;
 }
 
-/* Radio Group Container */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] {
-    margin-top: 4px !important;
+/* ============================================================
+   SIDEBAR REFINED DESIGN SYSTEM & ALIGNMENT
+   ============================================================ */
+
+/* Unified Section Headers (Labels for Radio, Selectbox, Inputs in Sidebar) */
+section[data-testid="stSidebar"] label[data-testid="stWidgetLabel"],
+section[data-testid="stSidebar"] div[data-testid="stRadio"] > label,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 14px !important;
+    margin-bottom: 7px !important;
+    display: flex !important;
+    align-items: center !important;
+    transform: none !important;
+    cursor: default !important;
 }
 
-/* Radio Group Label ("Select Intelligence Module:") */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] > label {
-    color: #C8E6C9 !important;
-    font-size: 0.88rem !important;
+section[data-testid="stSidebar"] label[data-testid="stWidgetLabel"] p,
+section[data-testid="stSidebar"] div[data-testid="stRadio"] > label p,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label p {
+    color: #A5D6A7 !important;
+    font-size: 0.74rem !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    margin-bottom: 6px !important;
-    display: block !important;
+    letter-spacing: 0.75px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
 }
 
-/* Spacing and Card Styling for each Module item in the Sidebar - Tighter, refined gap */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] {
-    gap: 4px !important;
+/* Horizontal Radio Group (Language Toggle: Side-by-side Balanced Pills) */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"],
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stRadioGroup"][aria-orientation="horizontal"] {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-bottom: 4px !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label,
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stRadioGroup"][aria-orientation="horizontal"] > label {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 7px 8px !important;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.20s ease !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: #81C784 !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:has(input:checked) {
+    background: rgba(46, 125, 50, 0.50) !important;
+    border: 1px solid #81C784 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label p {
+    color: #FFFFFF !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+/* Vertical Radio Group (Suite Navigation: Elegant, Unified Stack) */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) {
     display: flex !important;
     flex-direction: column !important;
+    gap: 5px !important;
+    width: 100% !important;
 }
 
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
-    margin-bottom: 1px !important;
-    margin-top: 1px !important;
-    padding: 7px 11px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label {
+    margin: 0 !important;
+    padding: 8px 11px !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.13) !important;
     border-radius: 8px !important;
-    transition: all 0.20s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
     cursor: pointer !important;
     display: flex !important;
     align-items: center !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+    gap: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Hover state on module capsules */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label:hover {
-    background: rgba(255, 255, 255, 0.18) !important;
-    border-color: rgba(255, 255, 255, 0.35) !important;
-    transform: translateX(3px) !important;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    transform: translateX(2px) !important;
 }
 
-/* Active / Selected Module Capsule */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label:has(input:checked) {
-    background: rgba(255, 255, 255, 0.24) !important;
-    border: 1px solid #A5D6A7 !important;
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked) {
+    background: rgba(46, 125, 50, 0.45) !important;
+    border: 1px solid #81C784 !important;
     border-left: 4px solid #81C784 !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16) !important;
     transform: translateX(2px) !important;
 }
 
-/* Text inside module capsules */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label p {
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label p {
     color: #FFFFFF !important;
-    font-size: 0.93rem !important;
+    font-size: 0.86rem !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
     margin: 0 !important;
+    white-space: normal !important;
 }
 
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label:has(input:checked) p {
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked) p {
     font-weight: 700 !important;
     color: #FFFFFF !important;
+}
+
+/* Selectbox styling in sidebar (Region selector) */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border: 1px solid rgba(255, 255, 255, 0.20) !important;
+    border-radius: 8px !important;
+    color: #FFFFFF !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] * {
+    color: #FFFFFF !important;
+    font-size: 0.86rem !important;
 }
 
 /* Sidebar Divider */

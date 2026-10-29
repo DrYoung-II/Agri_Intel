@@ -235,19 +235,20 @@ p, span, label, li {
     opacity: 0.92;
 }
 
-/* Sidebar Brand Card - Seamless on White */
+/* Sidebar Brand Card - Dark Green Border to Differentiate */
 .sidebar-brand-card {
-    background: transparent !important;
-    border-radius: 0 !important;
-    padding: 6px 4px 10px 4px !important;
-    margin-bottom: 6px !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: #FFFFFF !important;
+    border: 2.5px solid #1B5E20 !important;
+    border-radius: 12px !important;
+    padding: 12px 14px 10px 14px !important;
+    margin: 2px 0 16px 0 !important;
+    box-shadow: 0 3px 10px rgba(27, 94, 32, 0.10) !important;
     text-align: center !important;
+    box-sizing: border-box !important;
 }
 
 .sidebar-brand-card img {
-    max-width: 240px !important;
+    max-width: 225px !important;
     width: 100% !important;
     height: auto !important;
     display: block !important;
@@ -923,7 +924,9 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
 
     .sidebar-brand-card {
         padding: 10px 12px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border: 2.5px solid #1B5E20 !important;
+        border-radius: 12px !important;
     }
 
     .sidebar-brand-card img {

@@ -147,8 +147,8 @@ def main():
         curr_logo = get_base64_image(os.path.join("assets", "agrobiometrix_logo.png")) or LOGO_B64
         if curr_logo:
             st.markdown(f"""
-<div class="sidebar-brand-card">
-    <img src="data:image/png;base64,{curr_logo}" alt="AgroBiometrix Official Logo" />
+<div class="sidebar-brand-card" style="background: #FFFFFF; border: 2.5px solid #1B5E20; border-radius: 12px; padding: 12px 14px 10px 14px; margin-bottom: 16px; box-shadow: 0 3px 10px rgba(27, 94, 32, 0.10); text-align: center;">
+    <img src="data:image/png;base64,{curr_logo}" alt="AgroBiometrix Official Logo" style="max-width: 225px; width: 100%; height: auto; display: block; margin: 0 auto;" />
 </div>
 """, unsafe_allow_html=True)
         else:

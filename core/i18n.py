@@ -25,7 +25,7 @@ TRANSLATIONS = {
         "lang_selector_label": "🌐 Language / Langue :",
         "region_selector_label": "🌍 Regional Context & Currency :",
         "region_selector_help": "Adapts local currency, input pricing, agro-ecological zones, and NARS research protocols.",
-        "suite_selector_label": "🧭 Intelligence Suites :",
+        "suite_selector_label": "Intelligence Suites :",
         "connect_gemini_label": "🔑 Connect Google Gemini (Optional Free Key)",
         "gemini_key_prompt": "Google Gemini Key:",
         "gemini_active": "🟢 Live Google Gemini Engine Active",
@@ -35,14 +35,14 @@ TRANSLATIONS = {
         "powered_by": "POWERED BY",
         "unlocking_data": "Unlocking the power of data",
 
-        # Suites Titles (Clean, balanced, single-line fit)
-        "suite_orchestrator": "🌟 Multi-Agent Orchestrator",
-        "suite_biometrics": "🧬 Biometrics & Plant Breeding",
-        "suite_scientist": "🔬 AI Research Scientist Studio",
-        "suite_agro": "🌍 Agro-Ecosystems, Soil & Climate",
-        "suite_livestock": "🐄 Livestock & Veterinary Care",
-        "suite_policy": "🏛️ Policy & Economic Simulator",
-        "suite_api": "⚙️ Knowledge Graph & Developer API",
+        # Suites Titles (Clean, balanced, single-line fit without emojis)
+        "suite_orchestrator": "Multi-Agent Orchestrator",
+        "suite_biometrics": "Biometrics & Plant Breeding",
+        "suite_scientist": "AI Research Scientist Studio",
+        "suite_agro": "Agro-Ecosystems, Soil & Climate",
+        "suite_livestock": "Livestock & Veterinary Care",
+        "suite_policy": "Policy & Economic Simulator",
+        "suite_api": "Knowledge Graph & Developer API",
 
         # Orchestrator
         "orch_header": "Multi-Agent Orchestration Layer",
@@ -104,7 +104,7 @@ TRANSLATIONS = {
         "lang_selector_label": "🌐 Langue / Language :",
         "region_selector_label": "🌍 Contexte Régional & Devise :",
         "region_selector_help": "Adapte la monnaie locale, le barème des intrants, les zones agro-écologiques et les protocoles SNRA.",
-        "suite_selector_label": "🧭 Suites d'Intelligence :",
+        "suite_selector_label": "Suites d'Intelligence :",
         "connect_gemini_label": "🔑 Connecter Google Gemini (Clé Gratuite Optionnelle)",
         "gemini_key_prompt": "Clé API Google Gemini :",
         "gemini_active": "🟢 Moteur Google Gemini Actif & Sécurisé",
@@ -114,14 +114,14 @@ TRANSLATIONS = {
         "powered_by": "PROPULSÉ PAR",
         "unlocking_data": "Libérer la puissance des données",
 
-        # Suites Titles (Clean, balanced, single-line fit)
-        "suite_orchestrator": "🌟 Orchestrateur Multi-Agents",
-        "suite_biometrics": "🧬 Biométrie & Sélection Végétale",
-        "suite_scientist": "🔬 Chercheur IA & Studio de Thèse",
-        "suite_agro": "🌍 Agro-Écosystèmes, Sols & Climat",
-        "suite_livestock": "🐄 Élevage & Santé Vétérinaire",
-        "suite_policy": "🏛️ Politiques & Économie Agricole",
-        "suite_api": "⚙️ Graphe de Connaissances & API",
+        # Suites Titles (Clean, balanced, single-line fit without emojis)
+        "suite_orchestrator": "Orchestrateur Multi-Agents",
+        "suite_biometrics": "Biométrie & Sélection Végétale",
+        "suite_scientist": "Chercheur IA & Studio de Thèse",
+        "suite_agro": "Agro-Écosystèmes, Sols & Climat",
+        "suite_livestock": "Élevage & Santé Vétérinaire",
+        "suite_policy": "Politiques & Économie Agricole",
+        "suite_api": "Graphe de Connaissances & API",
 
         # Orchestrator
         "orch_header": "Couche d'Orchestration Multi-Agents",

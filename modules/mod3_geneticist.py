@@ -30,8 +30,13 @@ from core.exporter import render_download_buttons
 
 
 def render_statistical_geneticist():
-    st.markdown("### 🧬 AI Statistical Geneticist & Agricultural Biometrics")
-    st.caption("Publication-grade statistical analysis with automated pedagogical justifications, mean separation tests, and BLUP.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🧬 Généticien Biométrique & Statistiques Agricoles")
+        st.caption("Analyse statistique rigoureuse de niveau publication : ANOVA, séparation de moyennes (DMRT/Tukey), régression linéaire et modèles mixtes BLUP.")
+    else:
+        st.markdown("### 🧬 AI Statistical Geneticist & Agricultural Biometrics")
+        st.caption("Publication-grade statistical analysis with automated pedagogical justifications, mean separation tests, and BLUP.")
 
     # Dataset selection
     data_source = st.radio(

@@ -824,13 +824,23 @@ def analyze_custom_evidence_dataset(df_up: pd.DataFrame, filename: str) -> dict:
 
 
 def render_research_copilot():
-    st.markdown("### 📚 AgriResearch Copilot & Evidence Engine")
-    st.caption("Evidence-grounded systematic research assistant with zero fabricated citations, File Upload, & Multilingual Radio Extension.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 📚 Copilote de Recherche Agricole & Matrice de Preuves")
+        st.caption("Assistant de recherche systématique fondé sur des preuves scientifiques, téléversement de documents et vulgarisation radio multilingue.")
+        tab_titles = [
+            "🔬 Matrice Structurée de Preuves & Lacunes",
+            "🎙️ Vulgarisation Vocale & Radio Rurale Communautaire"
+        ]
+    else:
+        st.markdown("### 📚 AgriResearch Copilot & Evidence Engine")
+        st.caption("Evidence-grounded systematic research assistant with zero fabricated citations, File Upload, & Multilingual Radio Extension.")
+        tab_titles = [
+            "🔬 Structured Evidence Matrix & Gaps",
+            "🎙️ Last-Mile Multilingual Voice & Radio Advisory"
+        ]
 
-    tab_evidence, tab_radio = st.tabs([
-        "🔬 Structured Evidence Matrix & Gaps",
-        "🎙️ Last-Mile Multilingual Voice & Radio Advisory"
-    ])
+    tab_evidence, tab_radio = st.tabs(tab_titles)
 
     # -------------------------------------------------------------
     # TAB 1: EVIDENCE MATRIX & KNOWLEDGE GAPS
@@ -846,7 +856,7 @@ def render_research_copilot():
         col1, col2 = st.columns([2, 1])
         with col1:
             research_topic = st.selectbox(
-                "Select Agricultural Research Domain:",
+                "Sélectionnez le Domaine de Recherche Agricole :" if is_fr else "Select Agricultural Research Domain:",
                 [
                     "📁 Custom Query (Upload File or Type Prompt)",
                     "🐄 Genetic Resistance to Trypanosomiasis in West African Cattle",
@@ -861,7 +871,7 @@ def render_research_copilot():
                 index=0
             )
         with col2:
-            evidence_filter = st.selectbox("Evidence Strength Filter:", ["All Evidence", "Strong (Replicated) Only", "QTL / GWAS Only"])
+            evidence_filter = st.selectbox("Filtre de Robustesse des Preuves :" if is_fr else "Evidence Strength Filter:", ["All Evidence", "Strong (Replicated) Only", "QTL / GWAS Only"])
 
         # Check if user selected Custom Query
         is_custom = "Custom Query" in research_topic or "Upload" in research_topic or "Type Prompt" in research_topic

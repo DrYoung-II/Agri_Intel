@@ -222,13 +222,18 @@ DISCIPLINE_METADATA = {
 
 
 def render_student_tutor():
-    st.markdown("### 🎓 Agricultural Research Tutor & Thesis Mentor")
-    st.caption("A Socratic research supervisor that guides students through scientific rigor, statistical design, and thesis defense across all agricultural disciplines.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🎓 Tuteur de Recherche Agronomique & Mentor de Thèse")
+        st.caption("Superviseur de recherche socratique guidant les étudiants dans la rigueur scientifique, la conception biométrique et la préparation aux soutenances de mémoire et de thèse.")
+    else:
+        st.markdown("### 🎓 Agricultural Research Tutor & Thesis Mentor")
+        st.caption("A Socratic research supervisor that guides students through scientific rigor, statistical design, and thesis defense across all agricultural disciplines.")
 
     c1, c2 = st.columns([1, 1.3])
     with c1:
         degree_level = st.selectbox(
-            "Academic Level:",
+            "Niveau Académique :" if is_fr else "Academic Level:",
             [
                 "Undergraduate (B.Sc / B.Agric)",
                 "Master of Science (M.Sc)",
@@ -238,7 +243,7 @@ def render_student_tutor():
         )
     with c2:
         field_of_study = st.selectbox(
-            "Department / Specialization:",
+            "Département / Spécialisation :" if is_fr else "Department / Specialization:",
             DEPARTMENTS,
             index=1  # Default to Animal Nutrition
         )
@@ -267,7 +272,7 @@ def render_student_tutor():
 
     st.markdown("#### 🗺️ 10-Stage Research Roadmap")
     current_stage = st.select_slider(
-        "Current Thesis Stage:",
+        "Étape Actuelle du Mémoire / Thèse :" if is_fr else "Current Thesis Stage:",
         options=[
             "1. Topic Ideation",
             "2. Research Questions",

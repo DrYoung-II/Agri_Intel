@@ -203,17 +203,31 @@ BENCHMARK_REVIEWS = {
 
 
 def render_literature_scientist():
-    st.markdown("### 📖 Module 9: AI Literature Review Scientist & PRISMA Evidence Engine")
-    st.markdown(
-        "Automated systematic review generator, PRISMA 2020 flow diagnostics, evidence extraction matrices, "
-        "and geographical/methodological research gap detection for African and global agricultural science."
-    )
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 📖 Revue Systématique de Littérature & Moteur PRISMA 2020")
+        st.markdown(
+            "Générateur automatisé de revues systématiques, diagrammes de flux PRISMA 2020, matrices d'extraction de preuves "
+            "et détection des lacunes de recherche géographiques et méthodologiques pour les sciences agronomiques."
+        )
+        tab_names = [
+            "📊 Revues Systématiques de Référence (PRISMA 2020)",
+            "🔍 Requête de Littérature Personnalisée & Matrice",
+            "🗺️ Détecteur de Lacunes Géographiques & Méthodologiques"
+        ]
+    else:
+        st.markdown("### 📖 Module 9: AI Literature Review Scientist & PRISMA Evidence Engine")
+        st.markdown(
+            "Automated systematic review generator, PRISMA 2020 flow diagnostics, evidence extraction matrices, "
+            "and geographical/methodological research gap detection for African and global agricultural science."
+        )
+        tab_names = [
+            "📊 Benchmark Systematic Reviews (PRISMA 2020)",
+            "🔍 Custom Literature Query & Matrix Builder",
+            "🗺️ Geographic & Methodological Gap Detector"
+        ]
 
-    tab_review, tab_custom, tab_gaps = st.tabs([
-        "📊 Benchmark Systematic Reviews (PRISMA 2020)",
-        "🔍 Custom Literature Query & Matrix Builder",
-        "🗺️ Geographic & Methodological Gap Detector"
-    ])
+    tab_review, tab_custom, tab_gaps = st.tabs(tab_names)
 
     # -------------------------------------------------------------
     # TAB 1: BENCHMARK REVIEWS & PRISMA FLOW
@@ -222,7 +236,7 @@ def render_literature_scientist():
         st.markdown("#### 📑 Pre-Loaded Peer-Reviewed Evidence Benchmarks")
         
         benchmark_choice = st.selectbox(
-            "Select Systematic Review Benchmark:",
+            "Sélectionnez une Revue Systématique de Référence :" if is_fr else "Select Systematic Review Benchmark:",
             list(BENCHMARK_REVIEWS.keys()),
             index=0
         )

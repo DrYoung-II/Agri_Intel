@@ -913,151 +913,219 @@ L'utilisateur a sélectionné l'interface en français. Vous devez rédiger l'IN
 # =============================================================================
 
 def render_research_scientist():
-    st.markdown("### 🔬 AI Research Scientist & Proposal Builder")
-    st.caption("Transforms high-level research questions into publication-grade academic research proposals, experimental sampling designs, and biometric health audits.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
 
-    tab1, tab2 = st.tabs(["📝 Full Research Proposal Generator", "🩺 Dataset Health & Biometrics Inspector"])
+    if is_fr:
+        st.markdown("### 🔬 Chercheur IA & Concepteur de Projets de Recherche")
+        st.caption("Transforme les questions de recherche en projets académiques de niveau publication, protocoles d'échantillonnage expérimental et audits biométriques.")
+        tab1, tab2 = st.tabs(["📝 Générateur Intégral de Projet de Recherche", "🩺 Inspecteur de Santé & Biométrie des Données"])
+    else:
+        st.markdown("### 🔬 AI Research Scientist & Proposal Builder")
+        st.caption("Transforms high-level research questions into publication-grade academic research proposals, experimental sampling designs, and biometric health audits.")
+        tab1, tab2 = st.tabs(["📝 Full Research Proposal Generator", "🩺 Dataset Health & Biometrics Inspector"])
 
     # -------------------------------------------------------------------------
     # TAB 1: ACADEMIC RESEARCH PROPOSAL GENERATOR
     # -------------------------------------------------------------------------
     with tab1:
-        st.markdown("#### 🧪 Autonomous Research Proposal Architecture")
-        st.markdown(
-            "Enter any research question, thesis topic, or grant inquiry. The engine dynamically detects the biological organism, "
-            "pathogen/trait, agro-ecological jurisdiction, and institutional framework to generate a complete, publication-grade academic proposal."
-        )
+        if is_fr:
+            st.markdown("#### 🧪 Architecture Autonome de Projet de Recherche")
+            st.markdown(
+                "Saisissez votre question de recherche, sujet de thèse ou demande de subvention. Le moteur identifie dynamiquement l'organisme biologique, "
+                "le pathogène/trait, la zone agro-écologique et le cadre institutionnel pour générer une proposition académique complète de niveau publication."
+            )
+            st.markdown("💡 **Sujets d'inspiration rapide (Cliquez pour charger) :**")
+        else:
+            st.markdown("#### 🧪 Autonomous Research Proposal Architecture")
+            st.markdown(
+                "Enter any research question, thesis topic, or grant inquiry. The engine dynamically detects the biological organism, "
+                "pathogen/trait, agro-ecological jurisdiction, and institutional framework to generate a complete, publication-grade academic proposal."
+            )
+            st.markdown("💡 **Quick Inspiration Topics (Click to Populate):**")
 
-        # Quick Preset Inspiration Pills
-        st.markdown("💡 **Quick Inspiration Topics (Click to Populate):**")
         pills_row1 = st.columns(4)
         with pills_row1[0]:
-            if st.button("🐔 Poultry Diseases in Mali", key="pill_poultry_mali"):
-                st.session_state["user_prop_topic"] = "Epidemiology and biosecurity of Newcastle and Gumboro poultry diseases in smallholder flocks of Mali"
+            btn_lbl = "🐔 Maladies Aviaires au Mali" if is_fr else "🐔 Poultry Diseases in Mali"
+            if st.button(btn_lbl, key="pill_poultry_mali"):
+                st.session_state["user_prop_topic"] = (
+                    "Épidémiologie et biosécurité des maladies aviaires de Newcastle et de Gumboro dans les élevages familiaux du Mali"
+                    if is_fr else "Epidemiology and biosecurity of Newcastle and Gumboro poultry diseases in smallholder flocks of Mali"
+                )
         with pills_row1[1]:
-            if st.button("🌽 Maize Drought in Tanzania", key="pill_maize_tz"):
-                st.session_state["user_prop_topic"] = "Drought-tolerant hybrid maize agronomy and Fall Armyworm IPM in the Southern Highlands of Tanzania"
+            btn_lbl = "🌽 Maïs & Sécheresse en Tanzanie" if is_fr else "🌽 Maize Drought in Tanzania"
+            if st.button(btn_lbl, key="pill_maize_tz"):
+                st.session_state["user_prop_topic"] = (
+                    "Agronomie du maïs hybride tolérant à la sécheresse et lutte intégrée contre la légionnaire d'automne en Tanzanie"
+                    if is_fr else "Drought-tolerant hybrid maize agronomy and Fall Armyworm IPM in the Southern Highlands of Tanzania"
+                )
         with pills_row1[2]:
-            if st.button("🍠 Cassava Viruses in Uganda", key="pill_cassava_ug"):
-                st.session_state["user_prop_topic"] = "Cassava Brown Streak and Mosaic Virus resistance genetics in smallholder farming systems of Uganda"
+            btn_lbl = "🍠 Virus du Manioc en Ouganda" if is_fr else "🍠 Cassava Viruses in Uganda"
+            if st.button(btn_lbl, key="pill_cassava_ug"):
+                st.session_state["user_prop_topic"] = (
+                    "Génétique de la résistance aux virus de la striure brune et de la mosaïque du manioc en Ouganda"
+                    if is_fr else "Cassava Brown Streak and Mosaic Virus resistance genetics in smallholder farming systems of Uganda"
+                )
         with pills_row1[3]:
-            if st.button("🐟 Catfish RAS in Cameroon", key="pill_fish_cam"):
-                st.session_state["user_prop_topic"] = "Water quality dynamics, stocking density, and fingerling survival in recirculating catfish aquaculture in Cameroon"
+            btn_lbl = "🐟 Silure en Circuit Recyclé au Cameroun" if is_fr else "🐟 Catfish RAS in Cameroon"
+            if st.button(btn_lbl, key="pill_fish_cam"):
+                st.session_state["user_prop_topic"] = (
+                    "Dynamique de la qualité de l'eau, densité de mise en charge et survie des alevins de silure en circuit recirculé au Cameroun"
+                    if is_fr else "Water quality dynamics, stocking density, and fingerling survival in recirculating catfish aquaculture in Cameroon"
+                )
 
         pills_row2 = st.columns(4)
         with pills_row2[0]:
-            if st.button("🐄 Cattle Heat Tolerance in Nigeria", key="pill_cattle_ng"):
-                st.session_state["user_prop_topic"] = "Genomic dissection of heat stress tolerance and trypanosomiasis resistance in Nigerian indigenous cattle"
+            btn_lbl = "🐄 Tolérance Thermique Bovine au Nigeria" if is_fr else "🐄 Cattle Heat Tolerance in Nigeria"
+            if st.button(btn_lbl, key="pill_cattle_ng"):
+                st.session_state["user_prop_topic"] = (
+                    "Dissection génomique de la thermotolérance et de la résistance à la trypanosomiase chez les bovins autochtones du Nigeria"
+                    if is_fr else "Genomic dissection of heat stress tolerance and trypanosomiasis resistance in Nigerian indigenous cattle"
+                )
         with pills_row2[1]:
-            if st.button("🐐 Sahelian Goat PPR in Senegal", key="pill_goat_sen"):
-                st.session_state["user_prop_topic"] = "Peste des Petits Ruminants (PPR) seroprevalence and thermo-stable vaccination in Sahelian goats of Senegal"
+            btn_lbl = "🐐 PPR Caprine au Sénégal" if is_fr else "🐐 Sahelian Goat PPR in Senegal"
+            if st.button(btn_lbl, key="pill_goat_sen"):
+                st.session_state["user_prop_topic"] = (
+                    "Séroprévalence de la Peste des Petits Ruminants (PPR) et vaccination thermostable chez les chèvres sahéliennes du Sénégal"
+                    if is_fr else "Peste des Petits Ruminants (PPR) seroprevalence and thermo-stable vaccination in Sahelian goats of Senegal"
+                )
         with pills_row2[2]:
-            if st.button("🍅 Tomato TYLCV in Ghana", key="pill_tom_gh"):
-                st.session_state["user_prop_topic"] = "Tomato Yellow Leaf Curl Virus vector control, raised-bed drainage, and blossom-end rot mitigation in Ghana"
+            btn_lbl = "🍅 TYLCV de la Tomate au Ghana" if is_fr else "🍅 Tomato TYLCV in Ghana"
+            if st.button(btn_lbl, key="pill_tom_gh"):
+                st.session_state["user_prop_topic"] = (
+                    "Lutte contre le vecteur du TYLCV de la tomate, drainage sur billons surélevés et nécrose apicale au Ghana"
+                    if is_fr else "Tomato Yellow Leaf Curl Virus vector control, raised-bed drainage, and blossom-end rot mitigation in Ghana"
+                )
         with pills_row2[3]:
-            if st.button("🌱 Soil Acidity & NPK in Zambia", key="pill_soil_zam"):
-                st.session_state["user_prop_topic"] = "Stoichiometric NPK balancing and agricultural lime requirement models for acid soils in Zambia"
+            btn_lbl = "🌱 Acidité des Sols & NPK en Zambie" if is_fr else "🌱 Soil Acidity & NPK in Zambia"
+            if st.button(btn_lbl, key="pill_soil_zam"):
+                st.session_state["user_prop_topic"] = (
+                    "Équilibrage stœchiométrique NPK et modèles de besoin en chaux agricole pour les sols acides en Zambie"
+                    if is_fr else "Stoichiometric NPK balancing and agricultural lime requirement models for acid soils in Zambia"
+                )
 
         # User Text Input (Multi-line text area)
-        current_default = st.session_state.get(
-            "user_prop_topic",
-            "Epidemiology and biosecurity of Newcastle and Gumboro poultry diseases in smallholder flocks of Mali"
+        default_topic = (
+            "Épidémiologie et biosécurité des maladies aviaires de Newcastle et de Gumboro dans les élevages familiaux du Mali"
+            if is_fr else "Epidemiology and biosecurity of Newcastle and Gumboro poultry diseases in smallholder flocks of Mali"
         )
+        current_default = st.session_state.get("user_prop_topic", default_topic)
+        if is_fr and current_default == "Epidemiology and biosecurity of Newcastle and Gumboro poultry diseases in smallholder flocks of Mali":
+            current_default = default_topic
+            st.session_state["user_prop_topic"] = default_topic
+
+        prompt_lbl = "Entrez votre question centrale de recherche, objectif ou sujet de thèse :" if is_fr else "Enter your core research question, objective, or thesis topic:"
+        prompt_hlp = "Sujet de recherche libre sans menus déroulants restrictifs. Prend en charge toutes cultures, animaux, aquaculture, sols et agro-écologies." if is_fr else "Free-form research topic without restrictive dropdowns. Supports all crops, animals, aquaculture, soils, and global agro-ecologies."
         user_prompt = st.text_area(
-            "Enter your core research question, objective, or thesis topic:",
+            prompt_lbl,
             value=current_default,
             height=85,
             key="input_prop_topic",
-            help="Free-form research topic without restrictive dropdowns. Supports all crops, animals, aquaculture, soils, and global agro-ecologies."
+            help=prompt_hlp
         )
 
         col_opt1, col_opt2 = st.columns(2)
         with col_opt1:
-            academic_level = st.selectbox(
-                "Academic / Funding Level:",
-                [
-                    "Postgraduate (MSc / PhD Thesis)",
-                    "Institutional Grant / Research Funding Proposal",
-                    "Undergraduate (BSc Honor Project / Capstone)"
-                ]
-            )
+            acad_lbl = "Niveau académique / Type de financement :" if is_fr else "Academic / Funding Level:"
+            acad_opts = [
+                "Doctorat / Master (Thèse / Mémoire)",
+                "Projet de Subvention / Financement Institutionnel",
+                "Licence / Projet de Fin d'Études (BSc)"
+            ] if is_fr else [
+                "Postgraduate (MSc / PhD Thesis)",
+                "Institutional Grant / Research Funding Proposal",
+                "Undergraduate (BSc Honor Project / Capstone)"
+            ]
+            academic_level = st.selectbox(acad_lbl, acad_opts)
         with col_opt2:
+            geo_lbl = "Zone géographique / Pays cible (Optionnel) :" if is_fr else "Target Geography / Country (Optional):"
+            geo_ph = "Détecté automatiquement depuis la question (ou tapez ex. Mali, Sénégal, Cameroun, Côte d'Ivoire)" if is_fr else "Auto-detected from query (or type e.g. Mali, Kenya, Ghana, Uganda, Nigeria)"
+            geo_hlp = "Laissez vide pour une détection automatique à partir de votre question, ou spécifiez un pays ou une région." if is_fr else "Leave blank to auto-detect from your question, or specify a country or region."
             target_geo_hint = st.text_input(
-                "Target Geography / Country (Optional):",
-                placeholder="Auto-detected from query (or type e.g. Mali, Kenya, Ghana, Uganda, Nigeria)",
-                help="Leave blank to auto-detect from your question, or specify a country or region."
+                geo_lbl,
+                placeholder=geo_ph,
+                help=geo_hlp
             )
 
         # Engine Mode Selector
+        engine_lbl = "Sélectionnez le moteur de génération de projet :" if is_fr else "Select Proposal Generation Engine:"
         engine_options = [
+            "🟢 API Google Gemini en Direct (LLM Cloud • Synthèse Avancée)",
+            "⚡ Moteur Scientifique Agronomique Africain Intégré (Hors-ligne • 100% Gratuit • Validé)"
+        ] if is_fr else [
             "🟢 Live Google Gemini API (Cloud LLM • High-Impact Synthesis)",
             "⚡ Built-in African Agronomic Science Engine (Offline • 100% Free • Verified)"
         ]
-        selected_engine = st.selectbox("Select Proposal Generation Engine:", engine_options, index=0)
+        selected_engine = st.selectbox(engine_lbl, engine_options, index=0)
 
-        if "Live Google Gemini" in selected_engine:
+        if "Google Gemini" in selected_engine:
             active_gemini_key = get_gemini_api_key()
             if active_gemini_key:
                 val = validate_gemini_key(active_gemini_key)
                 if val.get("valid"):
-                    st.success("🟢 **Google Gemini Live Intelligence Active**: Cloud proposal synthesis connected and secured via server secrets. Zero client-side key entry required.")
+                    st.success("🟢 **Intelligence Google Gemini en Direct Active** : Synthèse de projet connectée et sécurisée via les secrets du serveur. Aucune clé client requise." if is_fr else "🟢 **Google Gemini Live Intelligence Active**: Cloud proposal synthesis connected and secured via server secrets. Zero client-side key entry required.")
                 else:
                     st.warning(f"🟡 **Google Gemini Status**: {val.get('message')}")
             else:
                 c_gk1, c_gk2 = st.columns([2, 1])
                 with c_gk1:
+                    key_lbl = "Clé API Google Gemini (Offre gratuite disponible sur Google AI Studio) :" if is_fr else "Google Gemini API Key (Free tier available from Google AI Studio):"
                     prop_gemini_key = st.text_input(
-                        "Google Gemini API Key (Free tier available from Google AI Studio):",
+                        key_lbl,
                         value="",
                         type="password",
                         placeholder="AIzaSy...",
                         key="prop_gemini_key_input",
-                        help="Free API key obtained from https://aistudio.google.com/"
+                        help="Clé API gratuite obtenue sur https://aistudio.google.com/" if is_fr else "Free API key obtained from https://aistudio.google.com/"
                     )
                     cleaned_k = (prop_gemini_key or "").strip().strip("'\"")
                     if cleaned_k:
                         set_gemini_api_key(cleaned_k)
                         val = validate_gemini_key(cleaned_k)
                         if val.get("valid"):
-                            st.success(f"🟢 **API Key Verified & Active**: {val.get('message')}")
+                            st.success(f"🟢 **Clé API Vérifiée & Active** : {val.get('message')}" if is_fr else f"🟢 **API Key Verified & Active**: {val.get('message')}")
                         else:
-                            st.error(f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
-                            st.caption("💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/) and 'Generative Language API' is enabled.*")
+                            st.error(f"🔴 **Notice Clé Google AI Studio** : `{val.get('message')}`" if is_fr else f"🔴 **Google AI Studio Key Notice**: `{val.get('message')}`")
+                            st.caption("💡 *Astuce : Vérifiez que la clé est active dans [Google AI Studio](https://aistudio.google.com/) et que la 'Generative Language API' est activée.*" if is_fr else "💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/) and 'Generative Language API' is enabled.*")
                     else:
-                        st.info("🔑 **Zero-Cost Live AI**: You can generate a free API key at [Google AI Studio](https://aistudio.google.com/) with no credit card required. Paste it above to enable real-time generative proposal synthesis.")
+                        st.info("🔑 **IA en Direct Sans Frais** : Vous pouvez générer une clé gratuite sur [Google AI Studio](https://aistudio.google.com/) sans carte bancaire. Collez-la ci-dessus pour activer la synthèse générative en temps réel." if is_fr else "🔑 **Zero-Cost Live AI**: You can generate a free API key at [Google AI Studio](https://aistudio.google.com/) with no credit card required. Paste it above to enable real-time generative proposal synthesis.")
                 with c_gk2:
-                    st.caption("🌐 **Universal Key Synchronization**: An API key entered here is automatically shared across all suites in AgroBiometrix!")
+                    st.caption("🌐 **Synchronisation Universelle des Clés** : Une clé saisie ici est automatiquement partagée sur toutes les suites d'AgroBiometrix !" if is_fr else "🌐 **Universal Key Synchronization**: An API key entered here is automatically shared across all suites in AgroBiometrix!")
 
         col_btn, col_info = st.columns([1, 2])
         with col_btn:
-            generate_clicked = st.button("🚀 Generate Complete Research Proposal", key="btn_gen_prop", type="primary")
+            btn_txt = "🚀 Générer le Projet de Recherche Complet" if is_fr else "🚀 Generate Complete Research Proposal"
+            generate_clicked = st.button(btn_txt, key="btn_gen_prop", type="primary")
         with col_info:
-            st.caption("Generates complete publication-grade proposal: Introduction, Literature Review, Methodology, Biometrics, and References.")
+            cpt_txt = "Génère un projet complet de niveau publication : Introduction, Revue de Littérature, Méthodologie, Biométrie et Références." if is_fr else "Generates complete publication-grade proposal: Introduction, Literature Review, Methodology, Biometrics, and References."
+            st.caption(cpt_txt)
 
         if generate_clicked:
             if not user_prompt.strip():
-                st.warning("⚠️ Please enter a research question or select one of the strategic presets above.")
+                st.warning("⚠️ Veuillez entrer une question de recherche ou sélectionner un sujet ci-dessus." if is_fr else "⚠️ Please enter a research question or select one of the strategic presets above.")
             else:
-                with st.spinner("Synthesizing theoretical framework, biometrical pipelines, and peer-reviewed citations..."):
+                spin_txt = "Synthèse du cadre théorique, des protocoles biométriques et des citations scientifiques..." if is_fr else "Synthesizing theoretical framework, biometrical pipelines, and peer-reviewed citations..."
+                with st.spinner(spin_txt):
                     # Execute Generation
-                    if "Live Google Gemini" in selected_engine:
+                    if "Google Gemini" in selected_engine:
                         active_key = get_gemini_api_key()
                         if not active_key:
-                            st.warning("⚠️ No Gemini API key detected. Proposal generated using the Built-in African Agronomic Science Engine.")
+                            warn_off = "⚠️ Aucune clé Gemini détectée. Proposition générée via le Moteur Scientifique Agronomique Africain Intégré." if is_fr else "⚠️ No Gemini API key detected. Proposal generated using the Built-in African Agronomic Science Engine."
+                            st.warning(warn_off)
                         proposal_text = call_live_ai_proposal(user_prompt, active_key, provider="gemini", academic_level=academic_level, geo_hint=target_geo_hint)
                         st.session_state["last_proposal_text"] = proposal_text
                         st.session_state["last_proposal_meta"] = {
                             "title": user_prompt,
-                            "domain_title": "AI Research Scientist (Live Google Gemini Synthesis)" if active_key else "Multi-Agent Science Synthesis (Offline)",
-                            "organism": "Live Model Inferred",
-                            "geography": {"country": target_geo_hint or "Sub-Saharan Africa", "agrozone": "Regional Context"}
+                            "domain_title": ("Chercheur IA (Synthèse Google Gemini en Direct)" if is_fr else "AI Research Scientist (Live Google Gemini Synthesis)") if active_key else ("Synthèse Scientifique Multi-Agents (Hors-ligne)" if is_fr else "Multi-Agent Science Synthesis (Offline)"),
+                            "organism": "Inférence par le Modèle" if is_fr else "Live Model Inferred",
+                            "geography": {"country": target_geo_hint or ("Afrique subsaharienne" if is_fr else "Sub-Saharan Africa"), "agrozone": ("Contexte Régional" if is_fr else "Regional Context")}
                         }
                     else:
                         prop_dict = generate_offline_research_proposal(user_prompt, academic_level=academic_level, geo_hint=target_geo_hint)
                         st.session_state["last_proposal_text"] = prop_dict["full_markdown"]
                         st.session_state["last_proposal_meta"] = prop_dict
 
-                st.success("✅ Complete Academic Research Proposal Generated Successfully!")
+                succ_txt = "✅ Projet de Recherche Académique Complet Généré avec Succès !" if is_fr else "✅ Complete Academic Research Proposal Generated Successfully!"
+                st.success(succ_txt)
 
         # Render Generated Proposal if present in session_state
         if "last_proposal_text" in st.session_state:
@@ -1069,51 +1137,52 @@ def render_research_scientist():
             
             # Header Meta-Card
             c_geo = p_meta.get("geography", {})
+            proto_hdr = "Protocole de Recherche Académique AgroBiometrix" if is_fr else "AgroBiometrix Academic Research Protocol"
+            juris_txt = "Juridiction" if is_fr else "Jurisdiction"
+            org_txt = "Organisme" if is_fr else "Organism"
+            frame_txt = "Normes Multilatérales CGIAR / SNRA" if is_fr else "CGIAR / NARS Multilateral Standards"
             st.markdown(f"""
 <div class="agri-card" style="border-left: 5px solid #1B5E20; background: #F1F8F2; padding: 16px 20px; border-radius: 6px; margin-bottom: 20px;">
     <div style="font-size: 0.82rem; font-weight: 700; color: #2E7D32; text-transform: uppercase; letter-spacing: 0.5px;">
-        🏛️ AgroBiometrix Academic Research Protocol • {p_meta.get('domain_title', 'Agricultural Science')}
+        🏛️ {proto_hdr} • {p_meta.get('domain_title', 'Sciences Agronomiques' if is_fr else 'Agricultural Science')}
     </div>
     <div style="font-size: 1.15rem; font-weight: 800; color: #1B5E20; margin: 6px 0;">
-        {p_meta.get('title', 'Academic Research Proposal')}
+        {p_meta.get('title', 'Projet de Recherche Académique' if is_fr else 'Academic Research Proposal')}
     </div>
     <div style="font-size: 0.85rem; color: #37474F; line-height: 1.5;">
-        • <b>Target Commodity / Organism</b>: {p_meta.get('organism', 'Biological System')}<br>
-        • <b>Agro-Ecological Jurisdiction</b>: {c_geo.get('country', 'Regional')} ({c_geo.get('agrozone', 'Sub-Saharan Belts')})<br>
-        • <b>Institutional Alignment</b>: {c_geo.get('institutes', 'National Agricultural Research Systems & CGIAR')}
+        🌍 <b>{juris_txt}</b> : {c_geo.get('country', 'Panafricain' if is_fr else 'Pan-African')} ({c_geo.get('agrozone', 'Zone Agro-Écologique Subsaharienne' if is_fr else 'Sub-Saharan Agro-Ecological Zone')}) • 
+        🔬 <b>{org_txt}</b> : {p_meta.get('organism', 'Système Biologique' if is_fr else 'Biological System')} • 
+        🏛️ <b>Cadre</b> : {frame_txt}
     </div>
 </div>
 """, unsafe_allow_html=True)
 
-            # Download Action Bar
-            render_download_buttons(
-                content_text=p_text,
-                filename_prefix="AgroBiometrix_Research_Proposal",
-                title="AgroBiometrix Research Proposal",
-                key_prefix="btn_dl_prop"
-            )
-
-            # Document Navigation Mode
-            view_mode = st.radio("Proposal Presentation Format:", ["📖 Continuous Formal Academic Document", "📑 Section-by-Section Interactive Explorer"], horizontal=True)
-
-            if "Continuous" in view_mode:
+            if "Live Google Gemini" in selected_engine or "Google Gemini" in selected_engine:
                 st.markdown(p_text)
             else:
                 # Segmented display
                 if "intro" in p_meta:
-                    with st.expander("📌 1. INTRODUCTION & HYPOTHESES", expanded=True):
+                    exp1 = "📌 1. INTRODUCTION & HYPOTHÈSES" if is_fr else "📌 1. INTRODUCTION & HYPOTHESES"
+                    exp2 = "📚 2. REVUE DE LITTÉRATURE SYSTÉMATIQUE" if is_fr else "📚 2. COMPREHENSIVE LITERATURE REVIEW"
+                    exp3 = "🔬 3. MATÉRIEL ET MÉTHODES (ÉCHANTILLONNAGE & BIOMÉTRIE)" if is_fr else "🔬 3. MATERIALS AND METHODS (SAMPLING & BIOMETRICS)"
+                    exp4 = "🎯 4. RÉSULTATS ATTENDUS & IMPACT" if is_fr else "🎯 4. EXPECTED OUTCOMES & IMPACT"
+                    exp5 = "🛡️ 5. CONSIDÉRATIONS ÉTHIQUES & BIOSÉCURITÉ" if is_fr else "🛡️ 5. ETHICAL CONSIDERATIONS & BIOSAFETY"
+                    exp6 = "📅 6. PLAN DE TRAVAIL & DIAGRAMME DE GANTT (12 MOIS)" if is_fr else "📅 6. 12-MONTH GANTT WORK PLAN"
+                    exp7 = "📖 7. RÉFÉRENCES BIBLIOGRAPHIQUES (REVUES À COMITÉ DE LECTURE)" if is_fr else "📖 7. REFERENCES (PEER-REVIEWED ONLINE JOURNALS)"
+
+                    with st.expander(exp1, expanded=True):
                         st.markdown(repair_markdown_math(p_meta["intro"]))
-                    with st.expander("📚 2. COMPREHENSIVE LITERATURE REVIEW", expanded=True):
+                    with st.expander(exp2, expanded=True):
                         st.markdown(repair_markdown_math(p_meta["literature"]))
-                    with st.expander("🔬 3. MATERIALS AND METHODS (SAMPLING & BIOMETRICS)", expanded=True):
+                    with st.expander(exp3, expanded=True):
                         st.markdown(repair_markdown_math(p_meta["methods"]))
-                    with st.expander("🎯 4. EXPECTED OUTCOMES & IMPACT", expanded=False):
+                    with st.expander(exp4, expanded=False):
                         st.markdown(repair_markdown_math(p_meta["outcomes"]))
-                    with st.expander("🛡️ 5. ETHICAL CONSIDERATIONS & BIOSAFETY", expanded=False):
+                    with st.expander(exp5, expanded=False):
                         st.markdown(repair_markdown_math(p_meta["ethics"]))
-                    with st.expander("📅 6. 12-MONTH GANTT WORK PLAN", expanded=False):
+                    with st.expander(exp6, expanded=False):
                         st.markdown(repair_markdown_math(p_meta["timeline"]))
-                    with st.expander("📖 7. REFERENCES (PEER-REVIEWED ONLINE JOURNALS)", expanded=True):
+                    with st.expander(exp7, expanded=True):
                         st.markdown(repair_markdown_math(p_meta["references"]))
                 else:
                     st.markdown(p_text)
@@ -1122,29 +1191,38 @@ def render_research_scientist():
     # TAB 2: DATASET HEALTH & BIOMETRICS INSPECTOR
     # -------------------------------------------------------------------------
     with tab2:
-        st.markdown("#### 🩺 Dataset Health & Assumption Auditor")
-        st.caption("Inspects experimental datasets for missingness, balance, repeated measurements, and model appropriateness.")
+        if is_fr:
+            st.markdown("#### 🩺 Audit de Santé des Données & des Hypothèses Statistiques")
+            st.caption("Inspecte les jeux de données expérimentaux pour détecter les valeurs manquantes, l'équilibre des facteurs et l'adéquation des modèles.")
+            ds_choice_lbl = "Choisir le jeu de données à auditer :"
+            ds_choice_opts = ["Charger l'Essai Bovin Pré-chargé", "Téléverser un Fichier CSV Personnalisé"]
+        else:
+            st.markdown("#### 🩺 Dataset Health & Assumption Auditor")
+            st.caption("Inspects experimental datasets for missingness, balance, repeated measurements, and model appropriateness.")
+            ds_choice_lbl = "Choose Dataset to Inspect:"
+            ds_choice_opts = ["Load Pre-loaded Cattle Trial Dataset", "Upload Custom CSV File"]
 
-        ds_choice = st.radio("Choose Dataset to Inspect:", ["Load Pre-loaded Cattle Trial Dataset", "Upload Custom CSV File"], horizontal=True)
+        ds_choice = st.radio(ds_choice_lbl, ds_choice_opts, horizontal=True)
         
         df_inspect = None
-        if ds_choice == "Load Pre-loaded Cattle Trial Dataset":
+        if ds_choice in ["Load Pre-loaded Cattle Trial Dataset", "Charger l'Essai Bovin Pré-chargé"]:
             cattle_path = os.path.join("data", "sample_cattle_heat_tolerance.csv")
             if os.path.exists(cattle_path):
                 df_inspect = pd.read_csv(cattle_path)
             else:
-                st.info("Sample cattle trial dataset will be automatically initialized when accessed.")
+                st.info("Le jeu de données de démonstration sera initialisé lors de l'accès." if is_fr else "Sample cattle trial dataset will be automatically initialized when accessed.")
         else:
-            uploaded_file = st.file_uploader("Upload Experimental Dataset (CSV)", type=["csv"], key="mod2_uploader")
+            up_lbl = "Téléverser un Jeu de Données Expérimental (CSV)" if is_fr else "Upload Experimental Dataset (CSV)"
+            uploaded_file = st.file_uploader(up_lbl, type=["csv"], key="mod2_uploader")
             if uploaded_file:
                 df_inspect = pd.read_csv(uploaded_file)
 
         if df_inspect is not None:
             if df_inspect.empty:
-                st.warning("⚠️ The selected or uploaded dataset is empty (0 observations).")
+                st.warning("⚠️ Le jeu de données sélectionné ou téléversé est vide (0 observation)." if is_fr else "⚠️ The selected or uploaded dataset is empty (0 observations).")
                 return
 
-            st.markdown("##### 👁️ Dataset Preview (First 5 Rows)")
+            st.markdown("##### 👁️ Aperçu du Jeu de Données (5 Premières Lignes)" if is_fr else "##### 👁️ Dataset Preview (First 5 Rows)")
             st.dataframe(df_inspect.head(), use_container_width=True)
 
             # Health Calculations
@@ -1155,33 +1233,51 @@ def render_research_scientist():
             missing_pct = (total_missing / total_cells * 100) if total_cells > 0 else 0.0
 
             col1, col2, col3, col4 = st.columns(4)
-            col1.metric("Total Records", f"{n_rows:,}")
+            col1.metric("Enregistrements" if is_fr else "Total Records", f"{n_rows:,}")
             col2.metric("Variables", f"{n_cols}")
-            col3.metric("Missing Values", f"{total_missing:,}")
-            col4.metric("Overall Missing %", f"{missing_pct:.1f}%")
+            col3.metric("Valeurs Manquantes" if is_fr else "Missing Values", f"{total_missing:,}")
+            col4.metric("Taux Global Manquant" if is_fr else "Overall Missing %", f"{missing_pct:.1f}%")
 
             # Missing breakdown
             cols_with_missing = missing_series[missing_series > 0]
             if not cols_with_missing.empty:
-                st.warning(f"⚠️ **Missing Observation Details**: {dict(cols_with_missing)}")
+                st.warning(f"⚠️ **{'Détails des Observations Manquantes' if is_fr else 'Missing Observation Details'}**: {dict(cols_with_missing)}")
 
             # Balance check on categorical columns
             cat_cols = df_inspect.select_dtypes(include=['object', 'category']).columns.tolist()
             if cat_cols:
-                selected_cat = st.selectbox("Inspect Balance Across Factor:", cat_cols)
+                cat_lbl = "Inspecter l'Équilibre selon le Facteur :" if is_fr else "Inspect Balance Across Factor:"
+                selected_cat = st.selectbox(cat_lbl, cat_cols)
                 counts = df_inspect[selected_cat].value_counts()
                 st.bar_chart(counts)
 
-            st.markdown("##### 🤖 AgroBiometrix Biometrics Recommendation")
+            rec_hdr = "🤖 Recommandation Biométrique AgroBiometrix" if is_fr else "🤖 AgroBiometrix Biometrics Recommendation"
+            stat_audit_title = "📊 Audit de l'Architecture Statistique" if is_fr else "📊 Statistical Architecture Audit"
+            ds_contains_txt = "Votre jeu de données contient" if is_fr else "Your dataset contains"
+            obs_txt = "observations"
+            across_txt = "réparties sur" if is_fr else "across"
+            miss_hdr = "Données manquantes" if is_fr else "Missingness"
+            if not cols_with_missing.empty:
+                cols_str = str(list(cols_with_missing.keys()))
+                miss_val_txt = f"Détectées dans les colonnes {cols_str}. Pour les caractères liés au sexe comme la production laitière, les mâles doivent être codés comme non observés plutôt que zéro." if is_fr else f"Detected in columns {cols_str}. For sex-limited traits like Milk Yield, males should be coded as unobserved rather than zero."
+            else:
+                miss_val_txt = "Aucune donnée manquante détectée. L'analyse sur cas complets est valide." if is_fr else "No missing data detected. Complete case analysis is valid."
+            bal_hdr = "Équilibre expérimental" if is_fr else "Experimental Balance"
+            bal_val_txt = "Les effectifs par sous-groupe indiquent une stratification structurée." if is_fr else "Sample sizes across groups show structured stratification."
+            model_hdr = "Modèle recommandé" if is_fr else "Recommended Model"
+            model_val_txt = "Si des mesures répétées existent par sujet, une régression MCO ordinaire sous-estimera sévèrement les erreurs types en ignorant la corrélation intra-sujet." if is_fr else "If repeated observations exist per subject, ordinary OLS regression will severely underestimate standard errors by ignoring intra-subject correlation."
+            rec_line = "Recommandation : Ajustez un Modèle Linéaire à Effets Mixtes (REML) ou effectuez une ANOVA avec Test de Portée Multiple de Duncan (DMRT) dans le Module Biométrie." if is_fr else "Recommendation: Fit a Linear Mixed-Effects Model (REML) or proceed to One-Way/Two-Way ANOVA with Duncan's Multiple Range Test (DMRT) in Module 3."
+
+            st.markdown(f"##### {rec_hdr}")
             st.markdown(f"""
 <div class="agri-card" style="border-left: 4px solid #1B5E20; background: #F1F8F2; padding: 12px 16px; border-radius: 4px; margin-top: 10px;">
-<div style="font-weight: 700; color: #1B5E20; font-size: 0.95rem; margin-bottom: 4px;">📊 Statistical Architecture Audit</div>
+<div style="font-weight: 700; color: #1B5E20; font-size: 0.95rem; margin-bottom: 4px;">{stat_audit_title}</div>
 <div style="font-size: 0.85rem; color: #37474F; line-height: 1.5;">
-Your dataset contains <b>{n_rows:,} observations</b> across <b>{n_cols} variables</b>.<br>
-• <b>Missingness</b>: {'Detected in columns ' + str(list(cols_with_missing.keys())) + '. For sex-limited traits like Milk Yield, males should be coded as unobserved rather than zero.' if not cols_with_missing.empty else 'No missing data detected. Complete case analysis is valid.'}<br>
-• <b>Experimental Balance</b>: Sample sizes across groups show structured stratification.<br>
-• <b>Recommended Model</b>: If repeated observations exist per subject, ordinary OLS regression will severely underestimate standard errors by ignoring intra-subject correlation.<br>
-<b>Recommendation: Fit a Linear Mixed-Effects Model (REML) or proceed to One-Way/Two-Way ANOVA with Duncan's Multiple Range Test (DMRT) in Module 3.</b>
+{ds_contains_txt} <b>{n_rows:,} {obs_txt}</b> {across_txt} <b>{n_cols} variables</b>.<br>
+• <b>{miss_hdr}</b> : {miss_val_txt}<br>
+• <b>{bal_hdr}</b> : {bal_val_txt}<br>
+• <b>{model_hdr}</b> : {model_val_txt}<br>
+<b>{rec_line}</b>
 </div>
 </div>
 """, unsafe_allow_html=True)

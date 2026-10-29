@@ -143,6 +143,12 @@ def render_suite_livestock():
     """
     Suite: Livestock & Veterinary Intelligence
     """
+    if _is_fr():
+        st.markdown("## 🐄 Élevage & Sciences Zootechniques")
+        st.caption("Intelligence vétérinaire et zootechnique intégrée : génétique animale, stress thermique (THI), formulation nutritionnelle et biosécurité aviaire, bovine et petits ruminants.")
+    else:
+        st.markdown("## 🐄 Livestock & Animal Sciences Intelligence")
+        st.caption("Integrated animal science and veterinary intelligence: genomic breeding values, THI thermal stress, precision nutrition formulations, and tropical livestock pathology.")
     render_livestock_intelligence()
 
 
@@ -150,6 +156,12 @@ def render_suite_policy():
     """
     Suite: Agricultural Policy & Economic Simulator
     """
+    if _is_fr():
+        st.markdown("## 🏛️ Politiques & Simulateur Macroéconomique Agricole")
+        st.caption("Modélisation des politiques publiques agricoles : impact des subventions aux intrants, tarifs douaniers, résilience des chaînes de valeur et sécurité alimentaire.")
+    else:
+        st.markdown("## 🏛️ Agricultural Policy & Macroeconomic Simulator")
+        st.caption("Public policy and macroeconomic modeling: input subsidy optimization, cross-border tariffs, value-chain resilience, and national food security metrics.")
     render_policy_simulator()
 
 

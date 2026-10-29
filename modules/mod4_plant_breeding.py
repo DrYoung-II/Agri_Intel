@@ -12,13 +12,18 @@ from core.crop_taxonomy import PAN_AFRICAN_CROPS, PAN_AFRICAN_ENVIRONMENTS, get_
 
 
 def render_plant_breeding():
-    st.markdown("### 🌽 Plant Breeding & Cultivar Design Intelligence")
-    st.caption("Genomic selection, quantitative trait prioritisation, G×E stability, and pan-African breeding population design.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🌽 Sélection Végétale & Création Variétale Quantitative")
+        st.caption("Sélection génomique, priorisation quantitative des caractères, stabilité G×E et conception de populations de sélection adaptées aux agro-écologies africaines.")
+    else:
+        st.markdown("### 🌽 Plant Breeding & Cultivar Design Intelligence")
+        st.caption("Genomic selection, quantitative trait prioritisation, G×E stability, and pan-African breeding population design.")
 
     c1, c2 = st.columns(2)
     with c1:
         crop_target_raw = st.selectbox(
-            "Target African Crop / Commodity:",
+            "Culture Panafricaine Cible :" if is_fr else "Target African Crop / Commodity:",
             PAN_AFRICAN_CROPS,
             index=0,
             help="Select any major African cereal, tuber, pulse, vegetable, or cash crop, or enter a custom African crop."
@@ -32,7 +37,7 @@ def render_plant_breeding():
 
     with c2:
         agro_target_raw = st.selectbox(
-            "Target Agro-Ecological Environment:",
+            "Zone Agro-Écologique Cible :" if is_fr else "Target Agro-Ecological Environment:",
             PAN_AFRICAN_ENVIRONMENTS,
             index=1,
             help="Select any major pan-African agro-ecological zone or enter a custom ecological region."

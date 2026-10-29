@@ -13,19 +13,28 @@ from core.crop_taxonomy import PAN_AFRICAN_CROPS, get_crop_climate_profile
 
 
 def render_soil_intelligence():
-    st.markdown("### 🌍 Soil Intelligence & Scenario Simulation Engine")
-    st.caption("Precision edaphic diagnostics, balanced nutrient strategy, and what-if economic/climate shock simulations.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🌍 Intelligence des Sols & Moteur de Simulation")
+        st.caption("Diagnostic édaphique de précision, stratégie de fertilisation équilibrée et simulations d'impacts économiques et climatiques.")
+        tab_names = ["🧪 Diagnostic de Fertilité & Stratégie Nutriments", "📈 Simulateur de Scénarios Prospectifs"]
+    else:
+        st.markdown("### 🌍 Soil Intelligence & Scenario Simulation Engine")
+        st.caption("Precision edaphic diagnostics, balanced nutrient strategy, and what-if economic/climate shock simulations.")
+        tab_names = ["🧪 Soil Health Diagnosis & Fertilizer Strategy", "📈 What-If Scenario Simulator"]
 
-    tab_diag, tab_scenario = st.tabs(["🧪 Soil Health Diagnosis & Fertilizer Strategy", "📈 What-If Scenario Simulator"])
+    tab_diag, tab_scenario = st.tabs(tab_names)
 
     # Load soil database
     soil_path = os.path.join("data", "sample_soil_profiles_africa.csv")
     df_soil_samples = pd.read_csv(soil_path) if os.path.exists(soil_path) else None
 
     with tab_diag:
-        st.markdown("#### 🌾 Input Soil Test Parameters")
+        st.markdown("#### 🌾 Paramètres d'Analyse du Sol" if is_fr else "#### 🌾 Input Soil Test Parameters")
         
-        mode = st.radio("Choose Input Mode:", ["Select Pre-loaded African Soil Profile", "Enter Manual Soil Sample"], horizontal=True)
+        mode_lbl = "Mode de Saisie :" if is_fr else "Choose Input Mode:"
+        mode_opts = ["Sélectionner un Profil de Sol Panafricain", "Saisir Manuellement un Échantillon"] if is_fr else ["Select Pre-loaded African Soil Profile", "Enter Manual Soil Sample"]
+        mode = st.radio(mode_lbl, mode_opts, horizontal=True)
         
         if mode == "Select Pre-loaded African Soil Profile" and df_soil_samples is not None and not df_soil_samples.empty:
             chosen_loc = st.selectbox("Select Soil Sample Location:", df_soil_samples["Location"].tolist())

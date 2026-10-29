@@ -31,13 +31,23 @@ CITY_COORDINATES = {
 
 
 def render_climate_intelligence():
-    st.markdown("### 🌦️ Climate × Agriculture Intelligence Engine")
-    st.caption("Translates climate variability, meteorological anomalies, and heat extremes into crop and farm-level risk management.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🌦️ Moteur d'Intelligence Climat × Agriculture")
+        st.caption("Traduit la variabilité climatique, les anomalies pluviométriques et les extrêmes thermiques en gestion des risques au champ.")
+        tab_names = [
+            "🔮 Simulateur Prospectif à 4 Scénarios Climatiques",
+            "🛰️ Agrométéo en Direct & Indice THI (API Open-Meteo)"
+        ]
+    else:
+        st.markdown("### 🌦️ Climate × Agriculture Intelligence Engine")
+        st.caption("Translates climate variability, meteorological anomalies, and heat extremes into crop and farm-level risk management.")
+        tab_names = [
+            "🔮 4-Scenario Climate Simulation Engine",
+            "🛰️ Live Real-Time Agro-Weather & THI (Open-Meteo API)"
+        ]
 
-    tab_scenario, tab_live = st.tabs([
-        "🔮 4-Scenario Climate Simulation Engine",
-        "🛰️ Live Real-Time Agro-Weather & THI (Open-Meteo API)"
-    ])
+    tab_scenario, tab_live = st.tabs(tab_names)
 
     with tab_scenario:
         c1, c2, c3 = st.columns(3)

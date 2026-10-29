@@ -16,14 +16,25 @@ from core.exporter import render_download_buttons
 
 
 def render_livestock_intelligence():
-    st.markdown("### 🐾 Livestock & Poultry Intelligence Infrastructure")
-    st.caption("Cross-species animal science: bovine quantitative genetics, poultry bioclimatics, and small ruminant nutrition.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🐾 Infrastructure d'Intelligence Animale & Vétérinaire")
+        st.caption("Sciences animales multi-espèces : génétique bovine quantitative, bioclimatologie avicole et nutrition des petits ruminants.")
+        tab_names = [
+            "🐄 Génétique Bovine & Pastorale",
+            "🐔 Simulateur Bioclimatique & Aviculture",
+            "🐐 Petits Ruminants & Porciculture"
+        ]
+    else:
+        st.markdown("### 🐾 Livestock & Poultry Intelligence Infrastructure")
+        st.caption("Cross-species animal science: bovine quantitative genetics, poultry bioclimatics, and small ruminant nutrition.")
+        tab_names = [
+            "🐄 Bovine & Pastoral Genetics",
+            "🐔 Poultry Bioclimatic & Festive Simulator",
+            "🐐 Small Ruminants & Swine"
+        ]
 
-    tab_cattle, tab_poultry, tab_ruminants = st.tabs([
-        "🐄 Bovine & Pastoral Genetics",
-        "🐔 Poultry Bioclimatic & Festive Simulator",
-        "🐐 Small Ruminants & Swine"
-    ])
+    tab_cattle, tab_poultry, tab_ruminants = st.tabs(tab_names)
 
     # =========================================================================
     # TAB 1: BOVINE & PASTORAL GENETICS

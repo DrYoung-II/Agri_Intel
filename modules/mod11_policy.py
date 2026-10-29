@@ -16,8 +16,13 @@ from core.orchestrator import get_gemini_api_key, call_live_llm_orchestration, s
 
 
 def render_policy_simulator():
-    st.markdown("### 🏛️ Government Agricultural Intelligence & Policy Simulator")
-    st.caption("Institutional macro-economic decision platform for national food security, inter-ministerial budget allocation, employment creation, poverty reduction, and counter-cyclical market stabilization.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🏛️ Simulateur de Politiques Publiques & Macroéconomie Agricole")
+        st.caption("Plateforme décisionnelle institutionnelle pour la sécurité alimentaire nationale, l'allocation budgétaire, l'emploi rural et la stabilisation des marchés.")
+    else:
+        st.markdown("### 🏛️ Government Agricultural Intelligence & Policy Simulator")
+        st.caption("Institutional macro-economic decision platform for national food security, inter-ministerial budget allocation, employment creation, poverty reduction, and counter-cyclical market stabilization.")
 
     # Retrieve active Pan-African region
     active_reg = st.session_state.get("active_region", {

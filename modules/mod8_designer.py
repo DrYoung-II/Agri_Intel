@@ -10,15 +10,23 @@ from core.crop_taxonomy import PAN_AFRICAN_CROPS
 
 
 def render_experiment_designer():
-    st.markdown("### 📐 Agricultural Experiment Designer")
-    st.caption("Automated experimental layouts, treatment randomisation, field book CSV templates, and R/Python analysis pipelines.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 📐 Concepteur de Dispositifs Expérimentaux Agricoles")
+        st.caption("Plans d'expérimentation automatisés, randomisation des traitements, modèles de carnet de champ CSV et pipelines d'analyse statistique.")
+    else:
+        st.markdown("### 📐 Agricultural Experiment Designer")
+        st.caption("Automated experimental layouts, treatment randomisation, field book CSV templates, and R/Python analysis pipelines.")
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        exp_design = st.selectbox("Experimental Design:", ["Randomized Complete Block Design (RCBD)", "Completely Randomized Design (CRD)", "Split-Plot Design"])
+        des_lbl = "Dispositif Expérimental :" if is_fr else "Experimental Design:"
+        des_opts = ["Blocs Complets Randomisés (RCBD)", "Complètement Aléatoire (CRD)", "Parcelles Divisées (Split-Plot)"] if is_fr else ["Randomized Complete Block Design (RCBD)", "Completely Randomized Design (CRD)", "Split-Plot Design"]
+        exp_design = st.selectbox(des_lbl, des_opts)
     with c2:
+        rep_lbl = "Nombre de Répétitions / Blocs :" if is_fr else "Number of Replications / Blocks:"
         num_reps = st.slider(
-            "Number of Replications / Blocks:",
+            rep_lbl,
             min_value=2,
             max_value=30,
             value=4,
@@ -37,16 +45,17 @@ def render_experiment_designer():
         else:
             target_crop = crop_choice_raw
 
-    st.markdown("#### 🧪 Define Treatments")
+    st.markdown("#### 🧪 Définition des Traitements" if is_fr else "#### 🧪 Define Treatments")
     col_t1, col_t2 = st.columns(2)
     with col_t1:
-        factor_a_name = st.text_input("Factor A Name:", "Fertilizer_Treatment")
-        factor_a_levels = st.text_area("Factor A Levels (comma separated):", "Control_Zero, NPK_Standard, NPK_Biochar, Integrated_Manure")
+        factor_a_name = st.text_input("Nom du Facteur A :" if is_fr else "Factor A Name:", "Fertilizer_Treatment")
+        factor_a_levels = st.text_area("Niveaux Facteur A (séparés par virgules) :" if is_fr else "Factor A Levels (comma separated):", "Control_Zero, NPK_Standard, NPK_Biochar, Integrated_Manure")
     with col_t2:
-        factor_b_name = st.text_input("Factor B Name (Optional / Factorial):", "Irrigation_Regime")
-        factor_b_levels = st.text_area("Factor B Levels (comma separated):", "Rainfed, Drip_Irrigation")
+        factor_b_name = st.text_input("Nom Facteur B (Optionnel / Factoriel) :" if is_fr else "Factor B Name (Optional / Factorial):", "Irrigation_Regime")
+        factor_b_levels = st.text_area("Niveaux Facteur B (séparés par virgules) :" if is_fr else "Factor B Levels (comma separated):", "Rainfed, Drip_Irrigation")
 
-    if st.button("🎲 Generate Randomised Field Layout & Data Collection Template", key="btn_gen_layout"):
+    btn_layout_lbl = "🎲 Générer le Plan de Champ Randomisé & Modèle de Collecte" if is_fr else "🎲 Generate Randomised Field Layout & Data Collection Template"
+    if st.button(btn_layout_lbl, key="btn_gen_layout"):
         levels_a = [x.strip() for x in factor_a_levels.split(",") if x.strip()]
         levels_b = [x.strip() for x in factor_b_levels.split(",") if x.strip()]
         if not levels_a:
@@ -115,7 +124,7 @@ def render_experiment_designer():
 
         csv_fieldbook = df_fieldbook.to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Field Data Collection Template (CSV)",
+            label="📥 Télécharger le Carnet de Champ (CSV)" if is_fr else "📥 Download Field Data Collection Template (CSV)",
             data=csv_fieldbook,
             file_name=f"{clean_crop}_experimental_fieldbook.csv",
             mime="text/csv"

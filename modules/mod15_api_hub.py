@@ -10,8 +10,13 @@ from core.orchestrator import get_gemini_api_key, set_gemini_api_key, validate_g
 
 
 def render_api_hub():
-    st.markdown("### 🔌 API Subscriptions, Accessible Domains & Integration Hub")
-    st.caption("Complete transparency on where to obtain API keys, direct links to subscribe, pricing models, and key configuration.")
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+    if is_fr:
+        st.markdown("### 🔌 Abonnements API, Domaines d'Accès & Hub d'Intégration")
+        st.caption("Transparence totale sur l'obtention des clés API, liens directs d'accès, modèles de gratuité et configuration des modèles.")
+    else:
+        st.markdown("### 🔌 API Subscriptions, Accessible Domains & Integration Hub")
+        st.caption("Complete transparency on where to obtain API keys, direct links to subscribe, pricing models, and key configuration.")
 
     st.markdown("""
 <div class="agri-explainer-box">
@@ -24,7 +29,7 @@ Connecting Google Gemini is strictly <b>optional</b> (free tier available at Goo
 """, unsafe_allow_html=True)
 
     # API Configuration Section
-    st.markdown("#### 🔑 Live AI Engine (Google Gemini)")
+    st.markdown("#### 🔑 Moteur IA en Direct (Google Gemini)" if is_fr else "#### 🔑 Live AI Engine (Google Gemini)")
     current_k = get_gemini_api_key()
     if current_k:
         val = validate_gemini_key(current_k)

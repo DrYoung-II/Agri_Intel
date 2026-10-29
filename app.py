@@ -158,7 +158,7 @@ def main():
         # Bilingual Language Switcher (English / Français)
         lang_choice = st.radio(
             t("lang_selector_label", cur_lang),
-            options=["English 🇬🇧", "Français 🇫🇷"],
+            options=["English\u00A0GB", "Français\u00A0FR"],
             index=0 if cur_lang == "en" else 1,
             horizontal=True,
             key="app_language_toggle"
@@ -198,11 +198,11 @@ def main():
         active_sb_key = get_gemini_api_key()
         if active_sb_key:
             st.markdown(f"""
-<div style="background: rgba(46,125,50,0.22); border: 1px solid #81C784; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px;">
-    <div style="font-size: 0.80rem; font-weight: 700; color: #A5D6A7;">
+<div style="background: #E8F5E9; border: 1px solid #81C784; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px;">
+    <div style="font-size: 0.80rem; font-weight: 700; color: #1B5E20;">
         {t("gemini_active", cur_lang)}
     </div>
-    <div style="font-size: 0.72rem; color: #E8F5E9; margin-top: 2px;">
+    <div style="font-size: 0.72rem; color: #2E7D32; margin-top: 2px;">
         {t("gemini_secured", cur_lang)}
     </div>
 </div>
@@ -239,11 +239,11 @@ def main():
             st.markdown(f"*{FOUNDER_STORY}*")
 
         st.markdown(f"""
-<div style="text-align: center; padding: 6px 0; opacity: 0.88;">
-    <div style="font-size: 0.72rem; letter-spacing: 0.6px; color: #C8E6C9; font-weight: 700; text-transform: uppercase;">
+<div style="text-align: center; padding: 6px 0; opacity: 0.90;">
+    <div style="font-size: 0.72rem; letter-spacing: 0.6px; color: #2E7D32; font-weight: 700; text-transform: uppercase;">
         {t("app_motto", cur_lang)}
     </div>
-    <div style="font-size: 0.70rem; color: #A5D6A7; margin-top: 2px;">
+    <div style="font-size: 0.70rem; color: #6B7280; margin-top: 2px;">
         {t("edition_label", cur_lang)}
     </div>
 </div>
@@ -254,10 +254,10 @@ def main():
         if curr_naysa:
             st.markdown(f"""
 <div class="sidebar-naysa-card">
-    <div style="font-size: 0.65rem; font-weight: 800; color: #81C784; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px;">{t("powered_by", cur_lang)}</div>
+    <div style="font-size: 0.65rem; font-weight: 800; color: #2E7D32; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px;">{t("powered_by", cur_lang)}</div>
     <img src="data:image/png;base64,{curr_naysa}" alt="Naysa-84 Labs" />
-    <div style="font-size: 0.76rem; color: #FFFFFF; font-weight: 700; margin-top: 5px; letter-spacing: 0.2px;">Naysa-84 Labs</div>
-    <div style="font-size: 0.68rem; color: #80DEEA; font-style: italic;">{t("unlocking_data", cur_lang)}</div>
+    <div style="font-size: 0.76rem; color: #111827; font-weight: 700; margin-top: 5px; letter-spacing: 0.2px;">Naysa-84 Labs</div>
+    <div style="font-size: 0.68rem; color: #0284C7; font-style: italic;">{t("unlocking_data", cur_lang)}</div>
 </div>
 """, unsafe_allow_html=True)
 

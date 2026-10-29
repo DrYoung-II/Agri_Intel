@@ -235,30 +235,23 @@ p, span, label, li {
     opacity: 0.92;
 }
 
-/* Sidebar Brand Card */
+/* Sidebar Brand Card - Seamless on White */
 .sidebar-brand-card {
-    background: #FFFFFF;
-    border-radius: 14px;
-    padding: 14px 14px 12px 14px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(129, 199, 132, 0.40);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-    text-align: center;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.sidebar-brand-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.20);
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 6px 4px 10px 4px !important;
+    margin-bottom: 6px !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: center !important;
 }
 
 .sidebar-brand-card img {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 6px;
+    max-width: 240px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 /* ============================================================
@@ -447,22 +440,22 @@ div.stButton > button:first-child:hover {
    SIDEBAR GREEN THEME & SPACING BETWEEN MODULES
    ============================================================ */
 
-/* Main Sidebar Container */
+/* Main Sidebar Container - Clean White Plane Surface (AgriIntel Style) */
 section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #134E1B 0%, #1B5E20 35%, #18521C 70%, #123F16 100%) !important;
-    border-right: 1px solid #2E7D32 !important;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.12) !important;
+    background: #FFFFFF !important;
+    border-right: 1px solid #E5E9E5 !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04) !important;
 }
 
 section[data-testid="stSidebar"] > div {
-    background: transparent !important;
+    background: #FFFFFF !important;
 }
 
 /* Sidebar Title and Text Headers */
 section[data-testid="stSidebar"] h1, 
 section[data-testid="stSidebar"] h2, 
 section[data-testid="stSidebar"] h3 {
-    color: #FFFFFF !important;
+    color: #1B5E20 !important;
     font-size: 1.15rem !important;
     letter-spacing: -0.2px !important;
     margin-bottom: 2px !important;
@@ -471,21 +464,16 @@ section[data-testid="stSidebar"] h3 {
 section[data-testid="stSidebar"] p, 
 section[data-testid="stSidebar"] span, 
 section[data-testid="stSidebar"] label {
-    color: #E8F5E9 !important;
+    color: #374151 !important;
 }
 
 section[data-testid="stSidebar"] .stCaption,
 section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
-    color: #C8E6C9 !important;
-    font-size: 0.86rem !important;
-    opacity: 0.95 !important;
+    color: #6B7280 !important;
+    font-size: 0.82rem !important;
 }
 
-/* ============================================================
-   SIDEBAR REFINED DESIGN SYSTEM & ALIGNMENT
-   ============================================================ */
-
-/* Unified Section Headers (Labels for Radio, Selectbox, Inputs in Sidebar) */
+/* Sidebar Section Headers (Language, Region, Suites) - Clean, Unboxed Web Headers */
 section[data-testid="stSidebar"] label[data-testid="stWidgetLabel"],
 section[data-testid="stSidebar"] div[data-testid="stRadio"] > label,
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label {
@@ -494,7 +482,7 @@ section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label {
     box-shadow: none !important;
     padding: 0 !important;
     margin-top: 14px !important;
-    margin-bottom: 7px !important;
+    margin-bottom: 6px !important;
     display: flex !important;
     align-items: center !important;
     transform: none !important;
@@ -504,23 +492,32 @@ section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label {
 section[data-testid="stSidebar"] label[data-testid="stWidgetLabel"] p,
 section[data-testid="stSidebar"] div[data-testid="stRadio"] > label p,
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > label p {
-    color: #A5D6A7 !important;
-    font-size: 0.74rem !important;
+    color: #2E7D32 !important;
+    font-size: 0.72rem !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.75px !important;
+    letter-spacing: 0.8px !important;
     line-height: 1.2 !important;
     margin: 0 !important;
 }
 
-/* Horizontal Radio Group (Language Toggle: Side-by-side Balanced Pills) */
+/* Horizontal Radio Group (Language Toggle: Side-by-side on Same Line) */
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"],
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stRadioGroup"][aria-orientation="horizontal"] {
     display: flex !important;
     flex-direction: row !important;
-    gap: 8px !important;
+    gap: 6px !important;
     width: 100% !important;
     margin-bottom: 4px !important;
+    background: #F3F4F6 !important;
+    padding: 3px !important;
+    border-radius: 8px !important;
+    border: 1px solid #E5E7EB !important;
+}
+
+/* Hide radio circle in language switcher for sleek tab look */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label > div:first-child {
+    display: none !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label,
@@ -529,119 +526,160 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-testid="stR
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 7px 8px !important;
+    padding: 6px 10px !important;
     margin: 0 !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
-    border-radius: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 6px !important;
     cursor: pointer !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
-    transition: all 0.20s ease !important;
-}
-
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:hover {
-    background: rgba(255, 255, 255, 0.16) !important;
-    border-color: #81C784 !important;
-}
-
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:has(input:checked) {
-    background: rgba(46, 125, 50, 0.50) !important;
-    border: 1px solid #81C784 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: none !important;
+    white-space: nowrap !important;
+    transition: all 0.18s ease !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label p {
-    color: #FFFFFF !important;
-    font-size: 0.84rem !important;
+    color: #4B5563 !important;
+    font-size: 0.82rem !important;
     font-weight: 600 !important;
     margin: 0 !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
     text-align: center !important;
 }
 
-/* Vertical Radio Group (Suite Navigation: Elegant, Unified Stack) */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:hover {
+    background: rgba(255, 255, 255, 0.65) !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:has(input:checked) {
+    background: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"][aria-orientation="horizontal"] > label:has(input:checked) p {
+    color: #1B5E20 !important;
+    font-weight: 700 !important;
+}
+
+/* Vertical Radio Group (Suite Navigation: Standalone Flat Web Links like AgriIntel) */
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) {
     display: flex !important;
     flex-direction: column !important;
-    gap: 5px !important;
+    gap: 1px !important;
     width: 100% !important;
+}
+
+/* Hide radio circle in suite navigation for clean web appearance */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label > div:first-child {
+    display: none !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label {
     margin: 0 !important;
-    padding: 8px 11px !important;
-    background: rgba(255, 255, 255, 0.07) !important;
-    border: 1px solid rgba(255, 255, 255, 0.13) !important;
-    border-radius: 8px !important;
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 9px 12px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: all 0.15s ease !important;
     cursor: pointer !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
-}
-
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.28) !important;
-    transform: translateX(2px) !important;
-}
-
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked) {
-    background: rgba(46, 125, 50, 0.45) !important;
-    border: 1px solid #81C784 !important;
-    border-left: 4px solid #81C784 !important;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16) !important;
-    transform: translateX(2px) !important;
+    justify-content: space-between !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label p {
-    color: #FFFFFF !important;
-    font-size: 0.86rem !important;
+    color: #374151 !important;
+    font-size: 0.88rem !important;
     font-weight: 500 !important;
-    line-height: 1.3 !important;
+    line-height: 1.35 !important;
     margin: 0 !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
+}
+
+/* Subtle chevron on the right like AgriIntel */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label::after {
+    content: '›' !important;
+    font-size: 1.20rem !important;
+    color: #9CA3AF !important;
+    margin-left: auto !important;
+    padding-left: 8px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    transition: transform 0.15s ease, color 0.15s ease !important;
+}
+
+/* Hover state: subtle tint like modern web navbar */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:hover {
+    background: #F0FDF4 !important;
+    border: none !important;
+    transform: none !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:hover p {
+    color: #15803D !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:hover::after {
+    color: #15803D !important;
+    transform: translateX(2px) !important;
+}
+
+/* Active / Selected Suite Item */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked) {
+    background: #E8F5E9 !important;
+    border: none !important;
+    border-left: 3px solid #2E7D32 !important;
+    border-radius: 0 6px 6px 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked) p {
     font-weight: 700 !important;
-    color: #FFFFFF !important;
+    color: #1B5E20 !important;
 }
 
-/* Selectbox styling in sidebar (Region selector) */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"]:not([aria-orientation="horizontal"]) > label:has(input:checked)::after {
+    color: #2E7D32 !important;
+    font-weight: 700 !important;
+}
+
+/* Selectbox styling in sidebar (Region selector) - Clean Web Form Input */
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-    background: rgba(255, 255, 255, 0.09) !important;
-    border: 1px solid rgba(255, 255, 255, 0.20) !important;
-    border-radius: 8px !important;
-    color: #FFFFFF !important;
+    background: #FAFCFA !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 6px !important;
+    color: #1F2937 !important;
 }
 
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] * {
-    color: #FFFFFF !important;
+    color: #1F2937 !important;
     font-size: 0.86rem !important;
 }
 
 /* Sidebar Divider */
 section[data-testid="stSidebar"] hr {
-    border-color: rgba(255, 255, 255, 0.20) !important;
+    border-color: #E5E7EB !important;
     margin: 14px 0 !important;
 }
 
-/* Sidebar Expander (Founder Story) */
+/* Sidebar Expander (Founder Story & Gemini Key) */
 section[data-testid="stSidebar"] [data-testid="stExpander"] {
-    background: rgba(255, 255, 255, 0.07) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
-    border-radius: 9px !important;
+    background: #F9FAFB !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 8px !important;
 }
 
 section[data-testid="stSidebar"] [data-testid="stExpander"] summary {
-    color: #FFFFFF !important;
+    color: #1B5E20 !important;
     font-weight: 600 !important;
     font-size: 0.84rem !important;
 }
 
 section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
-    color: #E8F5E9 !important;
+    color: #374151 !important;
     font-size: 0.82rem !important;
     line-height: 1.45 !important;
 }

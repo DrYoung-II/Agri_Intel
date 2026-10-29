@@ -36,16 +36,23 @@ st.set_page_config(
 import importlib
 import config
 import assets.styles
+import core.i18n
 try:
     importlib.reload(config)
     importlib.reload(assets.styles)
+    importlib.reload(core.i18n)
 except Exception:
     pass
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS
 from assets.styles import LEAF_GREEN_CSS
 from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key
 from core.exporter import render_download_buttons
-from core.i18n import t, get_current_lang, translate_agent_name
+from core.i18n import t, get_current_lang
+try:
+    from core.i18n import translate_agent_name
+except Exception:
+    def translate_agent_name(name, lang=None):
+        return name
 
 from modules.suites import (
     render_suite_biometrics,

@@ -31,6 +31,12 @@ TRANSLATIONS = {
         "gemini_active": "🟢 Live Google Gemini Engine Active",
         "gemini_secured": "Cloud Verified &bull; Secrets Secured",
         "founder_story_label": "📖 Founder Story & Vision",
+        "founder_story_text": (
+            "\"I trained as an animal geneticist, spent years working with agricultural research problems, "
+            "transitioned into data science and artificial intelligence, and realised that one of Africa's "
+            "biggest agricultural problems is not merely lack of knowledge—it is the inability to connect "
+            "agricultural knowledge, data, research and decision-making at scale.\""
+        ),
         "edition_label": "AgroBiometrix v2.4 &bull; Africa-First Institutional Edition",
         "powered_by": "POWERED BY",
         "unlocking_data": "Unlocking the power of data",
@@ -110,6 +116,12 @@ TRANSLATIONS = {
         "gemini_active": "🟢 Moteur Google Gemini Actif & Sécurisé",
         "gemini_secured": "Vérifié sur le Cloud &bull; Secrets Protégés",
         "founder_story_label": "📖 Histoire & Vision du Fondateur",
+        "founder_story_text": (
+            "« Formé en tant que généticien animalier, j'ai consacré des années à résoudre des problématiques de recherche "
+            "agronomique, avant d'évoluer vers la science des données et l'intelligence artificielle. J'ai alors compris que "
+            "l'un des plus grands défis de l'agriculture en Afrique n'est pas simplement un manque de connaissances — c'est "
+            "l'incapacité à relier les savoirs agronomiques, les données, la recherche et la prise de décision à grande échelle. »"
+        ),
         "edition_label": "AgroBiometrix v2.4 &bull; Édition Institutionnelle Panafricaine",
         "powered_by": "PROPULSÉ PAR",
         "unlocking_data": "Libérer la puissance des données",

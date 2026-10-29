@@ -15,12 +15,19 @@ COMPANY_NAME = "Naysa-84 Labs"
 COMPANY_TAGLINE = "Unlocking the power of data"
 NAYSA_LOGO_PATH = os.path.join("assets", "naysa84_labs_logo.png")
 
-FOUNDER_STORY = """
-"I trained as an animal geneticist, spent years working with agricultural research problems, 
-transitioned into data science and artificial intelligence, and realised that one of Africa's 
-biggest agricultural problems is not merely lack of knowledge—it is the inability to connect 
-agricultural knowledge, data, research and decision-making at scale."
-"""
+FOUNDER_STORY = (
+    '"I trained as an animal geneticist, spent years working with agricultural research problems, '
+    'transitioned into data science and artificial intelligence, and realised that one of Africa\'s '
+    'biggest agricultural problems is not merely lack of knowledge—it is the inability to connect '
+    'agricultural knowledge, data, research and decision-making at scale."'
+)
+
+FOUNDER_STORY_FR = (
+    '« Formé en tant que généticien animalier, j\'ai consacré des années à résoudre des problématiques de recherche '
+    'agronomique, avant d\'évoluer vers la science des données et l\'intelligence artificielle. J\'ai alors compris que '
+    'l\'un des plus grands défis de l\'agriculture en Afrique n\'est pas simplement un manque de connaissances — c\'est '
+    'l\'incapacité à relier les savoirs agronomiques, les données, la recherche et la prise de décision à grande échelle. »'
+)
 
 # Theme Palette: Leaf Green & Digital Circuit Fusion (Matching Official Logo)
 THEME = {

@@ -236,7 +236,11 @@ def main():
                     st.caption(caption_hint)
 
         with st.expander(t("founder_story_label", cur_lang), expanded=False):
-            st.markdown(f"*{FOUNDER_STORY}*")
+            st.markdown(f"""
+<div style="font-size: 0.82rem; line-height: 1.55; color: #374151; font-style: italic; border-left: 3px solid #2E7D32; padding: 4px 0 4px 10px; margin: 4px 0;">
+    {t("founder_story_text", cur_lang)}
+</div>
+""", unsafe_allow_html=True)
 
         st.markdown(f"""
 <div style="text-align: center; padding: 6px 0; opacity: 0.90;">

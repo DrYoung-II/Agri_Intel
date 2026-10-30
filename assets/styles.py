@@ -786,7 +786,7 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
     justify-content: center;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.22);
-    margin-bottom: 6px;
+    margin-bottom: 0px !important;
 }
 
 .agri-footer-naysa-card img {

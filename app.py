@@ -258,10 +258,8 @@ def main():
         if curr_naysa:
             st.markdown(f"""
 <div class="sidebar-naysa-card">
-    <div style="font-size: 0.65rem; font-weight: 800; color: #2E7D32; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px;">{t("powered_by", cur_lang)}</div>
+    <div style="font-size: 0.65rem; font-weight: 800; color: #2E7D32; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">{t("powered_by", cur_lang)}</div>
     <img src="data:image/png;base64,{curr_naysa}" alt="Naysa-84 Labs" />
-    <div style="font-size: 0.76rem; color: #111827; font-weight: 700; margin-top: 5px; letter-spacing: 0.2px;">Naysa-84 Labs</div>
-    <div style="font-size: 0.68rem; color: #0284C7; font-style: italic;">{t("unlocking_data", cur_lang)}</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -308,8 +306,6 @@ def render_page_footer():
             <div class="agri-footer-naysa-card">
                 <img src="data:image/png;base64,{naysa_b64}" alt="Naysa-84 Labs Logo" />
             </div>
-            <div class="agri-footer-naysa-name">Naysa-84 Labs</div>
-            <div class="agri-footer-naysa-tagline"><i>{t("unlocking_data", cur_lang)}</i></div>
         </div>
     </div>
     <div class="agri-footer-bottom">

@@ -127,12 +127,12 @@ LOCAL_RADIO_BROADCASTS = {
                 "broadcaster": "Baale Agbe Olusegun • AgroBiometrix Community Extension Radio (Oyo/Ogun)",
                 "headline": "Ikilo Ooru ati Idaduro Ojo fun Awon Agbe Agbado",
                 "audio_script": (
-                    "E ku ojumo gbogbo eyin agbe wa olokiki! E gbo ifitonile pataki lati odo ero imo-ijinle AgroBiometrix: "
-                    "Ni ose meji to n bo yii, oorun to gbona gidigidi yoo wa pelu idaduro ojo ni agbegbe wa. "
-                    "Awon onimo ijinle so wipe: E ma se da ajile Urea si ori ile gbigbe lasan o! Ooru yoo jo gbogbo ajile naa, "
-                    "yoo si ba gbongbo agbado je. E duro titi ti ojo to fe yoo fi rin ile daradara. Lati fi din owo ku, "
-                    "e lo ilana 'Micro-dosing'—omori igo kan ti ajile si idi igi agbado kookan. Eyi yoo daabo bo irugbin yin, "
-                    "yoo si fun yin ni ire pupo. Ire o!"
+                    "Ẹ kú ojúmọ́ gbogbo ẹ̀yin àgbẹ̀ wa olókìkí! Ẹ gbọ́ ìfitónilétí pàtàkì láti ọ̀dọ̀ ẹ̀rọ ìmọ̀-ìjìnlẹ̀ AgroBiometrix: "
+                    "Ní ọ̀sẹ̀ méjì tí ó ń bọ̀ yìí, oòrùn tí ó gbóná gidigidi yóò wà pẹ̀lú ìdádúró òjò ní agbègbè wa. "
+                    "Àwọn onímọ̀ ìjìnlẹ̀ sọ wípé: Ẹ má ṣe da ajílẹ̀ Urea sí orí ilẹ̀ gbígbẹ lásán o! Ooru yóò jó gbogbo ajílẹ̀ náà, "
+                    "yóò sì ba gbòǹgbò àgbàdo jẹ́. Ẹ dúró títí tí òjò tí ó fẹ́ yóò fi rin ilẹ̀ dáadáa. Láti fi dín owó kù, "
+                    "ẹ lo ìlànà 'Micro-dosing'—òmórí ìgò kan ti ajílẹ̀ sí ìdí igi àgbàdo kọ̀ọ̀kan. Èyí yóò dáàbò bo ìrugbìn yín, "
+                    "yóò sì fún yín ní ìrè púpọ̀. Ìrẹ o!"
                 ),
                 "english_translation": (
                     "Good day, esteemed farmers! Hear this important advisory from the AgroBiometrix intelligence engine: In the coming two weeks, "
@@ -256,10 +256,10 @@ LOCAL_RADIO_BROADCASTS = {
                 "broadcaster": "Baale Agbe Olusegun • AgroBiometrix Poultry Extension Radio (Oyo/Ogun)",
                 "headline": "Itoju Adiye ni Akoko Ooru ati Erupe Oye (Harmattan)",
                 "audio_script": (
-                    "E ku ojumo gbogbo eyin agbe adiye wa olokiki! E gbo ifitonile pataki: Ni akoko yi, ooru gbigbona wa ni osan "
-                    "pelu otutu ni oru. E ma se fun adiye ni ounje laarin agogo mkanla abo owuro si agogo meta abo osan (11:30 AM – 3:30 PM). "
-                    "E bu omi tutu to ni Vitamin C ati 'Sodium Bicarbonate' fun won mu lati din ooru ku. E si ranti lati fun won ni "
-                    "abere ajesara Newcastle Clone 30 ati Lasota lati daabo bo won lowo iko ati erupe oye!"
+                    "Ẹ kú ojúmọ́ gbogbo ẹ̀yin àgbẹ̀ adìyẹ wa olókìkí! Ẹ gbọ́ ìfitónilétí pàtàkì: Ní àkókò yìí, ooru gbígbóná wà ní ọ̀sán "
+                    "pẹ̀lú òtútù ní òru. Ẹ má ṣe fún adìyẹ ní oúnjẹ láàárín agogo mọ́kànlá àbọ̀ òwúrọ̀ sí agogo mẹ́ta àbọ̀ ọ̀sán (11:30 AM – 3:30 PM). "
+                    "Ẹ bu omi tútù tí ó ní Vitamin C àti 'Sodium Bicarbonate' fún wọn mu láti dín ooru kù. Ẹ sì rántí láti fún wọn ní "
+                    "abẹ́rẹ́ àjẹsára Newcastle Clone 30 àti Lasota láti dáàbò bo wọn lọ́wọ́ ikọ́ àti erùpẹ̀ oyé!"
                 ),
                 "english_translation": (
                     "Good day esteemed poultry farmers! Important advisory: Significant temperature swings are occurring between hot afternoons and cool nights. "
@@ -332,9 +332,9 @@ LOCAL_RADIO_BROADCASTS = {
                 "broadcaster": "Baale Agbe Olusegun • AgroBiometrix Rabbit Extension",
                 "headline": "Itoju Ehoro ati Dena Arun Ikun Wiwu (Bloat)",
                 "audio_script": (
-                    "Eyin olutoju ehoro olokiki! E gbo imoran pataki: Ooru to koja iwon maa n ba agbara ako ehoro je fun ose mefa si mejo. "
-                    "E gbe igo omi yinyin sinu keji won ni osan ki ara won le tutu. Pẹlupẹlu, e ma se fun won ni ewe tutu lẹsẹkẹsẹ; "
-                    "e gbodo sa ewe na si iboji fun wakati merin si mefa ki o le rọ die, ki ikun won ma baa wu tabi gbaa."
+                    "Ẹ̀yin olùtọ́jú ehoro olókìkí! Ẹ gbọ́ ìmọ̀ràn pàtàkì: Ooru tí ó kọjá ìwọ̀n máa ń ba agbára akọ ehoro jẹ́ fún ọ̀sẹ̀ mẹ́fà sí mẹ́jọ. "
+                    "Ẹ gbé ìgò omi yìnyín sínú kéejì wọn ní ọ̀sán kí ara wọn le tútù. Pẹ̀lúpẹ̀lù, ẹ má ṣe fún wọn ní ewé tútù lẹ́sẹ̀kẹsẹ̀; "
+                    "ẹ gbọdọ̀ sá ewé náà sí ibòji fún wákàtí mẹ́rin sí mẹ́fà kí ó le rọ díẹ̀, kí ikùn wọn má bàa wú tàbí gbá."
                 ),
                 "english_translation": (
                     "Rabbit keepers: Excessive tropical heat impairs buck fertility for 6 to 8 weeks. Place frozen bottles inside cages during peak hours for cooling. "
@@ -1332,6 +1332,40 @@ def render_research_copilot():
             lang_code, tld = get_gtts_lang(lang_choice)
             spoken_mp3 = synthesize_radio_voice(broadcast_data['audio_script'], lang_code=lang_code, tld=tld)
             
+            is_tonal_lang = "yoruba" in lang_choice.lower() or "igbo" in lang_choice.lower()
+            if is_tonal_lang:
+                if is_fr:
+                    st.markdown('''
+<div style="background: #FFFBEB; border-left: 4px solid #F59E0B; border-radius: 6px; padding: 9px 12px; margin: 6px 0 10px 0;">
+    <div style="font-size: 0.80rem; font-weight: 700; color: #92400E; display: flex; align-items: center; gap: 5px;">
+        <span>⚠️</span> <span>Avis Vocal : Modèle Tonal Indigène (Dò-Re-Mí)</span>
+    </div>
+    <div style="font-size: 0.75rem; color: #78350F; line-height: 1.4; margin-top: 3px;">
+        Le synthétiseur standard gTTS utilise un rendu phonétique anglais par défaut.<br>
+        👉 <b>Pour activer les intonations tonales authentiques</b>, cliquez ci-dessous sur <b>'📢 Read Aloud on Device Speaker'</b> (moteur <code>yo-NG</code> natif de votre téléphone) ou activez <b>YarnGPT / ElevenLabs</b>.
+    </div>
+</div>
+''', unsafe_allow_html=True)
+                else:
+                    st.markdown('''
+<div style="background: #FFFBEB; border-left: 4px solid #F59E0B; border-radius: 6px; padding: 9px 12px; margin: 6px 0 10px 0;">
+    <div style="font-size: 0.80rem; font-weight: 700; color: #92400E; display: flex; align-items: center; gap: 5px;">
+        <span>⚠️</span> <span>Voice Model Notice: Tonal Intonation (Dò-Re-Mí)</span>
+    </div>
+    <div style="font-size: 0.75rem; color: #78350F; line-height: 1.4; margin-top: 3px;">
+        Standard Google gTTS lacks native tonal acoustic models for Yoruba and Igbo (playing an English phonetic fallback).<br>
+        👉 <b>For authentic native pronunciation</b>, tap <b>'📢 Read Aloud on Device Speaker'</b> below (requests your device's native <code>yo-NG</code> voice engine) or configure <b>YarnGPT / ElevenLabs</b>.
+    </div>
+</div>
+''', unsafe_allow_html=True)
+            else:
+                status_txt = "🟢 Moteur Vocal Indigène Natif Actif (Acoustique Régionale Google)" if is_fr else "🟢 Native Indigenous Acoustic Voice Active (Regional Speech Engine)"
+                st.markdown(f'''
+<div style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 6px; padding: 7px 12px; margin: 5px 0 9px 0;">
+    <div style="font-size: 0.78rem; font-weight: 700; color: #166534;">{status_txt}</div>
+</div>
+''', unsafe_allow_html=True)
+
             if spoken_mp3:
                 st.audio(spoken_mp3, format="audio/mp3")
                 st.caption(f"🎙️ **Live Vernacular Voice Stream Active** ({lang_choice} • Full Audio Broadcast)")
@@ -1342,7 +1376,18 @@ def render_research_copilot():
             
             # Browser-based speech button (Web Speech API) as instant client-side playback
             safe_script = broadcast_data['audio_script'].replace("'", "\\'").replace('"', '\\"').replace("\n", " ")
-            bcp47 = "ha-NG" if "hausa" in lang_choice.lower() else ("sw-KE" if "swahili" in lang_choice.lower() else ("fr-FR" if "français" in lang_choice.lower() else "en-NG"))
+            if "yoruba" in lang_choice.lower():
+                bcp47 = "yo-NG"
+            elif "igbo" in lang_choice.lower():
+                bcp47 = "ig-NG"
+            elif "hausa" in lang_choice.lower():
+                bcp47 = "ha-NG"
+            elif "swahili" in lang_choice.lower():
+                bcp47 = "sw-KE"
+            elif "français" in lang_choice.lower() or "french" in lang_choice.lower():
+                bcp47 = "fr-FR"
+            else:
+                bcp47 = "en-NG" 
             
             st.markdown(f'''
 <div style="margin: 8px 0 12px 0; display: flex; gap: 8px; flex-wrap: wrap;">
@@ -1368,6 +1413,15 @@ def render_research_copilot():
     </button>
 </div>
 ''', unsafe_allow_html=True)
+
+            with st.expander("🎙️ African Voice AI & Tonal Models (YarnGPT / ElevenLabs)", expanded=False):
+                st.markdown(
+                    "AgroBiometrix supports studio-grade indigenous voice models via **YarnGPT** (dedicated Nigerian speech models for Yorùbá, Ìgbò, Hausa, Pidgin) "
+                    "and **ElevenLabs Multilingual v2**."
+                )
+                st.info(
+                    "💡 **How to activate in production**: Add your YarnGPT or ElevenLabs API key in **Module 15 (API Hub)** to upgrade rural radio advisories from web fallback to authentic studio voiceover."
+                )
 
             with st.expander("🔔 Play Radio Station Chime Tone (Marimba Jingle)", expanded=False):
                 jingle_wav = generate_radio_jingle()

@@ -37,10 +37,12 @@ import importlib
 import config
 import assets.styles
 import core.i18n
+import modules.mod1_copilot
 try:
     importlib.reload(config)
     importlib.reload(assets.styles)
     importlib.reload(core.i18n)
+    importlib.reload(modules.mod1_copilot)
 except Exception:
     pass
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS

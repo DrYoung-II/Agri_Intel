@@ -1301,9 +1301,24 @@ def render_research_copilot():
 
         st.info(f"**Field Context**: {selected_scenario['context']}")
 
-        # Language Selector
+        # Language Selector - High-Visibility Horizontal Radio Bar (One-Click Audio Switch)
         avail_langs = list(selected_scenario["languages"].keys())
-        lang_choice = st.selectbox("Select Target Indigenous African Language / Dialect:", avail_langs, index=0)
+        default_idx = 0
+        if is_fr:
+            for idx, l in enumerate(avail_langs):
+                if "français" in l.lower() or "french" in l.lower():
+                    default_idx = idx
+                    break
+
+        lang_label = "📻 **Choisissez la Langue de Diffusion (Cliquez pour Écouter le Bulletin) :**" if is_fr else "📻 **Select Broadcast Language (Click any language to load & play audio):**"
+        lang_choice = st.radio(
+            lang_label,
+            options=avail_langs,
+            index=default_idx,
+            horizontal=True,
+            key="radio_indigenous_lang_selector",
+            help="Bascule instantanément le lecteur audio, la transcription et la traduction dans la langue sélectionnée" if is_fr else "Instantly switches the audio player, transcript, and verified translation to the selected language."
+        )
         broadcast_data = selected_scenario["languages"][lang_choice]
 
         # Radio Station Studio Box

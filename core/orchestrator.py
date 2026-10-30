@@ -589,20 +589,43 @@ def rule_based_agent_synthesis(query: str, selected_agents: list = None, active_
     geo = detect_target_geography(query, active_region=active_region)
     if geo.get("is_uncalibrated"):
         country_name = geo.get("uncalibrated_name", "the requested region")
+        cur_lang = kwargs.get("lang") or ""
+        if not cur_lang:
+            try:
+                import streamlit as st
+                cur_lang = st.session_state.get("app_lang", "en")
+            except Exception:
+                cur_lang = "en"
+
+        if cur_lang == "fr":
+            msg = (
+                f"⚠️ **Avis de Calibration Géographique** : AgroBiometrix est spécifiquement étalonné pour les zones agro-écologiques subsahariennes. "
+                f"Sa base de connaissances empirique hors-ligne ne dispose pas actuellement de données étalonnées pour **{country_name}** sous cette requête (*'{query}'*).\n\n"
+                "Afin de préserver l'intégrité scientifique et d'éviter toute inadéquation géographique, les recommandations hors-ligne pour les zones non étalonnées sont suspendues."
+            )
+            sugg = (
+                "💡 **Action Recommandée** :\n"
+                "• Basculez sur l'**🟢 API Google Gemini en Direct** ci-dessus pour activer le raisonnement agronomique mondial en temps réel.\n"
+                "• Ou formulez votre question pour un pays subsaharien (ex. Mali, Sénégal, Côte d'Ivoire, Cameroun, RDC, Burkina Faso, Guinée, Nigeria, etc.) ou sélectionnez un contexte régional dans la barre latérale."
+            )
+        else:
+            msg = (
+                f"⚠️ **Geographical Calibration Notice**: AgroBiometrix is specifically calibrated for Sub-Saharan agro-ecological zones. "
+                f"Its offline empirical knowledge base does not currently provide calibrated datasets for **{country_name}** under this specific inquiry (*'{query}'*).\n\n"
+                "To uphold scientific integrity and prevent geographic mismatch or false country substitution, offline recommendations for foreign/uncalibrated locations are withheld."
+            )
+            sugg = (
+                "💡 **Recommended Action** :\n"
+                "• Switch the **Select Engine** dropdown above to **🟢 Live Google Gemini API** for live global agricultural reasoning.\n"
+                "• Alternatively, frame your query for any Sub-Saharan African country (e.g., Nigeria, Ghana, Kenya, Mali, South Africa, Uganda, Tanzania, Senegal, Côte d'Ivoire, Cameroon, Ethiopia, Zimbabwe, Zambia), or select a regional context from the sidebar."
+            )
+
         return {
             "unsupported": True,
             "selected_agents": [],
             "agent_outputs": {},
-            "message": (
-                f"⚠️ **Geographical Calibration Notice**: AgroBiometrix is specifically calibrated for Sub-Saharan agro-ecological zones. "
-                f"Its offline empirical knowledge base does not currently provide calibrated datasets for **{country_name}** under this specific inquiry (*'{query}'*).\n\n"
-                "To uphold scientific integrity and prevent geographic mismatch or false country substitution, offline recommendations for foreign/uncalibrated locations are withheld."
-            ),
-            "suggestion": (
-                "💡 **Recommended Action**:\n"
-                "• Switch the **Select Engine** dropdown above to **🟢 Live Google Gemini API**, **🧠 Live OpenAI API**, or **⚡ Live Groq API** for live global agricultural reasoning.\n"
-                "• Alternatively, frame your query for any Sub-Saharan African country (e.g., Nigeria, Ghana, Kenya, Mali, South Africa, Uganda, Tanzania, Senegal, Côte d'Ivoire, Cameroon, Ethiopia, Zimbabwe, Zambia), or select a regional context from the sidebar."
-            ),
+            "message": msg,
+            "suggestion": sugg,
             "final_synthesis": ""
         }
 

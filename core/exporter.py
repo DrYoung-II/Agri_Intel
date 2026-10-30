@@ -437,43 +437,57 @@ def render_download_buttons(
     key_prefix: str = "dl"
 ):
     """
-    Renders 3 publication-ready download buttons in Streamlit:
+    Renders 3 publication-ready download buttons in Streamlit with automatic French/English localization:
     1. PDF (.pdf)
     2. Microsoft Word (.docx)
     3. Markdown (.md)
     """
-    st.markdown("##### 📥 Export Document in Publication Formats:")
+    is_fr = False
+    try:
+        import streamlit as st
+        is_fr = st.session_state.get("app_lang", "en") == "fr"
+    except Exception:
+        pass
+
+    hdr = "##### 📥 Exporter le Document aux Formats Officiels :" if is_fr else "##### 📥 Export Document in Publication Formats:"
+    pdf_lbl = "📄 Télécharger le PDF (.pdf)" if is_fr else "📄 Download PDF (.pdf)"
+    docx_lbl = "📝 Télécharger Word (.docx)" if is_fr else "📝 Download Word (.docx)"
+    md_lbl = "📋 Télécharger Markdown (.md)" if is_fr else "📋 Download Markdown (.md)"
+
+    st.markdown(hdr)
     col1, col2, col3 = st.columns(3)
     
     with col1:
         try:
             pdf_bytes = markdown_to_pdf(content_text, title=title)
             st.download_button(
-                label="📄 Download PDF (.pdf)",
+                label=pdf_lbl,
                 data=pdf_bytes,
                 file_name=f"{filename_prefix}.pdf",
                 mime="application/pdf",
                 key=f"{key_prefix}_pdf"
             )
         except Exception as e:
-            st.caption(f"PDF export error: {e}")
+            err_msg = f"Erreur d'export PDF : {e}" if is_fr else f"PDF export error: {e}"
+            st.caption(err_msg)
             
     with col2:
         try:
             docx_bytes = markdown_to_docx(content_text, title=title)
             st.download_button(
-                label="📝 Download Word (.docx)",
+                label=docx_lbl,
                 data=docx_bytes,
                 file_name=f"{filename_prefix}.docx",
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 key=f"{key_prefix}_docx"
             )
         except Exception as e:
-            st.caption(f"Word export error: {e}")
+            err_msg = f"Erreur d'export Word : {e}" if is_fr else f"Word export error: {e}"
+            st.caption(err_msg)
             
     with col3:
         st.download_button(
-            label="📋 Download Markdown (.md)",
+            label=md_lbl,
             data=content_text.encode("utf-8"),
             file_name=f"{filename_prefix}.md",
             mime="text/markdown",

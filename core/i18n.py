@@ -182,6 +182,7 @@ TRANSLATIONS = {
 
 # Translated Agent Names Dictionary
 AGENT_NAMES_FR = {
+    # Core Specialist Roles
     "Soil & Edaphology Specialist": "Spécialiste Sols & Édaphologie",
     "Plant Breeder & Geneticist": "Généticien & Sélectionneur Végétal",
     "Agronomist & Crop Management": "Agronome & Conduite des Cultures",
@@ -198,8 +199,120 @@ AGENT_NAMES_FR = {
     "Cocoa & Tree Crops Agronomist": "Agronome Cultures Pérennes & Cacao",
     "Cassava & Root Crops Agronomist": "Agronome Manioc & Plantes à Racines",
     "Rabbits & Cuniculture Specialist": "Spécialiste Cuniculture (Élevage Cunicole)",
-    "Poultry Production & Bioclimatics Specialist": "Spécialiste Aviculture & Bioclimatologie"
+    "Poultry Production & Bioclimatics Specialist": "Spécialiste Aviculture & Bioclimatologie",
+
+    # Dispatched Multi-Agent Swarm Names
+    "Veterinary Pathology & Epidemiology Agent": "Agent de Pathologie Vétérinaire & Épidémiologie",
+    "Breeding Herd Health & Reproductive Physiology Agent": "Agent de Santé du Troupeau & Physiologie de Reproduction",
+    "Agro-Climatology & Vector Dynamics Agent": "Agent d'Agro-Climatologie & Dynamique des Vecteurs",
+    "Agro-Climatology & Vector Dynamics Agent (North-East / Regional)": "Agent d'Agro-Climatologie & Vecteurs Régionaux",
+    "Preventive Biosecurity & NVRI Vaccination Protocol Agent": "Agent de Biosécurité Préventive & Protocoles Vaccinaux",
+    "Preventive Biosecurity & Vaccination Protocol Agent": "Agent de Biosécurité Préventive & Protocoles Vaccinaux",
+    "Herd Economics & Production Loss Agent": "Agent d'Économie Pastorale & Pertes de Production",
+    "Institutional Evidence Agent": "Agent de Preuves Scientifiques Institutionnelles",
+    "Animal Genetics & Breed Architecture Agent": "Agent de Génétique Animale & Architecture des Races",
+    "Animal Genetics & Breeding Agent": "Agent de Génétique & Sélection Animale",
+    "Breed Genetics & Conformation Agent": "Agent de Génétique Raciale & Conformation",
+    "Nutrition & Feed Management Agent": "Agent de Nutrition Animale & Conduite Alimentaire",
+    "Ruminant Nutrition & Feed Science Agent": "Agent de Nutrition des Ruminants & Zootechnie",
+    "Rumen Microbiology & Urea Ammoniation Agent": "Agent de Microbiologie Ruminale & Traitement à l'Urée",
+    "Pasture & Maternal Nutrition Agent": "Agent des Pâturages & Nutrition Maternelle",
+    "Fodder Conservation & Nutrition Agent": "Agent de Conservation des Fourrages & Ensilage",
+    "Bioenergetic Feeding & FCR Optimization Agent": "Agent de Nutrition Bioénergétique & Optimisation de l'IC",
+    "Non-Conventional Feed Formulation Agent": "Agent de Formulation d'Aliments Non-Conventionnels",
+    "Caprine & Ovine Respiratory Complex Agent": "Agent du Complexe Respiratoire Caprin & Ovin",
+    "Small Ruminant Epidemiology & Viral Pathology Agent": "Agent d'Épidémiologie & Virologie des Petits Ruminants",
+    "Small Ruminant Pathology & PPR Defense Agent": "Agent de Pathologie des Petits Ruminants & Défense contre la PPR",
+    "Parasitology & Helminth Resistance Agent": "Agent de Parasitologie & Résistance aux Helminthes",
+    "Avian Pathology & Infectious Disease Agent": "Agent de Pathologie Aviaire & Maladies Infectieuses",
+    "Poultry Health & Biosecurity Agent": "Agent de Santé Avicole & Biosécurité",
+    "Poultry Science & Housing Agent": "Agent de Zootechnie Avicole & Bâtiments d'Élevage",
+    "Bioclimatic Housing & Airborne Vector Agent": "Agent de Bâtiments Bioclimatiques & Vecteurs Aériens",
+    "Tropical Housing & Thermal Cooling Agent": "Agent d'Habitat Tropical & Refroidissement Thermique",
+    "Tropical Climate & Heat Stress Agent": "Agent de Climat Tropical & Gestion du Stress Thermique",
+    "Colony Thermoregulation & Hive Shading Agent": "Agent de Thermorégulation des Colonies & Ombrage des Ruches",
+    "Cuniculture Science & Housing Agent": "Agent des Sciences Cunicoles & Aménagement des Clapiers",
+    "Rabbit Health & Disease Defense Agent": "Agent de Santé Cunicole & Prévention Sanitaire",
+    "Rabbit Nutrition & Forage Agent": "Agent de Nutrition Cunicole & Gestion des Fourrages",
+    "Porcine Pathology & Epizootiology Agent": "Agent de Pathologie Porcine & Épizootiologie",
+    "Swine Biosecurity & ASFV Exclusion Agent": "Agent de Biosécurité Porcine & Prévention PPA",
+    "Aquaculture Engineering & Water Quality Agent": "Agent d'Ingénierie Aquacole & Qualité de l'Eau",
+    "Fish Pathology & Bacterial Disease Agent": "Agent de Pathologie Piscicole & Maladies Bactériennes",
+    "Hatchery Phenomics & Fingerling Grading Agent": "Agent d'Écloserie & Calibrage des Alevins",
+    "Heliculture Systems & Gastropod Biology Agent": "Agent des Systèmes Hélicicoles & Biologie des Escargots",
+    "Microclimate Relative Humidity & Aestivation Agent": "Agent de Microclimat, Hygrométrie & Estivation",
+    "Mantle Biomineralization & Calcium Nutrition Agent": "Agent de Biominéralisation & Nutrition Calcique",
+    "Apiculture Science & Apiary Architecture Agent": "Agent des Sciences Apicoles & Architecture du Rucher",
+    "Absconding Prevention & Floral Calendar Agent": "Agent de Prévention de la Désertion & Calendrier Apicole",
+    "Honey Quality & Moisture Refractometry Agent": "Agent de Qualité du Miel & Réfractométrie",
+    "Cereal Agronomy & Crop Physiology Agent": "Agent d'Agronomie des Céréales & Physiologie Végétale",
+    "Pathology & Fall Armyworm Defense Agent": "Agent de Phytopathologie & Lutte contre la Légionnaire",
+    "Root & Tuber Agronomy Agent": "Agent d'Agronomie des Plantes à Racines & Tubercules",
+    "Viral Disease Defense Agent (CMD/CBSD)": "Agent de Lutte contre les Viroses (CMD/CBSD)",
+    "Grain Legume Physiology Agent": "Agent de Physiologie des Légumineuses à Grain",
+    "Pod Borer & Insect Defense Agent": "Agent de Protection contre le Foreur des Gousses",
+    "Biological Nitrogen Fixation Agent": "Agent de Fixation Biologique de l'Azote",
+    "Horticultural Pathology & Disease Defense Agent": "Agent de Pathologie Horticole & Protection Sanitaire",
+    "Canopy Architecture & Shade Ecology Agent": "Agent d'Architecture Foliaire & Agroforesterie",
+    "Phytopathology & Black Pod Defense Agent": "Agent de Phytopathologie & Lutte contre la Pourriture Brune",
+    "Perennial Tree Crop Physiology Agent": "Agent de Physiologie des Cultures Pérennes",
+    "Soil Chemistry & Mineral Fertility Agent": "Agent de Chimie des Sols & Fertilité Minérale",
+    "Soil Fertility & Balanced ISFM Agent": "Agent de Fertilité des Sols & GIFS Équilibrée",
+    "Integrated Soil Fertility Management (ISFM) Agent": "Agent de Gestion Intégrée de la Fertilité des Sols",
+    "Precision Micro-Dosing & Liming Agent": "Agent de Micro-Dosage de Précision & Chaulage",
+    "Edaphic Microbiome & Mycorrhizal Agent": "Agent du Microbiome Édaphique & Mycorhizes",
+    "Phosphorus Priming & Edaphic Agent": "Agent d'Apport Phospaté & Dynamique Édaphique",
+    "Soil Potassium & Edaphic Nutrition Agent": "Agent du Potassium Édaphique & Nutrition Minérale",
+    "Soil Mineral Nutrition & Mulching Agent": "Agent de Nutrition Minérale & Paillage",
+    "Soil Fertility & Calcium Nutrition Agent": "Agent de Fertilité des Sols & Nutrition Calcique",
+    "Substrate Formulation & Soil Microbiology Agent": "Agent de Formulation des Substrats & Microbiologie",
+    "Agro-Climatology & Drought Escape Agent": "Agent d'Agro-Climatologie & Échappement à la Sécheresse",
+    "Agro-Climatic Thermal Resilience Agent": "Agent de Résilience Thermique Agro-Climatique",
+    "Agro-Climatology & Water Security Agent": "Agent d'Agro-Climatologie & Sécurité Hydrique",
+    "Agro-Climatology & Grazing Agent": "Agent d'Agro-Climatologie & Conduite Pastorale",
+    "Agro-Climatic Bulking Agent": "Agent de Conditions Agro-Climatiques de Tubérisation",
+    "Agro-Climatology & Protected Cultivation Agent": "Agent d'Agro-Climatologie & Cultures Protégées",
+    "Flock Mortality & Enterprise Economics Agent": "Agent d'Économie Avicole & Réduction de la Mortalité",
+    "Farm Economics & Festive Market Agent": "Agent d'Économie d'Exploitation & Marchés Festifs",
+    "Feed Cost & Gross Margin Economics Agent": "Agent du Coût Alimentaire & Marges Brutes",
+    "Piggery Enterprise Economics Agent": "Agent d'Économie de l'Entreprise Porcine",
+    "Aquaculture Commercial Economics Agent": "Agent d'Économie Commerciale Aquacole",
+    "Heliculture Enterprise Economics Agent": "Agent d'Économie de l'Entreprise Hélicicole",
+    "Beekeeping Value Chain Economics Agent": "Agent de la Chaîne de Valeur Apicole",
+    "Grain Commodity Economics Agent": "Agent d'Économie de la Filière Céréalière",
+    "Starch Processing & Market Economics Agent": "Agent de Transformation Féculière & Marchés",
+    "Grain Legume Market Economics Agent": "Agent du Marché des Légumineuses à Grain",
+    "Value Chain & Fresh Produce Market Agent": "Agent des Filières & Marchés Maraîchers",
+    "Export Quality & EUDR Compliance Agent": "Agent de Qualité Export & Conformité RDUE",
+    "Fertilizer Input Economics Agent": "Agent d'Économie des Intrants & Engrais",
+    "Livestock Economics Agent": "Agent d'Économie de l'Élevage",
+    "Livestock Valuation & Pedigree Economics Agent": "Agent de Valorisation du Bétail & Pédigrée",
+    "Ram Fattening & Festive Market Agent": "Agent d'Embouche Ovine & Marché du Tabaski",
+    "Micro-Livestock Economics Agent": "Agent d'Économie du Mini-Élevage",
+    "Vaccination Protocol & Cold-Chain Agent": "Agent de Protocoles Vaccinaux & Chaîne du Froid",
+    "Biosecurity & NVRI Homologous Vaccine Agent": "Agent de Biosécurité & Vaccins Homologues",
+    "Electrolyte & Nutritional Support Agent": "Agent de Réhydratation & Soutien Électrolytique",
+    "Entomology & Insect Vector Control Agent": "Agent d'Entomologie & Lutte Anti-Vectorielle",
+    "Reproductive Technologies & AI Agent": "Agent des Biotechnologies de la Reproduction & IA",
+    "Rangeland Forage & Legume Agronomy Agent": "Agent des Pâturages & Légumineuses Fourragères",
+    "Rangeland & Soil Agent": "Agent des Parcours Pastoraux & Sols",
+    "Pathology, Biosecurity & Integrated Protection Agent": "Agent de Pathologie, Biosécurité & Protection Intégrée",
+    "Evidence & Research Standards Agent": "Agent de Rigueur & Normes de Recherche",
+    "Evidence & Standards Agent": "Agent de Preuves & Standards Scientifiques",
+    "Climate & Agro-Ecosystems Agent": "Agent Climat & Agro-Écosystèmes",
+    "Climate & Bioclimatic Housing Agent": "Agent Climat & Bâtiments Bioclimatiques",
+    "Livestock & Pastoral Science Agent": "Agent des Sciences Pastorales & de l'Élevage",
+    "Soil Edaphic & Nutritional Dynamics Agent": "Agent de Dynamique Édaphique & Nutritionnelle",
+
+    # Generic & Single-Domain Agents
+    "Genetics Agent": "Agent de Génétique & Sélection",
+    "Soil Agent": "Agent des Sols & Agronomie Édaphique",
+    "Climate Agent": "Agent d'Agro-Météorologie & Climat",
+    "Economics Agent": "Agent d'Économie & Analyse des Filières",
+    "Evidence Agent": "Agent de Preuves & Synthèse Scientifique",
+    "Crop Science Agent": "Agent des Sciences Végétales & Agronomie"
 }
+
 
 
 def get_current_lang() -> str:
@@ -229,9 +342,30 @@ def t(key: str, lang: str = None) -> str:
 
 
 def translate_agent_name(agent_name: str, lang: str = None) -> str:
-    """Translates an agent title to French if lang == 'fr'."""
+    """
+    Translates an agent title to French if lang == 'fr', with comprehensive exact-match
+    lookup across all 14 domains and intelligent dynamic pattern translation.
+    """
     if not lang:
         lang = get_current_lang()
     if lang == "fr":
-        return AGENT_NAMES_FR.get(agent_name, agent_name)
+        if agent_name in AGENT_NAMES_FR:
+            return AGENT_NAMES_FR[agent_name]
+        
+        # Dynamic prefix replacements for contextual Swarm agents
+        if agent_name.startswith("Institutional Evidence Agent ("):
+            return agent_name.replace("Institutional Evidence Agent (", "Agent de Preuves Institutionnelles (")
+        if agent_name.startswith("Institutional Standards Agent ("):
+            return agent_name.replace("Institutional Standards Agent (", "Agent de Normes Institutionnelles (")
+        if agent_name.startswith("Regional Agro-Climatology & Risk Agent ("):
+            return agent_name.replace("Regional Agro-Climatology & Risk Agent (", "Agent d'Agro-Climatologie & Risques Régionaux (")
+        if agent_name.startswith("Commodity Value Chain & Farmgate Economics Agent ("):
+            return agent_name.replace("Commodity Value Chain & Farmgate Economics Agent (", "Agent de la Chaîne de Valeur & Économie Rurale (")
+        if agent_name.startswith("Specialist Agronomic & Bio-Systems Agent ("):
+            return agent_name.replace("Specialist Agronomic & Bio-Systems Agent (", "Agent Spécialiste Agro-Biosystèmes (")
+        
+        # General fallback if title ends with ' Agent'
+        if agent_name.endswith(" Agent"):
+            base = agent_name[:-6]
+            return f"Agent de {base}"
     return agent_name

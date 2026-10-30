@@ -45,7 +45,7 @@ except Exception:
     pass
 from config import APP_NAME, APP_SUBTITLE, APP_TAGLINE, APP_MOTTO, FOUNDER_STORY, THEME, PAN_AFRICAN_REGIONS
 from assets.styles import LEAF_GREEN_CSS
-from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key
+from core.orchestrator import rule_based_agent_synthesis, call_live_llm_orchestration, AGENT_DESCRIPTIONS, validate_gemini_key, get_gemini_api_key, set_gemini_api_key, repair_markdown_math
 from core.exporter import render_download_buttons
 from core.i18n import t, get_current_lang
 try:
@@ -505,14 +505,15 @@ def render_orchestrator_home():
                 ])
 
                 with tab_advisory:
-                    st.markdown(result["final_synthesis"])
+                    clean_synthesis = repair_markdown_math(result["final_synthesis"])
+                    st.markdown(clean_synthesis)
                     
                     st.markdown("---")
                     clean_title = re.sub(r'[^a-zA-Z0-9_]', '_', user_query[:30]).strip('_')
                     file_prefix = f"AgroBiometrix_{'Avis' if cur_lang == 'fr' else 'Advisory'}_{clean_title}"
                     report_title = f"{'Avis Scientifique AgroBiometrix' if cur_lang == 'fr' else 'AgroBiometrix Scientific Advisory'}: {user_query[:60]}"
                     render_download_buttons(
-                        content_text=result["final_synthesis"],
+                        content_text=clean_synthesis,
                         filename_prefix=file_prefix,
                         title=report_title,
                         key_prefix="orch_advisory"
@@ -525,6 +526,7 @@ def render_orchestrator_home():
                     for agent_name in result["selected_agents"]:
                         out_text = result["agent_outputs"].get(agent_name, "Consulté et intégré à la synthèse." if cur_lang == "fr" else "Consulted and contributed to synthesis.")
                         fr_agent = translate_agent_name(agent_name, cur_lang)
+                        clean_out = repair_markdown_math(out_text)
                         st.markdown(f"""
 <div class="agri-card" style="border-left: 4px solid #2E7D32; margin-bottom: 1rem; background: #FAFCFA;">
     <div style="font-size: 0.95rem; font-weight: 700; color: #1B5E20; margin-bottom: 0.4rem;">
@@ -532,7 +534,7 @@ def render_orchestrator_home():
     </div>
     <div style="font-size: 0.88rem; color: #1B381E; line-height: 1.5;">
 """, unsafe_allow_html=True)
-                        st.markdown(out_text)
+                        st.markdown(clean_out)
                         st.markdown("</div></div>", unsafe_allow_html=True)
 
 

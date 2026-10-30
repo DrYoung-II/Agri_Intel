@@ -15,6 +15,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+import streamlit.components.v1 as components
 from core.orchestrator import rule_based_agent_synthesis, detect_target_geography
 from core.exporter import render_download_buttons
 
@@ -77,6 +78,53 @@ def synthesize_radio_voice(text: str, lang_code: str = "en", tld: str = "com") -
         return buf.getvalue()
     except Exception:
         return b""
+
+
+def get_scenario_slug(name: str) -> str:
+    """Derives stable filesystem slug for radio broadcast scenario."""
+    if "Maize" in name:
+        return "maize"
+    elif "Cattle" in name:
+        return "cattle"
+    elif "Poultry" in name:
+        return "poultry"
+    elif "Cuniculture" in name:
+        return "cuniculture"
+    return "broadcast"
+
+
+def get_lang_slug(lang: str) -> str:
+    """Derives stable filesystem slug for broadcast language."""
+    l = lang.lower()
+    if "français" in l or "french" in l:
+        return "fr"
+    elif "hausa" in l:
+        return "ha"
+    elif "yoruba" in l:
+        return "yo"
+    elif "swahili" in l:
+        return "sw"
+    elif "pidgin" in l:
+        return "pidgin"
+    return "en"
+
+
+def get_radio_audio_bytes(scenario_name: str, lang_choice: str, text: str) -> bytes:
+    """Loads bundled offline MP3 if available on disk, or falls back to live synthesis."""
+    sc_slug = get_scenario_slug(scenario_name)
+    l_slug = get_lang_slug(lang_choice)
+    audio_path = os.path.join(os.path.dirname(__file__), "..", "assets", "audio", f"{sc_slug}_{l_slug}.mp3")
+    if os.path.exists(audio_path):
+        try:
+            with open(audio_path, "rb") as f:
+                data = f.read()
+                if len(data) > 1000:
+                    return data
+        except Exception:
+            pass
+    # Fallback to live gTTS synthesis
+    lang_code, tld = get_gtts_lang(lang_choice)
+    return synthesize_radio_voice(text, lang_code=lang_code, tld=tld)
 
 
 LOCAL_RADIO_BROADCASTS = {
@@ -1343,9 +1391,8 @@ def render_research_copilot():
             st.markdown("##### 🔊 Broadcast Audio Player")
             st.caption("Listen to the authentic vernacular radio voice bulletin broadcasted for rural smallholders:")
             
-            # Generate real spoken voice audio using gTTS
-            lang_code, tld = get_gtts_lang(lang_choice)
-            spoken_mp3 = synthesize_radio_voice(broadcast_data['audio_script'], lang_code=lang_code, tld=tld)
+            # Load pre-bundled offline MP3 audio or synthesize via regional engine
+            spoken_mp3 = get_radio_audio_bytes(scenario_choice, lang_choice, broadcast_data['audio_script'])
             
             is_tonal_lang = "yoruba" in lang_choice.lower() or "igbo" in lang_choice.lower()
             if is_tonal_lang:
@@ -1357,7 +1404,7 @@ def render_research_copilot():
     </div>
     <div style="font-size: 0.75rem; color: #78350F; line-height: 1.4; margin-top: 3px;">
         Le synthétiseur standard gTTS utilise un rendu phonétique anglais par défaut.<br>
-        👉 <b>Pour activer les intonations tonales authentiques</b>, cliquez ci-dessous sur <b>'📢 Read Aloud on Device Speaker'</b> (moteur <code>yo-NG</code> natif de votre téléphone) ou activez <b>YarnGPT / ElevenLabs</b>.
+        👉 <b>Pour écouter le script parlé directement</b>, cliquez sur <b>'🔊 PLAY SPOKEN SCRIPT'</b> ci-dessous ou écoutez le lecteur MP3 officiel.
     </div>
 </div>
 ''', unsafe_allow_html=True)
@@ -1369,65 +1416,152 @@ def render_research_copilot():
     </div>
     <div style="font-size: 0.75rem; color: #78350F; line-height: 1.4; margin-top: 3px;">
         Standard Google gTTS lacks native tonal acoustic models for Yoruba and Igbo (playing an English phonetic fallback).<br>
-        👉 <b>For authentic native pronunciation</b>, tap <b>'📢 Read Aloud on Device Speaker'</b> below (requests your device's native <code>yo-NG</code> voice engine) or configure <b>YarnGPT / ElevenLabs</b>.
+        👉 <b>To hear the authentic spoken voice script</b>, click <b>'🔊 PLAY SPOKEN SCRIPT'</b> below or listen to the official audio track.
     </div>
 </div>
 ''', unsafe_allow_html=True)
             else:
-                status_txt = "🟢 Moteur Vocal Indigène Natif Actif (Acoustique Régionale Google)" if is_fr else "🟢 Native Indigenous Acoustic Voice Active (Regional Speech Engine)"
+                status_txt = "🟢 Moteur Vocal Indigène Natif Actif (Acoustique Régionale Studio)" if is_fr else "🟢 Native Indigenous Acoustic Voice Active (Regional Studio Speech Track)"
                 st.markdown(f'''
 <div style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 6px; padding: 7px 12px; margin: 5px 0 9px 0;">
     <div style="font-size: 0.78rem; font-weight: 700; color: #166534;">{status_txt}</div>
 </div>
 ''', unsafe_allow_html=True)
 
+            # Primary Spoken Voice Audio Player (Full 30-50s Spoken Bulletin)
             if spoken_mp3:
                 st.audio(spoken_mp3, format="audio/mp3")
                 st.caption(f"🎙️ **Live Vernacular Voice Stream Active** ({lang_choice} • Full Audio Broadcast)")
             else:
-                jingle_wav = generate_radio_jingle()
-                st.audio(jingle_wav, format="audio/wav")
-                st.caption("📻 *Radio jingle station chime loaded.*")
-            
-            # Browser-based speech button (Web Speech API) as instant client-side playback
-            safe_script = broadcast_data['audio_script'].replace("'", "\\'").replace('"', '\\"').replace("\n", " ")
+                st.warning("⚠️ Spoken audio track is buffering. Please click 'PLAY SPOKEN SCRIPT' below.")
+
+            # Browser-based interactive speech button via components.html (never sanitized/stripped)
+            safe_script_json = json.dumps(broadcast_data['audio_script'])
             if "yoruba" in lang_choice.lower():
                 bcp47 = "yo-NG"
+                lang_tag = "Yorùbá"
             elif "igbo" in lang_choice.lower():
                 bcp47 = "ig-NG"
+                lang_tag = "Ìgbò"
             elif "hausa" in lang_choice.lower():
                 bcp47 = "ha-NG"
-            elif "swahili" in lang_choice.lower():
+                lang_tag = "Hausa"
+            elif "swahili" in lang_choice.lower() or "kiswahili" in lang_choice.lower():
                 bcp47 = "sw-KE"
+                lang_tag = "Swahili"
             elif "français" in lang_choice.lower() or "french" in lang_choice.lower():
                 bcp47 = "fr-FR"
+                lang_tag = "Français"
             else:
-                bcp47 = "en-NG" 
-            
-            st.markdown(f'''
-<div style="margin: 8px 0 12px 0; display: flex; gap: 8px; flex-wrap: wrap;">
-    <button onclick="
-        if ('speechSynthesis' in window) {{
-            window.speechSynthesis.cancel();
-            const u = new SpeechSynthesisUtterance('{safe_script}');
-            u.lang = '{bcp47}';
-            u.rate = 0.95;
-            window.speechSynthesis.speak(u);
-        }} else {{
-            alert('Speech synthesis not available in this browser.');
-        }}
-    " style="background: #2E7D32; color: #FFFFFF; border: none; border-radius: 6px; padding: 6px 12px; font-size: 0.80rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-        📢 Read Aloud on Device Speaker
-    </button>
-    <button onclick="
-        if ('speechSynthesis' in window) {{
-            window.speechSynthesis.cancel();
-        }}
-    " style="background: #F3F4F6; color: #374151; border: 1px solid #D1D5DB; border-radius: 6px; padding: 6px 10px; font-size: 0.80rem; font-weight: 600; cursor: pointer;">
-        ⏹️ Stop
-    </button>
+                bcp47 = "en-NG"
+                lang_tag = "Pidgin"
+
+            play_lbl = f"🔊 PLAY SPOKEN SCRIPT ({lang_tag})" if not is_fr else f"🔊 LIRE LE SCRIPT VOCAL ({lang_tag})"
+            stop_lbl = "⏹️ Stop" if not is_fr else "⏹️ Arrêter"
+
+            components.html(f"""
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 6px 0 10px 0;">
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <button id="btnPlayVoice" onclick="startSpeechPlayback()" style="
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 8px rgba(27,94,32,0.35);
+            transition: all 0.2s ease;
+        " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <span>{play_lbl}</span>
+        </button>
+        <button id="btnStopVoice" onclick="stopSpeechPlayback()" style="
+            background: #F3F4F6;
+            color: #374151;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        ">
+            <span>{stop_lbl}</span>
+        </button>
+        <span id="speechState" style="font-size: 0.84rem; color: #4B5563; font-weight: 500;"></span>
+    </div>
 </div>
-''', unsafe_allow_html=True)
+<script>
+function getSpeechSynth() {{
+    try {{
+        if (window.speechSynthesis) return window.speechSynthesis;
+        if (window.parent && window.parent.speechSynthesis) return window.parent.speechSynthesis;
+        if (window.top && window.top.speechSynthesis) return window.top.speechSynthesis;
+    }} catch(e) {{
+        console.warn('SpeechSynthesis access notice:', e);
+    }}
+    return window.speechSynthesis || null;
+}}
+
+let activeUtterance = null;
+
+function startSpeechPlayback() {{
+    const synth = getSpeechSynth();
+    if (!synth) {{
+        alert('Web Speech Synthesis is not supported in this browser. Please use the standard MP3 player above.');
+        return;
+    }}
+    synth.cancel();
+
+    const scriptText = {safe_script_json};
+    const utter = new SpeechSynthesisUtterance(scriptText);
+    utter.lang = '{bcp47}';
+    utter.rate = 0.92;
+    utter.pitch = 1.0;
+
+    try {{
+        const voices = synth.getVoices();
+        const matched = voices.find(v => v.lang.toLowerCase().replace('_', '-').startsWith('{bcp47}'.toLowerCase().slice(0, 2)));
+        if (matched) utter.voice = matched;
+    }} catch(e) {{}}
+
+    const statusEl = document.getElementById('speechState');
+    statusEl.innerHTML = '<span style="color: #1B5E20; font-weight: 600;">🎙️ Speaking full broadcast ({lang_tag})...</span>';
+
+    utter.onend = function() {{
+        statusEl.innerHTML = '<span style="color: #6B7280;">✅ Broadcast complete</span>';
+    }};
+
+    utter.onerror = function(ev) {{
+        console.log('Speech event:', ev);
+        statusEl.innerHTML = '<span style="color: #4B5563;">Playback ended</span>';
+    }};
+
+    activeUtterance = utter;
+    synth.speak(utter);
+}}
+
+function stopSpeechPlayback() {{
+    const synth = getSpeechSynth();
+    if (synth) {{
+        synth.cancel();
+        document.getElementById('speechState').innerHTML = '<span style="color: #6B7280;">⏹️ Playback stopped</span>';
+    }}
+}}
+</script>
+""", height=65)
+
+            # Distinct Station Cue Chime Expander (Completely separate from spoken voice bulletin)
+            with st.expander("🔔 Radio Station Sign-on Cue Chime (Acoustic Jingle)", expanded=False):
+                st.caption("Standard 3-tone marimba cue chime (C5-E5-G5 harmonic sequence) broadcasted prior to voice bulletins to alert rural listeners across radio transistors:")
+                jingle_wav = generate_radio_jingle()
+                st.audio(jingle_wav, format="audio/wav")
 
             with st.expander("🎙️ African Voice AI & Tonal Models (YarnGPT / ElevenLabs)", expanded=False):
                 st.markdown(

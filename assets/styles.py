@@ -851,65 +851,96 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
 }
 
 @media (max-width: 768px) {
-    /* Optimize Streamlit viewport margins on mobile phones */
+    /* Generous top clearance below Streamlit's fixed floating header (>> sidebar toggle & ⋮ menu) */
     .block-container {
-        padding-top: 1.0rem !important;
-        padding-bottom: 2rem !important;
-        padding-left: 0.65rem !important;
-        padding-right: 0.65rem !important;
+        padding-top: calc(4.75rem + env(safe-area-inset-top, 0px)) !important;
+        padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)) !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
         max-width: 100% !important;
     }
 
-    /* Hero Banner Mobile Styling: One single unified card */
+    /* Hero Banner Mobile Styling: Fully visible, unclipped institutional card */
     .agri-hero-banner {
         border-radius: 12px !important;
-        margin-bottom: 0.80rem !important;
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.90rem !important;
+        overflow: hidden !important;
     }
 
     .agri-hero-main {
-        padding: 12px 12px 10px 12px !important;
+        padding: 12px 14px 12px 14px !important;
         flex-direction: column !important;
         align-items: stretch !important;
         gap: 10px !important;
     }
 
     .agri-hero-identity {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
         gap: 12px !important;
         width: 100% !important;
     }
 
     .agri-hero-logo {
+        width: 48px !important;
+        height: 48px !important;
         padding: 4px !important;
         border-radius: 10px !important;
+        flex-shrink: 0 !important;
     }
 
     .agri-hero-logo img {
-        width: 42px !important;
-        height: 42px !important;
+        width: 40px !important;
+        height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        object-fit: contain !important;
+    }
+
+    .agri-hero-text {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .agri-hero-title-row {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-wrap: wrap !important;
+        line-height: 1.25 !important;
     }
 
     .agri-hero-title {
-        font-size: 1.45rem !important;
+        font-size: 1.38rem !important;
+        line-height: 1.25 !important;
         white-space: nowrap !important;
         word-break: keep-all !important;
         hyphens: none !important;
+        margin: 0 !important;
     }
 
     .agri-hero-pill {
-        font-size: 0.60rem !important;
-        padding: 2px 6px !important;
+        font-size: 0.62rem !important;
+        padding: 2px 7px !important;
+        border-radius: 10px !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
     }
 
     .agri-hero-subtitle {
         font-size: 0.82rem !important;
-        line-height: 1.30 !important;
-        margin-top: 2px !important;
-        margin-bottom: 2px !important;
+        line-height: 1.35 !important;
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+        word-break: break-word !important;
     }
 
     .agri-hero-framework {
         font-size: 0.70rem !important;
-        line-height: 1.30 !important;
+        line-height: 1.35 !important;
+        word-break: break-word !important;
     }
 
     /* Hide redundant desktop right card on small screens */
@@ -975,17 +1006,40 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
         min-height: 44px !important;
     }
 
-    /* Responsive Tabs */
+    /* Responsive Tabs: Smooth horizontal touch scroll, preventing tab cutoff */
+    .stTabs [data-baseweb="tab-list"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        scrollbar-width: thin !important;
+        padding-bottom: 2px !important;
+    }
+
     .stTabs [data-baseweb="tab"] {
         padding: 6px 10px !important;
         font-size: 0.78rem !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
 
-    /* Touch-friendly scrolling for dataframes, tables, and preformatted blocks */
-    [data-testid="stDataFrame"], .stTable, pre {
+    /* Touch-friendly scrolling for dataframes, tables, charts, and preformatted blocks */
+    [data-testid="stDataFrame"], .stTable, div[data-testid="stTable"], .dataframe, table, pre {
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
         max-width: 100% !important;
+    }
+
+    div[data-testid="stPlotlyChart"], div[data-testid="stArrowVegaLiteChart"] {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 
     /* Footer Mobile Responsiveness */
@@ -1010,13 +1064,44 @@ section[data-testid="stSidebar"] [data-testid="stExpander"] [data-testid="stExpa
 
 /* Extra small devices (< 420px) like compact Android phones */
 @media (max-width: 420px) {
-    .agri-hero-title {
-        font-size: 1.30rem !important;
+    .block-container {
+        padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)) !important;
+        padding-left: 0.50rem !important;
+        padding-right: 0.50rem !important;
+    }
+
+    .agri-hero-main {
+        padding: 10px 10px 10px 10px !important;
+        gap: 8px !important;
+    }
+
+    .agri-hero-identity {
+        gap: 10px !important;
+    }
+
+    .agri-hero-logo {
+        width: 42px !important;
+        height: 42px !important;
+        padding: 3px !important;
     }
 
     .agri-hero-logo img {
-        width: 36px !important;
-        height: 36px !important;
+        width: 34px !important;
+        height: 34px !important;
+        max-width: 34px !important;
+        max-height: 34px !important;
+    }
+
+    .agri-hero-title {
+        font-size: 1.25rem !important;
+    }
+
+    .agri-hero-subtitle {
+        font-size: 0.76rem !important;
+    }
+
+    .agri-hero-framework {
+        font-size: 0.68rem !important;
     }
 }
 </style>

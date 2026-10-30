@@ -21,6 +21,8 @@ ENV/
 .env.*
 .streamlit/secrets*
 secrets*
+*.key
+*.pem
 
 
 # IDEs and Editors

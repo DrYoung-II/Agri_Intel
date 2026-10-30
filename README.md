@@ -1,5 +1,14 @@
 # 🌱 AgroBiometrix — The Generative Intelligence Platform for Agriculture
 > **Africa-First, Globally Relevant: The Intelligence Infrastructure Behind Resilient Agriculture**
+>
+> 🌐 **Live Web Application**: [agrobiometrix.streamlit.app](https://agrobiometrix.streamlit.app) • 🇬🇧 **English** & 🇫🇷 **Français** Pan-African Support
+
+---
+
+## 🌍 Pan-African Bilingual & Mobile-First Architecture
+- **🇬🇧 English (GB) & 🇫🇷 Français (FR)**: Native bilingual switch across the entire application — including all 7 unified suites, 14 domain modules, multi-agent query syntheses, founder story, thesis mentor, and document downloads.
+- **📱 Fully Responsive Mobile View**: Precision viewport padding and proportional scaling optimized for compact Android phones and iOS devices without header clipping or horizontal overflow.
+- **📻 Last-Mile Vernacular Radio Advisory**: Interactive rural radio script synthesizer with voice synthesis in Hausa, Yoruba, Igbo, Swahili, Amharic, and French with acoustic advisory chimes.
 
 ---
 
@@ -131,7 +140,7 @@ The platform operates **100% free out of the box** using deterministic offline e
 
 ### Step 1: Open PowerShell / Terminal in Workspace
 ```powershell
-cd "c:\Users\USER\Documents\ML Projects\Agri_Intel"
+cd "c:\Users\USER\Documents\ML Projects\AgroBiometrix"
 ```
 
 ### Step 2: Install Required Dependencies

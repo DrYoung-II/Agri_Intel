@@ -584,7 +584,7 @@ def create_agrobiometrix_pdf():
     story.append(Paragraph(
         "<b>To launch the application at any time in the future:</b><br/>"
         "1. Open PowerShell or Command Prompt in the project directory:<br/>"
-        "&nbsp;&nbsp;&nbsp;&nbsp;<code>cd \"c:\\Users\\USER\\Documents\\ML Projects\\Agri_Intel\"</code><br/>"
+        "&nbsp;&nbsp;&nbsp;&nbsp;<code>cd \"c:\\Users\\USER\\Documents\\ML Projects\\AgroBiometrix\"</code><br/>"
         "2. Install required dependencies:<br/>"
         "&nbsp;&nbsp;&nbsp;&nbsp;<code>python -m pip install -r requirements.txt</code><br/>"
         "3. Launch the Streamlit application:<br/>"

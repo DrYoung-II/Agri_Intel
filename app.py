@@ -62,7 +62,8 @@ from modules.suites import (
     render_suite_agro_ecosystems,
     render_suite_livestock,
     render_suite_policy,
-    render_suite_tools
+    render_suite_tools,
+    render_suite_radio
 )
 
 # -------------------------------------------------------------
@@ -188,7 +189,8 @@ def main():
             t("suite_agro", cur_lang),
             t("suite_livestock", cur_lang),
             t("suite_policy", cur_lang),
-            t("suite_api", cur_lang)
+            t("suite_api", cur_lang),
+            t("suite_radio", cur_lang)
         ]
         menu = st.radio(
             t("suite_selector_label", cur_lang),
@@ -282,6 +284,8 @@ def main():
         render_suite_policy()
     elif "Knowledge" in menu or "Connaissances" in menu or "API" in menu:
         render_suite_tools()
+    elif "Radio" in menu or "Vernacular" in menu or "Vernaculaire" in menu or "Voix" in menu:
+        render_suite_radio()
 
     # -------------------------------------------------------------
     # INSTITUTIONAL FOOTER (POWERED BY NAYSA-84 LABS)

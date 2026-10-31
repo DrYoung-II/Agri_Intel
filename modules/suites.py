@@ -30,6 +30,7 @@ from modules.mod11_policy import render_policy_simulator
 
 from modules.mod13_graph_view import render_knowledge_graph_view
 from modules.mod15_api_hub import render_api_hub
+from modules.mod14_radio import render_vernacular_radio_suite
 
 
 def _is_fr() -> bool:
@@ -83,16 +84,16 @@ def render_suite_research_studio():
             "📝 Générateur Intégral de Projet de Recherche",
             "📖 Revue Systématique de Littérature (PRISMA)",
             "🎓 Mentor de Thèse & Préparation à la Soutenance",
-            "📚 Matrice de Preuves & Radio Vernaculaire"
+            "📚 Matrice de Preuves & Lacunes de Recherche"
         ]
     else:
         st.markdown("## 🔬 AI Research Scientist & Proposal Studio")
-        st.caption("Complete academic research lifecycle: from PRISMA systematic literature reviews and Socratic thesis defense tutoring to publication-grade 7-part grant proposals and vernacular extension.")
+        st.caption("Complete academic research lifecycle: from PRISMA systematic literature reviews and Socratic thesis defense tutoring to publication-grade 7-part grant proposals and evidence synthesis.")
         tab_titles = [
             "📝 Full Research Proposal Generator",
             "📖 PRISMA Systematic Literature Review",
             "🎓 Thesis Mentor & Defense Tutor",
-            "📚 Evidence Matrix & Vernacular Radio"
+            "📚 Structured Evidence Matrix & Knowledge Gaps"
         ]
     
     tab_proposal, tab_prisma, tab_tutor, tab_copilot = st.tabs(tab_titles)
@@ -192,3 +193,11 @@ def render_suite_tools():
         
     with tab_api:
         render_api_hub()
+
+
+def render_suite_radio():
+    """
+    Suite 8: Last-Mile Multilingual Radio & Voice Disseminator
+    """
+    render_vernacular_radio_suite()
+

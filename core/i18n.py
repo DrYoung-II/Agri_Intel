@@ -49,6 +49,7 @@ TRANSLATIONS = {
         "suite_livestock": "Livestock & Veterinary Care",
         "suite_policy": "Policy & Economic Simulator",
         "suite_api": "Knowledge Graph & Developer API",
+        "suite_radio": "Last-Mile Vernacular Radio & Voice",
 
         # Orchestrator
         "orch_header": "Multi-Agent Orchestration Layer",
@@ -134,6 +135,7 @@ TRANSLATIONS = {
         "suite_livestock": "Élevage & Santé Vétérinaire",
         "suite_policy": "Politiques & Économie Agricole",
         "suite_api": "Graphe de Connaissances & API",
+        "suite_radio": "Radio Vernaculaire & Voix du Dernier Kilomètre",
 
         # Orchestrator
         "orch_header": "Couche d'Orchestration Multi-Agents",

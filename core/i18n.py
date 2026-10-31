@@ -43,12 +43,12 @@ TRANSLATIONS = {
 
         # Suites Titles (Clean, balanced, single-line fit without emojis)
         "suite_orchestrator": "Multi-Agent Orchestrator",
-        "suite_biometrics": "Biometrics & Plant Breeding",
+        "suite_biometrics": "Experimental Biometrics & Crop Breeding",
         "suite_scientist": "AI Research Scientist Studio",
         "suite_agro": "Agro-Ecosystems, Soil & Climate",
         "suite_livestock": "Livestock & Veterinary Care",
         "suite_policy": "Policy & Economic Simulator",
-        "suite_api": "Knowledge Graph & Developer API",
+        "suite_api": "Knowledge Network & Developer API Hub",
         "suite_radio": "Last-Mile Vernacular Radio & Voice",
 
         # Orchestrator
@@ -129,12 +129,12 @@ TRANSLATIONS = {
 
         # Suites Titles (Clean, balanced, single-line fit without emojis)
         "suite_orchestrator": "Orchestrateur Multi-Agents",
-        "suite_biometrics": "Biométrie & Sélection Végétale",
+        "suite_biometrics": "Biométrie Expérimentale & Amélioration des Plantes",
         "suite_scientist": "Chercheur IA & Studio de Thèse",
         "suite_agro": "Agro-Écosystèmes, Sols & Climat",
         "suite_livestock": "Élevage & Santé Vétérinaire",
         "suite_policy": "Politiques & Économie Agricole",
-        "suite_api": "Graphe de Connaissances & API",
+        "suite_api": "Réseau de Connaissances & API Développeur",
         "suite_radio": "Radio Vernaculaire & Voix du Dernier Kilomètre",
 
         # Orchestrator

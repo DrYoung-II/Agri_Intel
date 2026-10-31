@@ -5,8 +5,10 @@ CRD, RCBD, Split-Plot Factorial Design, Randomisation Tables, and Template Gener
 
 import pandas as pd
 import numpy as np
+import os
 import streamlit as st
 from core.crop_taxonomy import PAN_AFRICAN_CROPS
+from core.broadcast_dispatcher import render_dispatch_trigger_card
 
 
 def render_experiment_designer():
@@ -163,3 +165,111 @@ duncan_out <- duncan.test(model, "{clean_fa}", alpha = 0.05, console = TRUE)
 plot(duncan_out, main = "Duncan Multiple Range Test Mean Separation")
 """
         st.code(r_script, language="r")
+
+
+def render_dataset_health_auditor():
+    """
+    Pre-Analysis Dataset Health, Missingness & Assumption Auditor
+    Audits experimental trial datasets before running ANOVA, DMRT, or Mixed Models.
+    """
+    is_fr = st.session_state.get("app_lang", "en") == "fr"
+
+    if is_fr:
+        st.markdown("### 🩺 Audit de Santé des Données Expérimentales & Données Manquantes")
+        st.caption("Inspecte les jeux de données expérimentaux pour détecter les valeurs manquantes, l'équilibre des facteurs et l'adéquation des modèles.")
+        ds_choice_lbl = "Choisir le jeu de données à auditer :"
+        ds_choice_opts = ["Charger l'Essai Bovin Pré-chargé", "Téléverser un Fichier CSV Personnalisé"]
+    else:
+        st.markdown("### 🩺 Pre-Analysis Dataset Health & Missingness Auditor")
+        st.caption("Inspects experimental datasets for missingness, experimental factor balance, repeated measures, and model appropriateness before running ANOVA/DMRT.")
+        ds_choice_lbl = "Choose Dataset to Inspect:"
+        ds_choice_opts = ["Load Pre-loaded Cattle Trial Dataset", "Upload Custom CSV File"]
+
+    ds_choice = st.radio(ds_choice_lbl, ds_choice_opts, horizontal=True, key="auditor_ds_choice")
+
+    df_inspect = None
+    if ds_choice in ["Load Pre-loaded Cattle Trial Dataset", "Charger l'Essai Bovin Pré-chargé"]:
+        cattle_path = os.path.join("data", "sample_cattle_heat_tolerance.csv")
+        if os.path.exists(cattle_path):
+            df_inspect = pd.read_csv(cattle_path)
+        else:
+            st.info("Le jeu de données de démonstration sera initialisé lors de l'accès." if is_fr else "Sample cattle trial dataset will be automatically initialized when accessed.")
+    else:
+        up_lbl = "Téléverser un Jeu de Données Expérimental (CSV)" if is_fr else "Upload Experimental Dataset (CSV)"
+        uploaded_file = st.file_uploader(up_lbl, type=["csv"], key="mod8_auditor_uploader")
+        if uploaded_file:
+            df_inspect = pd.read_csv(uploaded_file)
+
+    if df_inspect is not None:
+        if df_inspect.empty:
+            st.warning("⚠️ Le jeu de données sélectionné ou téléversé est vide (0 observation)." if is_fr else "⚠️ The selected or uploaded dataset is empty (0 observations).")
+            return
+
+        st.markdown("##### 👁️ Aperçu du Jeu de Données (5 Premières Lignes)" if is_fr else "##### 👁️ Dataset Preview (First 5 Rows)")
+        st.dataframe(df_inspect.head(), use_container_width=True)
+
+        # Health Calculations
+        n_rows, n_cols = df_inspect.shape
+        missing_series = df_inspect.isnull().sum()
+        total_missing = missing_series.sum()
+        total_cells = n_rows * n_cols
+        missing_pct = (total_missing / total_cells * 100) if total_cells > 0 else 0.0
+
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Enregistrements" if is_fr else "Total Records", f"{n_rows:,}")
+        col2.metric("Variables", f"{n_cols}")
+        col3.metric("Valeurs Manquantes" if is_fr else "Missing Values", f"{total_missing:,}")
+        col4.metric("Taux Global Manquant" if is_fr else "Overall Missing %", f"{missing_pct:.1f}%")
+
+        # Missing breakdown
+        cols_with_missing = missing_series[missing_series > 0]
+        if not cols_with_missing.empty:
+            st.warning(f"⚠️ **{'Détails des Observations Manquantes' if is_fr else 'Missing Observation Details'}**: {dict(cols_with_missing)}")
+
+        # Balance check on categorical columns
+        cat_cols = df_inspect.select_dtypes(include=['object', 'category']).columns.tolist()
+        if cat_cols:
+            cat_lbl = "Inspecter l'Équilibre selon le Facteur :" if is_fr else "Inspect Balance Across Factor:"
+            selected_cat = st.selectbox(cat_lbl, cat_cols, key="auditor_cat_select")
+            counts = df_inspect[selected_cat].value_counts()
+            st.bar_chart(counts)
+
+        rec_hdr = "🤖 Recommandation Biométrique AgroBiometrix" if is_fr else "🤖 AgroBiometrix Biometrics Recommendation"
+        stat_audit_title = "📊 Audit de l'Architecture Statistique" if is_fr else "📊 Statistical Architecture Audit"
+        ds_contains_txt = "Votre jeu de données contient" if is_fr else "Your dataset contains"
+        obs_txt = "observations"
+        across_txt = "réparties sur" if is_fr else "across"
+        miss_hdr = "Données manquantes" if is_fr else "Missingness"
+        if not cols_with_missing.empty:
+            cols_str = str(list(cols_with_missing.keys()))
+            miss_val_txt = f"Détectées dans les colonnes {cols_str}. Pour les caractères liés au sexe comme la production laitière, les mâles doivent être codés comme non observés plutôt que zéro." if is_fr else f"Detected in columns {cols_str}. For sex-limited traits like Milk Yield, males should be coded as unobserved rather than zero."
+        else:
+            miss_val_txt = "Aucune donnée manquante détectée. L'analyse sur cas complets est valide." if is_fr else "No missing data detected. Complete case analysis is valid."
+        bal_hdr = "Équilibre expérimental" if is_fr else "Experimental Balance"
+        bal_val_txt = "Les effectifs par sous-groupe indiquent une stratification structurée." if is_fr else "Sample sizes across groups show structured stratification."
+        model_hdr = "Modèle recommandé" if is_fr else "Recommended Model"
+        model_val_txt = "Si des mesures répétées existent par sujet, une régression MCO ordinaire sous-estimera sévèrement les erreurs types en ignorant la corrélation intra-sujet." if is_fr else "If repeated observations exist per subject, ordinary OLS regression will severely underestimate standard errors by ignoring intra-subject correlation."
+        rec_line = "Recommandation : Passez à l'onglet 'Statistiques Biométriques & DMRT' pour exécuter l'ANOVA et la séparation de moyennes de Duncan." if is_fr else "Recommendation: Proceed to the 'Statistical Biometrics & DMRT' tab to execute ANOVA and Duncan's Multiple Range Test."
+
+        st.markdown(f"##### {rec_hdr}")
+        st.markdown(f"""
+<div class="agri-card" style="border-left: 4px solid #1B5E20; background: #F1F8F2; padding: 12px 16px; border-radius: 4px; margin-top: 10px;">
+<div style="font-weight: 700; color: #1B5E20; font-size: 0.95rem; margin-bottom: 4px;">{stat_audit_title}</div>
+<div style="font-size: 0.85rem; color: #37474F; line-height: 1.5;">
+{ds_contains_txt} <b>{n_rows:,} {obs_txt}</b> {across_txt} <b>{n_cols} variables</b>.<br>
+• <b>{miss_hdr}</b> : {miss_val_txt}<br>
+• <b>{bal_hdr}</b> : {bal_val_txt}<br>
+• <b>{model_hdr}</b> : {model_val_txt}<br>
+<b>{rec_line}</b>
+</div>
+</div>
+""", unsafe_allow_html=True)
+
+        render_dispatch_trigger_card(
+            source_module="Suite 2: Biometric Field Trial & Statistical Audit",
+            commodity="Multi-Commodity Field Trials",
+            region="Sub-Saharan Agricultural Research Zones",
+            headline="Validated Field Trial Protocol & Experimental Balance Advisory",
+            trigger_summary=f"Analysis of {n_rows:,} observations across {n_cols} factors completed. Recommended model: {model_val_txt[:90]}.",
+            recommendation_summary=rec_line
+        )

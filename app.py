@@ -331,218 +331,231 @@ def render_orchestrator_home():
     st.markdown(f"### 🤖 {t('orch_header', cur_lang)}")
     st.markdown(t("orch_quote", cur_lang), unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown(f"#### 💬 {t('orch_ask_label', cur_lang)}")
-    st.caption(t("orch_ask_sub", cur_lang))
-    
-    # Preset query chips
-    if cur_lang == "fr":
-        sample_queries = [
-            "🐇 Meilleure race de lapin pour le climat ouest-africain et sahélien",
-            "🐔 Conditions climatiques et conduite d'élevage avicole en période actuelle",
-            "🍅 Variétés de tomates performantes et gestion sanitaire en zone tropicale humide",
-            "🌽 Quelles variétés de maïs cultiver face au stress thermique et hydrique croissant au Sahel ?",
-            "🐟 Qualité de l'eau et alimentation du silure (poisson-chat) en période d'harmattan",
-            "🐐 Conduite d'élevage et prévention de la PPR chez les caprins et ovins en saison sèche",
-            "🐄 Régions génomiques associées à la thermotolérance et à la trypanosomiase chez les bovins africains",
-            "📉 Impact d'une hausse de 40% des engrais et baisse pluviométrique de 15% sur les rendements céréaliers",
-            "💰 Quelles interventions agricoles offrent le plus fort impact sur la sécurité alimentaire ?"
-        ]
-        custom_opt = t("orch_custom_choice", "fr")
-    else:
-        sample_queries = [
-            "🐇 The best breed of rabbit for the Nigerian climate",
-            "🐔 How favourable is the climatic condition to poultry production at this period?",
-            "🍅 Best tomato varieties and management for Western Nigeria at this period?",
-            "🌽 Which maize varieties should Northern Nigerian farmers plant under increasing heat stress?",
-            "🐟 Water quality and feeding management for catfish during the cold Harmattan period?",
-            "🐐 Best management and PPR prevention for goats and sheep under dry season forage scarcity?",
-            "🐄 What are the major genomic regions associated with heat tolerance and trypanosomiasis in West African cattle?",
-            "📉 What happens if fertilizer prices increase by 40% and rainfall declines by 15% in Kaduna?",
-            "💰 What agricultural interventions could create the largest food-security impact per ₦1 billion?"
-        ]
-        custom_opt = t("orch_custom_choice", "en")
-    
-    preset_choice = st.selectbox(
-        t("orch_preset_label", cur_lang),
-        options=[custom_opt] + sample_queries,
-        index=1,
-        help="Sélectionnez une requête prédéfinie pour remplir le champ ou choisissez Personnalisée pour rédiger la vôtre." if cur_lang == "fr" else "Select any strategic preset inquiry to instantly populate the query box, or choose Custom to write your own."
-    )
-    
-    if preset_choice == custom_opt:
-        default_val = st.session_state.get("custom_typed_query", "")
-    else:
-        cleaned = preset_choice
-        for prefix in ["🐇 ", "🐔 ", "🍅 ", "🌽 ", "🐟 ", "🐐 ", "🐄 ", "📉 ", "💰 "]:
-            if cleaned.startswith(prefix):
-                cleaned = cleaned[len(prefix):]
-                break
-        default_val = cleaned
+    tab_orch_titles = [
+        "🤖 Synthèse Multi-Agents Autonome" if cur_lang == "fr" else "🤖 Autonomous Multi-Agent Synthesis",
+        "🕸️ Graphe de Connaissances Agricoles Panafricain" if cur_lang == "fr" else "🕸️ African Agricultural Knowledge Network"
+    ]
+    tab_agent_inquiry, tab_graph_view = st.tabs(tab_orch_titles)
 
-    user_query = st.text_area(
-        t("orch_query_label", cur_lang),
-        value=default_val,
-        placeholder=t("orch_query_placeholder", cur_lang),
-        height=95
-    )
-    if preset_choice == custom_opt:
-        st.session_state["custom_typed_query"] = user_query
+    with tab_agent_inquiry:
 
-    st.markdown(f"##### ⚙️ {t('orch_engine_mode', cur_lang)}")
-    engine_gemini = t("orch_engine_gemini", cur_lang)
-    engine_offline = t("orch_engine_offline", cur_lang)
-    engine_choices = [engine_gemini, engine_offline]
+        st.markdown("---")
+        st.markdown(f"#### 💬 {t('orch_ask_label', cur_lang)}")
+        st.caption(t("orch_ask_sub", cur_lang))
 
-    selected_engine = st.selectbox(
-        t("orch_engine_select", cur_lang),
-        options=engine_choices,
-        index=0,
-        help=t("orch_engine_help", cur_lang)
-    )
-
-    api_key_to_use = ""
-    provider_to_use = "gemini"
-
-    if selected_engine == engine_choices[0]:
-        active_key = get_gemini_api_key()
-        if active_key:
-            st.success(t("orch_gemini_active_msg", cur_lang))
-            api_key_to_use = active_key
-            provider_to_use = "gemini"
+        # Preset query chips
+        if cur_lang == "fr":
+            sample_queries = [
+                "🐇 Meilleure race de lapin pour le climat ouest-africain et sahélien",
+                "🐔 Conditions climatiques et conduite d'élevage avicole en période actuelle",
+                "🍅 Variétés de tomates performantes et gestion sanitaire en zone tropicale humide",
+                "🌽 Quelles variétés de maïs cultiver face au stress thermique et hydrique croissant au Sahel ?",
+                "🐟 Qualité de l'eau et alimentation du silure (poisson-chat) en période d'harmattan",
+                "🐐 Conduite d'élevage et prévention de la PPR chez les caprins et ovins en saison sèche",
+                "🐄 Régions génomiques associées à la thermotolérance et à la trypanosomiase chez les bovins africains",
+                "📉 Impact d'une hausse de 40% des engrais et baisse pluviométrique de 15% sur les rendements céréaliers",
+                "💰 Quelles interventions agricoles offrent le plus fort impact sur la sécurité alimentaire ?"
+            ]
+            custom_opt = t("orch_custom_choice", "fr")
         else:
-            c_k1, c_k2 = st.columns([2, 1])
-            with c_k1:
-                key_prompt = "Coller la Clé API Google Gemini :" if cur_lang == "fr" else "Paste Google Gemini API Key:"
-                input_gemini_key = st.text_input(
-                    key_prompt,
-                    value="",
-                    type="password",
-                    placeholder="AIzaSy...",
-                    help="Obtenez une clé API gratuite sur https://aistudio.google.com/" if cur_lang == "fr" else "Get a free API key at https://aistudio.google.com/"
-                )
-                cleaned_key = (input_gemini_key or "").strip().strip("'\"")
-                if cleaned_key:
-                    set_gemini_api_key(cleaned_key)
-                    if HAS_GENAI and genai is not None:
-                        try:
-                            genai.configure(api_key=cleaned_key)
-                            st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
-                        except Exception:
-                            pass
-                    val = validate_gemini_key(cleaned_key)
-                    if val.get("valid"):
-                        msg_ok = "Clé API Vérifiée & Active" if cur_lang == "fr" else "API Key Verified & Active"
-                        st.success(f"🟢 **{msg_ok}**: {val.get('message')}")
-                    else:
-                        msg_err = "Notification Clé Google AI Studio" if cur_lang == "fr" else "Google AI Studio Key Notice"
-                        st.error(f"🔴 **{msg_err}**: `{val.get('message')}`")
-                        tip_msg = "💡 *Conseil : Vérifiez que la clé est active dans Google AI Studio et que l'API Generative Language est activée.*" if cur_lang == "fr" else "💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/), has no IP restrictions, and 'Generative Language API' is enabled.*"
-                        st.caption(tip_msg)
-                    api_key_to_use = cleaned_key
-                else:
-                    api_key_to_use = ""
-                provider_to_use = "gemini"
-            with c_k2:
-                tier_msg = "🔑 **Niveau Gratuit Disponible** : Obtenez une clé gratuite sur [Google AI Studio](https://aistudio.google.com/). Gemini en direct permet un raisonnement instantané sur l'ensemble des 48+ pays africains." if cur_lang == "fr" else "🔑 **Free Tier Available**: Generate a free API key at [Google AI Studio](https://aistudio.google.com/). Live Gemini enables real-time reasoning across all 48+ African countries."
-                st.caption(tier_msg)
-    else:
-        st.info(t("orch_offline_active_msg", cur_lang))
+            sample_queries = [
+                "🐇 The best breed of rabbit for the Nigerian climate",
+                "🐔 How favourable is the climatic condition to poultry production at this period?",
+                "🍅 Best tomato varieties and management for Western Nigeria at this period?",
+                "🌽 Which maize varieties should Northern Nigerian farmers plant under increasing heat stress?",
+                "🐟 Water quality and feeding management for catfish during the cold Harmattan period?",
+                "🐐 Best management and PPR prevention for goats and sheep under dry season forage scarcity?",
+                "🐄 What are the major genomic regions associated with heat tolerance and trypanosomiasis in West African cattle?",
+                "📉 What happens if fertilizer prices increase by 40% and rainfall declines by 15% in Kaduna?",
+                "💰 What agricultural interventions could create the largest food-security impact per ₦1 billion?"
+            ]
+            custom_opt = t("orch_custom_choice", "en")
+
+        preset_choice = st.selectbox(
+            t("orch_preset_label", cur_lang),
+            options=[custom_opt] + sample_queries,
+            index=1,
+            help="Sélectionnez une requête prédéfinie pour remplir le champ ou choisissez Personnalisée pour rédiger la vôtre." if cur_lang == "fr" else "Select any strategic preset inquiry to instantly populate the query box, or choose Custom to write your own."
+        )
+
+        if preset_choice == custom_opt:
+            default_val = st.session_state.get("custom_typed_query", "")
+        else:
+            cleaned = preset_choice
+            for prefix in ["🐇 ", "🐔 ", "🍅 ", "🌽 ", "🐟 ", "🐐 ", "🐄 ", "📉 ", "💰 "]:
+                if cleaned.startswith(prefix):
+                    cleaned = cleaned[len(prefix):]
+                    break
+            default_val = cleaned
+
+        user_query = st.text_area(
+            t("orch_query_label", cur_lang),
+            value=default_val,
+            placeholder=t("orch_query_placeholder", cur_lang),
+            height=95
+        )
+        if preset_choice == custom_opt:
+            st.session_state["custom_typed_query"] = user_query
+
+        st.markdown(f"##### ⚙️ {t('orch_engine_mode', cur_lang)}")
+        engine_gemini = t("orch_engine_gemini", cur_lang)
+        engine_offline = t("orch_engine_offline", cur_lang)
+        engine_choices = [engine_gemini, engine_offline]
+
+        selected_engine = st.selectbox(
+            t("orch_engine_select", cur_lang),
+            options=engine_choices,
+            index=0,
+            help=t("orch_engine_help", cur_lang)
+        )
+
         api_key_to_use = ""
-        provider_to_use = "offline"
+        provider_to_use = "gemini"
 
-    col_btn, col_mode = st.columns([1, 2])
-    with col_btn:
-        run_query = st.button(t("orch_btn_run", cur_lang), key="btn_invoke_agents")
-    with col_mode:
-        if api_key_to_use:
-            mode_label = f"🟢 IA Cloud en Direct ({provider_to_use.title()})" if cur_lang == "fr" else f"🟢 Live Cloud LLM ({provider_to_use.title()})"
-        else:
-            mode_label = t("orch_status_offline", cur_lang)
-        st.caption(f"{t('orch_status_label', cur_lang)} **{mode_label}**")
-
-    if run_query:
-        if not user_query.strip():
-            st.warning(t("orch_query_warning", cur_lang))
-        else:
-            with st.spinner(t("orch_spinner", cur_lang)):
-                active_reg = st.session_state.get("active_region")
-                if api_key_to_use:
-                    result = call_live_llm_orchestration(user_query, api_key_to_use, provider=provider_to_use, active_region=active_reg, lang=cur_lang)
-                else:
-                    result = rule_based_agent_synthesis(user_query, active_region=active_reg, lang=cur_lang)
-
-            if result.get("unsupported"):
-                st.warning(result["message"])
-                st.info(result.get("suggestion", ""))
+        if selected_engine == engine_choices[0]:
+            active_key = get_gemini_api_key()
+            if active_key:
+                st.success(t("orch_gemini_active_msg", cur_lang))
+                api_key_to_use = active_key
+                provider_to_use = "gemini"
             else:
-                st.success(t("orch_complete", cur_lang))
-
-                if result.get("is_live_cloud"):
-                    cloud_notice = f"🟢 **Consultation IA Cloud en Direct** : Générée via **{result.get('provider')} ({result.get('model')})**." if cur_lang == "fr" else f"🟢 **Live Cloud AI Consultation**: Generated via **{result.get('provider')} ({result.get('model')})** with your Google AI Studio API key."
-                    st.info(cloud_notice)
-                elif result.get("live_api_error"):
-                    warn_notice = f"⚠️ **Notification IA Cloud** : L'API Google Gemini a retourné : `{result['live_api_error']}`. AgroBiometrix a automatiquement basculé sur son **Moteur Scientifique Agronomique Africain Hors-ligne**." if cur_lang == "fr" else f"⚠️ **Live Cloud AI Notice**: Google Gemini API returned: `{result['live_api_error']}`. AgroBiometrix automatically served this consultation using its built-in **Offline African Agronomic Science Engine**."
-                    st.warning(warn_notice)
-                elif not api_key_to_use and selected_engine == engine_choices[0]:
-                    off_notice = "💡 **Mode Hors-ligne Actif** : Aucune clé Gemini détectée. AgroBiometrix a synthétisé cette consultation via son **Moteur Scientifique Agronomique Africain Intégré**." if cur_lang == "fr" else "💡 **Offline Mode Notice**: No Gemini API key detected. AgroBiometrix synthesized this consultation using its built-in **Offline African Agronomic Science Engine**."
-                    st.info(off_notice)
-
-                # Dispatch Banner with Badges
-                roster_hdr = f"🏛️ {t('orch_roster_title', cur_lang)} &bull; {len(result['selected_agents'])} {t('orch_roster_sub', cur_lang)}"
-                agent_tags = ' '.join([
-                    f'<span style="background: #FFFFFF; border: 1px solid #A5D6A7; color: #1B5E20; font-size: 0.78rem; font-weight: 600; padding: 3px 8px; border-radius: 4px;">🤖 {translate_agent_name(a, cur_lang)}</span>'
-                    for a in result['selected_agents']
-                ])
-                st.markdown(f"""
-<div style="background: #E8F5E9; border-left: 5px solid #2E7D32; border-radius: 6px; padding: 12px 16px; margin: 12px 0 18px 0;">
-    <div style="font-size: 0.82rem; font-weight: 700; color: #1B5E20; text-transform: uppercase; letter-spacing: 0.5px;">
-        {roster_hdr}
-    </div>
-    <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px;">
-        {agent_tags}
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-                tab_advisory, tab_agents = st.tabs([
-                    t("orch_advisory_tab", cur_lang),
-                    t("orch_agents_tab", cur_lang)
-                ])
-
-                with tab_advisory:
-                    clean_synthesis = repair_markdown_math(result["final_synthesis"])
-                    st.markdown(clean_synthesis)
-                    
-                    st.markdown("---")
-                    clean_title = re.sub(r'[^a-zA-Z0-9_]', '_', user_query[:30]).strip('_')
-                    file_prefix = f"AgroBiometrix_{'Avis' if cur_lang == 'fr' else 'Advisory'}_{clean_title}"
-                    report_title = f"{'Avis Scientifique AgroBiometrix' if cur_lang == 'fr' else 'AgroBiometrix Scientific Advisory'}: {user_query[:60]}"
-                    render_download_buttons(
-                        content_text=clean_synthesis,
-                        filename_prefix=file_prefix,
-                        title=report_title,
-                        key_prefix="orch_advisory"
+                c_k1, c_k2 = st.columns([2, 1])
+                with c_k1:
+                    key_prompt = "Coller la Clé API Google Gemini :" if cur_lang == "fr" else "Paste Google Gemini API Key:"
+                    input_gemini_key = st.text_input(
+                        key_prompt,
+                        value="",
+                        type="password",
+                        placeholder="AIzaSy...",
+                        help="Obtenez une clé API gratuite sur https://aistudio.google.com/" if cur_lang == "fr" else "Get a free API key at https://aistudio.google.com/"
                     )
+                    cleaned_key = (input_gemini_key or "").strip().strip("'\"")
+                    if cleaned_key:
+                        set_gemini_api_key(cleaned_key)
+                        if HAS_GENAI and genai is not None:
+                            try:
+                                genai.configure(api_key=cleaned_key)
+                                st.session_state["gemini_model"] = genai.GenerativeModel("gemini-1.5-flash")
+                            except Exception:
+                                pass
+                        val = validate_gemini_key(cleaned_key)
+                        if val.get("valid"):
+                            msg_ok = "Clé API Vérifiée & Active" if cur_lang == "fr" else "API Key Verified & Active"
+                            st.success(f"🟢 **{msg_ok}**: {val.get('message')}")
+                        else:
+                            msg_err = "Notification Clé Google AI Studio" if cur_lang == "fr" else "Google AI Studio Key Notice"
+                            st.error(f"🔴 **{msg_err}**: `{val.get('message')}`")
+                            tip_msg = "💡 *Conseil : Vérifiez que la clé est active dans Google AI Studio et que l'API Generative Language est activée.*" if cur_lang == "fr" else "💡 *Tip: Ensure the key is active in [Google AI Studio](https://aistudio.google.com/), has no IP restrictions, and 'Generative Language API' is enabled.*"
+                            st.caption(tip_msg)
+                        api_key_to_use = cleaned_key
+                    else:
+                        api_key_to_use = ""
+                    provider_to_use = "gemini"
+                with c_k2:
+                    tier_msg = "🔑 **Niveau Gratuit Disponible** : Obtenez une clé gratuite sur [Google AI Studio](https://aistudio.google.com/). Gemini en direct permet un raisonnement instantané sur l'ensemble des 48+ pays africains." if cur_lang == "fr" else "🔑 **Free Tier Available**: Generate a free API key at [Google AI Studio](https://aistudio.google.com/). Live Gemini enables real-time reasoning across all 48+ African countries."
+                    st.caption(tier_msg)
+        else:
+            st.info(t("orch_offline_active_msg", cur_lang))
+            api_key_to_use = ""
+            provider_to_use = "offline"
 
-                with tab_agents:
-                    st.markdown(f"##### {t('orch_consultations_title', cur_lang)}")
-                    st.caption(t("orch_consultations_sub", cur_lang))
+        col_btn, col_mode = st.columns([1, 2])
+        with col_btn:
+            run_query = st.button(t("orch_btn_run", cur_lang), key="btn_invoke_agents")
+        with col_mode:
+            if api_key_to_use:
+                mode_label = f"🟢 IA Cloud en Direct ({provider_to_use.title()})" if cur_lang == "fr" else f"🟢 Live Cloud LLM ({provider_to_use.title()})"
+            else:
+                mode_label = t("orch_status_offline", cur_lang)
+            st.caption(f"{t('orch_status_label', cur_lang)} **{mode_label}**")
 
-                    for agent_name in result["selected_agents"]:
-                        out_text = result["agent_outputs"].get(agent_name, "Consulté et intégré à la synthèse." if cur_lang == "fr" else "Consulted and contributed to synthesis.")
-                        fr_agent = translate_agent_name(agent_name, cur_lang)
-                        clean_out = repair_markdown_math(out_text)
-                        st.markdown(f"""
-<div class="agri-card" style="border-left: 4px solid #2E7D32; margin-bottom: 1rem; background: #FAFCFA;">
-    <div style="font-size: 0.95rem; font-weight: 700; color: #1B5E20; margin-bottom: 0.4rem;">
-        🤖 {fr_agent}
+        if run_query:
+            if not user_query.strip():
+                st.warning(t("orch_query_warning", cur_lang))
+            else:
+                with st.spinner(t("orch_spinner", cur_lang)):
+                    active_reg = st.session_state.get("active_region")
+                    if api_key_to_use:
+                        result = call_live_llm_orchestration(user_query, api_key_to_use, provider=provider_to_use, active_region=active_reg, lang=cur_lang)
+                    else:
+                        result = rule_based_agent_synthesis(user_query, active_region=active_reg, lang=cur_lang)
+
+                if result.get("unsupported"):
+                    st.warning(result["message"])
+                    st.info(result.get("suggestion", ""))
+                else:
+                    st.success(t("orch_complete", cur_lang))
+
+                    if result.get("is_live_cloud"):
+                        cloud_notice = f"🟢 **Consultation IA Cloud en Direct** : Générée via **{result.get('provider')} ({result.get('model')})**." if cur_lang == "fr" else f"🟢 **Live Cloud AI Consultation**: Generated via **{result.get('provider')} ({result.get('model')})** with your Google AI Studio API key."
+                        st.info(cloud_notice)
+                    elif result.get("live_api_error"):
+                        warn_notice = f"⚠️ **Notification IA Cloud** : L'API Google Gemini a retourné : `{result['live_api_error']}`. AgroBiometrix a automatiquement basculé sur son **Moteur Scientifique Agronomique Africain Hors-ligne**." if cur_lang == "fr" else f"⚠️ **Live Cloud AI Notice**: Google Gemini API returned: `{result['live_api_error']}`. AgroBiometrix automatically served this consultation using its built-in **Offline African Agronomic Science Engine**."
+                        st.warning(warn_notice)
+                    elif not api_key_to_use and selected_engine == engine_choices[0]:
+                        off_notice = "💡 **Mode Hors-ligne Actif** : Aucune clé Gemini détectée. AgroBiometrix a synthétisé cette consultation via son **Moteur Scientifique Agronomique Africain Intégré**." if cur_lang == "fr" else "💡 **Offline Mode Notice**: No Gemini API key detected. AgroBiometrix synthesized this consultation using its built-in **Offline African Agronomic Science Engine**."
+                        st.info(off_notice)
+
+                    # Dispatch Banner with Badges
+                    roster_hdr = f"🏛️ {t('orch_roster_title', cur_lang)} &bull; {len(result['selected_agents'])} {t('orch_roster_sub', cur_lang)}"
+                    agent_tags = ' '.join([
+                        f'<span style="background: #FFFFFF; border: 1px solid #A5D6A7; color: #1B5E20; font-size: 0.78rem; font-weight: 600; padding: 3px 8px; border-radius: 4px;">🤖 {translate_agent_name(a, cur_lang)}</span>'
+                        for a in result['selected_agents']
+                    ])
+                    st.markdown(f"""
+    <div style="background: #E8F5E9; border-left: 5px solid #2E7D32; border-radius: 6px; padding: 12px 16px; margin: 12px 0 18px 0;">
+        <div style="font-size: 0.82rem; font-weight: 700; color: #1B5E20; text-transform: uppercase; letter-spacing: 0.5px;">
+            {roster_hdr}
+        </div>
+        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px;">
+            {agent_tags}
+        </div>
     </div>
-    <div style="font-size: 0.88rem; color: #1B381E; line-height: 1.5;">
-""", unsafe_allow_html=True)
-                        st.markdown(clean_out)
-                        st.markdown("</div></div>", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
+                    tab_advisory, tab_agents = st.tabs([
+                        t("orch_advisory_tab", cur_lang),
+                        t("orch_agents_tab", cur_lang)
+                    ])
+
+                    with tab_advisory:
+                        clean_synthesis = repair_markdown_math(result["final_synthesis"])
+                        st.markdown(clean_synthesis)
+
+                        st.markdown("---")
+                        clean_title = re.sub(r'[^a-zA-Z0-9_]', '_', user_query[:30]).strip('_')
+                        file_prefix = f"AgroBiometrix_{'Avis' if cur_lang == 'fr' else 'Advisory'}_{clean_title}"
+                        report_title = f"{'Avis Scientifique AgroBiometrix' if cur_lang == 'fr' else 'AgroBiometrix Scientific Advisory'}: {user_query[:60]}"
+                        render_download_buttons(
+                            content_text=clean_synthesis,
+                            filename_prefix=file_prefix,
+                            title=report_title,
+                            key_prefix="orch_advisory"
+                        )
+
+                    with tab_agents:
+                        st.markdown(f"##### {t('orch_consultations_title', cur_lang)}")
+                        st.caption(t("orch_consultations_sub", cur_lang))
+
+                        for agent_name in result["selected_agents"]:
+                            out_text = result["agent_outputs"].get(agent_name, "Consulté et intégré à la synthèse." if cur_lang == "fr" else "Consulted and contributed to synthesis.")
+                            fr_agent = translate_agent_name(agent_name, cur_lang)
+                            clean_out = repair_markdown_math(out_text)
+                            st.markdown(f"""
+    <div class="agri-card" style="border-left: 4px solid #2E7D32; margin-bottom: 1rem; background: #FAFCFA;">
+        <div style="font-size: 0.95rem; font-weight: 700; color: #1B5E20; margin-bottom: 0.4rem;">
+            🤖 {fr_agent}
+        </div>
+        <div style="font-size: 0.88rem; color: #1B381E; line-height: 1.5;">
+    """, unsafe_allow_html=True)
+                            st.markdown(clean_out)
+                            st.markdown("</div></div>", unsafe_allow_html=True)
+
+
+
+    with tab_graph_view:
+        from modules.mod13_graph_view import render_knowledge_graph_view
+        render_knowledge_graph_view()
 
 if __name__ == "__main__":
     main()

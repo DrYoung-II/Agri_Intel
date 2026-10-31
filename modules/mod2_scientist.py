@@ -918,17 +918,15 @@ def render_research_scientist():
 
     if is_fr:
         st.markdown("### 🔬 Chercheur IA & Concepteur de Projets de Recherche")
-        st.caption("Transforme les questions de recherche en projets académiques de niveau publication, protocoles d'échantillonnage expérimental et audits biométriques.")
-        tab1, tab2 = st.tabs(["📝 Générateur Intégral de Projet de Recherche", "🩺 Inspecteur de Santé & Biométrie des Données"])
+        st.caption("Transforme les questions de recherche en projets académiques de niveau publication et protocoles expérimentaux.")
     else:
         st.markdown("### 🔬 AI Research Scientist & Proposal Builder")
-        st.caption("Transforms high-level research questions into publication-grade academic research proposals, experimental sampling designs, and biometric health audits.")
-        tab1, tab2 = st.tabs(["📝 Full Research Proposal Generator", "🩺 Dataset Health & Biometrics Inspector"])
+        st.caption("Transforms high-level research questions into publication-grade academic research proposals and experimental sampling designs.")
 
     # -------------------------------------------------------------------------
-    # TAB 1: ACADEMIC RESEARCH PROPOSAL GENERATOR
+    # ACADEMIC RESEARCH PROPOSAL GENERATOR
     # -------------------------------------------------------------------------
-    with tab1:
+    with st.container():
         if is_fr:
             st.markdown("#### 🧪 Architecture Autonome de Projet de Recherche")
             st.markdown(
@@ -1188,106 +1186,10 @@ def render_research_scientist():
                 else:
                     st.markdown(p_text)
 
-    # -------------------------------------------------------------------------
-    # TAB 2: DATASET HEALTH & BIOMETRICS INSPECTOR
-    # -------------------------------------------------------------------------
-    with tab2:
-        if is_fr:
-            st.markdown("#### 🩺 Audit de Santé des Données & des Hypothèses Statistiques")
-            st.caption("Inspecte les jeux de données expérimentaux pour détecter les valeurs manquantes, l'équilibre des facteurs et l'adéquation des modèles.")
-            ds_choice_lbl = "Choisir le jeu de données à auditer :"
-            ds_choice_opts = ["Charger l'Essai Bovin Pré-chargé", "Téléverser un Fichier CSV Personnalisé"]
-        else:
-            st.markdown("#### 🩺 Dataset Health & Assumption Auditor")
-            st.caption("Inspects experimental datasets for missingness, balance, repeated measurements, and model appropriateness.")
-            ds_choice_lbl = "Choose Dataset to Inspect:"
-            ds_choice_opts = ["Load Pre-loaded Cattle Trial Dataset", "Upload Custom CSV File"]
-
-        ds_choice = st.radio(ds_choice_lbl, ds_choice_opts, horizontal=True)
-        
-        df_inspect = None
-        if ds_choice in ["Load Pre-loaded Cattle Trial Dataset", "Charger l'Essai Bovin Pré-chargé"]:
-            cattle_path = os.path.join("data", "sample_cattle_heat_tolerance.csv")
-            if os.path.exists(cattle_path):
-                df_inspect = pd.read_csv(cattle_path)
-            else:
-                st.info("Le jeu de données de démonstration sera initialisé lors de l'accès." if is_fr else "Sample cattle trial dataset will be automatically initialized when accessed.")
-        else:
-            up_lbl = "Téléverser un Jeu de Données Expérimental (CSV)" if is_fr else "Upload Experimental Dataset (CSV)"
-            uploaded_file = st.file_uploader(up_lbl, type=["csv"], key="mod2_uploader")
-            if uploaded_file:
-                df_inspect = pd.read_csv(uploaded_file)
-
-        if df_inspect is not None:
-            if df_inspect.empty:
-                st.warning("⚠️ Le jeu de données sélectionné ou téléversé est vide (0 observation)." if is_fr else "⚠️ The selected or uploaded dataset is empty (0 observations).")
-                return
-
-            st.markdown("##### 👁️ Aperçu du Jeu de Données (5 Premières Lignes)" if is_fr else "##### 👁️ Dataset Preview (First 5 Rows)")
-            st.dataframe(df_inspect.head(), use_container_width=True)
-
-            # Health Calculations
-            n_rows, n_cols = df_inspect.shape
-            missing_series = df_inspect.isnull().sum()
-            total_missing = missing_series.sum()
-            total_cells = n_rows * n_cols
-            missing_pct = (total_missing / total_cells * 100) if total_cells > 0 else 0.0
-
-            col1, col2, col3, col4 = st.columns(4)
-            col1.metric("Enregistrements" if is_fr else "Total Records", f"{n_rows:,}")
-            col2.metric("Variables", f"{n_cols}")
-            col3.metric("Valeurs Manquantes" if is_fr else "Missing Values", f"{total_missing:,}")
-            col4.metric("Taux Global Manquant" if is_fr else "Overall Missing %", f"{missing_pct:.1f}%")
-
-            # Missing breakdown
-            cols_with_missing = missing_series[missing_series > 0]
-            if not cols_with_missing.empty:
-                st.warning(f"⚠️ **{'Détails des Observations Manquantes' if is_fr else 'Missing Observation Details'}**: {dict(cols_with_missing)}")
-
-            # Balance check on categorical columns
-            cat_cols = df_inspect.select_dtypes(include=['object', 'category']).columns.tolist()
-            if cat_cols:
-                cat_lbl = "Inspecter l'Équilibre selon le Facteur :" if is_fr else "Inspect Balance Across Factor:"
-                selected_cat = st.selectbox(cat_lbl, cat_cols)
-                counts = df_inspect[selected_cat].value_counts()
-                st.bar_chart(counts)
-
-            rec_hdr = "🤖 Recommandation Biométrique AgroBiometrix" if is_fr else "🤖 AgroBiometrix Biometrics Recommendation"
-            stat_audit_title = "📊 Audit de l'Architecture Statistique" if is_fr else "📊 Statistical Architecture Audit"
-            ds_contains_txt = "Votre jeu de données contient" if is_fr else "Your dataset contains"
-            obs_txt = "observations"
-            across_txt = "réparties sur" if is_fr else "across"
-            miss_hdr = "Données manquantes" if is_fr else "Missingness"
-            if not cols_with_missing.empty:
-                cols_str = str(list(cols_with_missing.keys()))
-                miss_val_txt = f"Détectées dans les colonnes {cols_str}. Pour les caractères liés au sexe comme la production laitière, les mâles doivent être codés comme non observés plutôt que zéro." if is_fr else f"Detected in columns {cols_str}. For sex-limited traits like Milk Yield, males should be coded as unobserved rather than zero."
-            else:
-                miss_val_txt = "Aucune donnée manquante détectée. L'analyse sur cas complets est valide." if is_fr else "No missing data detected. Complete case analysis is valid."
-            bal_hdr = "Équilibre expérimental" if is_fr else "Experimental Balance"
-            bal_val_txt = "Les effectifs par sous-groupe indiquent une stratification structurée." if is_fr else "Sample sizes across groups show structured stratification."
-            model_hdr = "Modèle recommandé" if is_fr else "Recommended Model"
-            model_val_txt = "Si des mesures répétées existent par sujet, une régression MCO ordinaire sous-estimera sévèrement les erreurs types en ignorant la corrélation intra-sujet." if is_fr else "If repeated observations exist per subject, ordinary OLS regression will severely underestimate standard errors by ignoring intra-subject correlation."
-            rec_line = "Recommandation : Ajustez un Modèle Linéaire à Effets Mixtes (REML) ou effectuez une ANOVA avec Test de Portée Multiple de Duncan (DMRT) dans le Module Biométrie." if is_fr else "Recommendation: Fit a Linear Mixed-Effects Model (REML) or proceed to One-Way/Two-Way ANOVA with Duncan's Multiple Range Test (DMRT) in Module 3."
-
-            st.markdown(f"##### {rec_hdr}")
-            st.markdown(f"""
-<div class="agri-card" style="border-left: 4px solid #1B5E20; background: #F1F8F2; padding: 12px 16px; border-radius: 4px; margin-top: 10px;">
-<div style="font-weight: 700; color: #1B5E20; font-size: 0.95rem; margin-bottom: 4px;">{stat_audit_title}</div>
-<div style="font-size: 0.85rem; color: #37474F; line-height: 1.5;">
-{ds_contains_txt} <b>{n_rows:,} {obs_txt}</b> {across_txt} <b>{n_cols} variables</b>.<br>
-• <b>{miss_hdr}</b> : {miss_val_txt}<br>
-• <b>{bal_hdr}</b> : {bal_val_txt}<br>
-• <b>{model_hdr}</b> : {model_val_txt}<br>
-<b>{rec_line}</b>
+    st.markdown("---")
+    st.markdown('''
+<div class="agri-card" style="border-left: 4px solid #1B5E20; background: #F0FDF4; padding: 12px 16px; margin-top: 15px;">
+    <b>📊 Looking for the Pre-Analysis Dataset Health & Missingness Auditor?</b><br>
+    The experimental trial data health inspector has moved to <b>Suite 2: Experimental Biometrics & Crop Breeding</b> (Tab 1: <i>Pre-Analysis Data Health Auditor</i>) to precede your ANOVA and DMRT analyses!
 </div>
-</div>
-""", unsafe_allow_html=True)
-
-            render_dispatch_trigger_card(
-                source_module="Module 2: Biometric Field Trial & Statistical Audit",
-                commodity="Multi-Commodity Field Trials",
-                region="Sub-Saharan Agricultural Research Zones",
-                headline="Validated Field Trial Protocol & Experimental Balance Advisory",
-                trigger_summary=f"Analysis of {n_rows:,} observations across {n_cols} factors completed. Recommended model: {model_val_txt[:90]}.",
-                recommendation_summary=rec_line
-            )
+''', unsafe_allow_html=True)

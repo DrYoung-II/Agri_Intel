@@ -13,7 +13,7 @@ Organizes the 14 individual domain engines into 7 cohesive, publication-grade Po
 import streamlit as st
 
 # Import the existing, untampered domain renderers
-from modules.mod8_designer import render_experiment_designer
+from modules.mod8_designer import render_experiment_designer, render_dataset_health_auditor
 from modules.mod3_geneticist import render_statistical_geneticist
 from modules.mod4_plant_breeding import render_plant_breeding
 
@@ -40,75 +40,80 @@ def _is_fr() -> bool:
 
 def render_suite_biometrics():
     """
-    Suite: Agricultural Biometrics & Breeding Suite
-    Consolidates Experiment Design, Statistical ANOVA/DMRT, and Plant Breeding Cultivar Selection.
+    Suite 2: Experimental Biometrics & Crop Breeding
+    Consolidates Data Health Audit, Trial Design, Statistical ANOVA/DMRT, and Plant Breeding.
     """
     if _is_fr():
-        st.markdown("## 🧬 Biométrie Agricole & Sélection Végétale")
-        st.caption("Intelligence biométrique de bout en bout : de la modélisation des plans expérimentaux (RCBD, Split-Plot, Alpha-Lattice) jusqu'à la séparation de moyennes (DMRT/Tukey) et la sélection variétale quantitative.")
+        st.markdown("## 🧬 Biométrie Expérimentale & Amélioration des Plantes")
+        st.caption("Intelligence biométrique de bout en bout : de l'audit de santé des données (valeurs manquantes, équilibre) et des plans expérimentaux (RCBD, Split-Plot) jusqu'à la séparation de moyennes (DMRT/Tukey) et la sélection variétale quantitative.")
         tab_titles = [
+            "🩺 Audit de Santé des Données & Hypothèses",
             "📐 Conception & Dispositifs Expérimentaux",
             "📊 Statistiques Biométriques & DMRT",
-            "🌽 Sélection Variétale & Sélection Génomique"
+            "🌽 Sélection Végétale & Caractères Quantitatifs"
         ]
     else:
-        st.markdown("## 🧬 Agricultural Biometrics & Breeding Suite")
-        st.caption("End-to-end biometrical intelligence: from experimental field layout design to rigorous ANOVA mean separation (DMRT) and quantitative breeding selection.")
+        st.markdown("## 🧬 Experimental Biometrics & Crop Breeding")
+        st.caption("End-to-end biometrical intelligence: from pre-analysis data health audits (missingness, balance) and automated experimental design (RCBD, Split-Plot) to mean separation tests (DMRT/Tukey) and quantitative cultivar selection.")
         tab_titles = [
-            "📐 Experiment Designer & Layouts",
-            "📊 Biometric Statistics & DMRT",
-            "🌽 Quantitative Breeding & Cultivar Selection"
+            "🩺 Pre-Analysis Data Health Auditor",
+            "📐 Experimental Design & Layout",
+            "📊 Statistical Biometrics & DMRT",
+            "🌽 Plant Breeding & Cultivar Selection"
         ]
-    
-    tab_design, tab_stats, tab_breeding = st.tabs(tab_titles)
-    
+
+    tab_audit, tab_design, tab_stats, tab_breeding = st.tabs(tab_titles)
+
+    with tab_audit:
+        render_dataset_health_auditor()
+
     with tab_design:
         render_experiment_designer()
-        
+
     with tab_stats:
         render_statistical_geneticist()
-        
+
     with tab_breeding:
         render_plant_breeding()
 
 
 def render_suite_research_studio():
     """
-    Suite: AI Research Scientist & Proposal Studio
-    Consolidates Proposal Generator, PRISMA Systematic Literature Review, Thesis Mentor, and Copilot Evidence/Radio.
+    Suite 3: AI Research Scientist Studio
+    Chronological Academic Journey: Literature Review -> Evidence Matrix -> Grant Proposal -> Thesis Defense.
     """
     if _is_fr():
         st.markdown("## 🔬 Chercheur IA & Studio de Thèse / Projets")
-        st.caption("Cycle complet de la recherche agronomique : de la revue systématique de la littérature (PRISMA) au mentorat socratique de thèse et à la génération de projets de subvention.")
+        st.caption("Cycle académique chronologique : de la revue systématique de littérature (PRISMA) et la matrice de preuves à la génération de projets de subvention et au mentorat de thèse.")
         tab_titles = [
-            "📝 Générateur Intégral de Projet de Recherche",
             "📖 Revue Systématique de Littérature (PRISMA)",
-            "🎓 Mentor de Thèse & Préparation à la Soutenance",
-            "📚 Matrice de Preuves & Lacunes de Recherche"
+            "🔬 Matrice de Preuves & Lacunes de Recherche",
+            "📝 Générateur Intégral de Projet de Recherche",
+            "🎓 Mentor de Thèse & Préparation à la Soutenance"
         ]
     else:
-        st.markdown("## 🔬 AI Research Scientist & Proposal Studio")
-        st.caption("Complete academic research lifecycle: from PRISMA systematic literature reviews and Socratic thesis defense tutoring to publication-grade 7-part grant proposals and evidence synthesis.")
+        st.markdown("## 🔬 AI Research Scientist Studio")
+        st.caption("Chronological postgraduate & research lifecycle: from PRISMA systematic literature reviews and evidence gap analysis to publication-grade 7-part grant proposals and Socratic thesis defense tutoring.")
         tab_titles = [
-            "📝 Full Research Proposal Generator",
             "📖 PRISMA Systematic Literature Review",
-            "🎓 Thesis Mentor & Defense Tutor",
-            "📚 Structured Evidence Matrix & Knowledge Gaps"
+            "🔬 Structured Evidence Matrix & Knowledge Gaps",
+            "📝 Full Research Proposal Generator",
+            "🎓 Thesis Mentor & Socratic Defense Tutor"
         ]
-    
-    tab_proposal, tab_prisma, tab_tutor, tab_copilot = st.tabs(tab_titles)
-    
-    with tab_proposal:
-        render_research_scientist()
-        
+
+    tab_prisma, tab_evidence, tab_proposal, tab_tutor = st.tabs(tab_titles)
+
     with tab_prisma:
         render_literature_scientist()
-        
+
+    with tab_evidence:
+        render_research_copilot()
+
+    with tab_proposal:
+        render_research_scientist()
+
     with tab_tutor:
         render_student_tutor()
-        
-    with tab_copilot:
-        render_research_copilot()
 
 
 def render_suite_agro_ecosystems():

@@ -18,6 +18,12 @@ import streamlit as st
 import streamlit.components.v1 as components
 from core.orchestrator import rule_based_agent_synthesis, detect_target_geography
 from core.exporter import render_download_buttons
+from core.broadcast_dispatcher import (
+    init_broadcast_queue,
+    queue_broadcast_advisory,
+    render_dispatch_trigger_card,
+    generate_vernacular_radio_script
+)
 
 
 def generate_radio_jingle():
@@ -1330,47 +1336,411 @@ def render_research_copilot():
 
             st.info("💡 **Africa-First Evidence Grounding**: Powered by institutional synthesis across CGIAR, IITA, ILRI, NAPRI, FUNAAB, NIHORT, FAO, and national agricultural research systems (NARS).")
 
+            # Last-Mile Extension Dispatch trigger for current research query
+            first_gap = gaps[0].replace("**", "").replace("*", "") if gaps else "Agronomic optimization required"
+            first_sol = "Validated agronomic protocols and stress-mitigation guidelines."
+            if isinstance(evidence_df, pd.DataFrame) and not evidence_df.empty and "Key Metric / Target Value" in evidence_df.columns:
+                first_sol = str(evidence_df.iloc[0]["Key Metric / Target Value"])
+            render_dispatch_trigger_card(
+                source_module="Module 1: AI Research Scientist Studio",
+                commodity=research_topic.split()[0] if research_topic else "Field Crops",
+                region=target_geo if target_geo else "Pan-African Smallholder Belts",
+                headline=f"Evidence Grounding: {research_topic[:50]}",
+                trigger_summary=first_gap[:140],
+                recommendation_summary=str(first_sol)[:140]
+            )
+
     # -------------------------------------------------------------
     # TAB 2: LAST-MILE MULTILINGUAL VOICE & RADIO ADVISORY
     # -------------------------------------------------------------
     with tab_radio:
+        init_broadcast_queue()
         st.markdown("#### 📻 Community Extension Radio & Multilingual Voice Dispatcher")
         st.markdown(
             "Translates complex agricultural research and climate biometrics into **indigenous local-language voice bulletins** "
             "for rural smallholders across Africa. Demonstrates end-to-end delivery from **lab to last-mile farmer**."
         )
 
-        scenario_choice = st.selectbox(
-            "Select Field Advisory Scenario:",
-            list(LOCAL_RADIO_BROADCASTS.keys()),
-            index=0
-        )
-        selected_scenario = LOCAL_RADIO_BROADCASTS[scenario_choice]
-
-        st.info(f"**Field Context**: {selected_scenario['context']}")
-
-        # Language Selector - High-Visibility Horizontal Radio Bar (One-Click Audio Switch)
-        avail_langs = list(selected_scenario["languages"].keys())
-        default_idx = 0
-        if is_fr:
-            for idx, l in enumerate(avail_langs):
-                if "français" in l.lower() or "french" in l.lower():
-                    default_idx = idx
-                    break
-
-        lang_label = "📻 **Choisissez la Langue de Diffusion (Cliquez pour Écouter le Bulletin) :**" if is_fr else "📻 **Select Broadcast Language (Click any language to load & play audio):**"
-        lang_choice = st.radio(
-            lang_label,
-            options=avail_langs,
-            index=default_idx,
+        radio_mode = st.radio(
+            "📻 Select Radio Operation Mode:" if not is_fr else "📻 Mode de Fonctionnement Radio :",
+            [
+                "🎙️ Live AI Extension Broadcast Studio & Dynamic Queue (On-The-Fly Generation)",
+                "📻 Curated Institutional Benchmarks (Pre-Bundled Ground Truth)"
+            ],
+            index=0,
             horizontal=True,
-            key="radio_indigenous_lang_selector",
-            help="Bascule instantanément le lecteur audio, la transcription et la traduction dans la langue sélectionnée" if is_fr else "Instantly switches the audio player, transcript, and verified translation to the selected language."
+            key="radio_mode_toggle_selector"
         )
-        broadcast_data = selected_scenario["languages"][lang_choice]
 
-        # Radio Station Studio Box
-        st.markdown(f"""
+        if "Live AI" in radio_mode:
+            st.markdown("---")
+            # -------------------------------------------------------------
+            # SECTION 1: GLOBAL BROADCAST DISPATCH QUEUE
+            # -------------------------------------------------------------
+            st.markdown("##### 📡 Live Agricultural Broadcast Dispatch Queue")
+            st.caption(
+                "Active research findings and biometric diagnoses automatically captured from analytical modules across AgroBiometrix for vernacular broadcast:"
+            )
+
+            queue = st.session_state.get("broadcast_dispatch_queue", [])
+            with st.expander(f"📋 View Active Dispatch Queue ({len(queue)} Analytical Alerts Pending Air)", expanded=True):
+                for idx, item in enumerate(queue):
+                    q_col1, q_col2, q_col3 = st.columns([1.2, 3, 1])
+                    with q_col1:
+                        st.markdown(f"**`{item['id']}`**<br><span style='font-size:0.75rem; color:#6B7280;'>⏱️ {item['timestamp']}</span>", unsafe_allow_html=True)
+                        st.caption(f"🏛️ {item['source_module']}")
+                    with q_col2:
+                        st.markdown(f"**📢 {item['headline']}** (`{item['commodity']}`)")
+                        st.markdown(f"<span style='font-size:0.78rem; color:#1B5E20; font-weight:600;'>📍 {item['region']}</span><br><span style='font-size:0.80rem;'><b>Trigger:</b> {item['agronomic_trigger']}</span>", unsafe_allow_html=True)
+                    with q_col3:
+                        if st.button("⚡ Load to Studio", key=f"btn_load_q_{idx}", help="Load this finding directly into the Broadcast Studio below"):
+                            st.session_state["active_studio_alert"] = item
+                            st.session_state["dyn_head_val"] = item["headline"]
+                            st.session_state["dyn_comm_val"] = item["commodity"]
+                            st.session_state["dyn_reg_val"] = item["region"]
+                            st.session_state["dyn_trig_val"] = item["agronomic_trigger"]
+                            st.session_state["dyn_rec_val"] = item["recommendation"]
+                            st.rerun()
+                    st.markdown("<hr style='margin: 4px 0 8px 0; border: none; border-top: 1px dashed #D1D5DB;' />", unsafe_allow_html=True)
+
+                c_q1, c_q2 = st.columns([1, 1])
+                with c_q1:
+                    if st.button("🔄 Reset Queue to Defaults", key="btn_reset_queue"):
+                        from core.broadcast_dispatcher import DEFAULT_BROADCAST_QUEUE
+                        st.session_state["broadcast_dispatch_queue"] = list(DEFAULT_BROADCAST_QUEUE)
+                        st.rerun()
+
+            # -------------------------------------------------------------
+            # SECTION 2: BROADCASTER STUDIO COMPOSER
+            # -------------------------------------------------------------
+            st.markdown("##### 🎙️ Extension Radio Broadcaster Studio & AI Script Generator")
+            st.caption(
+                "Compose or synthesize culturally grounded vernacular radio bulletins from any agronomic finding or field emergency alert:"
+            )
+
+            active_alert = st.session_state.get("active_studio_alert", queue[0] if queue else {})
+
+            c_top1, c_top2 = st.columns([2, 1])
+            with c_top1:
+                head_in = st.text_input(
+                    "Advisory Headline / Bulletin Title:",
+                    value=st.session_state.get("dyn_head_val", active_alert.get("headline", "Severe Phosphorus & Zinc Fixation in Acidic Ultisols")),
+                    key="studio_head_input"
+                )
+            with c_top2:
+                comm_in = st.text_input(
+                    "Target Agricultural Commodity:",
+                    value=st.session_state.get("dyn_comm_val", active_alert.get("commodity", "Maize & Cassava")),
+                    key="studio_comm_input"
+                )
+
+            reg_in = st.text_input(
+                "Target Agro-Ecological Region / State / Country:",
+                value=st.session_state.get("dyn_reg_val", active_alert.get("region", "Southwest Nigeria (Oyo/Ogun Transition Zone)")),
+                key="studio_reg_input"
+            )
+
+            c_f1, c_f2 = st.columns([1, 1])
+            with c_f1:
+                trig_in = st.text_area(
+                    "Scientific Trigger & Biometric Finding:",
+                    value=st.session_state.get("dyn_trig_val", active_alert.get("agronomic_trigger", "Soil pH < 5.1 with active Al3+ toxicity and high P-sorption capacity. Surface urea broadcast causing 40% ammonia volatilization.")),
+                    height=90,
+                    key="studio_trig_input"
+                )
+            with c_f2:
+                rec_in = st.text_area(
+                    "Practical Agronomic Remedy & Farmer Guidance:",
+                    value=st.session_state.get("dyn_rec_val", active_alert.get("recommendation", "Halt surface urea broadcast. Apply 2.5 t/ha agricultural lime with organic compost. Switch to micro-dosing single superphosphate (SSP) at root zone.")),
+                    height=90,
+                    key="studio_rec_input"
+                )
+
+            # Language Selection for Dynamic Generation
+            studio_lang_options = [
+                "🇳🇬 Èdè Yorùbá (Yoruba)",
+                "🇳🇬 Harshen Hausa (Hausa)",
+                "🇰🇪 Kiswahili (Swahili)",
+                "🇨🇮 Français Agricole (French)",
+                "🇳🇬 West African Pidgin",
+                "🇬🇧 Institutional English"
+            ]
+            studio_lang_choice = st.radio(
+                "📻 Select Target Broadcast Language for On-Air Generation:",
+                studio_lang_options,
+                index=0,
+                horizontal=True,
+                key="studio_lang_choice_radio"
+            )
+
+            btn_gen = st.button("✨ GENERATE LIVE INDIGENOUS SPOKEN BULLETIN", type="primary", use_container_width=True, key="btn_generate_dynamic_radio")
+
+            # Store and display generated dynamic bulletin
+            if btn_gen:
+                with st.spinner(f"🎙️ Formulating culturally grounded radio script in {studio_lang_choice}..."):
+                    dyn_result = generate_vernacular_radio_script(
+                        headline=head_in,
+                        commodity=comm_in,
+                        region=reg_in,
+                        trigger=trig_in,
+                        recommendation=rec_in,
+                        target_lang=studio_lang_choice
+                    )
+                    st.session_state["current_dynamic_bulletin"] = dyn_result
+                    st.session_state["current_dynamic_lang"] = studio_lang_choice
+
+            dyn_data = st.session_state.get("current_dynamic_bulletin")
+            dyn_lang = st.session_state.get("current_dynamic_lang", studio_lang_choice)
+
+            if not dyn_data:
+                # Pre-seed with active alert so screen is immediately rich and ready
+                dyn_data = generate_vernacular_radio_script(
+                    headline=head_in,
+                    commodity=comm_in,
+                    region=reg_in,
+                    trigger=trig_in,
+                    recommendation=rec_in,
+                    target_lang=studio_lang_choice
+                )
+                st.session_state["current_dynamic_bulletin"] = dyn_data
+                st.session_state["current_dynamic_lang"] = studio_lang_choice
+
+            st.markdown(f"""
+<div class="agri-card" style="border-left: 5px solid #1B5E20; background: #F8FAF8; margin-top: 1rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: #1B5E20; text-transform: uppercase;">
+            📡 ON AIR • {dyn_data.get('broadcaster', 'AgroBiometrix Community Radio')}
+        </span>
+        <span style="background: #E8F5E9; color: #1B5E20; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+            ⚡ Dynamically Formulated from Live Research Finding
+        </span>
+    </div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: #1B5E20; margin-bottom: 0.5rem;">
+        📢 {dyn_data.get('headline', head_in)}
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+            col_dyn_audio, col_dyn_txt = st.columns([1, 1])
+            with col_dyn_audio:
+                st.markdown("##### 🔊 Real-Time Voice Broadcast Audio")
+                st.caption(f"Listen to the dynamically formulated {dyn_lang} voice bulletin:")
+
+                # Browser Web Speech API via components.html
+                dyn_script_json = json.dumps(dyn_data.get('audio_script', ''))
+                if "yoruba" in dyn_lang.lower():
+                    dyn_bcp47 = "yo-NG"
+                    dyn_tag = "Yorùbá"
+                elif "hausa" in dyn_lang.lower():
+                    dyn_bcp47 = "ha-NG"
+                    dyn_tag = "Hausa"
+                elif "swahili" in dyn_lang.lower():
+                    dyn_bcp47 = "sw-KE"
+                    dyn_tag = "Swahili"
+                elif "français" in dyn_lang.lower() or "french" in dyn_lang.lower():
+                    dyn_bcp47 = "fr-FR"
+                    dyn_tag = "Français"
+                else:
+                    dyn_bcp47 = "en-NG"
+                    dyn_tag = "Pidgin / English"
+
+                components.html(f"""
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 6px 0 10px 0;">
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <button id="btnPlayDynVoice" onclick="startDynSpeech()" style="
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 8px rgba(27,94,32,0.35);
+            transition: all 0.2s ease;
+        " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <span>🔊 PLAY SPOKEN SCRIPT ({dyn_tag})</span>
+        </button>
+        <button id="btnStopDynVoice" onclick="stopDynSpeech()" style="
+            background: #F3F4F6;
+            color: #374151;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        ">
+            <span>⏹️ Stop</span>
+        </button>
+        <span id="dynSpeechState" style="font-size: 0.84rem; color: #4B5563; font-weight: 500;"></span>
+    </div>
+</div>
+<script>
+function getSynth() {{
+    try {{
+        if (window.speechSynthesis) return window.speechSynthesis;
+        if (window.parent && window.parent.speechSynthesis) return window.parent.speechSynthesis;
+        if (window.top && window.top.speechSynthesis) return window.top.speechSynthesis;
+    }} catch(e) {{}}
+    return window.speechSynthesis || null;
+}}
+
+let dynUtter = null;
+
+function startDynSpeech() {{
+    const synth = getSynth();
+    if (!synth) {{
+        alert('Web Speech Synthesis is not supported in this browser.');
+        return;
+    }}
+    synth.cancel();
+
+    const script = {dyn_script_json};
+    const u = new SpeechSynthesisUtterance(script);
+    u.lang = '{dyn_bcp47}';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+
+    try {{
+        const voices = synth.getVoices();
+        const matched = voices.find(v => v.lang.toLowerCase().replace('_', '-').startsWith('{dyn_bcp47}'.toLowerCase().slice(0, 2)));
+        if (matched) u.voice = matched;
+    }} catch(e) {{}}
+
+    const sEl = document.getElementById('dynSpeechState');
+    sEl.innerHTML = '<span style="color: #1B5E20; font-weight: 600;">🎙️ Speaking broadcast ({dyn_tag})...</span>';
+
+    u.onend = function() {{
+        sEl.innerHTML = '<span style="color: #6B7280;">✅ Spoken broadcast finished</span>';
+    }};
+
+    u.onerror = function(ev) {{
+        sEl.innerHTML = '<span style="color: #4B5563;">Playback ended</span>';
+    }};
+
+    dynUtter = u;
+    synth.speak(u);
+}}
+
+function stopDynSpeech() {{
+    const synth = getSynth();
+    if (synth) {{
+        synth.cancel();
+        document.getElementById('dynSpeechState').innerHTML = '<span style="color: #6B7280;">⏹️ Playback stopped</span>';
+    }}
+}}
+</script>
+""", height=65)
+
+                with st.expander("🔔 Radio Station Sign-on Cue Chime (Acoustic Jingle)", expanded=False):
+                    st.caption("Broadcast intro marimba chime (C5-E5-G5 harmonic sequence):")
+                    st.audio(generate_radio_jingle(), format="audio/wav")
+
+                st.markdown(f"""
+<div class="agri-card" style="border: 1px dashed #81C784; background: #FFFFFF; font-size: 0.85rem; line-height: 1.5;">
+    <b>🗣️ Indigenous Voice Transcript ({dyn_lang}):</b><br><br>
+    <i>"{dyn_data.get('audio_script', '')}"</i>
+</div>
+""", unsafe_allow_html=True)
+
+            with col_dyn_txt:
+                st.markdown("##### 🌐 Verified Translation & Cultural Context")
+                st.markdown(f"""
+<div class="agri-card" style="background: #FFFFFF; font-size: 0.85rem; line-height: 1.5;">
+    <b>Institutional English Translation:</b><br><br>
+    "{dyn_data.get('english_translation', '')}"
+</div>
+""", unsafe_allow_html=True)
+
+                if dyn_data.get('proverb_or_cultural_hook'):
+                    st.markdown(f"""
+<div class="agri-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+    <b>🪝 Cultural Farming Hook / Indigenous Proverb Used:</b><br>
+    <i>"{dyn_data.get('proverb_or_cultural_hook', '')}"</i>
+</div>
+""", unsafe_allow_html=True)
+
+                st.markdown(f"""
+<div class="agri-card agri-card-highlight" style="font-size: 0.8rem; margin-top: 0.5rem;">
+    <b>🔬 Underlying AgroBiometrix Biometric Source:</b><br>
+    • Source Module: {active_alert.get('source_module', 'Cross-Suite Analytics')}<br>
+    • Target Commodity: {comm_in} | Region: {reg_in}<br>
+    • Status: Verified for Community Radio Broadcast
+</div>
+""", unsafe_allow_html=True)
+
+            # Download Cue Sheet Packet
+            cue_sheet = f"""AGROBIOMETRIX LIVE BROADCASTER CUE SHEET & STATION AUDIO PACKET
+Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Broadcaster / Call-Sign: {dyn_data.get('broadcaster', '')}
+Target Commodity: {comm_in}
+Agro-Ecological Region: {reg_in}
+Language: {dyn_lang}
+Headline: {dyn_data.get('headline', head_in)}
+
+--- INDIGENOUS VERNACULAR BROADCAST SCRIPT ---
+{dyn_data.get('audio_script', '')}
+
+--- ENGLISH EQUIVALENT ---
+{dyn_data.get('english_translation', '')}
+
+--- SCIENTIFIC FIELD CONTEXT ---
+Trigger: {trig_in}
+Remedy: {rec_in}
+
+--- CULTURAL HOOK / PROVERB ---
+{dyn_data.get('proverb_or_cultural_hook', 'N/A')}
+"""
+            render_download_buttons(
+                content_text=cue_sheet,
+                filename_prefix=f"AgroBiometrix_Live_Studio_Radio_{dyn_lang[:2]}",
+                title=f"Station Cue Sheet: {dyn_data.get('headline', '')[:30]}",
+                key_prefix="btn_dl_dyn_studio_radio"
+            )
+
+        else:
+            # -------------------------------------------------------------
+            # BENCHMARK SUITE: CURATED INSTITUTIONAL BENCHMARKS
+            # -------------------------------------------------------------
+            st.markdown("---")
+            scenario_choice = st.selectbox(
+                "Select Field Advisory Scenario:",
+                list(LOCAL_RADIO_BROADCASTS.keys()),
+                index=0
+            )
+            selected_scenario = LOCAL_RADIO_BROADCASTS[scenario_choice]
+
+            st.info(f"**Field Context**: {selected_scenario['context']}")
+
+            # Language Selector - High-Visibility Horizontal Radio Bar (One-Click Audio Switch)
+            avail_langs = list(selected_scenario["languages"].keys())
+            default_idx = 0
+            if is_fr:
+                for idx, l in enumerate(avail_langs):
+                    if "français" in l.lower() or "french" in l.lower():
+                        default_idx = idx
+                        break
+
+            lang_label = "📻 **Choisissez la Langue de Diffusion (Cliquez pour Écouter le Bulletin) :**" if is_fr else "📻 **Select Broadcast Language (Click any language to load & play audio):**"
+            lang_choice = st.radio(
+                lang_label,
+                options=avail_langs,
+                index=default_idx,
+                horizontal=True,
+                key="radio_indigenous_lang_selector",
+                help="Bascule instantanément le lecteur audio, la transcription et la traduction dans la langue sélectionnée" if is_fr else "Instantly switches the audio player, transcript, and verified translation to the selected language."
+            )
+            broadcast_data = selected_scenario["languages"][lang_choice]
+
+            # Radio Station Studio Box
+            st.markdown(f"""
 <div class="agri-card" style="border-left: 5px solid #1B5E20; background: #F8FAF8; margin-top: 1rem;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <span style="font-size: 0.8rem; font-weight: 700; color: #1B5E20; text-transform: uppercase;">
@@ -1386,18 +1756,18 @@ def render_research_copilot():
 </div>
 """, unsafe_allow_html=True)
 
-        col_audio, col_txt = st.columns([1, 1])
-        with col_audio:
-            st.markdown("##### 🔊 Broadcast Audio Player")
-            st.caption("Listen to the authentic vernacular radio voice bulletin broadcasted for rural smallholders:")
-            
-            # Load pre-bundled offline MP3 audio or synthesize via regional engine
-            spoken_mp3 = get_radio_audio_bytes(scenario_choice, lang_choice, broadcast_data['audio_script'])
-            
-            is_tonal_lang = "yoruba" in lang_choice.lower() or "igbo" in lang_choice.lower()
-            if is_tonal_lang:
-                if is_fr:
-                    st.markdown('''
+            col_audio, col_txt = st.columns([1, 1])
+            with col_audio:
+                st.markdown("##### 🔊 Broadcast Audio Player")
+                st.caption("Listen to the authentic vernacular radio voice bulletin broadcasted for rural smallholders:")
+                
+                # Load pre-bundled offline MP3 audio or synthesize via regional engine
+                spoken_mp3 = get_radio_audio_bytes(scenario_choice, lang_choice, broadcast_data['audio_script'])
+                
+                is_tonal_lang = "yoruba" in lang_choice.lower() or "igbo" in lang_choice.lower()
+                if is_tonal_lang:
+                    if is_fr:
+                        st.markdown('''
 <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; border-radius: 6px; padding: 9px 12px; margin: 6px 0 10px 0;">
     <div style="font-size: 0.80rem; font-weight: 700; color: #92400E; display: flex; align-items: center; gap: 5px;">
         <span>⚠️</span> <span>Avis Vocal : Modèle Tonal Indigène (Dò-Re-Mí)</span>
@@ -1408,8 +1778,8 @@ def render_research_copilot():
     </div>
 </div>
 ''', unsafe_allow_html=True)
-                else:
-                    st.markdown('''
+                    else:
+                        st.markdown('''
 <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; border-radius: 6px; padding: 9px 12px; margin: 6px 0 10px 0;">
     <div style="font-size: 0.80rem; font-weight: 700; color: #92400E; display: flex; align-items: center; gap: 5px;">
         <span>⚠️</span> <span>Voice Model Notice: Tonal Intonation (Dò-Re-Mí)</span>
@@ -1420,46 +1790,46 @@ def render_research_copilot():
     </div>
 </div>
 ''', unsafe_allow_html=True)
-            else:
-                status_txt = "🟢 Moteur Vocal Indigène Natif Actif (Acoustique Régionale Studio)" if is_fr else "🟢 Native Indigenous Acoustic Voice Active (Regional Studio Speech Track)"
-                st.markdown(f'''
+                else:
+                    status_txt = "🟢 Moteur Vocal Indigène Natif Actif (Acoustique Régionale Studio)" if is_fr else "🟢 Native Indigenous Acoustic Voice Active (Regional Studio Speech Track)"
+                    st.markdown(f'''
 <div style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 6px; padding: 7px 12px; margin: 5px 0 9px 0;">
     <div style="font-size: 0.78rem; font-weight: 700; color: #166534;">{status_txt}</div>
 </div>
 ''', unsafe_allow_html=True)
 
-            # Primary Spoken Voice Audio Player (Full 30-50s Spoken Bulletin)
-            if spoken_mp3:
-                st.audio(spoken_mp3, format="audio/mp3")
-                st.caption(f"🎙️ **Live Vernacular Voice Stream Active** ({lang_choice} • Full Audio Broadcast)")
-            else:
-                st.warning("⚠️ Spoken audio track is buffering. Please click 'PLAY SPOKEN SCRIPT' below.")
+                # Primary Spoken Voice Audio Player (Full 30-50s Spoken Bulletin)
+                if spoken_mp3:
+                    st.audio(spoken_mp3, format="audio/mp3")
+                    st.caption(f"🎙️ **Live Vernacular Voice Stream Active** ({lang_choice} • Full Audio Broadcast)")
+                else:
+                    st.warning("⚠️ Spoken audio track is buffering. Please click 'PLAY SPOKEN SCRIPT' below.")
 
-            # Browser-based interactive speech button via components.html (never sanitized/stripped)
-            safe_script_json = json.dumps(broadcast_data['audio_script'])
-            if "yoruba" in lang_choice.lower():
-                bcp47 = "yo-NG"
-                lang_tag = "Yorùbá"
-            elif "igbo" in lang_choice.lower():
-                bcp47 = "ig-NG"
-                lang_tag = "Ìgbò"
-            elif "hausa" in lang_choice.lower():
-                bcp47 = "ha-NG"
-                lang_tag = "Hausa"
-            elif "swahili" in lang_choice.lower() or "kiswahili" in lang_choice.lower():
-                bcp47 = "sw-KE"
-                lang_tag = "Swahili"
-            elif "français" in lang_choice.lower() or "french" in lang_choice.lower():
-                bcp47 = "fr-FR"
-                lang_tag = "Français"
-            else:
-                bcp47 = "en-NG"
-                lang_tag = "Pidgin"
+                # Browser-based interactive speech button via components.html (never sanitized/stripped)
+                safe_script_json = json.dumps(broadcast_data['audio_script'])
+                if "yoruba" in lang_choice.lower():
+                    bcp47 = "yo-NG"
+                    lang_tag = "Yorùbá"
+                elif "igbo" in lang_choice.lower():
+                    bcp47 = "ig-NG"
+                    lang_tag = "Ìgbò"
+                elif "hausa" in lang_choice.lower():
+                    bcp47 = "ha-NG"
+                    lang_tag = "Hausa"
+                elif "swahili" in lang_choice.lower() or "kiswahili" in lang_choice.lower():
+                    bcp47 = "sw-KE"
+                    lang_tag = "Swahili"
+                elif "français" in lang_choice.lower() or "french" in lang_choice.lower():
+                    bcp47 = "fr-FR"
+                    lang_tag = "Français"
+                else:
+                    bcp47 = "en-NG"
+                    lang_tag = "Pidgin"
 
-            play_lbl = f"🔊 PLAY SPOKEN SCRIPT ({lang_tag})" if not is_fr else f"🔊 LIRE LE SCRIPT VOCAL ({lang_tag})"
-            stop_lbl = "⏹️ Stop" if not is_fr else "⏹️ Arrêter"
+                play_lbl = f"🔊 PLAY SPOKEN SCRIPT ({lang_tag})" if not is_fr else f"🔊 LIRE LE SCRIPT VOCAL ({lang_tag})"
+                stop_lbl = "⏹️ Stop" if not is_fr else "⏹️ Arrêter"
 
-            components.html(f"""
+                components.html(f"""
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 6px 0 10px 0;">
     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
         <button id="btnPlayVoice" onclick="startSpeechPlayback()" style="
@@ -1557,43 +1927,38 @@ function stopSpeechPlayback() {{
 </script>
 """, height=65)
 
-            # Distinct Station Cue Chime Expander (Completely separate from spoken voice bulletin)
-            with st.expander("🔔 Radio Station Sign-on Cue Chime (Acoustic Jingle)", expanded=False):
-                st.caption("Standard 3-tone marimba cue chime (C5-E5-G5 harmonic sequence) broadcasted prior to voice bulletins to alert rural listeners across radio transistors:")
-                jingle_wav = generate_radio_jingle()
-                st.audio(jingle_wav, format="audio/wav")
+                # Distinct Station Cue Chime Expander (Completely separate from spoken voice bulletin)
+                with st.expander("🔔 Radio Station Sign-on Cue Chime (Acoustic Jingle)", expanded=False):
+                    st.caption("Standard 3-tone marimba cue chime (C5-E5-G5 harmonic sequence) broadcasted prior to voice bulletins to alert rural listeners across radio transistors:")
+                    jingle_wav = generate_radio_jingle()
+                    st.audio(jingle_wav, format="audio/wav")
 
-            with st.expander("🎙️ African Voice AI & Tonal Models (YarnGPT / ElevenLabs)", expanded=False):
-                st.markdown(
-                    "AgroBiometrix supports studio-grade indigenous voice models via **YarnGPT** (dedicated Nigerian speech models for Yorùbá, Ìgbò, Hausa, Pidgin) "
-                    "and **ElevenLabs Multilingual v2**."
-                )
-                st.info(
-                    "💡 **How to activate in production**: Add your YarnGPT or ElevenLabs API key in **Module 15 (API Hub)** to upgrade rural radio advisories from web fallback to authentic studio voiceover."
-                )
+                with st.expander("🎙️ African Voice AI & Tonal Models (YarnGPT / ElevenLabs)", expanded=False):
+                    st.markdown(
+                        "AgroBiometrix supports studio-grade indigenous voice models via **YarnGPT** (dedicated Nigerian speech models for Yorùbá, Ìgbò, Hausa, Pidgin) "
+                        "and **ElevenLabs Multilingual v2**."
+                    )
+                    st.info(
+                        "💡 **How to activate in production**: Add your YarnGPT or ElevenLabs API key in **Module 15 (API Hub)** to upgrade rural radio advisories from web fallback to authentic studio voiceover."
+                    )
 
-            with st.expander("🔔 Play Radio Station Chime Tone (Marimba Jingle)", expanded=False):
-                jingle_wav = generate_radio_jingle()
-                st.audio(jingle_wav, format="audio/wav")
-                st.caption("Traditional 3-note broadcast cue tone (C5-E5-G5).")
-
-            st.markdown(f"""
+                st.markdown(f"""
 <div class="agri-card" style="border: 1px dashed #81C784; background: #FFFFFF; font-size: 0.85rem; line-height: 1.5;">
     <b>🗣️ Indigenous Voice Transcript ({lang_choice}):</b><br><br>
     <i>"{broadcast_data['audio_script']}"</i>
 </div>
 """, unsafe_allow_html=True)
 
-        with col_txt:
-            st.markdown("##### 🌐 Verified English Translation & Biometrics Link")
-            st.markdown(f"""
+            with col_txt:
+                st.markdown("##### 🌐 Verified English Translation & Biometrics Link")
+                st.markdown(f"""
 <div class="agri-card" style="background: #FFFFFF; font-size: 0.85rem; line-height: 1.5;">
     <b>Institutional English Translation:</b><br><br>
     "{broadcast_data['english_translation']}"
 </div>
 """, unsafe_allow_html=True)
 
-            st.markdown(f"""
+                st.markdown(f"""
 <div class="agri-card agri-card-highlight" style="font-size: 0.8rem; margin-top: 0.5rem;">
     <b>🔬 Underlying AgroBiometrix Biometric Models Linked:</b><br>
     • Open-Meteo REST API: 14-day rainfall hiatus & heat stress index<br>
@@ -1602,8 +1967,8 @@ function stopSpeechPlayback() {{
 </div>
 """, unsafe_allow_html=True)
 
-        # Download radio script for field agents
-        downloadable_script = f"""AGROBIOMETRIX COMMUNITY EXTENSION RADIO BROADCAST SCRIPT
+            # Download radio script for field agents
+            downloadable_script = f"""AGROBIOMETRIX COMMUNITY EXTENSION RADIO BROADCAST SCRIPT
 Scenario: {scenario_choice}
 Language: {lang_choice}
 Broadcaster / Station: {broadcast_data['broadcaster']}
@@ -1619,9 +1984,10 @@ Headline: {broadcast_data['headline']}
 Target recommendations generated by AgroBiometrix Biometric & Climate Ensemble.
 Compliant with CGIAR / IFPRI digital extension standards for sub-Saharan Africa.
 """
-        render_download_buttons(
-            content_text=downloadable_script,
-            filename_prefix=f"AgroBiometrix_Radio_Advisory_{lang_choice[:2]}",
-            title=f"AgroBiometrix Radio Advisory: {broadcast_data.get('headline', '')}",
-            key_prefix="btn_dl_radio"
-        )
+            render_download_buttons(
+                content_text=downloadable_script,
+                filename_prefix=f"AgroBiometrix_Radio_Advisory_{lang_choice[:2]}",
+                title=f"AgroBiometrix Radio Advisory: {broadcast_data.get('headline', '')}",
+                key_prefix="btn_dl_radio"
+            )
+

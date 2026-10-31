@@ -786,4 +786,14 @@ def render_small_ruminants_section():
             key_prefix="btn_dl_swine"
         )
 
+        from core.broadcast_dispatcher import render_dispatch_trigger_card
+        render_dispatch_trigger_card(
+            source_module="Module 7: Livestock Biometrics & Swine THI",
+            commodity=f"Swine / Piggery ({herd_pigs} head)",
+            region="Sub-Saharan Commercial Piggery Belts",
+            headline=f"Swine THI {swine_thi:.1f} Heat Stress Alert",
+            trigger_summary=f"Swine THI reached {swine_thi:.1f} ({sw_stress_cat}). Respiration {respiration_rate:.0f} bpm, feed intake dropped -{feed_drop_pct:.1f}%.",
+            recommendation_summary="Shift 70% of feed delivery to cool hours (6:30 PM - 5:30 AM). Supplement drinking water with 0.2% sodium bicarbonate and Vitamin C."
+        )
+
 

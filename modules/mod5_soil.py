@@ -180,3 +180,13 @@ Under a <b>{fert_price_change:+d}% fertilizer price shift</b> and <b>{rainfall_c
 </div>
 """, unsafe_allow_html=True)
 
+        from core.broadcast_dispatcher import render_dispatch_trigger_card
+        render_dispatch_trigger_card(
+            source_module="Module 5: Soil Fertility & Economic Optimizer",
+            commodity=sim_crop_name,
+            region=country_name,
+            headline=f"Fertilizer Shock & Soil Advisory ({sim_crop_name})",
+            trigger_summary=f"Fertilizer shift {fert_price_change:+d}% and rainfall {rainfall_change:+d}%. Projected margin shift {pct_margin_change:+.1f}%.",
+            recommendation_summary="Apply micro-dosing (1 bottle cap per plant) combined with organo-mineral compost to cut input costs by 50%."
+        )
+

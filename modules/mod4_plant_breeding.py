@@ -9,6 +9,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 from core.crop_taxonomy import PAN_AFRICAN_CROPS, PAN_AFRICAN_ENVIRONMENTS, get_crop_breeding_profile
+from core.broadcast_dispatcher import render_dispatch_trigger_card
 
 
 def render_plant_breeding():
@@ -108,3 +109,13 @@ def render_plant_breeding():
 4. <b>End-User Adoption Criteria</b>: {breeding_prof['adoption']}
 </div>
 """, unsafe_allow_html=True)
+
+    # 1-Click Extension Radio Dispatch
+    render_dispatch_trigger_card(
+        source_module="Module 2 & 4: Plant Breeding & Cultivar Design",
+        commodity=crop_target,
+        region=agro_target,
+        headline=f"New Resilient {crop_target} Seed Trait Profile & Planting Guidance",
+        trigger_summary=f"Optimized breeding index confirmed for {crop_target} in {agro_target}. Trait priorities: {trait_names[0]} and {trait_names[1]}.",
+        recommendation_summary=f"Farmers are advised to source certified seeds matching this profile ({breeding_prof['adoption'][:75]}...). Align planting dates with the first sustained rains."
+    )

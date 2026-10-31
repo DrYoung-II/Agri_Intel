@@ -13,6 +13,7 @@ import json
 import math
 from core.exporter import render_download_buttons
 from core.orchestrator import sanitize_api_error, get_gemini_api_key, set_gemini_api_key, validate_gemini_key, repair_markdown_math
+from core.broadcast_dispatcher import render_dispatch_trigger_card
 
 # =============================================================================
 # 1. PAN-AFRICAN AGRO-ECOLOGICAL & INSTITUTIONAL CONTEXT ENGINE
@@ -1281,3 +1282,12 @@ def render_research_scientist():
 </div>
 </div>
 """, unsafe_allow_html=True)
+
+            render_dispatch_trigger_card(
+                source_module="Module 2: Biometric Field Trial & Statistical Audit",
+                commodity="Multi-Commodity Field Trials",
+                region="Sub-Saharan Agricultural Research Zones",
+                headline="Validated Field Trial Protocol & Experimental Balance Advisory",
+                trigger_summary=f"Analysis of {n_rows:,} observations across {n_cols} factors completed. Recommended model: {model_val_txt[:90]}.",
+                recommendation_summary=rec_line
+            )

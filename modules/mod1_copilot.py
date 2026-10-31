@@ -25,6 +25,8 @@ from core.broadcast_dispatcher import (
     render_dispatch_trigger_card,
     generate_vernacular_radio_script
 )
+from core.audio_engine import render_voice_engine_settings_panel, LANGUAGE_VOICE_MAP
+from core.broadcast_feed import generate_podcast_rss_xml
 
 
 def generate_radio_jingle():
@@ -1422,6 +1424,9 @@ def render_research_copilot():
                         st.session_state["broadcast_dispatch_queue"] = list(DEFAULT_BROADCAST_QUEUE)
                         st.rerun()
 
+            # Render Voice Synthesis Provider Configuration Panel
+            render_voice_engine_settings_panel()
+
             # -------------------------------------------------------------
             # SECTION 2: BROADCASTER STUDIO COMPOSER
             # -------------------------------------------------------------
@@ -2002,4 +2007,42 @@ Compliant with CGIAR / IFPRI digital extension standards for sub-Saharan Africa.
                 title=f"AgroBiometrix Radio Advisory: {broadcast_data.get('headline', '')}",
                 key_prefix="btn_dl_radio"
             )
+
+        # -------------------------------------------------------------
+        # SECTION 4: STATION AUTOMATION & SYNDICATION FEED (RSS 2.0 PODCAST XML)
+        # -------------------------------------------------------------
+        st.markdown("---")
+        with st.expander("📻 Community Radio Automation & Syndication Feed (RSS 2.0 / Apple Podcasts XML)", expanded=False):
+            st.markdown("""
+<div style="font-size: 0.85rem; color: #374151; line-height: 1.5; margin-bottom: 0.8rem;">
+    Community radio stations and national agricultural syndicates (e.g. Farm Radio International, NAFAS, FECAVOICE) 
+    can automatically subscribe to this <b>RFC-compliant RSS 2.0 Podcast XML feed</b>. 
+    Station playout software (ZaraRadio, Rivendell, RadioDJ, StationPlaylist) automatically checks this feed 
+    and inserts spoken bulletins into daily farming hours.
+</div>
+""", unsafe_allow_html=True)
+
+            queue_items = st.session_state.get("broadcast_dispatch_queue", [])
+            feed_xml = generate_podcast_rss_xml(queue_items)
+
+            f_col1, f_col2 = st.columns([2, 1])
+            with f_col1:
+                st.text_input(
+                    "Live Station Syndication Feed URL (Copy to ZaraRadio / Rivendell / Podcast App):",
+                    value="https://agrobiometrix.org/feeds/community_radio_podcast.xml",
+                    key="txt_feed_url",
+                    disabled=True
+                )
+            with f_col2:
+                st.download_button(
+                    label="📥 Download Podcast XML Feed",
+                    data=feed_xml,
+                    file_name="agrobiometrix_radio_podcast_feed.xml",
+                    mime="application/rss+xml",
+                    key="btn_dl_podcast_xml",
+                    help="Download the valid RSS 2.0 podcast XML feed containing all queued alerts and audio enclosures."
+                )
+
+            with st.expander("👁️ Inspect Generated RSS 2.0 / Podcast XML", expanded=False):
+                st.code(feed_xml[:1800] + "\n... [Remaining XML nodes truncated for display]", language="xml")
 

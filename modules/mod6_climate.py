@@ -10,6 +10,7 @@ import requests
 import plotly.express as px
 import streamlit as st
 from core.crop_taxonomy import PAN_AFRICAN_CROPS, PAN_AFRICAN_ENVIRONMENTS, get_crop_climate_profile
+from core.broadcast_dispatcher import render_dispatch_trigger_card
 
 CITY_COORDINATES = {
     "Kaduna, Nigeria (Guinea Savanna)": (10.52, 7.44),
@@ -220,6 +221,15 @@ def render_climate_intelligence():
 </div>
 """, unsafe_allow_html=True)
 
+        render_dispatch_trigger_card(
+            source_module="Module 6: Agro-Ecosystems & Climate Risk",
+            commodity=crop_sel,
+            region=loc,
+            headline=f"Agro-Climatic Warning & Rainfall Anomaly for {crop_sel}",
+            trigger_summary=f"4-Scenario modeling indicates up to {loss_d}% yield reduction under extreme thermal stress in {loc}.",
+            recommendation_summary=rec_b
+        )
+
     with tab_live:
         st.markdown("#### 🛰️ Live Real-Time Agro-Weather & THI Query")
         st.caption("Directly connected to the public Open-Meteo meteorological API across pan-African agricultural hubs (100% Free, Zero API Key required).")
@@ -276,6 +286,15 @@ def render_climate_intelligence():
 • <b>Evaporative Demand</b>: Wind speed is {wind_kmh:.1f} km/h with {rh_pct:.0f}% humidity, resulting in estimated crop canopy evapotranspiration of ~4.8 mm/day.
 </div>
 """, unsafe_allow_html=True)
+
+                        render_dispatch_trigger_card(
+                            source_module="Module 6: Live Agrometeorological Observatory",
+                            commodity="Livestock & Field Crops",
+                            region=city_choice,
+                            headline=f"Live Meteorological Warning: THI {thi_val:.1f} ({thi_status}) in {city_choice}",
+                            trigger_summary=f"Temperature: {temp_c:.1f}°C, Humidity: {rh_pct:.0f}%, THI: {thi_val:.1f} ({thi_status}).",
+                            recommendation_summary="Animals require shaded shelter, clean continuous water, and early-morning pasturing." if thi_val >= 78 else "Comfort zone maintained. Standard grazing schedules apply."
+                        )
                     else:
                         st.error(f"Weather service returned status code {resp.status_code}")
                 except Exception as e:

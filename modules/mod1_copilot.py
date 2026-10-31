@@ -1337,15 +1337,26 @@ def render_research_copilot():
             st.info("💡 **Africa-First Evidence Grounding**: Powered by institutional synthesis across CGIAR, IITA, ILRI, NAPRI, FUNAAB, NIHORT, FAO, and national agricultural research systems (NARS).")
 
             # Last-Mile Extension Dispatch trigger for current research query
-            first_gap = gaps[0].replace("**", "").replace("*", "") if gaps else "Agronomic optimization required"
+            first_gap = gaps[0].replace("**", "").replace("*", "") if 'gaps' in locals() and gaps else "Agronomic optimization required"
             first_sol = "Validated agronomic protocols and stress-mitigation guidelines."
-            if isinstance(evidence_df, pd.DataFrame) and not evidence_df.empty and "Key Metric / Target Value" in evidence_df.columns:
-                first_sol = str(evidence_df.iloc[0]["Key Metric / Target Value"])
+            if 'df_evidence' in locals() and isinstance(df_evidence, pd.DataFrame) and not df_evidence.empty:
+                for c in ["Key Metric / Target Value", "Impact_Finding", "Trait"]:
+                    if c in df_evidence.columns:
+                        first_sol = str(df_evidence.iloc[0][c])
+                        break
+
+            curr_topic = research_topic if 'research_topic' in locals() and research_topic else "Field Crops"
+            curr_geo = "Pan-African Smallholder Belts"
+            if 'geo_info' in locals() and isinstance(geo_info, dict):
+                curr_geo = geo_info.get("label", curr_geo)
+            elif 'active_reg' in locals():
+                curr_geo = str(active_reg)
+
             render_dispatch_trigger_card(
                 source_module="Module 1: AI Research Scientist Studio",
-                commodity=research_topic.split()[0] if research_topic else "Field Crops",
-                region=target_geo if target_geo else "Pan-African Smallholder Belts",
-                headline=f"Evidence Grounding: {research_topic[:50]}",
+                commodity=curr_topic.split()[0] if curr_topic else "Field Crops",
+                region=curr_geo,
+                headline=f"Evidence Grounding: {curr_topic[:50]}",
                 trigger_summary=first_gap[:140],
                 recommendation_summary=str(first_sol)[:140]
             )
